@@ -4,10 +4,15 @@ import React, { useEffect, useRef } from "react";
 import FloatingIcons from "./FloatingIcons";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { MacbookScroll } from "./ui/macbook-scroll";
+import { useTheme } from "../components/hooks/darkmode";
+import { BackgroundBeamsWithCollision } from "./ui/background-beams-with-collision";
+import { BoxesCore } from "./ui/background-boxes";
 
 const Hero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const { theme, toggleTheme } = useTheme();
 
   gsap.registerPlugin(ScrollTrigger);
 
@@ -58,59 +63,47 @@ const Hero: React.FC = () => {
 
   return (
     <section
-      className="relative h-screen flex flex-col justify-center items-center bg-gray-100 overflow-hidden text-center sm:text-left lg:text-right px-4 sm:px-8"
+      className="relative h-screen flex flex-col justify-center items-center overflow-hidden px-4 sm:px-8 bg-background text-foreground"
       ref={heroRef}
     >
-      <div className="flex flex-col justify-center items-center sm:items-start lg:items-end mb-5 sm:ml-8">
-        <h1
-          className="text-black font-ThicccboiRegular sm:text-left lg:text-right text-center"
-          style={{
-            fontSize: "clamp(1rem, 1rem + 2vw, 4rem)", // Responsive text size
-            lineHeight: "clamp(1.2rem, 1rem + 3vw, 4.5rem)", // Responsive line height
-          }}
-        >
-          STRATEGY PLANNING BUILDING
-        </h1>
-        <h2
-          className="font-ThicccboiMedium sm:text-left lg:text-right text-center"
-          style={{
-            fontSize: "clamp(1rem, 1rem + 2vw, 4rem)",
-            lineHeight: "clamp(1.2rem, 1rem + 3vw, 4.5rem)",
-            backgroundImage: "linear-gradient(90deg, #bf00ff, #ff5633)",
-            backgroundClip: "text",
-            WebkitBackgroundClip: "text",
-            color: "transparent",
-          }}
-        >
-          Application Design and Development
-        </h2>
-        <p className="text-black text-base sm:text-xl font-ThicccboiRegular mt-5 px-2 sm:px-4 text-center sm:text-left lg:text-right">
-          Reaching out to transform the business world into future technology.
-        </p>
-      </div>
+      {/* Wrapping Components */}
+      <BackgroundBeamsWithCollision>
+        
+          {/* Text Div */}
+          <div className="absolute top-[40%] right-[10%] flex flex-col justify-center items-start">
+            <h1
+              className="font-ThicccboiRegular text-foreground"
+              style={{
+                fontSize: "clamp(1rem, 1rem + 2vw, 4rem)",
+                lineHeight: "clamp(1.2rem, 1rem + 3vw, 4.5rem)",
+              }}
+            >
+              STRATEGY PLANNING BUILDING
+            </h1>
+            <h2
+              className="font-ThicccboiMedium"
+              style={{
+                fontSize: "clamp(1rem, 1rem + 2vw, 4rem)",
+                lineHeight: "clamp(1.2rem, 1rem + 3vw, 4.5rem)",
+                backgroundImage: "linear-gradient(90deg, #bf00ff, #ff5633)",
+                backgroundClip: "text",
+                WebkitBackgroundClip: "text",
+                color: "transparent",
+              }}
+            >
+              Application Design and Development
+            </h2>
+            <p className="text-foreground text-base sm:text-xl font-ThicccboiRegular mt-5">
+              Reaching out to transform the business world into future technology.
+            </p>
+          </div>
 
-      <div className="absolute top-0 left-0 w-full h-full">
-        <FloatingIcons />
-      </div>
-
-      <button
-        ref={buttonRef}
-        className="absolute bottom-5 left-1/2 transform -translate-x-1/2 z-10 overflow-hidden rounded-3xl bg-pink-700 text-white text-sm sm:text-lg font-semibold flex justify-center items-center cursor-pointer transition-all duration-300 ease-in-out"
-        style={{
-          width: "clamp(100px, 10vw, 150px)", // Responsive button width
-          height: "clamp(50px, 5vw, 70px)", // Responsive button height
-        }}
-      >
-        <video
-          className="object-cover w-full h-full"
-          autoPlay
-          loop
-          muted
-          playsInline
-        >
-          <source src="/video.mp4" type="video/mp4" />
-        </video>
-      </button>
+          {/* Floating Icons */}
+          <div className="absolute top-3 left-0 w-full h-full">
+            <FloatingIcons />
+          </div>
+        
+      </BackgroundBeamsWithCollision>
     </section>
   );
 };
