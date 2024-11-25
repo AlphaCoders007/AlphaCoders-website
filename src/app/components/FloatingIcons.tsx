@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { SiReact, SiPython, SiNextdotjs, SiJavascript, SiNodedotjs, SiFlask, SiMongodb } from "react-icons/si";
+import { SiReact, SiPython, SiNextdotjs, SiJavascript, SiNodedotjs, SiFlask, SiMongodb, SiReactrouter, SiMysql,  } from "react-icons/si"; // Added new icons
 import styles from "../Styles.css/FloatingIcons.module.css";
 
 const FloatingIcons: React.FC = () => {
@@ -13,21 +13,22 @@ const FloatingIcons: React.FC = () => {
       const icons = iconContainerRef.current.querySelectorAll(`.${styles.icon}`);
 
       icons.forEach((icon) => {
+        // Randomize the starting horizontal (X) and vertical (Y) positions
         const randomX = gsap.utils.random(-300, 300); // Random horizontal offset
-        const randomY = gsap.utils.random(-100, -300); // Random vertical offset above the viewport
+        const randomY = gsap.utils.random(-100, 100); // Random vertical offset, slightly above the viewport
 
-        gsap.timeline({ repeat: -1, repeatDelay: 1 })
+        gsap.timeline({ repeat: -1 }) // Repeat indefinitely
           .set(icon, {
-            x: `50%`, // Center horizontally by default
-            y: `${randomY}vh`, // Start above the viewport randomly
-            opacity: 0,
+            x: `+=${randomX}`, // Set random horizontal position
+            y: `${randomY}vh`, // Set random vertical position
+            opacity: 1, // Make sure icons are immediately visible
           })
           .to(icon, {
             x: `+=${randomX}`, // Drift to a random horizontal position
-            y: "80vh", // Fall through the viewport but bounce before exiting
+            y: "80vh", // Fall down to 80% of the viewport height
             rotation: gsap.utils.random(-45, 45), // Add random rotation for dynamics
             scale: 1, // Ensure consistent scale
-            opacity: 1, // Fade in
+            opacity: 1, // Keep the opacity at 1 to stay visible
             duration: gsap.utils.random(6, 8), // Increased duration for slower fall
             ease: "power2.out", // Smooth easing for slow fall
           })
@@ -80,6 +81,12 @@ const FloatingIcons: React.FC = () => {
       </div>
       <div className={`${styles.icon} ${styles.iconMongodb}`}>
         <SiMongodb size={50} color="#47A248" />
+      </div>
+      <div className={`${styles.icon} ${styles.iconMysql}`}>
+        <SiMysql size={50} color="#00758F" />
+      </div>
+      <div className={`${styles.icon} ${styles.iconReactRouter}`}>
+        <SiReactrouter size={50} color="#CA4245" />
       </div>
     </div>
   );
