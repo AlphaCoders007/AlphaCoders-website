@@ -1,7 +1,7 @@
 import React from "react";
 import Hero from "./components/Hero";
 import { Whatwedo } from "./components/Whatwedo";
-import Cards from "./components/Cards";
+
 import ContactSection from "./components/ContactSection";
 import Carousel from "./components/ui/CarouselUI";
 import Card from "./components/Card";
