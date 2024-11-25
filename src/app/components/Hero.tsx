@@ -58,12 +58,12 @@ const Hero: React.FC = () => {
 
   return (
     <section
-      className="relative h-screen flex flex-col justify-center items-center bg-gray-100 overflow-hidden text-center px-4 sm:items-end sm:text-left"
+      className="relative h-screen flex flex-col justify-center items-center bg-gray-100 overflow-hidden text-center sm:text-left lg:text-right px-4 sm:px-8"
       ref={heroRef}
     >
-      <div className="flex flex-col justify-center items-center sm:items-start mb-5 sm:ml-8">
+      <div className="flex flex-col justify-center items-center sm:items-start lg:items-end mb-5 sm:ml-8">
         <h1
-          className="text-black font-ThicccboiRegular transform -translate-x-16" // Move text slightly to the left
+          className="text-black font-ThicccboiRegular sm:text-left lg:text-right text-center"
           style={{
             fontSize: "clamp(1rem, 1rem + 2vw, 4rem)", // Responsive text size
             lineHeight: "clamp(1.2rem, 1rem + 3vw, 4.5rem)", // Responsive line height
@@ -72,7 +72,7 @@ const Hero: React.FC = () => {
           STRATEGY PLANNING BUILDING
         </h1>
         <h2
-          className="font-ThicccboiMedium text-center sm:text-left transform -translate-x-16" // Move text slightly to the left
+          className="font-ThicccboiMedium sm:text-left lg:text-right text-center"
           style={{
             fontSize: "clamp(1rem, 1rem + 2vw, 4rem)",
             lineHeight: "clamp(1.2rem, 1rem + 3vw, 4.5rem)",
@@ -84,7 +84,7 @@ const Hero: React.FC = () => {
         >
           Application Design and Development
         </h2>
-        <p className="text-black text-base sm:text-xl font-ThicccboiRegular mt-5 px-2 sm:px-4 transform -translate-x-16">
+        <p className="text-black text-base sm:text-xl font-ThicccboiRegular mt-5 px-2 sm:px-4 text-center sm:text-left lg:text-right">
           Reaching out to transform the business world into future technology.
         </p>
       </div>
