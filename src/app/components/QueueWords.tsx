@@ -22,7 +22,7 @@ export const QueueWords: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex justify-center items-center text-6xl sm:text-8xl">
+    <div className="flex justify-center items-center text-4xl sm:text-6xl md:text-7xl xl:text-8xl overflow-hidden">
       <motion.div
         key={currentWordIndex}  // Change word on index update
         initial={{ opacity: 0 }}

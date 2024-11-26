@@ -6,8 +6,7 @@ import { QueueWords } from "./QueueWords";
 import StatsCard from "./StatsCard";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
 
-const words = `Oxygen gets you high. In a catastrophic emergency, we're taking giant, panicked breaths. Suddenly you become euphoric, docile. You accept your fate. It's all right here. Emergency water landing, six hundred miles an hour. Blank faces, calm as Hindu cows
-`;
+const words = `Oxygen gets you high. In a catastrophic emergency, we're taking giant, panicked breaths. Suddenly you become euphoric, docile. You accept your fate. It's all right here. Emergency water landing, six hundred miles an hour. Blank faces, calm as Hindu cows`;
 
 const CardsTabs = [
   { count: "150+", label: "Projects Completed" },
@@ -26,27 +25,28 @@ export function Whatwedo() {
           duration: 1.5,
           ease: "easeInOut",
         }}
-        className="relative flex flex-col gap-8 items-center justify-center px-4 py-16 text-black"
-      >
-        <div className="text-3xl sm:text-5xl lg:text-6xl font-bold text-center leading-tight tracking-wide">
+        className="relative flex flex-col gap-8 items-center justify-center px-6 py-16 text-black max-w-full overflow-hidden w-full"
+>
+        {/* Heading */}
+        <div className="text-3xl sm:text-2xl md:text-5xl lg:text-6xl font-bold text-center leading-tight tracking-wide px-4 sm:px-6 md:px-8">
           <QueueWords />
         </div>
       </motion.div>
 
       {/* Stats Cards Section */}
-      <div className="flex flex-wrap justify-center gap-8 px-4 py-10">
+      <div className="flex flex-wrap justify-center gap-8 px-4 py-10 w-full">
         {CardsTabs.map((card, i) => (
           <StatsCard
             key={i}
             count={card.count}
             label={card.label}
-            className="flex flex-col items-center bg-white p-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+            className="flex flex-col items-center bg-white p-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl w-full sm:w-1/3 md:w-1/4 lg:w-1/5 max-w-sm"
           />
         ))}
       </div>
 
       {/* Text Section */}
-      <div className="px-4 py-10 max-w-4xl mx-auto text-lg leading-relaxed text-center">
+      <div className="px-6 py-10 max-w-full mx-auto text-lg leading-relaxed text-center w-full">
         <TextGenerateEffect words={words} />
       </div>
     </AuroraBackground>
