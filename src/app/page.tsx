@@ -3,8 +3,9 @@ import Hero from "./components/Hero";
 import { Whatwedo } from "./components/Whatwedo";
 
 import ContactSection from "./components/ContactSection";
-import Carousel from "./components/ui/CarouselUI";
-import Card from "./components/Card";
+import Carousel from "../../ExtraComponents/CarouselUI";
+import Card from "../../ExtraComponents/Carousel";
+import Cards from "./components/Cards";
 
 
 const itemsArray = [
@@ -28,7 +29,8 @@ function Page() {
   return (
     <div>
       <Hero />
-      <Carousel items={itemsArray} />
+      < Cards/>
+      {/* <Carousel items={itemsArray} /> */}
       <Whatwedo />
       <ContactSection />
     </div>

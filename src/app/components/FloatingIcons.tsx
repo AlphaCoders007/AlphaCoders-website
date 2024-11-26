@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { SiReact, SiPython, SiNextdotjs, SiJavascript, SiNodedotjs, SiFlask, SiMongodb, SiReactrouter, SiMysql,  } from "react-icons/si"; // Added new icons
+import { SiReact, SiPython, SiNextdotjs, SiJavascript, SiNodedotjs, SiFlask, SiMongodb, SiReactrouter, SiMysql } from "react-icons/si";
 import styles from "../Styles.css/FloatingIcons.module.css";
 
 const FloatingIcons: React.FC = () => {
@@ -12,48 +12,52 @@ const FloatingIcons: React.FC = () => {
     if (iconContainerRef.current) {
       const icons = iconContainerRef.current.querySelectorAll(`.${styles.icon}`);
 
-      icons.forEach((icon) => {
-        // Randomize the starting horizontal (X) and vertical (Y) positions
-        const randomX = gsap.utils.random(-300, 300); // Random horizontal offset
-        const randomY = gsap.utils.random(-100, 100); // Random vertical offset, slightly above the viewport
+      icons.forEach((icon: Element) => {
+        const startX = gsap.utils.random(-20, 120); // Random starting x in vw
+        const startY = gsap.utils.random(-20, -20); // Random starting y above viewport
+        const driftX = gsap.utils.random(-20, 20); // Random x drift
+        const duration = gsap.utils.random(6, 8); // Random fall duration
 
-        gsap.timeline({ repeat: -1 }) // Repeat indefinitely
+        // Animation timeline for the icons
+        gsap.timeline({ repeat: -1 })
           .set(icon, {
-            x: `+=${randomX}`, // Set random horizontal position
-            y: `${randomY}vh`, // Set random vertical position
-            opacity: 1, // Make sure icons are immediately visible
+            x: `${startX}vw`,
+            y: `${startY}vh`,
+            opacity: 1,
+            scale: 1,
           })
           .to(icon, {
-            x: `+=${randomX}`, // Drift to a random horizontal position
-            y: "80vh", // Fall down to 80% of the viewport height
-            rotation: gsap.utils.random(-45, 45), // Add random rotation for dynamics
-            scale: 1, // Ensure consistent scale
-            opacity: 1, // Keep the opacity at 1 to stay visible
-            duration: gsap.utils.random(6, 8), // Increased duration for slower fall
-            ease: "power2.out", // Smooth easing for slow fall
+            x: `${startX + driftX}vw`, // Drift horizontally
+            y: "80vh", // Fall to 80% of the viewport
+            rotation: gsap.utils.random(-45, 45), // Random rotation
+            scale: 1.1,
+            opacity: 1,
+            duration,
+            ease: "power2.out",
+            boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)", // Soft shadow on move
           })
           .to(icon, {
-            y: "60vh", // Bounce upwards a bit
-            duration: 1.5, // Increased bounce duration for smooth effect
-            ease: "elastic.out(1, 0.4)", // Use elastic easing for natural bounce
-            scale: 1.1, // Slightly increase size during bounce for emphasis
-            boxShadow: "0 8px 20px rgba(0, 0, 0, 0.2)", // Add shadow to emphasize bounce
+            y: "60vh",
+            duration: 1.5,
+            ease: "elastic.out(1, 0.4)",
+            scale: 1.2,
+            boxShadow: "0px 6px 30px rgba(0, 0, 0, 0.2)", // Increase shadow during bounce
           })
           .to(icon, {
-            y: "80vh", // Fall back down after the bounce
-            opacity: 1, // Ensure visibility
-            duration: 1.5, // Longer fall duration for smoother effect
-            ease: "power2.inOut", // Smooth easing for fall back down
-            boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)", // Soft shadow during fall
-            scale: 1, // Return to original size
+            y: "80vh",
+            opacity: 1,
+            duration: 1.5,
+            ease: "power2.inOut",
+            scale: 1,
+            boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)",
           })
           .to(icon, {
-            y: "120vh", // Move out of the viewport (disappear)
-            opacity: 0, // Fade out
-            duration: 2, // Increased duration for smooth exit
-            ease: "power2.in", // Smooth easing for disappearing
-            scale: 0.9, // Shrink when disappearing
-            boxShadow: "none", // Remove shadow while disappearing
+            y: "120vh", // Exit the viewport
+            opacity: 0,
+            duration: 2,
+            ease: "power2.in",
+            scale: 0.9,
+            boxShadow: "none",
           });
       });
     }

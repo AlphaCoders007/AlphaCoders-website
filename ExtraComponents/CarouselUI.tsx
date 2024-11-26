@@ -4,7 +4,7 @@
 import React, { useState, useRef, useEffect, createContext } from "react";
 import { motion } from "framer-motion";
 import { IconArrowNarrowLeft, IconArrowNarrowRight } from "@tabler/icons-react";
-import Card from "../Card"; // Ensure this import matches your Card file path
+import Card from "./Carousel"; // Ensure this import matches your Card file path
 
 interface CarouselProps {
   items: JSX.Element[];
