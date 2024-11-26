@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from "react";
 import FloatingIcons from "./FloatingIcons";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { BackgroundBeamsWithCollision } from "./ui/background-beams-with-collision";
+import { BackgroundBeamsWithCollision } from "../../../ExtraComponents/UI/background-beams-with-collision";
 
 const Hero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -63,9 +63,9 @@ const Hero: React.FC = () => {
       ref={heroRef}
     >
       {/* Wrapping Components */}
-      <BackgroundBeamsWithCollision>
+      {/* <BackgroundBeamsWithCollision> */}
         {/* Text Div */}
-        <div className="absolute inset-0 flex flex-col justify-center items-center px-4 sm:px-12 text-center z-10">
+        <div className="absolute inset-0 text-right flex flex-col justify-center items-end px-4 sm:px-12 z-10">
           <h1
             className="font-ThicccboiRegular text-foreground"
             style={{
@@ -88,7 +88,7 @@ const Hero: React.FC = () => {
           >
             Application Design and Development
           </h2>
-          <p className="text-foreground text-sm sm:text-lg font-ThicccboiRegular mt-5">
+          <p className="text-foreground  text-sm sm:text-lg font-ThicccboiRegular mt-5">
             Reaching out to transform the business world into future technology.
           </p>
         </div>
@@ -97,7 +97,7 @@ const Hero: React.FC = () => {
         <div className="absolute top-0 left-0 w-full h-full">
           <FloatingIcons />
         </div>
-      </BackgroundBeamsWithCollision>
+      {/* </BackgroundBeamsWithCollision> */}
     </section>
   );
 };

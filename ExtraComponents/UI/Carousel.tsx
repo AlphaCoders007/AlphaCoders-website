@@ -4,8 +4,8 @@
 import React, { useState, useContext, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { IconX } from "@tabler/icons-react";
-import { CarouselContext } from "./CarouselUI";
-import  BlurImage  from "../src/app/components/ui/BlurImage"; // Assuming the BlurImage component is in the same folder
+import { CarouselContext } from "../CarouselUI";
+import  BlurImage  from "../../src/app/components/ui/BlurImage"; // Assuming the BlurImage component is in the same folder
 
 interface CardProps {
   card: {

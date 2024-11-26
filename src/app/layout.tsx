@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import NavBarSection from "./components/NavbarSection";
-import { TracingBeam } from "./components/ui/racing-beam"; // Ensure the import path is correct
+import { TracingBeam } from "../../ExtraComponents/UI/racing-beam"; // Ensure the import path is correct
 
 export const metadata: Metadata = {
   title: "AlphaCoders",
@@ -16,10 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-background text-foreground">
-        <TracingBeam> {/* Wrap the entire content inside the TracingBeam */}
+        {/* <TracingBeam> Wrap the entire content inside the TracingBeam */}
           <NavBarSection />
           {children}
-        </TracingBeam>
+        {/* </TracingBeam> */}
       </body>
     </html>
   );

@@ -5,17 +5,11 @@
 @tailwind utilities;
 
 :root {
-  --background-light: #ffffff;
-  --foreground-light: #000000;
-  --background-dark: #000000;
-  --foreground-dark: #ffffff;
+  --background-light: #ffffff;  /* White background for light mode */
+  --foreground-light: #000000;  /* Black text for light mode */
 }
 
 body {
-  @apply bg-background-light text-foreground-light;
+  @apply bg-background-light text-foreground-light; /* White background and black text */
   font-family: 'ThicccBoi', sans-serif;
-}
-
-.dark body {
-  @apply bg-background-dark text-foreground-dark;
 }

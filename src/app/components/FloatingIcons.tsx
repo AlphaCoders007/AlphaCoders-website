@@ -12,44 +12,42 @@ const FloatingIcons: React.FC = () => {
     if (iconContainerRef.current) {
       const icons = iconContainerRef.current.querySelectorAll(`.${styles.icon}`);
 
-      icons.forEach((icon: Element) => {
+      icons.forEach((icon) => {
         const startX = gsap.utils.random(-20, 120); // Random starting x in vw
-        const startY = gsap.utils.random(-20, -20); // Random starting y above viewport
+        const startY = gsap.utils.random(-20, -0); // Random starting y above viewport
+
         const driftX = gsap.utils.random(-20, 20); // Random x drift
         const duration = gsap.utils.random(6, 8); // Random fall duration
 
-        // Animation timeline for the icons
         gsap.timeline({ repeat: -1 })
           .set(icon, {
             x: `${startX}vw`,
             y: `${startY}vh`,
             opacity: 1,
-            scale: 1,
           })
           .to(icon, {
             x: `${startX + driftX}vw`, // Drift horizontally
             y: "80vh", // Fall to 80% of the viewport
-            rotation: gsap.utils.random(-45, 45), // Random rotation
-            scale: 1.1,
+            rotation: gsap.utils.random(-45, 45), // Add random rotation
+            scale: 1,
             opacity: 1,
             duration,
             ease: "power2.out",
-            boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)", // Soft shadow on move
           })
           .to(icon, {
             y: "60vh",
             duration: 1.5,
             ease: "elastic.out(1, 0.4)",
-            scale: 1.2,
-            boxShadow: "0px 6px 30px rgba(0, 0, 0, 0.2)", // Increase shadow during bounce
+            scale: 1.1,
+            
           })
           .to(icon, {
             y: "80vh",
             opacity: 1,
             duration: 1.5,
             ease: "power2.inOut",
+            
             scale: 1,
-            boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)",
           })
           .to(icon, {
             y: "120vh", // Exit the viewport
