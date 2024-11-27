@@ -1,148 +1,334 @@
 "use client";
 import React, { useState } from "react";
+import {
+  Phone,
+  Mail,
+  Linkedin,
+  Instagram,
+  Facebook,
+  Github,
+} from "lucide-react";
 
-const ContactSection: React.FC = () => {
+const ConnectSection: React.FC = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [budget, setBudget] = useState(10); // State to track budget range value
 
-  // Toggle the popup form visibility
   const handlePopupToggle = () => {
     setIsPopupOpen(!isPopupOpen);
   };
 
-  return (
-    <section className="text-gray-600 body-font relative font-ThicccboiRegular">
-      {/* Background Map */}
-      <div className="absolute inset-0 bg-gray-300">
-        <iframe
-          width="100%"
-          height="100%"
-          style={{ filter: "grayscale(1) contrast(1.2) opacity(0.4)" }}
-          title="map"
-          src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=%C4%B0zmir+(My%20Business%20Name)&ie=UTF8&t=&z=14&iwloc=B&output=embed"
-        />
-      </div>
+  // Function to handle range input change
+  const handleBudgetChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setBudget(Number(event.target.value));
+  };
 
-      {/* Content Section */}
-      <div className="container px-5 py-24 mx-auto flex items-center justify-center relative z-10">
-        <div className="lg:w-1/3 md:w-1/2 bg-white rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 relative z-10 shadow-xl hover:shadow-2xl transition-all duration-500">
-          <h2 className="text-black text-lg mb-4 font-semibold tracking-wider uppercase">
-            Feedback
-          </h2>
-          <p className="leading-relaxed mb-6 text-gray-600 text-sm font-light">
-            We value your feedback! Let us know how we can improve or what you love about us.
-          </p>
-          <div className="relative mb-6">
-            <label htmlFor="email" className="leading-7 text-sm text-gray-600">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              className="w-full bg-white rounded-lg border border-gray-300 from-[#bf00ff] to-[#ff5633] text-base outline-none text-gray-700 py-2 px-4 leading-8 transition-all duration-300 ease-in-out"
-            />
+  return (
+    <div className="flex h-full w-full flex-col items-end justify-end bg-white">
+      <div className="max-container mx-auto px-[1.5rem] md:px-[5rem]">
+        <div className="flex w-full items-center justify-between gap-[1rem] md:gap-[4rem] pt-[0rem] md:pt-[12rem]">
+          {/* Header Section */}
+          <div className="flex flex-col items-start justify-start gap-10">
+            <div>
+              <h2
+                className="font-ThicccboiRegular text-black md:font-ThicccboiMedium"
+                style={{
+                  fontSize: "clamp(1rem, -.3rem + 5.333vw, 4.5rem)",
+                  lineHeight: "clamp(1.1rem, -.2rem + 5.333vw, 4.6rem)",
+                }}
+              >
+                Got an Interesting Project?
+              </h2>
+              <h2
+                id="letsConnectDiv"
+                className="text-black font-ThicccboiMedium"
+                style={{
+                  fontSize: "clamp(1rem, -.3rem + 5.333vw, 4.5rem)",
+                  lineHeight: "clamp(1.1rem, -.2rem + 5.333vw, 4.6rem)",
+                  backgroundImage: "linear-gradient(90deg, #bf00ff, #ff5633)",
+                  backgroundClip: "text",
+                  WebkitBackgroundClip: "text",
+                  color: "transparent",
+                  backgroundRepeat: "no-repeat",
+                }}
+              >
+                Let’s Connect.
+              </h2>
+            </div>
           </div>
-          <div className="relative mb-6">
-            <label htmlFor="message" className="leading-7 text-sm text-gray-600">
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              className="w-full bg-white rounded-lg border border-gray-300 focus:border-[#ff5633] focus:ring-2 focus:ring-[#ff5633] h-32 text-base outline-none text-gray-700 py-2 px-4 resize-none leading-6 transition-all duration-300 ease-in-out"
-            />
-          </div>
+
+          {/* Button */}
           <button
-            className="text-white bg-[#9f0eff] border-0 py-2 px-6 focus:outline-none hover:bg-[#1b22ff] rounded-lg text-lg w-full transform transition-all duration-300 hover:scale-105"
+            aria-labelledby="letsConnectDiv"
             onClick={handlePopupToggle}
+            className="group relative size-fit overflow-hidden rounded-full bg-[#F2F2F2] transition-all p-[3rem] hover:scale-110"
           >
-            Open Form
+            {/* First Arrow */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 36 36"
+              fill="none"
+              className="absolute top-[50%] left-[50%] transition-all duration-[700ms] size-[1rem] md:size-[1.5rem] group-hover:translate-x-[250%] group-hover:translate-y-[-250%] transform -translate-x-[50%] -translate-y-[50%]"
+            >
+              <path
+                fill="url(#service_arrow_color)"
+                fillRule="evenodd"
+                d="M35.892.81H2.108v5.631h24.171L.941 31.78l3.982 3.982L30.26 10.423v24.172h5.63V.81Z"
+                clipRule="evenodd"
+              ></path>
+              <defs>
+                <linearGradient
+                  id="service_arrow_color"
+                  x1="0.086"
+                  x2="35.104"
+                  y1="25.3"
+                  y2="25.3"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stopColor="black"></stop>
+                  <stop offset="0.06" stopColor="#C306F1"></stop>
+                  <stop offset="0.53" stopColor="#E3318C"></stop>
+                  <stop offset="0.85" stopColor="#F74C4C"></stop>
+                  <stop offset="1" stopColor="#FF5633"></stop>
+                </linearGradient>
+              </defs>
+            </svg>
+
+            {/* Second Arrow */}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 36 36"
+              fill="none"
+              className="absolute top-[50%] left-[50%] transition-all duration-[700ms] size-[1rem] md:size-[1.5rem] opacity-0 group-hover:opacity-100 transform -translate-x-[50%] -translate-y-[50%]"
+            >
+              <path
+                fill="url(#service_arrow_color_2)"
+                fillRule="evenodd"
+                d="M35.892.81H2.108v5.631h24.171L.941 31.78l3.982 3.982L30.26 10.423v24.172h5.63V.81Z"
+                clipRule="evenodd"
+              ></path>
+              <defs>
+                <linearGradient
+                  id="service_arrow_color_2"
+                  x1="0.086"
+                  x2="35.104"
+                  y1="25.3"
+                  y2="25.3"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stopColor="#FF5633"></stop>
+                  <stop offset="0.15" stopColor="#F74C4C"></stop>
+                  <stop offset="0.45" stopColor="#E3318C"></stop>
+                  <stop offset="0.75" stopColor="#C306F1"></stop>
+                  <stop offset="1" stopColor="black"></stop>
+                </linearGradient>
+              </defs>
+            </svg>
           </button>
-          <p className="text-xs text-gray-500 mt-4 text-center">
-            Chicharrones blog helvetica normcore iceland tousled brook viral artisan.
-          </p>
+        </div>
+        {/* Contact Section */}
+        <div className="py-8 md:py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className=" rounded-3xl  p-6 md:p-8">
+              <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
+                <a
+                  href="tel:+919400303325"
+                  className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-200"
+                >
+                  <Phone className="w-5 h-5" />
+                  <span className="text-sm font-medium">Call Now</span>
+                </a>
+
+                <a
+                  href="mailto:info@urbanhubinnovations.com"
+                  className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-200"
+                >
+                  <Mail className="w-5 h-5" />
+                  <span className="text-sm font-medium">Email Us</span>
+                </a>
+
+                <a
+                  href="https://www.linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-200"
+                >
+                  <Linkedin className="w-5 h-5" />
+                  <span className="text-sm font-medium">LinkedIn</span>
+                </a>
+
+                <div className="flex items-center justify-center gap-4 md:gap-6">
+                  <a
+                    href="https://www.instagram.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-200"
+                  >
+                    <Instagram className="w-5 h-5" />
+                    <span className="sr-only">Instagram</span>
+                  </a>
+
+                  <a
+                    href="https://www.facebook.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-200"
+                  >
+                    <Facebook className="w-5 h-5" />
+                    <span className="sr-only">Facebook</span>
+                  </a>
+
+                  <a
+                    href="https://github.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-200"
+                  >
+                    <Github className="w-5 h-5" />
+                    <span className="sr-only">GitHub</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Sliding Contact Form */}
       <div
-        className={`fixed inset-x-0 bottom-0 z-50 transform transition-transform ${
-          isPopupOpen ? "translate-y-0" : "translate-y-full"
+        className={`fixed inset-x-0 bottom-0 z-50 transition-all duration-700 ease-out ${
+          isPopupOpen ? "transform translate-y-0" : "transform translate-y-full"
         }`}
+        style={{
+          pointerEvents: isPopupOpen ? "auto" : "none",
+        }}
       >
         <div
-          className="bg-white rounded-t-2xl shadow-lg p-8"
-          style={{ maxHeight: "90vh", overflowY: "auto" }}
+          className="bg-white rounded-t-[30px] shadow-xl p-6 relative"
+          style={{
+            height: "calc(100vh - 70px)",
+            overflowY: "auto",
+          }}
         >
-          {/* Close Button */}
-          <button
-            onClick={handlePopupToggle}
-            className="absolute top-4 right-4 p-2 rounded-full bg-gray-200 hover:bg-[#0244c7] hover:text-white transition-all duration-300"
-            aria-label="Close Form"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="2"
-              stroke="currentColor"
-              className="w-6 h-6"
+          <div className="absolute top-2 right-2">
+            <button
+              onClick={handlePopupToggle}
+              className="hover:scale-110 transition-all"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
-
-          <h2 className="text-center text-[#000000] font-medium text-2xl md:text-3xl">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                fill="none"
+              >
+                <path
+                  stroke="#333"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="1.5"
+                  d="M5.001 5 19 19M5 19 18.999 5"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <h2
+            className="text-black text-6xl text-center font-ThicccboiMedium text-global-font-sm-h3 md:text-global-font-h1"
+            style={{
+              fontSize: "clamp(1rem, -.3rem + 5.333vw, 4.5rem)",
+              lineHeight: "clamp(1.1rem, -.2rem + 5.333vw, 4.6rem)",
+              backgroundImage: "linear-gradient(90deg, #bf00ff, #ff5633)",
+              backgroundClip: "text",
+              WebkitBackgroundClip: "text", // For webkit browsers (Chrome/Safari)
+              color: "transparent", // Make text color transparent so the gradient shows
+              backgroundRepeat: "no-repeat",
+            }}
+          >
             Let’s Get Into Work!
           </h2>
-          <form className="mt-6">
+          <form className="mt-20 overflow-auto h-[80vh]">
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
               <div>
-                <label className="text-[#000000]">Name / Company</label>
+                <label htmlFor="companyName" className="text-black text-lg">
+                  Name / Company
+                </label>
                 <input
-                  className="mt-2 w-full border rounded-lg p-3 focus:ring-[#ff5633] transition-all duration-300"
                   placeholder="Your Name / Company"
+                  className="mt-1 w-full border-2 border-gray-300 rounded-[1.5rem] p-4 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  type="text"
+                  name="companyName"
                 />
               </div>
               <div>
-                <label className="text-[#000000]">Email</label>
+                <label htmlFor="email" className="text-black text-lg">
+                  Email
+                </label>
                 <input
-                  className="mt-2 w-full border rounded-lg p-3 focus:ring-[#000000] transition-all duration-300"
+                  id="email"
                   placeholder="Your Email"
+                  className="mt-1 w-full border-2 border-gray-300 rounded-[1.5rem] p-4 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                   type="email"
+                  name="email"
                 />
               </div>
             </div>
 
-            <div className="mt-6">
-              <label className="text-[#000000]">Requirement Based On</label>
-              <div className="flex flex-wrap gap-4 mt-2">
-                {["Website Development", "Mobile Application", "Other"].map(
-                  (item) => (
-                    <button
-                      key={item}
-                      type="button"
-                      className="px-6 py-3 rounded-lg border border-[rgb(31,24,248)] text-[#cf20e2] hover:bg-[#690ff1] hover:text-white transition-all duration-300"
-                    >
-                      {item}
-                    </button>
-                  )
-                )}
+            <div className="mt-4">
+              <label className="text-black text-lg">Requirement Based On</label>
+              <div className="flex flex-wrap gap-6 mt-3">
+                {[
+                  "Website Development",
+                  "Mobile Application",
+                  "UI/UX",
+                  "Branding",
+                  "Web Application",
+                  "Other",
+                ].map((item) => (
+                  <button
+                    key={item}
+                    type="button"
+                    className="border-2 border-gray-300 bg-gray-200 text-gray-700 rounded-full px-8 py-4 text-lg hover:bg-black hover:text-white transition-all"
+                  >
+                    {item}
+                  </button>
+                ))}
               </div>
             </div>
 
-            <button className="mt-6 w-full bg-[#000000] text-white py-3 rounded-lg hover:bg-[#041b8d] transform transition-all duration-300 hover:scale-105">
+            <div className="mt-4">
+              <label className="text-black text-lg">Budget</label>
+              <div className="flex items-center justify-between mt-3">
+                <input
+                  type="range"
+                  min="10"
+                  max="1000"
+                  className="w-full"
+                  value={budget} // Set the range value to state
+                  onChange={handleBudgetChange} // Update state on change
+                />
+                <span>{budget}</span> {/* Display the budget value */}
+              </div>
+            </div>
+
+            <div className="mt-4">
+              <label className="text-black text-lg">Enquiry</label>
+              <textarea
+                rows={4}
+                placeholder="Give a brief about the project"
+                className="mt-1 w-full h-200 border-2 border-gray-300 rounded-[1.5rem] p-4 "
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              className="px-10 py-5 bg-black text-white rounded-full text-xl mt-6 hover:scale-105 transition-all"
+            >
               Submit Your Enquiry
             </button>
           </form>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default ContactSection;
+export default ConnectSection;

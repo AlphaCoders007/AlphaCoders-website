@@ -34,7 +34,7 @@ const Cards: React.FC = () => {
   ];
 
   return (
-    <div className="w-full mt-12 bg-white">
+    <div className="w-full mt-12 px-9 bg-white">
       {cards.map((card, index) => (
         <Card
           key={index}
@@ -50,3 +50,4 @@ const Cards: React.FC = () => {
 };
 
 export default Cards;
+

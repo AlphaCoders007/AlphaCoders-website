@@ -1,98 +1,177 @@
-import { cn } from "@/app/lib/utils";
-import { Marquee } from "@/app/components/ui/ParallexUI";
+"use client";
 
-// Sample images
-const reviews = [
-  {
-    img: "https://randomuser.me/api/portraits/men/1.jpg",
-  },
-  {
-    img: "https://randomuser.me/api/portraits/women/1.jpg",
-  },
-  {
-    img: "https://randomuser.me/api/portraits/men/2.jpg",
-  },
-  {
-    img: "https://randomuser.me/api/portraits/women/2.jpg",
-  },
-  {
-    img: "https://randomuser.me/api/portraits/men/3.jpg",
-  },
-  {
-    img: "https://randomuser.me/api/portraits/women/3.jpg",
-  },
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
+
+// Sample high-resolution images
+const teamMembers = [
+  { img: "https://randomuser.me/api/portraits/men/1.jpg" },
+  { img: "https://randomuser.me/api/portraits/men/2.jpg" },
+  { img: "https://randomuser.me/api/portraits/men/3.jpg" },
+  { img: "https://randomuser.me/api/portraits/men/4.jpg" },
+  { img: "https://randomuser.me/api/portraits/men/5.jpg" },
+  { img: "https://randomuser.me/api/portraits/men/6.jpg" },
+  { img: "https://randomuser.me/api/portraits/men/7.jpg" },
+  { img: "https://randomuser.me/api/portraits/men/8.jpg" },
+  { img: "https://randomuser.me/api/portraits/men/9.jpg" },
+  { img: "https://randomuser.me/api/portraits/men/10.jpg" },
+  { img: "https://randomuser.me/api/portraits/men/11.jpg" },
+  { img: "https://randomuser.me/api/portraits/men/12.jpg" },
 ];
 
-// Randomly insert "Meet", "The", or "Team" into the rows
-const firstRow = reviews.slice(0, 3);
-const secondRow = reviews.slice(0, 4);
-const thirdRow = reviews.slice(0, 4);
+interface ReviewCardProps {
+  img?: string;
+  text?: string;
+}
 
-
-const texts = ["Meet", "The", "Team"];
-
-const insertRandomText = (row: any[]) => {
-  const rowCopy = [...row];
-  const randomText = texts[Math.floor(Math.random() * texts.length)];
-  const randomIndex = Math.floor(Math.random() * rowCopy.length);
-  
-  rowCopy.splice(randomIndex, 0, { text: randomText }); // Insert random text at random index
-  return rowCopy;
-};
-
-const firstRowWithText = insertRandomText(firstRow);
-const secondRowWithText = insertRandomText(secondRow);
-const thirdRowWithText = insertRandomText(thirdRow);
-
-
-const ReviewCard = ({ img, text }: { img: string; text?: string }) => {
+const ReviewCard = ({ img, text }: ReviewCardProps) => {
   return (
-    <figure
-      className={cn(
-        "relative w-48 h-48 cursor-pointer overflow-hidden rounded-md shadow-md", // Larger size here
-        // light styles
-        "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
-        // dark styles
-        "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
-      )}
-    >
+    <div className="relative flex flex-col items-center justify-center">
       {text ? (
-        <div className="absolute inset-0 flex items-center justify-center text-xl font-bold text-white">
+        <div className="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 hidden md:block space-x-6">
           {text}
         </div>
       ) : (
-        // Square-shaped image
-        <img
-          className="object-cover w-full h-full"
-          alt="Review Image"
-          src={img}
-        />
+        <div className="relative">
+          <Image
+            className="object-cover w-32 h-32 md:w-72 md:h-72 rounded-[1.5rem] shadow-lg hover:scale-105 transition-all duration-300"
+            alt="Team member"
+            src={img || ""}
+            width={288}
+            height={288}
+          />
+        </div>
       )}
-    </figure>
+    </div>
   );
 };
 
 export function ParallexSection() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const firstRowRef = useRef<HTMLDivElement>(null);
+  const secondRowRef = useRef<HTMLDivElement>(null);
+  const thirdRowRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const mm = gsap.matchMedia();
+
+      mm.add("(min-width: 768px)", () => {
+        gsap.fromTo(
+          firstRowRef.current,
+          { x: -200 },
+          {
+            x: 0,
+            scrollTrigger: {
+              trigger: firstRowRef.current,
+              start: "top 80%",
+              end: "bottom top",
+              scrub: true,
+            },
+          }
+        );
+
+        gsap.fromTo(
+          secondRowRef.current,
+          { x: 200 },
+          {
+            x: 0,
+            scrollTrigger: {
+              trigger: secondRowRef.current,
+              start: "top 80%",
+              end: "bottom top",
+              scrub: true,
+            },
+          }
+        );
+
+        gsap.fromTo(
+          thirdRowRef.current,
+          { x: -200 },
+          {
+            x: 0,
+            scrollTrigger: {
+              trigger: thirdRowRef.current,
+              start: "top 80%",
+              end: "bottom top",
+              scrub: true,
+            },
+          }
+        );
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  const firstRow = [
+    { img: teamMembers[0].img },
+    { img: teamMembers[1].img },
+    { text: "Meet" },
+    { img: teamMembers[2].img },
+    { img: teamMembers[3].img },
+  ];
+
+  const secondRow = [
+    { img: teamMembers[4].img },
+    { text: "the" },
+    { img: teamMembers[5].img },
+    { img: teamMembers[6].img },
+    { img: teamMembers[7].img },
+  ];
+
+  const thirdRow = [
+    { img: teamMembers[8].img },
+    { img: teamMembers[9].img },
+    { text: "Crew!" },
+    { img: teamMembers[10].img },
+    { img: teamMembers[11].img },
+  ];
+
   return (
-    <div className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
-      <Marquee pauseOnHover className="[--duration:20s]">
-        {firstRowWithText.map((review, index) => (
-          <ReviewCard key={index} {...review} />
+    <section
+      ref={sectionRef}
+      className="relative flex flex-col items-center gap-12 py-16 md:py-24 overflow-hidden bg-gray-50"
+    >
+      {/* Mobile-only heading */}
+      <h2 className="md:hidden text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 mb-6">
+        Meet the Crew
+      </h2>
+
+      {/* First Row */}
+      <div
+        ref={firstRowRef}
+        className="flex items-center justify-start w-full space-x-6 overflow-x-auto pb-6 px-6 md:justify-center md:space-x-12 md:overflow-x-visible"
+      >
+        {firstRow.map((item, index) => (
+          <ReviewCard key={index} {...item} />
         ))}
-      </Marquee>
-      <Marquee reverse pauseOnHover className="[--duration:20s]">
-        {secondRowWithText.map((review, index) => (
-          <ReviewCard key={index} {...review} />
+      </div>
+
+      {/* Second Row */}
+      <div
+        ref={secondRowRef}
+        className="flex items-center justify-start w-full space-x-6 overflow-x-auto pb-6 px-6 md:justify-center md:space-x-12 md:overflow-x-visible"
+      >
+        {secondRow.map((item, index) => (
+          <ReviewCard key={index} {...item} />
         ))}
-      </Marquee>
-      <Marquee reverse pauseOnHover className="[--duration:20s]">
-        {secondRowWithText.map((review, index) => (
-          <ReviewCard key={index} {...review} />
+      </div>
+
+      {/* Third Row */}
+      <div
+        ref={thirdRowRef}
+        className="flex items-center justify-start w-full space-x-6 overflow-x-auto pb-6 px-6 md:justify-center md:space-x-12 md:overflow-x-visible"
+      >
+        {thirdRow.map((item, index) => (
+          <ReviewCard key={index} {...item} />
         ))}
-      </Marquee>
-      {/* Gradient overlays for visual effect */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"></div>
-    </div>
+      </div>
+    </section>
   );
 }
