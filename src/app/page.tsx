@@ -3,9 +3,7 @@ import Hero from "./components/Hero";
 import { Whatwedo } from "./components/Whatwedo";
 
 import ContactSection from "./components/ContactSection";
-import Carousel from "../../ExtraComponents/CarouselUI";
-import Card from "../../ExtraComponents/UI/Carousel";
-import Cards from "./components/Cards";
+
 import StackedCards from "./components/StackedCards";
 import { ParallexSection } from "./components/ParallexSection";
 

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import NavBarSection from "./components/NavbarSection";
-import { TracingBeam } from "../../ExtraComponents/UI/racing-beam"; // Ensure the import path is correct
+
 
 export const metadata: Metadata = {
   title: "AlphaCoders",

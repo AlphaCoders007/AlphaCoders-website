@@ -13,12 +13,12 @@ const StatsCard: React.FC<StatsCardProps> = ({
 }) => {
   return (
     <div
-      className={`flex w-full sm:w-72 md:w-56 flex-col items-center justify-center rounded-[1.5rem] border border-g-grey bg-white/10 px-6 py-4 text-center font-montserrat ${className}`}
+      className={`flex w-full sm:w-72 md:w-56 flex-col items-center justify-center rounded-[1.5rem] border border-white/20 bg-white/10 px-6 py-4 text-center font-montserrat ${className}`}
     >
-      <h3 className="font-semibold tracking-wider text-black text-sm sm:text-xl">
+      <h3 className="font-bold text-white text-lg sm:text-xl">
         <span>{count}</span>
       </h3>
-      <p className="font-light tracking-wider text-black text-xs sm:text-sm">
+      <p className="font-semibold text-white text-sm sm:text-base">
         {label}
       </p>
     </div>
