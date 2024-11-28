@@ -10,18 +10,18 @@ gsap.registerPlugin(ScrollTrigger);
 
 // Sample high-resolution images
 const teamMembers = [
-  { img: "https://randomuser.me/api/portraits/men/1.jpg" },
-  { img: "https://randomuser.me/api/portraits/men/2.jpg" },
-  { img: "https://randomuser.me/api/portraits/men/3.jpg" },
-  { img: "https://randomuser.me/api/portraits/men/4.jpg" },
-  { img: "https://randomuser.me/api/portraits/men/5.jpg" },
-  { img: "https://randomuser.me/api/portraits/men/6.jpg" },
-  { img: "https://randomuser.me/api/portraits/men/7.jpg" },
-  { img: "https://randomuser.me/api/portraits/men/8.jpg" },
-  { img: "https://randomuser.me/api/portraits/men/9.jpg" },
-  { img: "https://randomuser.me/api/portraits/men/10.jpg" },
-  { img: "https://randomuser.me/api/portraits/men/11.jpg" },
-  { img: "https://randomuser.me/api/portraits/men/12.jpg" },
+  { img: "/image1.jpg" },
+  { img: "/dev3.jpg" },
+  { img: "/dev1.jpg" },
+  { img: "/ogdev.jpg" },
+  { img: "/image1.jpg" },
+  { img: "/dev3.jpg" },
+  { img: "/dev1.jpg" },
+  { img: "/ogdev.jpg" },
+  { img: "/image1.jpg" },
+  { img: "/dev3.jpg" },
+  { img: "/dev1.jpg" },
+  { img: "/ogdev.jpg" },
 ];
 
 interface ReviewCardProps {
@@ -33,7 +33,7 @@ const ReviewCard = ({ img, text }: ReviewCardProps) => {
   return (
     <div className="relative flex flex-col items-center justify-center">
       {text ? (
-        <div className="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 hidden md:block space-x-6">
+        <div className="text-5xl md:text-8xl font-ThicccboiRegular text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500  hidden md:block space-x-6">
           {text}
         </div>
       ) : (
