@@ -1,30 +1,25 @@
 "use client";
-
 import React, { useState } from "react";
-import { Phone, Mail, Linkedin, Instagram, Facebook, Github } from "lucide-react";
+import {
+  Phone,
+  Mail,
+  Linkedin,
+  Instagram,
+  Facebook,
+  Github,
+} from "lucide-react";
 
 const ConnectSection: React.FC = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [budget, setBudget] = useState(10);
-  const [formData, setFormData] = useState({
-    companyName: "",
-    email: "",
-    website: "",
-    socialLinks: "",
-    requirement: "",
-  });
+  const [budget, setBudget] = useState(10); // State to track budget range value
 
   const handlePopupToggle = () => {
     setIsPopupOpen(!isPopupOpen);
   };
 
+  // Function to handle range input change
   const handleBudgetChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setBudget(Number(event.target.value));
-  };
-
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = event.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   return (
@@ -64,10 +59,11 @@ const ConnectSection: React.FC = () => {
           {/* Button */}
           <button
             aria-labelledby="letsConnectDiv"
-            className="group relative rounded-full bg-[#F2F2F2] overflow-hidden transition-transform p-8 hover:scale-110"
             onClick={handlePopupToggle}
+      className="group relative rounded-full bg-[#F2F2F2] overflow-hidden transition-transform p-8 hover:scale-110"
           >
-             <svg
+            {/* First Arrow */}
+            <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 36 36"
         fill="none"
@@ -127,60 +123,66 @@ const ConnectSection: React.FC = () => {
       </svg>
           </button>
         </div>
-
         {/* Contact Section */}
         <div className="py-8 md:py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="rounded-3xl p-6 md:p-8">
+            <div className=" rounded-3xl  p-6 md:p-8">
               <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
                 <a
                   href="tel:+919400303325"
-                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200"
+                  className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-200"
                 >
                   <Phone className="w-5 h-5" />
-                  <span>Call Now</span>
+                  <span className="text-sm font-medium">Call Now</span>
                 </a>
+
                 <a
                   href="mailto:info@urbanhubinnovations.com"
-                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200"
+                  className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-200"
                 >
                   <Mail className="w-5 h-5" />
-                  <span>Email Us</span>
+                  <span className="text-sm font-medium">Email Us</span>
                 </a>
+
                 <a
                   href="https://www.linkedin.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200"
+                  className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-200"
                 >
                   <Linkedin className="w-5 h-5" />
-                  <span>LinkedIn</span>
+                  <span className="text-sm font-medium">LinkedIn</span>
                 </a>
-                {/* Social Links */}
-                <div className="flex items-center gap-4">
+
+                <div className="flex items-center justify-center gap-4 md:gap-6">
                   <a
                     href="https://www.instagram.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 rounded-full bg-gray-100 hover:bg-gray-200"
+                    className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-200"
                   >
                     <Instagram className="w-5 h-5" />
+                    <span className="sr-only">Instagram</span>
                   </a>
+
                   <a
                     href="https://www.facebook.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 rounded-full bg-gray-100 hover:bg-gray-200"
+                    className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-200"
                   >
                     <Facebook className="w-5 h-5" />
+                    <span className="sr-only">Facebook</span>
                   </a>
+
                   <a
                     href="https://github.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 rounded-full bg-gray-100 hover:bg-gray-200"
+                    className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-200"
                   >
                     <Github className="w-5 h-5" />
+                    <span className="sr-only">GitHub</span>
                   </a>
                 </div>
               </div>
@@ -189,23 +191,44 @@ const ConnectSection: React.FC = () => {
         </div>
       </div>
 
-      {/* Popup Form */}
-      {isPopupOpen && (
+      {/* Sliding Contact Form */}
+      <div
+        className={`fixed inset-x-0 bottom-0 z-50 transition-all duration-700 ease-out ${
+          isPopupOpen ? "transform translate-y-0" : "transform translate-y-full"
+        }`}
+        style={{
+          pointerEvents: isPopupOpen ? "auto" : "none",
+        }}
+      >
         <div
-          className="fixed inset-x-0 bottom-0 z-50 bg-white rounded-t-[30px] shadow-xl p-6"
-          style={{ height: "calc(100vh - 70px)", overflowY: "auto" }}
+          className="bg-white rounded-t-[30px] shadow-xl p-6 relative"
+          style={{
+            height: "calc(100vh - 70px)",
+            overflowY: "auto",
+          }}
         >
-          <button onClick={handlePopupToggle} className="absolute top-2 right-2">
-            <svg width="24" height="24">
-              <path
-                stroke="#333"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1.5"
-                d="M5.001 5 19 19M5 19 18.999 5"
-              />
-            </svg>
-          </button>
+          <div className="absolute top-2 right-2">
+            <button
+              onClick={handlePopupToggle}
+              className="hover:scale-110 transition-all"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                fill="none"
+              >
+                <path
+                  stroke="#333"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="1.5"
+                  d="M5.001 5 19 19M5 19 18.999 5"
+                ></path>
+              </svg>
+            </button>
+          </div>
           <h2
             className="text-black text-6xl text-center font-ThicccboiMedium text-global-font-sm-h3 md:text-global-font-h1"
             style={{
@@ -217,7 +240,9 @@ const ConnectSection: React.FC = () => {
               color: "transparent", // Make text color transparent so the gradient shows
               backgroundRepeat: "no-repeat",
             }}
-          >Let’s Get Into Work!</h2>
+          >
+            Let’s Get Into Work!
+          </h2>
           <form className="mt-20 overflow-auto h-[80vh]">
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
               <div>
@@ -299,7 +324,7 @@ const ConnectSection: React.FC = () => {
             </button>
           </form>
         </div>
-      )}
+      </div>
     </div>
   );
 };
