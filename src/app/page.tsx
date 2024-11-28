@@ -13,6 +13,7 @@ function Page() {
   
   return (
     <div>
+      
       <Hero />
       <Whatwedo />
       <StackedCards />

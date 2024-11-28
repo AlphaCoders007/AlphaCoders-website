@@ -1,16 +1,19 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import FloatingIcons from "./FloatingIcons";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BackgroundBeamsWithCollision } from "../../../ExtraComponents/UI/background-beams-with-collision";
+import Letsgetstarted from "./ui/Letgetstarted";
 
 const Hero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   gsap.registerPlugin(ScrollTrigger);
+
+  
 
   useEffect(() => {
     const heroElement = heroRef.current;
@@ -58,47 +61,78 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section
-      className="relative h-screen flex flex-col justify-center items-center px-4 sm:px-8 bg-background text-foreground overflow-hidden"
-      ref={heroRef}
-    >
-      {/* Wrapping Components */}
-      {/* <BackgroundBeamsWithCollision> */}
-        {/* Text Div */}
-        <div className="absolute inset-0 text-right flex flex-col justify-center items-end px-4 sm:px-12 z-10">
-          <h1
-            className="font-ThicccboiRegular text-foreground"
+    <>
+      <section className="relative h-[100vh] w-[100vw] overflow-hidden">
+        {/* Background Content */}
+        <div className="absolute inset-0">
+          <div
+            className="relative h-full w-full origin-center"
             style={{
-              fontSize: "clamp(1.5rem, 2rem + 2vw, 4rem)",
-              lineHeight: "clamp(2rem, 2.5rem + 3vw, 4.5rem)",
+              filter: "blur(0px)",
+              willChange: "transform, filter",
+              transform: "none",
             }}
           >
-            STRATEGY PLANNING BUILDING
-          </h1>
-          <h2
-            className="font-ThicccboiMedium mt-4"
-            style={{
-              fontSize: "clamp(1.25rem, 1.75rem + 2vw, 3.5rem)",
-              lineHeight: "clamp(1.75rem, 2rem + 2vw, 4rem)",
-              backgroundImage: "linear-gradient(90deg, #bf00ff, #ff5633)",
-              backgroundClip: "text",
-              WebkitBackgroundClip: "text",
-              color: "transparent",
-            }}
-          >
-            Application Design and Development
-          </h2>
-          <p className="text-foreground  text-sm sm:text-lg font-ThicccboiRegular mt-5">
-            Reaching out to transform the business world into future technology.
-          </p>
+            {/* Video for larger screens */}
+            <div className="absolute inset-0 h-[100vh] w-[100vw] overflow-hidden sm:block">
+              <div className="w-full h-full">
+                <video
+                  src="home.mp4"
+                  className="w-full h-full object-cover"
+                  preload="auto"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  webkit-playsinline="true"
+                  x5-playsinline="true"
+                />
+              </div>
+            </div>
+            {/* Image fallback for smaller screens */}
+            <div className="absolute inset-0 block h-[100svh] overflow-hidden opacity-60 sm:hidden">
+              <img
+                alt="home"
+                loading="lazy"
+                decoding="async"
+                className="object-cover object-left"
+                style={{
+                  position: "absolute",
+                  height: "100%",
+                  width: "100%",
+                  left: 0,
+                  top: 0,
+                  color: "transparent",
+                  backgroundSize: "cover",
+                  backgroundPosition: "50% 50%",
+                  backgroundRepeat: "no-repeat",
+                }}
+                src="home-sm.webp"
+              />
+            </div>
+          </div>
         </div>
-
-        {/* Floating Icons */}
-        <div className="absolute top-0 left-0 w-full h-full">
-          <FloatingIcons />
+        {/* Text Content */}
+        <div className="relative flex h-full flex-col justify-center">
+          <div className="flex w-full origin-center flex-col items-center gap-4 md:items-start md:pl-[40%]">
+            <h1 className="text-center text-xl md:text-left">
+              <span className="font-ThicccboiLight text-[#797979] text-5xl">
+                This is a Change, to a
+              </span>
+              <br />
+              <span className="font-medium bg-gradient-to-r from-[#bf00ff] to-[#ff5633] bg-clip-text text-transparent font-ThicccboiRegular text-5xl">
+                Future more Exciting.
+              </span>
+            </h1>
+            <h2 className="text-left font-montserrat text-[#797979]  text-lg ">
+              Websites, Mobile App, UI/UX &amp; Branding
+            </h2>
+          </div>
         </div>
-      {/* </BackgroundBeamsWithCollision> */}
-    </section>
+        < Letsgetstarted />
+      </section>
+     
+    </>
   );
 };
 
