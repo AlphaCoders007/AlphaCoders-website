@@ -116,11 +116,11 @@ const Hero: React.FC = () => {
         <div className="relative flex h-full flex-col justify-center">
           <div className="flex w-full origin-center flex-col items-center gap-4 md:items-start md:pl-[40%]">
             <h1 className="text-center text-xl md:text-left">
-              <span className="font-ThicccboiLight text-[#797979] text-5xl">
+              <span className="font-ThicccboiLight text-[#797979] lg:text-7xl">
                 This is a Change, to a
               </span>
               <br />
-              <span className="font-medium bg-gradient-to-r from-[#bf00ff] to-[#ff5633] bg-clip-text text-transparent font-ThicccboiRegular text-5xl">
+              <span className="font-medium bg-gradient-to-r from-[#bf00ff] to-[#ff5633] bg-clip-text text-transparent font-ThicccboiRegular lg:text-7xl ">
                 Future more Exciting.
               </span>
             </h1>
