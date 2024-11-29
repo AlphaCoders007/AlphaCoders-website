@@ -13,7 +13,7 @@ const StackedCardsUI: React.FC = () => {
             <div
               className={`flex flex-col lg:flex-row ${
                 card.reversed ? "lg:flex-row-reverse" : ""
-              } items-center h-[87vh] bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-xl shadow-lg overflow-hidden`}
+              } items-center h-[100vh] lg:h-[70vh]  bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-xl shadow-lg overflow-hidden`}
             >
               {/* Image Section */}
               <motion.div
