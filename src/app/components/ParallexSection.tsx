@@ -174,4 +174,4 @@ export function ParallexSection() {
       </div>
     </section>
   );
-}
+}  
