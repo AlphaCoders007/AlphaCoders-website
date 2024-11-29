@@ -60,69 +60,67 @@ const ConnectSection: React.FC = () => {
           <button
             aria-labelledby="letsConnectDiv"
             onClick={handlePopupToggle}
-            className="group relative size-fit overflow-hidden rounded-full bg-[#F2F2F2] transition-all p-[3rem] hover:scale-110"
+      className="group relative rounded-full bg-[#F2F2F2] overflow-hidden transition-transform p-8 hover:scale-110"
           >
             {/* First Arrow */}
             <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 36 36"
-              fill="none"
-              className="absolute top-[50%] left-[50%] transition-all duration-[700ms] size-[1rem] md:size-[1.5rem] group-hover:translate-x-[250%] group-hover:translate-y-[-250%] transform -translate-x-[50%] -translate-y-[50%]"
-            >
-              <path
-                fill="url(#service_arrow_color)"
-                fillRule="evenodd"
-                d="M35.892.81H2.108v5.631h24.171L.941 31.78l3.982 3.982L30.26 10.423v24.172h5.63V.81Z"
-                clipRule="evenodd"
-              ></path>
-              <defs>
-                <linearGradient
-                  id="service_arrow_color"
-                  x1="0.086"
-                  x2="35.104"
-                  y1="25.3"
-                  y2="25.3"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stopColor="black"></stop>
-                  <stop offset="0.06" stopColor="#C306F1"></stop>
-                  <stop offset="0.53" stopColor="#E3318C"></stop>
-                  <stop offset="0.85" stopColor="#F74C4C"></stop>
-                  <stop offset="1" stopColor="#FF5633"></stop>
-                </linearGradient>
-              </defs>
-            </svg>
-
-            {/* Second Arrow */}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 36 36"
-              fill="none"
-              className="absolute top-[50%] left-[50%] transition-all duration-[700ms] size-[1rem] md:size-[1.5rem] opacity-0 group-hover:opacity-100 transform -translate-x-[50%] -translate-y-[50%]"
-            >
-              <path
-                fill="url(#service_arrow_color_2)"
-                fillRule="evenodd"
-                d="M35.892.81H2.108v5.631h24.171L.941 31.78l3.982 3.982L30.26 10.423v24.172h5.63V.81Z"
-                clipRule="evenodd"
-              ></path>
-              <defs>
-                <linearGradient
-                  id="service_arrow_color_2"
-                  x1="0.086"
-                  x2="35.104"
-                  y1="25.3"
-                  y2="25.3"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stopColor="#FF5633"></stop>
-                  <stop offset="0.15" stopColor="#F74C4C"></stop>
-                  <stop offset="0.45" stopColor="#E3318C"></stop>
-                  <stop offset="0.75" stopColor="#C306F1"></stop>
-                  <stop offset="1" stopColor="black"></stop>
-                </linearGradient>
-              </defs>
-            </svg>
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 36 36"
+        fill="none"
+        className="transition-transform duration-300 w-8 h-8 group-hover:translate-x-[250%] group-hover:translate-y-[-250%]"
+      >
+        <path
+          fill="url(#service_arrow_color)"
+          fillRule="evenodd"
+          d="M35.892.81H2.108v5.631h24.171L.941 31.78l3.982 3.982L30.26 10.423v24.172h5.63V.81Z"
+          clipRule="evenodd"
+        />
+        <defs>
+          <linearGradient
+            id="service_arrow_color"
+            x1="0.086"
+            x2="35.104"
+            y1="25.3"
+            y2="25.3"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#BF00FF" />
+            <stop offset="0.06" stopColor="#C306F1" />
+            <stop offset="0.53" stopColor="#E3318C" />
+            <stop offset="0.85" stopColor="#F74C4C" />
+            <stop offset="1" stopColor="#FF5633" />
+          </linearGradient>
+        </defs>
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 36 36"
+        fill="none"
+        className="absolute translate-x-[-250%] translate-y-[250%] transition-transform duration-300 inset-8 w-8 h-8 group-hover:translate-x-0 group-hover:translate-y-0"
+      >
+        <path
+          fill="url(#service_arrow_color)"
+          fillRule="evenodd"
+          d="M35.892.81H2.108v5.631h24.171L.941 31.78l3.982 3.982L30.26 10.423v24.172h5.63V.81Z"
+          clipRule="evenodd"
+        />
+        <defs>
+          <linearGradient
+            id="service_arrow_color"
+            x1="0.086"
+            x2="35.104"
+            y1="25.3"
+            y2="25.3"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop stopColor="#BF00FF" />
+            <stop offset="0.06" stopColor="#C306F1" />
+            <stop offset="0.53" stopColor="#E3318C" />
+            <stop offset="0.85" stopColor="#F74C4C" />
+            <stop offset="1" stopColor="#FF5633" />
+          </linearGradient>
+        </defs>
+      </svg>
           </button>
         </div>
         {/* Contact Section */}
