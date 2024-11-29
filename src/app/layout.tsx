@@ -16,10 +16,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-background text-foreground">
-        {/* <TracingBeam> Wrap the entire content inside the TracingBeam */}
           <NavBarSection />
           {children}
-        {/* </TracingBeam> */}
       </body>
     </html>
   );

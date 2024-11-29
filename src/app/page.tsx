@@ -17,9 +17,6 @@ function Page() {
       <Hero />
       <Whatwedo />
       <StackedCards />
-      {/* < Cards/> */}
-      {/* <Carousel items={itemsArray} /> */}
-      
       <ParallexSection />
       <ContactSection />
     </div>
