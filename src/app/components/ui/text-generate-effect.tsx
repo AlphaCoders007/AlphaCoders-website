@@ -1,39 +1,47 @@
-"use client";
+"use client"
 
-import { FC, useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { cn } from "@/app/lib/utils";
-import { MotionValue } from "framer-motion";
+import React, { useRef } from "react"
+import { motion, useScroll, useTransform, MotionValue } from "framer-motion"
+import { cn } from "@/app/lib/utils"
 
 interface TextRevealByLineProps {
-  text: string; // Single string prop
-  className?: string;
+  text: string
+  className?: string
+  lineHeight?: number
+  fontSize?: string
+  textColor?: string
+  fontStyle?: string
 }
 
-export const TextRevealByLine: FC<TextRevealByLineProps> = ({
+export function TextRevealByLine({
   text,
   className,
-}) => {
-  const targetRef = useRef<HTMLDivElement | null>(null);
+  lineHeight = 1.5,
+  fontSize = "3xl", // Increased font size
+  textColor = "text-black dark:text-white",
+  fontStyle = "normal", // Default font style
+}: TextRevealByLineProps) {
+  const targetRef = useRef<HTMLDivElement>(null)
 
-  // Access scrollYProgress using the useScroll hook
   const { scrollYProgress } = useScroll({
     target: targetRef,
-  });
+    offset: ["start end", "end start"],
+  })
 
-  // Split the text into words
-  const words = text.split(" ");
+  const words = text.split(" ")
 
   return (
     <div ref={targetRef} className={cn("relative z-0", className)}>
       <div
-        className={
-          "sticky top-0 mx-auto flex flex-wrap items-center bg-transparent px-[1rem] py-[5rem]"
-        }
+        className={cn(
+          "sticky top-0 mx-auto flex flex-wrap items-center bg-transparent px-4 py-20",
+          `leading-[${lineHeight}]`,
+          "font-Montserrat tracking-[0.02rem] text-white ~text-global-font-sm-h3/global-font-h3" // Add the new classes
+        )}
       >
         {words.map((word, index) => {
-          const start = index / words.length;  // Start from the first word
-          const end = (index + 1) / words.length;  // End at the last word
+          const start = index / words.length
+          const end = (index + 1) / words.length
 
           return (
             <Line
@@ -41,31 +49,42 @@ export const TextRevealByLine: FC<TextRevealByLineProps> = ({
               text={word}
               progress={scrollYProgress}
               range={[start, end]}
+              fontSize={fontSize}
+              textColor={textColor}
+              fontStyle={fontStyle} 
             />
-          );
+          )
         })}
       </div>
     </div>
-  );
-};
-
-interface LineProps {
-  text: string;
-  progress: MotionValue<number>;
-  range: [number, number];
+  )
 }
 
-const Line: FC<LineProps> = ({ text, progress, range }) => {
-  // Use useTransform correctly to map scrollYProgress to opacity
-  const opacity = useTransform(progress, range, [0, 1]);
-  const y = useTransform(progress, range, [20, 0]); // For smooth vertical movement
+interface LineProps {
+  text: string
+  progress: MotionValue<number>
+  range: [number, number]
+  fontSize: string
+  textColor: string
+  fontStyle: string 
+}
+
+function Line({ text, progress, range, fontSize, textColor, fontStyle }: LineProps) {
+  const opacity = useTransform(progress, range, [0, 1])
+  const y = useTransform(progress, range, [20, 0])
 
   return (
     <motion.span
       style={{ opacity, y }}
-      className={"mx-1 text-2xl font-bold text-black dark:text-white"}
+      className={cn(
+        "mx-1 font-bold",
+        `text-${fontSize}`,
+        textColor,
+        fontStyle, 
+        "font-Montserrat tracking-[0.02rem] text-white ~text-global-font-sm-h3/global-font-h3"
+      )}
     >
       {text}
     </motion.span>
-  );
-};
+  )
+}

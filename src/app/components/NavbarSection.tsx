@@ -21,6 +21,7 @@ function NavBarSection() {
           </div>
         </Link>
       </div>
+      
     </header>
   );
 }
