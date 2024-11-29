@@ -35,7 +35,8 @@ const Hero: React.FC = () => {
         className="relative h-[100vh] w-[100vw] overflow-hidden"
       >
         
-       
+        <NavBarSection />
+        
         {/* Background Video for larger screens */}
         <div className="absolute inset-0 sm:block">
           <video
@@ -58,7 +59,7 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Text Content */}
-        <div className="relative flex h-full flex-col justify-center">
+        <div className="relative flex h-full flex-col justify-start mt-[140px]">
           <div className="flex w-full origin-center flex-col items-center gap-4 md:items-start md:pl-[40%]">
             <h1 className="text-center text-xl md:text-left">
               <span className="font-ThicccboiLight font-thin text-[#797979] lg:text-7xl">
