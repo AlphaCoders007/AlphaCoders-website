@@ -1,100 +1,88 @@
-"use client";
-
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const Letsgetstarted: React.FC = () => {
-  const videoRef = useRef<HTMLDivElement>(null);
-  const buttonRef = useRef<HTMLButtonElement>(null);
-  const [isExpanded, setIsExpanded] = useState(false);
+interface ExpandableButtonProps {
+  isExpanded: boolean;
+  setIsExpanded: (expanded: boolean) => void;
+}
 
-  gsap.registerPlugin(ScrollTrigger);
+const Letgetstarted: React.FC<ExpandableButtonProps> = ({
+  isExpanded,
+  setIsExpanded,
+}) => {
+  const buttonRef = useRef<HTMLDivElement>(null);
+  const [showText, setShowText] = useState(true); // Controls text visibility
 
-  // Handle Scroll Effect
   useEffect(() => {
-    const videoElement = videoRef.current;
+    gsap.registerPlugin(ScrollTrigger);
+    const button = buttonRef.current;
 
-    if (videoElement) {
-      ScrollTrigger.create({
-        trigger: videoElement,
-        start: "top top",
-        end: "bottom top",
-        scrub: true,
-        onEnter: () => setIsExpanded(true),
+    if (button) {
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#hero-section",
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+          onUpdate: (self) => {
+            // Set expanded state and control text visibility based on scroll position
+            setIsExpanded(self.progress === 1);
+            setShowText(self.progress < 0.5); // Hide text as it expands (after halfway)
+          },
+        },
       });
 
-      if (isExpanded) {
-        gsap.to(videoElement, {
+      // Animate the button growth and text fade-out
+      timeline.fromTo(
+        button,
+        {
+          width: "200px",
+          height: "100px",
+          borderRadius: "60px", // Rounded corners for the initial state
+        },
+        {
           width: "100vw",
           height: "100vh",
-          borderRadius: "0px",
+          borderRadius: "0%", // Full screen with no rounded corners when fully expanded
+          backgroundColor: "#000",
           duration: 1.5,
-          ease: "power3.inOut",
-        });
-      }
+          ease: "power2.inOut",
+        }
+      );
     }
-  }, [isExpanded]);
-
-  // Handle Click Expansion
-  const handleClick = () => {
-    setIsExpanded(true);
-    const videoElement = videoRef.current;
-
-    if (videoElement) {
-      gsap.to(videoElement, {
-        width: "100vw",
-        height: "100vh",
-        borderRadius: "0px",
-        duration: 1.5,
-        ease: "power3.inOut",
-      });
-    }
-  };
+  }, [setIsExpanded]);
 
   return (
-    <div className="relative h-[200vh] w-full">
-      {/* Video Section */}
-      <div
-        ref={videoRef}
-        className={`absolute top-0 left-0 flex items-center justify-center ${
-          isExpanded
-            ? "w-full h-screen"
-            : "w-[80px] h-[40px] rounded-full bg-gradient-to-r from-purple-500 to-pink-500"
-        } transition-all duration-300 ease-in-out overflow-hidden`}
-      >
-        {/* Video or Button */}
-        {!isExpanded ? (
-          <button
-            ref={buttonRef}
-            className="text-white text-sm font-bold"
-            onClick={handleClick}
-          >
-            Get Started
-          </button>
-        ) : (
-          <video
-            src="portfolio-demo.mp4"
-            className="w-full h-full object-cover"
-            preload="auto"
-            autoPlay
-            muted
-            loop
-            playsInline
-            webkit-playsinline="true"
-            x5-playsinline="true"
-          />
-        )}
-      </div>
+    <div
+      ref={buttonRef}
+      className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex items-center justify-center overflow-hidden"
+      style={{
+        width: "200px", // Initial width
+        height: "100px", // Initial height
+        borderRadius: "60px", // Rounded corners initially
+        backgroundColor: "#c3195d", // Default button color
+        zIndex: 10, // Ensures it's above the video
+      }}
+    >
+      {/* Conditionally render text inside the button */}
+      {showText && (
+        <span className="text-white font-medium text-lg opacity-100 transition-opacity duration-300 ease-out">
+          Let’s Get Started
+        </span>
+      )}
 
-      {/* Content Section */}
-      <div className="relative h-full flex items-center justify-center bg-gray-50">
-        <h1 className="text-2xl font-bold text-gray-700">
-          Scroll down or click to expand the video.
-        </h1>
-      </div>
+      {/* The video inside the button */}
+      <video
+        src="video.mp4"
+        autoPlay
+        loop
+        muted
+        className="absolute w-full h-full object-cover transition-opacity duration-300 opacity-100"
+        style={{ zIndex: 1 }}
+      />
     </div>
   );
 };
 
-export default Letsgetstarted;
+export default Letgetstarted;
