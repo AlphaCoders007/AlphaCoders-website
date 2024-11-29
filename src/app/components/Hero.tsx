@@ -1,10 +1,8 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from "react";
-import FloatingIcons from "./FloatingIcons";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { BackgroundBeamsWithCollision } from "../../../ExtraComponents/UI/background-beams-with-collision";
 import Letsgetstarted from "./ui/Letgetstarted";
 
 const Hero: React.FC = () => {
