@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState,useEffect} from "react";
 import {
   Phone,
   Mail,
@@ -9,18 +9,64 @@ import {
   Github,
 } from "lucide-react";
 
-const ConnectSection: React.FC = () => {
+const ConnectSection: React.FC = (): JSX.Element => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [budget, setBudget] = useState(10); // State to track budget range value
+  const [isScrolledToBottom, setIsScrolledToBottom] = useState(false);
 
   const handlePopupToggle = () => {
     setIsPopupOpen(!isPopupOpen);
   };
+  
+  // Scroll detection function
+  const handleScroll = () => {
+    const scrollPosition = window.innerHeight + window.scrollY;
+    const documentHeight = document.documentElement.offsetHeight;
 
-  // Function to handle range input change
+    // Check if the user has scrolled to the bottom
+    if (scrollPosition >= documentHeight) {
+      setIsScrolledToBottom(true);
+    } else {
+      setIsScrolledToBottom(false);
+    }
+  };
+
+  // Add scroll event listener when the component mounts
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  // Function to handle budget input change
   const handleBudgetChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setBudget(Number(event.target.value));
   };
+
+  // Function to handle min range input change
+  // Define the event type explicitly for 'e'
+  const [minValue, setMinValue] = useState<number>(1000); // Assuming minValue is in thousands
+  const [maxValue, setMaxValue] = useState<number>(50000); // Assuming maxValue is in thousands
+
+  // Function to handle min value change
+  const handleMinChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    const newValue = Number(e.target.value); // Ensure the value is a number
+    if (newValue <= maxValue) {
+      setMinValue(newValue); // Update minValue if it's less than or equal to maxValue
+    }
+  };
+
+  // Function to handle max value change
+  const handleMaxChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    const newValue = Number(e.target.value); // Ensure the value is a number
+    if (newValue >= minValue) {
+      setMaxValue(newValue); // Update maxValue if it's greater than or equal to minValue
+    }
+  };
+
+  // Function to get the percentage position for the slider
+  const getMinPosition = (value: number): number => (value / 100000) * 100;
+  const getMaxPosition = (value: number): number => (value / 100000) * 100;
 
   return (
     <div className="flex h-full w-full flex-col items-end justify-end bg-white">
@@ -292,20 +338,102 @@ const ConnectSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="mt-4">
-              <label className="text-black text-lg">Budget</label>
-              <div className="flex items-center justify-between mt-3">
-                <input
-                  type="range"
-                  min="10"
-                  max="1000"
-                  className="w-full"
-                  value={budget} // Set the range value to state
-                  onChange={handleBudgetChange} // Update state on change
-                />
-                <span>{budget}</span> {/* Display the budget value */}
-              </div>
+            <div className="mt-[1.5rem]">
+      <label htmlFor="budgetRange" className="text-black text-lg">
+        Budget (₹ in thousands)
+      </label>
+      <div className="price-range-slider relative pt-[1rem]">
+        <div className="slider relative">
+          <div
+            className="example-track example-track-0"
+            style={{
+              position: 'absolute',
+              left: '0px',
+              right: `${1000 - getMaxPosition(maxValue)}%`,
+            }}
+          ></div>
+          <div
+            className="example-track example-track-1"
+            style={{
+              position: 'absolute',
+              left: `${getMinPosition(minValue)}%`,
+              right: `${1000 - getMaxPosition(maxValue)}%`,
+            }}
+          ></div>
+          <div
+            className="example-track example-track-2"
+            style={{
+              position: 'absolute',
+              left: `${getMinPosition(minValue)}%`,
+              right: '0px',
+            }}
+          ></div>
+
+          {/* Min Value Slider Handle */}
+          <div
+            className="group absolute -top-2 cursor-pointer rounded-full bg-blue-500"
+            style={{
+              left: `${getMinPosition(minValue)}%`,
+              zIndex: 1, // Make sure minValue handle has a lower z-index than maxValue handle
+            }}
+            role="slider"
+            aria-valuenow={minValue}
+            aria-valuemin={1}
+            aria-valuemax={maxValue}
+            aria-labelledby="minValueLabel"
+          >
+            <div className="absolute top-8 flex -translate-x-1/2 items-center justify-center rounded-b-3xl border border-[#E6E6E6] bg-white p-[0.5rem] font-Montserrat text-sm">
+              ₹{minValue / 1000}k
             </div>
+          </div>
+
+          {/* Max Value Slider Handle */}
+          <div
+            className="group absolute -top-2 cursor-pointer rounded-full bg-blue-500"
+            style={{
+              left: `${getMaxPosition(maxValue)}%`,
+              zIndex: 2, // Ensure maxValue handle is on top
+            }}
+            role="slider"
+            aria-valuenow={maxValue}
+            aria-valuemin={minValue}
+            aria-valuemax={100000}
+            aria-labelledby="maxValueLabel"
+          >
+            <div className="absolute top-8 flex -translate-x-1/2 items-center justify-center rounded-b-3xl border border-[#E6E6E6] bg-white p-[0.5rem] font-Montserrat text-sm">
+              ₹{maxValue / 1000}k+
+            </div>
+          </div>
+        </div>
+
+        {/* Range Inputs for Min and Max */}
+        <div className="absolute inset-x-0 top-[1rem]">
+          <input
+            type="range"
+            min="1"
+            max="100000"
+            value={minValue}
+            onChange={handleMinChange}
+            className="absolute w-full h-2 bg-gray-300 rounded-full focus:outline-none z-10" // z-index added to avoid overlap
+          />
+          <input
+            type="range"
+            min={minValue + 1}
+            max="100000"
+            value={maxValue}
+            onChange={handleMaxChange}
+            className="absolute w-full h-2 bg-gray-300 rounded-full focus:outline-none z-20" // Higher z-index for max value
+          />
+        </div>
+      </div>
+
+      <p className="text-sm text-gray-500 mt-2">
+        Selected Budget: ₹{minValue / 1000}k to ₹{maxValue / 1000}k
+      </p>
+    </div>
+
+
+
 
             <div className="mt-4">
               <label className="text-black text-lg">Enquiry</label>
@@ -325,7 +453,27 @@ const ConnectSection: React.FC = () => {
           </form>
         </div>
       </div>
+      
+
+      <div
+        className={`fixed inset-x-0 bottom-0 z-40 transition-all duration-500 ease-in-out ${
+          isScrolledToBottom ? "transform translate-y-0" : "transform translate-y-full"
+        }`}
+        style={{
+          pointerEvents: isScrolledToBottom ? "auto" : "none",
+        }}
+      >
+        {/* Footer Content */}
+  
+      <div className="w-full bg-gradient-to-r from-purple-500 to-orange-500">
+        <div className="text-center font-Montserrat leading-loose tracking-wide text-white text-sm p-2">
+          © 2024 AlphaCoder Software Innovations
+        </div>
+      </div>
+    
     </div>
+    </div>
+    
   );
 };
 
