@@ -12,7 +12,8 @@ const Letgetstarted: React.FC<ExpandableButtonProps> = ({
   setIsExpanded,
 }) => {
   const buttonRef = useRef<HTMLDivElement>(null);
-  const [showText, setShowText] = useState(true); // Controls text visibility
+  const [showText, setShowText] = useState(true); // Initially show the text
+  const [showVideo, setShowVideo] = useState(false); // Initially hide the video
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -26,25 +27,24 @@ const Letgetstarted: React.FC<ExpandableButtonProps> = ({
           end: "bottom top",
           scrub: true,
           onUpdate: (self) => {
-            // Set expanded state and control text visibility based on scroll position
             setIsExpanded(self.progress === 1);
-            setShowText(self.progress < 0.5); // Hide text as it expands (after halfway)
+            setShowText(self.progress < 0.1);
+            setShowVideo(self.progress >= 0.1); 
           },
         },
       });
 
-      // Animate the button growth and text fade-out
       timeline.fromTo(
         button,
         {
-          width: "200px",
-          height: "100px",
-          borderRadius: "60px", // Rounded corners for the initial state
+          width:"150px",
+          height : "50px",
+          borderRadius: "45%",
         },
         {
           width: "100vw",
           height: "100vh",
-          borderRadius: "0%", // Full screen with no rounded corners when fully expanded
+          borderRadius: "0%",
           backgroundColor: "#000",
           duration: 1.5,
           ease: "power2.inOut",
@@ -56,31 +56,34 @@ const Letgetstarted: React.FC<ExpandableButtonProps> = ({
   return (
     <div
       ref={buttonRef}
-      className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex items-center justify-center overflow-hidden"
+      className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex items-center justify-center overflow-hidden origin-top h-fit py-2"
       style={{
-        width: "200px", // Initial width
-        height: "100px", // Initial height
-        borderRadius: "60px", // Rounded corners initially
-        backgroundColor: "#c3195d", // Default button color
-        zIndex: 10, // Ensures it's above the video
+        // width: "100px",
+        // height: "100px", 
+        zIndex: 10, 
       }}
     >
-      {/* Conditionally render text inside the button */}
       {showText && (
-        <span className="text-white font-medium text-lg opacity-100 transition-opacity duration-300 ease-out">
+        <span className="text-black font-medium text-lg opacity-100 transition-opacity size-full items-center  flex duration-300 ease-out justify-center z-20 bg-gray-200">
           Let’s Get Started
         </span>
       )}
 
-      {/* The video inside the button */}
-      <video
-        src="video.mp4"
-        autoPlay
-        loop
-        muted
-        className="absolute w-full h-full object-cover transition-opacity duration-300 opacity-100"
-        style={{ zIndex: 1 }}
-      />
+      {/* Conditionally render video */}
+      {showVideo && (
+        <video
+          src="video2.mp4"
+          autoPlay
+          loop
+          muted
+          className="absolute w-full h-full object-cover transition-opacityduration-300"
+          style={{
+            opacity:  1 ,
+            zIndex: 1,
+            pointerEvents: "auto"
+          }}
+        />      
+        )}
     </div>
   );
 };

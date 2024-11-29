@@ -3,12 +3,12 @@
 import { motion } from "framer-motion";
 import { AuroraBackground } from "./ui/aurora-background";
 import { QueueWords } from "./QueueWords";
-import StatsCard from "./StatsCard";
+import  StatsCard  from "./StatsCard";
 import { TextRevealByLine } from "./ui/text-generate-effect";
 
-const words = `As pioneers in alpha coding, our expertise extends to spearheading advancements in revolutionary technologies such as GenAI.`; // Original sentence to be split into words
+const words = `As pioneers in alpha coding, our expertise extends to spearheading advancements in revolutionary technologies such as GenAI.`;
 
-const CardsTabs = [
+const cardsTabs = [
   { count: "150+", label: "Projects Completed" },
   { count: "120", label: "Happy Clients" },
   { count: "50", label: "Awards Won" },
@@ -17,9 +17,8 @@ const CardsTabs = [
 export function Whatwedo() {
   return (
     <AuroraBackground>
-      {/* Hero Section */}
       <motion.div
-        initial={{ opacity: 0.0, y: 40 }}
+        initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{
           delay: 0.3,
@@ -28,15 +27,13 @@ export function Whatwedo() {
         }}
         className="relative flex flex-col gap-8 items-center justify-center px-6 py-16 text-white w-full overflow-hidden"
       >
-        {/* Heading with Animated Queue Words */}
         <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center leading-tight tracking-wide lg:px-12 sm:px-6 md:px-8">
           <QueueWords />
         </div>
       </motion.div>
 
-      {/* Stats Cards Section */}
-      <div className="flex flex-wrap justify-center gap-8 px-4  w-full">
-        {CardsTabs.map((card, i) => (
+      <div className="flex flex-wrap justify-center gap-8 px-4 w-full">
+        {cardsTabs.map((card, i) => (
           <StatsCard
             key={i}
             count={card.count}
@@ -46,10 +43,14 @@ export function Whatwedo() {
         ))}
       </div>
 
-      {/* Text Generator Section */}
-      <div className="px-6 max-w-3xl mx-auto text-lg leading-relaxed text-center w-full">
-        <TextRevealByLine text="AlphaCoders Innovations is a cutting-edge software solutions company dedicated to empowering businesses through transformative technology. With a focus on innovation, creativity, and precision, we design and develop digital solutions tailored to meet the unique needs of our clients." />
+      <div className="px-6 max-w-5xl  mx-auto text-lg leading-8 text-center w-full">
+        <TextRevealByLine 
+          text="AlphaCoders Innovations is a cutting-edge software solutions company dedicated to empowering businesses through transformative technology. " 
+          textColor="text-white"
+          fontSize="4xl"
+        />
       </div>
     </AuroraBackground>
   );
 }
+

@@ -3,8 +3,8 @@
 import React, { useEffect, useState, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { BackgroundBeamsWithCollision } from "../../../ExtraComponents/UI/background-beams-with-collision";
 import Letgetstarted from "./ui/Letgetstarted";
+import NavBarSection from "./NavbarSection";
 
 const Hero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -34,6 +34,8 @@ const Hero: React.FC = () => {
         ref={heroRef}
         className="relative h-[100vh] w-[100vw] overflow-hidden"
       >
+        
+       
         {/* Background Video for larger screens */}
         <div className="absolute inset-0 sm:block">
           <video
@@ -59,7 +61,7 @@ const Hero: React.FC = () => {
         <div className="relative flex h-full flex-col justify-center">
           <div className="flex w-full origin-center flex-col items-center gap-4 md:items-start md:pl-[40%]">
             <h1 className="text-center text-xl md:text-left">
-              <span className="font-ThicccboiLight text-[#797979] lg:text-7xl">
+              <span className="font-ThicccboiLight font-thin text-[#797979] lg:text-7xl">
                 This is a Change, to a
               </span>
               <br />
