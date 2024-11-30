@@ -27,6 +27,7 @@ export default {
   theme: {
     extend: {
       animation: {
+        circle: 'moveCircle 10s linear infinite',
         aurora: "aurora 10s ease-in-out infinite", // Aurora animation for light mode
         marquee: "marquee var(--duration) linear infinite",
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
@@ -35,6 +36,10 @@ export default {
         aurora: {
           "0%, 100%": { backgroundPosition: "50% 50%" },
           "50%": { backgroundPosition: "60% 40%" },
+        },
+        moveCircle: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
         },
         marquee: {
           from: { transform: "translateX(0)" },
