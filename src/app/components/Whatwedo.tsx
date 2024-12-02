@@ -1,12 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
 import { AuroraBackground } from "./ui/aurora-background";
 import { QueueWords } from "./QueueWords";
-import  StatsCard  from "./StatsCard";
+import StatsCard from "./StatsCard";
 import { TextRevealByLine } from "./ui/text-generate-effect";
-
-const words = `As pioneers in alpha coding, our expertise extends to spearheading advancements in revolutionary technologies such as GenAI.`;
 
 const cardsTabs = [
   { count: "150+", label: "Projects Completed" },
@@ -15,6 +14,19 @@ const cardsTabs = [
 ];
 
 export function Whatwedo() {
+  const [textAnimationComplete, setTextAnimationComplete] = useState(false);
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const { scrollYProgress } = useScroll();
+
+  const sectionHeight = useTransform(scrollYProgress, [0, 0.9], ["100vh", "auto"]);
+
+  useEffect(() => {
+    // Once the animation is complete, we mark text as done
+    if (textAnimationComplete) {
+      // Adjust scroll behavior or any other logic here when text animation is complete
+    }
+  }, [textAnimationComplete]);
+
   return (
     <AuroraBackground>
       <motion.div
@@ -27,7 +39,7 @@ export function Whatwedo() {
         }}
         className="relative flex flex-col gap-8 items-center justify-center px-6 py-16 text-white w-full overflow-hidden"
       >
-        <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center leading-tight tracking-wide lg:px-12 sm:px-6 md:px-8">
+        <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-center leading-tight tracking-wide lg:px-12 sm:px-6 md:px-8">
           <QueueWords />
         </div>
       </motion.div>
@@ -43,14 +55,32 @@ export function Whatwedo() {
         ))}
       </div>
 
-      <div className="px-6 max-w-5xl  mx-auto text-lg leading-8 text-center w-full">
-        <TextRevealByLine 
-          text="AlphaCoders Innovations is a cutting-edge software solutions company dedicated to empowering businesses through transformative technology. " 
-          textColor="text-white"
-          fontSize="4xl"
-        />
-      </div>
+      {/* Section containing the animated text */}
+      <motion.div
+        ref={sectionRef}
+        className="relative overflow-hidden"
+        style={{
+          height: "100vh", // Make sure this section occupies the entire viewport height initially
+          transition: "height 2s ease-in-out", // Smooth transition for section height change
+        }}
+      >
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          onAnimationComplete={() => setTextAnimationComplete(true)} // Mark the text animation as complete
+          transition={{
+            duration: 5, // Adjust the duration of the text animation
+          }}
+          className="px-6 max-w-5xl mx-auto text-lg leading-8 text-center w-full min-h-[40vh] flex items-center"
+        >
+          <TextRevealByLine
+            text="AlphaCoders Innovations is a cutting-edge software solutions company dedicated to empowering businesses through transformative technology."
+            textColor="text-white"
+            fontSize="4xl"
+            className="animated-text"
+          />
+        </motion.div>
+      </motion.div>
     </AuroraBackground>
   );
 }
-

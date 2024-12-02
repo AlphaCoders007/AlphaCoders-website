@@ -11,11 +11,11 @@ function NavBarSection() {
         <Link href="/">
           <div className="flex flex-col items-center space-y-1">
             <div className="flex items-center space-x-3">
-              <span className="text-3xl sm:text-4xl font-ThicccboiMedium bg-gradient-to-r from-[#bf00ff] to-[#ff5633] text-transparent bg-clip-text text-center">
-                AlphaCoders
+              <span className="text-sm sm:text-4xl font-wide font-thin bg-gradient-to-r from-[#bf00ff] to-[#ff5633] text-transparent bg-clip-text text-center">
+                alphacoders
               </span>
             </div>
-            <p className="text-xl text-gray-600 font-ThicccboiRegular text-center">
+            <p className="text-xl text-gray-600 font-ThicccboiRegular  text-center">
               Software Innovations
             </p>
           </div>

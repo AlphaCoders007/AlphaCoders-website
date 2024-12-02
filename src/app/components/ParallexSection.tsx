@@ -10,15 +10,15 @@ gsap.registerPlugin(ScrollTrigger);
 
 // Sample high-resolution images
 const teamMembers = [
-  { img: "/image1.jpg" },
+  { img: "/dev0.jpeg" },
   { img: "/dev3.jpg" },
   { img: "/dev1.jpg" },
   { img: "/ogdev.jpg" },
-  { img: "/image1.jpg" },
+  { img: "/dev0.jpeg" },
   { img: "/dev3.jpg" },
   { img: "/dev1.jpg" },
   { img: "/ogdev.jpg" },
-  { img: "/image1.jpg" },
+  { img: "/dev0.jpeg" },
   { img: "/dev3.jpg" },
   { img: "/dev1.jpg" },
   { img: "/ogdev.jpg" },
@@ -33,7 +33,7 @@ const ReviewCard = ({ img, text }: ReviewCardProps) => {
   return (
     <div className="relative flex flex-col items-center justify-center">
       {text ? (
-        <div className="text-5xl md:text-8xl font-ThicccboiRegular text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500  hidden md:block space-x-6">
+        <div className="text-5xl md:text-8xl font-ThicccboiRegular text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 hidden md:block space-x-6">
           {text}
         </div>
       ) : (
@@ -61,6 +61,7 @@ export function ParallexSection() {
     const ctx = gsap.context(() => {
       const mm = gsap.matchMedia();
 
+      // For desktop screens (min-width: 768px)
       mm.add("(min-width: 768px)", () => {
         gsap.fromTo(
           firstRowRef.current,
@@ -104,6 +105,51 @@ export function ParallexSection() {
           }
         );
       });
+
+      // For mobile screens (max-width: 767px)
+      mm.add("(max-width: 767px)", () => {
+        gsap.fromTo(
+          firstRowRef.current,
+          { x: -50 },
+          {
+            x: 0,
+            scrollTrigger: {
+              trigger: firstRowRef.current,
+              start: "top 80%",
+              end: "bottom top",
+              scrub: true,
+            },
+          }
+        );
+
+        gsap.fromTo(
+          secondRowRef.current,
+          { x: 50 },
+          {
+            x: 0,
+            scrollTrigger: {
+              trigger: secondRowRef.current,
+              start: "top 80%",
+              end: "bottom top",
+              scrub: true,
+            },
+          }
+        );
+
+        gsap.fromTo(
+          thirdRowRef.current,
+          { x: -50 },
+          {
+            x: 0,
+            scrollTrigger: {
+              trigger: thirdRowRef.current,
+              start: "top 80%",
+              end: "bottom top",
+              scrub: true,
+            },
+          }
+        );
+      });
     }, sectionRef);
 
     return () => ctx.revert();
@@ -136,7 +182,7 @@ export function ParallexSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex flex-col items-center gap-12 py-16 md:py-24 overflow-hidden bg-gray-50"
+      className="relative flex flex-col items-center gap-4 py-16 md:py-24 overflow-hidden bg-gray-50"
     >
       {/* Mobile-only heading */}
       <h2 className="md:hidden text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 mb-6">
@@ -146,7 +192,7 @@ export function ParallexSection() {
       {/* First Row */}
       <div
         ref={firstRowRef}
-        className="flex items-center justify-start w-full space-x-6 overflow-x-auto pb-6 px-6 md:justify-center md:space-x-12 md:overflow-x-visible"
+        className="flex items-center justify-start w-full gap-2 overflow-x-auto pb-6 px-6 md:justify-center md:space-x-12 md:overflow-x-visible"
       >
         {firstRow.map((item, index) => (
           <ReviewCard key={index} {...item} />
@@ -156,7 +202,7 @@ export function ParallexSection() {
       {/* Second Row */}
       <div
         ref={secondRowRef}
-        className="flex items-center justify-start w-full space-x-6 overflow-x-auto pb-6 px-6 md:justify-center md:space-x-12 md:overflow-x-visible"
+        className="flex items-center justify-start w-full gap-2 overflow-x-auto pb-6 px-6 md:justify-center md:space-x-12 md:overflow-x-visible"
       >
         {secondRow.map((item, index) => (
           <ReviewCard key={index} {...item} />
@@ -166,7 +212,7 @@ export function ParallexSection() {
       {/* Third Row */}
       <div
         ref={thirdRowRef}
-        className="flex items-center justify-start w-full space-x-6 overflow-x-auto pb-6 px-6 md:justify-center md:space-x-12 md:overflow-x-visible"
+        className="flex items-center justify-start w-full gap-2 overflow-x-auto pb-6 px-6 md:justify-center md:space-x-12 md:overflow-x-visible"
       >
         {thirdRow.map((item, index) => (
           <ReviewCard key={index} {...item} />
@@ -174,4 +220,4 @@ export function ParallexSection() {
       </div>
     </section>
   );
-}  
+}

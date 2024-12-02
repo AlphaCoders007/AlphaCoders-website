@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect,useState , useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Letgetstarted from "./ui/Letgetstarted";
@@ -9,7 +9,8 @@ import NavBarSection from "./NavbarSection";
 const Hero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
 
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false); 
+
 
   gsap.registerPlugin(ScrollTrigger);
 
@@ -21,8 +22,7 @@ const Hero: React.FC = () => {
         trigger: heroElement,
         start: "top top",
         end: "bottom top",
-        pin: true, // Keeps the hero section fixed while button expands
-        pinSpacing: false, // Prevents additional spacing after unpinning
+        
       });
     }
   }, []);
@@ -34,9 +34,8 @@ const Hero: React.FC = () => {
         ref={heroRef}
         className="relative h-[100vh] w-[100vw] overflow-hidden"
       >
-        
         <NavBarSection />
-        
+
         {/* Background Video for larger screens */}
         <div className="absolute inset-0 sm:block">
           <video
@@ -70,20 +69,14 @@ const Hero: React.FC = () => {
                 Future more Exciting.
               </span>
             </h1>
-            <h2 className="text-left font-montserrat text-[#797979]  text-lg ">
+            <h2 className="text-left font-ThicccboiLight font-thin text-lg ">
               Websites, Mobile App, UI/UX &amp; Branding
             </h2>
           </div>
         </div>
+      {/* <Letgetstarted isExpanded={isExpanded} setIsExpanded={setIsExpanded} /> */}
 
-        {/* Letgetstarted Component */}
-        <Letgetstarted isExpanded={isExpanded} setIsExpanded={setIsExpanded} />
-      </section>
-
-      {/* Next Section */}
-      <section className="h-[100vh] w-full bg-gray-200 flex items-center justify-center">
-        
-      </section>
+      </section>  
     </>
   );
 };

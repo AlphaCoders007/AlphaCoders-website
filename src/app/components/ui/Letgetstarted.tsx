@@ -27,6 +27,7 @@ const Letgetstarted: React.FC<ExpandableButtonProps> = ({
           start: "top top",
           end: "bottom top",
           scrub: true,
+
           onUpdate: (self) => {
             const progress = self.progress;
 
@@ -52,13 +53,13 @@ const Letgetstarted: React.FC<ExpandableButtonProps> = ({
         {
           width: "150px",
           height: "50px",
-          borderRadius: "30px", // Rounded corners initially
+          borderRadius: "30px", // Initially rounded corners
           padding: "10px 20px", // Padding for better button size
         },
         {
           width: "100vw",
           height: "100vh",
-          borderRadius: "30%", // Adjust border-radius when expanded
+          borderRadius: "50%", // Adjust border-radius to make it a circle when expanded
           duration: 1.5,
           ease: "power2.inOut",
         }
@@ -73,7 +74,7 @@ const Letgetstarted: React.FC<ExpandableButtonProps> = ({
       gsap.to(buttonRef.current, {
         width: "100vw", // Expand width
         height: "100vh", // Expand height
-        borderRadius: "30%", // Adjust the border-radius when expanded
+        borderRadius: "50%", // Adjust the border-radius to a circle when expanded
         duration: 1.5,
         ease: "power2.inOut",
       });
@@ -86,25 +87,25 @@ const Letgetstarted: React.FC<ExpandableButtonProps> = ({
   return (
     <div
       ref={buttonRef}
-      className="fixed bottom-10 left-1/2 transform -translate-x-1/2 flex items-center justify-center z-10"
+      className="fixed bottom-10 left-1/2 transform -translate-x-1/2 flex items-center justify-center z-10 cursor-pointer"
       onClick={handleClick} // Trigger expansion on click
     >
-      {/* Video is shown immediately */}
+      {/* Video is shown immediately and stays behind */}
       <video
         src="video2.mp4"
         autoPlay
         loop
         muted
-        className="absolute w-full h-full object-cover transition-opacity duration-300"
+        className="absolute w-full h-full object-cover transition-opacity duration-300 z-0" // Ensure video is behind the button
         style={{
-          zIndex: 1,
+          zIndex: 0, // Keep video behind the button
           pointerEvents: "none",
         }}
       />
 
       {/* Text appears based on scroll progress */}
       {showText && (
-        <span className="text-white font-medium text-lg flex items-center justify-center whitespace-nowrap transition-opacity duration-500 ease-out px-8 py-4 rounded-full bg-gradient-to-r from-[#bf00ff] to-[#ff5633] z-20 shadow-xl transform hover:scale-105 cursor-pointer">
+        <span className="text-white font-medium text-lg flex items-center justify-center whitespace-nowrap transition-opacity duration-500 ease-out px-8 py-4 rounded-full z-10">
           Let’s Get Started
         </span>
       )}
