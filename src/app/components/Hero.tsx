@@ -59,22 +59,26 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Text Content */}
-        <div className="relative flex h-full flex-col justify-start mt-[140px]">
-          <div className="flex w-full origin-center flex-col items-center gap-4 md:items-start md:pl-[40%]">
-            <h1 className="text-center text-xl md:text-left">
-              <span className="font-ThicccboiLight font-thin text-[#797979] lg:text-7xl">
-                This is a Change, to a
-              </span>
-              <br />
-              <span className="font-medium bg-gradient-to-r from-[#bf00ff] to-[#ff5633] bg-clip-text text-transparent font-ThicccboiRegular lg:text-7xl ">
-                Future more Exciting.
-              </span>
-            </h1>
-            <h2 className="text-left font-montserrat text-[#797979]  text-lg ">
-              Websites, Mobile App, UI/UX &amp; Branding
-            </h2>
-          </div>
-        </div>
+    <div className="relative flex h-full flex-col justify-start mt-[140px] md:mt-[140px]">
+     <div className="flex w-full origin-center flex-col items-center gap-4 md:items-start md:pl-[40%] mt-56 md:mt-0">
+    <h1 className="text-center md:text-left">
+    <span 
+  className="font-ThicccboiRegular font-extralight text-[#797979] text-4xl sm:text-5xl lg:text-7xl">
+  This is a Change, to a
+</span>
+
+      <br />
+      <span className="font-medium bg-gradient-to-r from-[#bf00ff] to-[#ff5633] bg-clip-text text-transparent font-ThicccboiRegular text-3xl sm:text-4xl lg:text-7xl">
+        Future more Exciting.
+      </span>
+    </h1>
+   <h2 className="text-center md:text-left font-montserrat text-[#797979] text-base md:text-lg">
+  Websites, Mobile App, UI/UX &amp; Branding
+</h2>
+
+  </div>
+</div>
+
 
         {/* Letgetstarted Component */}
         <Letgetstarted isExpanded={isExpanded} setIsExpanded={setIsExpanded} />
