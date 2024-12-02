@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=ThicccBoi:wght@100;400;700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Hachi+Maru+Pop&family=Parkinsans:wght@300..800&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,5 +10,5 @@
 
 
 body {
-  font-family: 'ThicccBoi', sans-serif;
+  font-family: '', sans-serif;
 }

@@ -1,4 +1,5 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import Hero from "./components/Hero";
 import { Whatwedo } from "./components/Whatwedo";
 import ContactSection from "./components/ContactSection";
@@ -8,13 +9,11 @@ import VerticalStack from "./components/VerticalStack";
 
 function Page() {
 
-  
   return (
     <div>
-      
       <Hero />
       <Whatwedo />
-      <VerticalStack/>
+      <VerticalStack />
       <ParallexSection />
       <ContactSection />
     </div>

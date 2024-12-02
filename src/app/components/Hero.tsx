@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect,useState , useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Letgetstarted from "./ui/Letgetstarted";
@@ -9,7 +9,8 @@ import NavBarSection from "./NavbarSection";
 const Hero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
 
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false); 
+
 
   gsap.registerPlugin(ScrollTrigger);
 
@@ -21,8 +22,7 @@ const Hero: React.FC = () => {
         trigger: heroElement,
         start: "top top",
         end: "bottom top",
-        pin: true, // Keeps the hero section fixed while button expands
-        pinSpacing: false, // Prevents additional spacing after unpinning
+        
       });
     }
   }, []);
@@ -34,9 +34,8 @@ const Hero: React.FC = () => {
         ref={heroRef}
         className="relative h-[100vh] w-[100vw] overflow-hidden"
       >
-        
         <NavBarSection />
-        
+
         {/* Background Video for larger screens */}
         <div className="absolute inset-0 sm:block">
           <video
@@ -59,6 +58,7 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Text Content */}
+<<<<<<< HEAD
     <div className="relative flex h-full flex-col justify-start mt-[140px] md:mt-[140px]">
      <div className="flex w-full origin-center flex-col items-center gap-4 md:items-start md:pl-[40%] mt-56 md:mt-0">
     <h1 className="text-center md:text-left">
@@ -79,15 +79,27 @@ const Hero: React.FC = () => {
   </div>
 </div>
 
+=======
+        <div className="relative flex h-full flex-col justify-start mt-[140px]">
+          <div className="flex w-full origin-center flex-col items-center gap-4 md:items-start md:pl-[40%]">
+            <h1 className="text-center text-xl md:text-left">
+              <span className="font-ThicccboiLight font-thin text-[#797979] lg:text-7xl">
+                This is a Change, to a
+              </span>
+              <br />
+              <span className="font-medium bg-gradient-to-r from-[#bf00ff] to-[#ff5633] bg-clip-text text-transparent font-ThicccboiRegular lg:text-7xl ">
+                Future more Exciting.
+              </span>
+            </h1>
+            <h2 className="text-left font-ThicccboiLight font-thin text-lg ">
+              Websites, Mobile App, UI/UX &amp; Branding
+            </h2>
+          </div>
+        </div>
+      {/* <Letgetstarted isExpanded={isExpanded} setIsExpanded={setIsExpanded} /> */}
+>>>>>>> dev1
 
-        {/* Letgetstarted Component */}
-        <Letgetstarted isExpanded={isExpanded} setIsExpanded={setIsExpanded} />
-      </section>
-
-      {/* Next Section */}
-      <section className="h-[100vh] w-full bg-gray-200 flex items-center justify-center">
-        
-      </section>
+      </section>  
     </>
   );
 };

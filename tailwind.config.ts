@@ -26,6 +26,10 @@ export default {
   ],
   theme: {
     extend: {
+
+        fontFamily: {
+          wide: ["Audiowide"]
+        },
       animation: {
         circle: 'moveCircle 10s linear infinite',
         aurora: "aurora 10s ease-in-out infinite", // Aurora animation for light mode
