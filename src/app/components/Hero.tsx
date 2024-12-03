@@ -85,6 +85,9 @@ const Hero: React.FC = () => {
             </h2>
           </div>
           {/* <Letgetstarted isExpanded={isExpanded} setIsExpanded={setIsExpanded} /> */}
+          <div>
+            
+          </div>
         </div>
       </section>
 
