@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React, { useEffect, useState, useRef } from "react";
 import { gsap } from "gsap";
@@ -7,7 +7,7 @@ import NavBarSection from "./NavbarSection";
 
 const Hero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
-  const textRef = useRef<HTMLDivElement>(null);  // Ref for both h1 and h2 wrapper
+  const textRef = useRef<HTMLDivElement>(null); // Ref for both h1 and h2 wrapper
 
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -45,7 +45,7 @@ const Hero: React.FC = () => {
         ref={heroRef}
         className="relative h-[100vh] w-[100vw] overflow-hidden"
       >
-        <NavBarSection    />
+        <NavBarSection />
 
         {/* Background Video for larger screens */}
         <div className="absolute inset-0 sm:block">
@@ -69,24 +69,59 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Text Content */}
-        <div ref={textRef} className="relative flex h-full flex-col justify-start mt-[140px]">
-          <div className="flex w-full origin-center py-20 flex-col items-center gap-4 md:items-start md:pl-[40%]">
-            <h1 className="text-center  text-3xl md:text-left">
-              <span className="font-ThicccboiLight font-thin text-[#797979] lg:text-7xl">
+        <div
+          ref={textRef}
+          className="relative flex h-full flex-col justify-start mt-[140px]"
+        >
+          <div className="flex w-full origin-center py-[1.8%] flex-col items-center gap-4 md:items-start md:pl-[40%]">
+            <h1 className="text-center text-3xl md:text-left">
+              <span className="font-thicccboi font-light text-[#797979] lg:text-7xl block">
                 This is a Change, to a
               </span>
-              <br />
-              <span className="font-medium bg-gradient-to-r from-[#bf00ff] to-[#ff5633] bg-clip-text text-transparent font-ThicccboiRegular lg:text-7xl ">
+              <span className="font-thicccboi font-bold bg-gradient-to-r from-[#bf00ff] to-[#ff5633] bg-clip-text text-transparent lg:text-7xl block mt-1">
                 Future more Exciting.
               </span>
             </h1>
-            <h2 className="text-left text-sm font-ThicccboiLight font-thin ">
+            <h2 className="text-left py-4 text-xl  font-thin ">
               Websites, Mobile App, UI/UX &amp; Branding
             </h2>
           </div>
           {/* <Letgetstarted isExpanded={isExpanded} setIsExpanded={setIsExpanded} /> */}
-          <div>
-            
+          <div className="opacity-0 will-change-[opacity,transform] transform translate-y-10">
+            <div className="relative h-[100svh]">
+              <div className="sticky top-0 h-[100svh] w-screen">
+                {/* Gradient Overlay */}
+                <div className="absolute inset-x-0 top-[-5rem] h-20 w-full bg-gradient-to-t from-[#f9f9f9] to-transparent"></div>
+
+                {/* Content Wrapper */}
+                <div className="absolute top-[-26px] flex h-full w-screen justify-center">
+                  <div className="relative h-auto origin-top overflow-hidden rounded-full">
+                    {/* Text Layer */}
+                    <div className="absolute inset-0 flex items-center justify-center z-10">
+                      <div className="opacity-100">
+                        <span className="cursor-pointer text-center font-Montserrat text-sm">
+                          Let's Get Started!
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Video Background */}
+                    <div className="opacity-20 w-52 h-16">
+                      <div id="portfolio" className="h-full w-full">
+                        <video
+                          src="/video/portfolio-demo.mp4"
+                          className="w-full h-full"
+                          preload="auto"
+                          autoPlay
+                          muted
+                          loop
+                        ></video>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -110,7 +145,7 @@ const Hero: React.FC = () => {
           }
 
           .bg-blur-wrapper::before {
-            content: '';
+            content: "";
             position: absolute;
             top: 0;
             left: 0;
@@ -126,4 +161,3 @@ const Hero: React.FC = () => {
 };
 
 export default Hero;
-

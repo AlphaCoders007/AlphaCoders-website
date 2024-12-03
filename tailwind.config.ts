@@ -4,7 +4,7 @@ const { default: flattenColorPalette } = require("tailwindcss/lib/util/flattenCo
 function addVariablesForColors({ addBase, theme }: any) {
   const allColors = flattenColorPalette(theme("colors"));
   const newVars = Object.fromEntries(
-    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, String(val)]) // Ensure all values are strings
   );
 
   addBase({
@@ -12,13 +12,15 @@ function addVariablesForColors({ addBase, theme }: any) {
       ...newVars,
       "--background-light": theme("colors.background.light"),
       "--foreground-light": theme("colors.foreground.light"),
-      "--aurora": "repeating-linear-gradient(100deg, #3b82f6_10%, #8b5cf6_20%, #3b82f6_30%)", // Light Aurora Gradient
+      "--aurora":
+        "repeating-linear-gradient(100deg, #3b82f6_10%, #8b5cf6_20%, #3b82f6_30%)",
     },
   });
 }
 
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 export default {
-  
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -26,12 +28,20 @@ export default {
   ],
   theme: {
     extend: {
-        fontFamily: {
-          wide: ["Audiowide"]
-        },
+      fontFamily: {
+        thicccboi: ["Thicccboi", ...defaultTheme.fontFamily.sans],
+        wide: ["Audiowide"],
+        Orbitron: ["Orbitron"],
+      },
+      fontWeight: {
+        light: "100",
+        normal: "400",
+        medium: "500",
+        bold: "600",
+      },
       animation: {
-        circle: 'moveCircle 10s linear infinite',
-        aurora: "aurora 10s ease-in-out infinite", // Aurora animation for light mode
+        circle: "moveCircle 10s linear infinite",
+        aurora: "aurora 10s ease-in-out infinite",
         marquee: "marquee var(--duration) linear infinite",
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
       },
@@ -41,8 +51,8 @@ export default {
           "50%": { backgroundPosition: "60% 40%" },
         },
         moveCircle: {
-          '0%': { transform: 'rotate(0deg)' },
-          '100%': { transform: 'rotate(360deg)' },
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
         },
         marquee: {
           from: { transform: "translateX(0)" },
@@ -55,10 +65,10 @@ export default {
       },
       colors: {
         background: {
-          light: "#ffffff", // White background for light mode
+          light: "#ffffff", // Ensure this is a string
         },
         foreground: {
-          light: "#000000", // Black text for light mode
+          light: "#000000", // Ensure this is a string
         },
       },
     },
