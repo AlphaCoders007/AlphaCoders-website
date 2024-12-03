@@ -26,7 +26,6 @@ export default {
   ],
   theme: {
     extend: {
-
         fontFamily: {
           wide: ["Audiowide"]
         },

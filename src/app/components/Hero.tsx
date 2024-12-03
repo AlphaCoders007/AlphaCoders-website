@@ -124,4 +124,3 @@ const Hero: React.FC = () => {
 export default Hero;
 
 {/* <Letgetstarted isExpanded={isExpanded} setIsExpanded={setIsExpanded} /> */}
-
