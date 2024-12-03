@@ -70,8 +70,11 @@ interface LineProps {
 }
 
 function Line({ text, progress, range, fontSize, textColor, fontStyle }: LineProps) {
-  const opacity = useTransform(progress, range, [0, 1])
-  const y = useTransform(progress, range, [20, 0])
+  // Speed up the text reveal by modifying the range. 
+  const modifiedRange = [range[0] * 0.6, range[1] * 0.8]; // Reduce the range for faster animation
+
+  const opacity = useTransform(progress, modifiedRange, [0, 1])
+  const y = useTransform(progress, modifiedRange, [20, 0]) // Adjusting Y transform to make text appear quicker
 
   return (
     <motion.span
@@ -80,7 +83,7 @@ function Line({ text, progress, range, fontSize, textColor, fontStyle }: LinePro
         "mx-1",
         `text-${fontSize}`, // Dynamically apply font size
         textColor,
-        fontStyle, // Use the font style provided
+        fontStyle, 
         "tracking-wide" // Add consistent spacing
       )}
     >
