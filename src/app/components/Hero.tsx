@@ -84,6 +84,7 @@ const Hero: React.FC = () => {
               Websites, Mobile App, UI/UX &amp; Branding
             </h2>
           </div>
+          {/* <Letgetstarted isExpanded={isExpanded} setIsExpanded={setIsExpanded} /> */}
         </div>
       </section>
 
@@ -123,4 +124,3 @@ const Hero: React.FC = () => {
 
 export default Hero;
 
-{/* <Letgetstarted isExpanded={isExpanded} setIsExpanded={setIsExpanded} /> */}
