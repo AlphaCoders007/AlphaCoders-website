@@ -13,15 +13,15 @@ const teamMembers = [
   { img: "/dev0.jpeg" },
   { img: "/dev3.jpg" },
   { img: "/dev1.jpg" },
-  { img: "/ogdev.jpg" },
+  { img: "/ogdev2.jpg" },
+  { img: "/dev0.jpeg" },
+  { img: "/dev3.jpg" },
+  { img: "/ogdev2.jpg" },
+  { img: "/dev1.jpg" },
+  { img: "/ogdev2.jpg" },
   { img: "/dev0.jpeg" },
   { img: "/dev3.jpg" },
   { img: "/dev1.jpg" },
-  { img: "/ogdev.jpg" },
-  { img: "/dev0.jpeg" },
-  { img: "/dev3.jpg" },
-  { img: "/dev1.jpg" },
-  { img: "/ogdev.jpg" },
 ];
 
 interface ReviewCardProps {

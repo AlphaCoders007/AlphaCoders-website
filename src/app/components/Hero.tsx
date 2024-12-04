@@ -7,7 +7,7 @@ import NavBarSection from "./NavbarSection";
 
 const Hero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
-  const textRef = useRef<HTMLDivElement>(null); // Ref for both h1 and h2 wrapper
+  const textRef = useRef<HTMLDivElement>(null);
 
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -61,6 +61,8 @@ const Hero: React.FC = () => {
 
         {/* Background Image for smaller screens */}
         <div className="absolute inset-0 sm:hidden bg-blur">
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-overlay"></div>
           <img
             alt="Home"
             src="home-sm.webp"
@@ -71,10 +73,10 @@ const Hero: React.FC = () => {
         {/* Text Content */}
         <div
           ref={textRef}
-          className="relative flex h-full flex-col justify-start mt-[140px]"
+          className="relative flex h-full flex-col justify-start mt-[140px] z-10"
         >
-          <div className="flex w-full origin-center py-[1.8%] flex-col items-center gap-4 md:items-start md:pl-[40%]">
-            <h1 className="text-center text-3xl md:text-left">
+          <div className="flex w-full origin-center py-[14%] sm:p-[4%] flex-col items-center gap-2 md:items-start md:pl-[40%]">
+            <h1 className="text-center text-3xl  md:text-left">
               <span className="font-thicccboi font-light text-[#797979] lg:text-7xl block">
                 This is a Change, to a
               </span>
@@ -82,78 +84,49 @@ const Hero: React.FC = () => {
                 Future more Exciting.
               </span>
             </h1>
-            <h2 className="text-left py-4 text-xl  font-thin ">
+            <h2 className="text-left font-Montserrat text-sm sm:text-xl  font-thin">
               Websites, Mobile App, UI/UX &amp; Branding
             </h2>
-          </div>
-          {/* <Letgetstarted isExpanded={isExpanded} setIsExpanded={setIsExpanded} /> */}
-          <div className="opacity-0 will-change-[opacity,transform] transform translate-y-10">
-            <div className="relative h-[100svh]">
-              <div className="sticky top-0 h-[100svh] w-screen">
-                {/* Gradient Overlay */}
-                <div className="absolute inset-x-0 top-[-5rem] h-20 w-full bg-gradient-to-t from-[#f9f9f9] to-transparent"></div>
-
-                {/* Content Wrapper */}
-                <div className="absolute top-[-26px] flex h-full w-screen justify-center">
-                  <div className="relative h-auto origin-top overflow-hidden rounded-full">
-                    {/* Text Layer */}
-                    <div className="absolute inset-0 flex items-center justify-center z-10">
-                      <div className="opacity-100">
-                        <span className="cursor-pointer text-center font-Montserrat text-sm">
-                          Let's Get Started!
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Video Background */}
-                    <div className="opacity-20 w-52 h-16">
-                      <div id="portfolio" className="h-full w-full">
-                        <video
-                          src="/video/portfolio-demo.mp4"
-                          className="w-full h-full"
-                          preload="auto"
-                          autoPlay
-                          muted
-                          loop
-                        ></video>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
       <style jsx>{`
-        /* Blur effect with whitish overlay for small screens */
         @media (max-width: 640px) {
           .bg-blur-wrapper {
             position: relative;
-          }
-
-          .bg-blur img {
-            filter: blur(4px);
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
             width: 100%;
             height: 100%;
           }
 
-          .bg-blur-wrapper::before {
-            content: "";
+          .bg-blur-wrapper img {
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(255, 255, 255, 0.4); /* Whitish overlay */
-            z-index: 1;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0; /* Background image is at the lowest layer */
           }
+
+          .bg-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(
+              255,
+              255,
+              255,
+              0.5
+            ); /* Semi-transparent white overlay */
+            z-index: 1; /* Overlay is above the background but below the text */
+          }
+        }
+
+        .relative {
+          z-index: 10; /* Ensure text appears above the overlay */
         }
       `}</style>
     </>
