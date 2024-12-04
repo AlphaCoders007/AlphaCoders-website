@@ -1,116 +1,56 @@
-import React, { useEffect, useRef, useState } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+'use client'
 
-interface ExpandableButtonProps {
-  isExpanded: boolean;
-  setIsExpanded: (expanded: boolean) => void;
-}
+import React, { useEffect, useState } from "react"
 
-const Letgetstarted: React.FC<ExpandableButtonProps> = ({
-  isExpanded,
-  setIsExpanded,
-}) => {
-  const buttonRef = useRef<HTMLDivElement>(null);
-  const [showText, setShowText] = useState(true); // Show text by default
+const LetsGetStartedSection: React.FC = () => {
+  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    const button = buttonRef.current;
-
-    if (button) {
-      // GSAP timeline to handle button expansion and collapse
-      const timeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: "#hero-section",
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
-
-          onUpdate: (self) => {
-            const progress = self.progress;
-
-            // Hide the text once scroll progress exceeds 10%
-            if (progress >= 0.1) {
-              setShowText(false);
-            }
-
-            // Show the text if scroll progress is less than 10%
-            if (progress < 0.1) {
-              setShowText(true);
-            }
-
-            // Update the expansion state based on scroll progress
-            setIsExpanded(progress === 1); // Collapse when reaching the top again
-          },
-        },
-      });
-
-      // GSAP animation for button expansion/collapse
-      timeline.fromTo(
-        button,
-        {
-          width: "150px",
-          height: "50px",
-          borderRadius: "30px", // Initially rounded corners
-          padding: "10px 20px", // Padding for better button size
-        },
-        {
-          width: "100vw",
-          height: "100vh",
-          borderRadius: "50%", // Adjust border-radius to make it a circle when expanded
-          duration: 1.5,
-          ease: "power2.inOut",
-        }
-      );
-    }
-  }, [setIsExpanded]);
-
-  // Handle the click to expand the button
-  const handleClick = () => {
-    if (buttonRef.current) {
-      // Trigger the expansion animation on click
-      gsap.to(buttonRef.current, {
-        width: "100vw", // Expand width
-        height: "100vh", // Expand height
-        borderRadius: "50%", // Adjust the border-radius to a circle when expanded
-        duration: 1.5,
-        ease: "power2.inOut",
-      });
-
-      setIsExpanded(true); // Update state to reflect expansion
-      setShowText(false); // Hide text immediately after the click
-    }
-  };
+    const timer = setTimeout(() => setIsVisible(true), 100)
+    return () => clearTimeout(timer)
+  }, [])
 
   return (
     <div
-      ref={buttonRef}
-      className="fixed bottom-10 left-1/2 transform -translate-x-1/2 flex items-center justify-center z-10 cursor-pointer"
-      onClick={handleClick} // Trigger expansion on click
+      className={`transition-all duration-500 ease-in-out ${
+        isVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-10 scale-95"
+      }`}
     >
-      {/* Video is shown immediately and stays behind */}
-      <video
-        src="video2.mp4"
-        autoPlay
-        loop
-        muted
-        className="absolute w-full h-full object-cover transition-opacity duration-300 z-0" // Ensure video is behind the button
-        style={{
-          zIndex: 0, // Keep video behind the button
-          pointerEvents: "none",
-        }}
-      />
+      <div className="relative h-16">
+        <div className="sticky top-0 h-16 w-64">
+          {/* Gradient Overlay */}
+          <div className="absolute inset-x-0 top-0 h-4 w-full bg-gradient-to-t from-[#f9f9f9] to-transparent"></div>
 
-      {/* Text appears based on scroll progress */}
-      {showText && (
-        <span className="text-white font-medium text-lg flex items-center justify-center whitespace-nowrap transition-opacity duration-500 ease-out px-8 py-4 rounded-full z-10">
-          Let’s Get Started
-        </span>
-      )}
+          {/* Content Wrapper */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="relative h-16 w-64 overflow-hidden rounded-full bg-black/20">
+              {/* Text Layer */}
+              <div className="absolute inset-0 flex items-center justify-center z-10">
+                <button className="text-center font-sans text-sm text-white hover:underline focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+                  Let's Get Started!
+                </button>
+              </div>
+
+              {/* Video Background */}
+              <div className="absolute inset-0 opacity-20">
+                <video
+                  src="/video2.mp4"
+                  className="h-full w-full object-cover"
+                  preload="auto"
+                  autoPlay
+                  muted
+                  loop
+                  aria-hidden="true"
+                >
+                  <track kind="captions" />
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  );
-};
+  )
+}
 
-export default Letgetstarted;
+export default LetsGetStartedSection
