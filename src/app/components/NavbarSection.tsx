@@ -9,8 +9,8 @@ import Link from "next/link";
 function NavBarSection() {
 
   return (
-    <header className="relative ">
-      <div className="fixed top-2 left-[18%] sm:left-[40%] z-30">
+    <header className="relative">
+      <div className="fixed top-2 left-1/2 right-1/2 z-30">
       <div className="flex flex-col justify-center items-center py-5 px-6">
         <Link href="/">
           <div className="flex flex-col items-center">
@@ -26,7 +26,6 @@ function NavBarSection() {
         </Link>
       </div>
       </div>
-     
     </header>
   );
 }

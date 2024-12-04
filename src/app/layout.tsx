@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import FloatingMenu from "./components/FloatingMenu";
 import NavBarSection from "./components/NavbarSection";
 import ConnectSection from "./components/ConnectSection";
 
@@ -17,8 +18,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-background text-foreground">
-        <NavBarSection />
-      
+        <NavBarSection/>
+        <FloatingMenu/>
           {children}
 
       <ConnectSection />
