@@ -43,7 +43,6 @@ const Hero: React.FC = () => {
   ref={heroRef}
   className="relative h-[100vh] w-[100vw] overflow-hidden"
 >
-  <NavBarSection />
 
   {/* Background Video for larger screens */}
   <div className="absolute inset-0 sm:block">
