@@ -5,7 +5,10 @@ import StickyComponent from './ui/StickyComponent'; // Import your existing comp
 import { cards } from '../data/StackCardsData';
 const VerticalStack: React.FC = () => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col  ">
+      
+      
+      
       {/* Add more StickyComponent instances as needed */}
       {
         cards.map((card,i) =>(

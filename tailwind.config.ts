@@ -57,7 +57,7 @@ export default {
         '4xl': ['2.25rem', '2.5rem'],     // 36px, line-height 40px
         '5xl': ['3rem', '1'],             // 48px, line-height 1
         '6xl': ['3.75rem', '1'],          // 60px, line-height 1
-        '7xl': ['4.5rem', '1'],           // 72px, line-height 1
+        '7xl': ['clamp(1.56rem,.468rem + 4.48vw,4.5rem)', '5rem'],           // 72px, line-height 1
         '8xl': ['6rem', '1'],             // 96px, line-height 1
         '9xl': ['8rem', '1'],             // 128px, line-height 1
       },

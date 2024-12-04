@@ -48,7 +48,9 @@ const ConnectSection: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex h-full w-full flex-col items-end justify-end bg-white">
+    <footer className="relative">
+      <div className="fixed bottom-0  w-full h-full">
+      <div className="flex h-full w-full flex-col items-end justify-end bg-background-light">
       <div className="max-container mx-auto px-[1.5rem] md:px-[5rem]">
         <div className="flex w-full items-center justify-between gap-[1rem] md:gap-[4rem] pt-[0rem] md:pt-[12rem]">
           {/* Header Section */}
@@ -367,6 +369,10 @@ const ConnectSection: React.FC = () => {
     
     </div>
     </div>
+
+      </div>
+    
+    </footer>
   );
 };
 

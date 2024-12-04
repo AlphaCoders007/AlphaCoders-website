@@ -38,59 +38,61 @@ const Hero: React.FC = () => {
 
   return (
     <>
-     <section
-  id="hero-section"
-  ref={heroRef}
-  className="relative h-[100vh] w-[100vw] overflow-hidden"
->
-  <NavBarSection />
+      <section
+        id="hero-section"
+        ref={heroRef}
+        className=" relative z-10 h-[100vh] w-[100vw] overflow-hidden"
+      >
+        {/* Background Video for larger screens */}
+        <div className="absolute inset-0 sm:block">
+          <video
+            src="home.mp4"
+            className="w-full h-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+          />
+        </div>
 
-  {/* Background Video for larger screens */}
-  <div className="absolute inset-0 sm:block">
-    <video
-      src="home.mp4"
-      className="w-full h-full object-cover"
-      autoPlay
-      muted
-      loop
-      playsInline
-    />
-  </div>
+        {/* Background Image for smaller screens */}
+        <div className="absolute inset-0 sm:hidden bg-blur">
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-overlay"></div>
+          <img
+            alt="Home"
+            src="home-sm.webp"
+            className="w-full h-full object-cover"
+          />
+        </div>
 
-  {/* Background Image for smaller screens */}
-  <div className="absolute inset-0 sm:hidden bg-blur">
-    {/* Overlay */}
-    <div className="absolute inset-0 bg-overlay"></div>
-    <img
-      alt="Home"
-      src="home-sm.webp"
-      className="w-full h-full object-cover"
-    />
-  </div>
+        {/* Text Content */}
+        <div
+          ref={textRef}
+          className="relative flex h-full flex-col justify-start mt-[140px] z-10"
+        >
+          <div className="main flex w-full origin-center py-[60%] sm:p-[8%] flex-col items-center gap-2 md:items-start md:pl-[40%] lg:gap-0">
+            
+            <h1 className="text-center text-3xl  md:text-left">
+              {/* first span  */}
+              <span className="font-thicccboi  font-light text-[#797979] lg:text-7xl block">
+                This is a Change, to a
+              </span>
+              {/* second span  */}
+              <span className="font-thicccboi leading-tight font-bold bg-gradient-to-r from-[#bf00ff] to-[#ff5633] bg-clip-text text-transparent lg:text-7xl  block mt-1">
+                Future more Exciting.
+              </span>
+              {/* third span  */}
+              <span className="text-left font-Montserrat py-[4%] text-sm sm:text-xl font-thin">
+                Websites, Mobile App, UI/UX &amp; Branding
+              </span>
+            </h1>
+          </div>
+        </div>
 
-  {/* Text Content */}
-  <div
-    ref={textRef}
-    className="relative flex h-full flex-col justify-start mt-[140px] z-10"
-  >
-    <div className="flex w-full origin-center py-[14%] sm:p-[4%] flex-col items-center gap-2 md:items-start md:pl-[40%] lg:gap-0">
-      <h1 className="text-center text-3xl md:text-left">
-        <span className="font-thicccboi font-light text-[#797979] lg:text-7xl block">
-          This is a Change, to a
-        </span>
-        <span className="font-thicccboi font-bold bg-gradient-to-r from-[#bf00ff] to-[#ff5633] bg-clip-text text-transparent lg:text-7xl block mt-1">
-          Future more Exciting.
-        </span>
-      </h1>
-      <h2 className="text-left font-Montserrat text-sm sm:text-xl font-thin">
-        Websites, Mobile App, UI/UX &amp; Branding
-      </h2>
-    </div>
-  </div>
-
-  {/* Positioned at the bottom center */}
-  {/* */}
-</section>
+        {/* Positioned at the bottom center */}
+        {/* */}
+      </section>
 
       <style jsx>{`
         @media (max-width: 640px) {
@@ -116,7 +118,12 @@ const Hero: React.FC = () => {
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.5); /* Semi-transparent white overlay */
+            background: rgba(
+              255,
+              255,
+              255,
+              0.5
+            ); /* Semi-transparent white overlay */
             z-index: 1; /* Overlay is above the background but below the text */
           }
         }

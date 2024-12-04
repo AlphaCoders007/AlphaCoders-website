@@ -3,9 +3,14 @@
 import React from "react";
 import Link from "next/link";
 
+
+
+
 function NavBarSection() {
+
   return (
-    <header className="sticky top-2 left-0 z-30">
+    <header className="relative ">
+      <div className="fixed top-2 left-[18%] sm:left-[40%] z-30">
       <div className="flex flex-col justify-center items-center py-5 px-6">
         <Link href="/">
           <div className="flex flex-col items-center">
@@ -20,6 +25,8 @@ function NavBarSection() {
           </div>
         </Link>
       </div>
+      </div>
+     
     </header>
   );
 }
