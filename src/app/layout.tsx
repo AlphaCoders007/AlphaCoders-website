@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 import FloatingMenu from "./components/FloatingMenu";
 import NavBarSection from "./components/NavbarSection";
+import ConnectSection from "./components/ConnectSection";
+
+
 export const metadata: Metadata = {
   title: "AlphaCoders",
   description: "Think out of the box",
@@ -18,6 +21,8 @@ export default function RootLayout({
         <NavBarSection/>
         <FloatingMenu/>
           {children}
+
+      <ConnectSection />
       </body>
     </html>
   );

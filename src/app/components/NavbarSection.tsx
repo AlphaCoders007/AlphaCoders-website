@@ -3,7 +3,11 @@
 import React from "react";
 import Link from "next/link";
 
+
+
+
 function NavBarSection() {
+
   return (
     <header className="relative">
       <div className="fixed top-2 left-1/2 right-1/2 z-30">

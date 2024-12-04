@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import CircularMovingText from "./MovingText";
+import { div } from "framer-motion/client";
 
 interface StickyComponentProps {
   imageSrc: string;
@@ -34,9 +35,9 @@ const StickyComponent: React.FC<StickyComponentProps> = ({
   }, []);
 
   return (
-    <div className="sticky top-0 flex h-screen items-start justify-center px-[1rem] md:px-[2rem]">
-      <div className="h-full origin-top pt-[7rem] pb-[2rem] w-full">
-        <div className="relative h-full overflow-hidden">
+    <div className="    sticky top-0 z-20 flex h-screen items-start justify-center px-[1rem] md:px-[2rem]">
+      <div className="  h-full origin-top pt-[7rem] pb-[2rem] w-full">
+        <div className= "  relative h-full overflow-hidden">
           <div
             className={`flex h-full w-full flex-col overflow-hidden rounded-3xl md:flex-row bg-gradient-to-b from-[#8305C9] to-[#4C0294] ${
               isEven ? "md:flex-row" : "md:flex-row-reverse"

@@ -31,7 +31,7 @@ interface ReviewCardProps {
 
 const ReviewCard = ({ img, text }: ReviewCardProps) => {
   return (
-    <div className="relative flex flex-col items-center justify-center">
+    <div className="  relative flex flex-col items-center justify-center ">
       {text ? (
         <div className="text-5xl md:text-8xl font-ThicccboiRegular text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 hidden md:block space-x-6">
           {text}
@@ -182,8 +182,9 @@ export function ParallexSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex flex-col items-center gap-4 py-16 md:py-24 overflow-hidden bg-gray-50"
+      className=" z-10 relative flex flex-col items-center gap-4 py-16 md:py-24 overflow-hidden bg-gray-50"
     >
+      <div className="">
       {/* Mobile-only heading */}
       <h2 className="md:hidden text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 mb-6">
         Meet the Crew
@@ -217,6 +218,7 @@ export function ParallexSection() {
         {thirdRow.map((item, index) => (
           <ReviewCard key={index} {...item} />
         ))}
+      </div>
       </div>
     </section>
   );

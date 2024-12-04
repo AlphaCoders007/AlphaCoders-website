@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from "react";
 import { AuroraBackground } from "./ui/aurora-background";
 import { QueueWords } from "./QueueWords";
 import StatsCard from "./StatsCard";
-import { TextRevealByLine } from "./ui/text-generate-effect";
+import { TextRevealByLine } from "./ui/textrevealbyline";
 
 const cardsTabs = [
   { count: "150+", label: "Projects Completed" },
@@ -28,7 +28,7 @@ export function Whatwedo() {
   }, [textAnimationComplete]);
 
   return (
-    <AuroraBackground className="w-full h-full pb-8"> 
+    <AuroraBackground className="w-full h-full pb-8 z-20"> 
   <motion.div
     initial={{ opacity: 0, y: 40 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -65,8 +65,8 @@ export function Whatwedo() {
         <TextRevealByLine
           text="AlphaCoders Innovations is a cutting-edge software solutions company dedicated to empowering businesses through transformative technology."
           textColor="text-white"
-          fontSize="4xl"
-          className="animated-text"
+          fontSize="4xl "
+          className="animated-text "
         />
       </motion.div>
     </motion.div>
