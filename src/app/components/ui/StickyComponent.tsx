@@ -22,17 +22,18 @@ const StickyComponent: React.FC<StickyComponentProps> = ({
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-
-      const zoomFactor = Math.max(0.5, 1 + (scrollY * 2) / 9000);
+  
+      const zoomFactor = Math.max(-1, 1.1 + scrollY / 9000); 
       setScale(zoomFactor);
     };
-
+  
     window.addEventListener("scroll", handleScroll);
-
+  
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  
 
   return (
     <div className="    sticky top-0 z-20 flex h-screen items-start justify-center px-[1rem] md:px-[2rem]">
