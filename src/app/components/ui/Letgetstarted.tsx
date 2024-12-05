@@ -1,56 +1,79 @@
-'use client'
+"use client";
 
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const LetsGetStartedSection: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false)
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
+  gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), 100)
-    return () => clearTimeout(timer)
-  }, [])
+    const buttonElement = buttonRef.current;
+
+    if (buttonElement) {
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: buttonElement,
+          start: "top bottom", // Animation starts when button enters viewport
+          end: "bottom top", // Ends when button leaves viewport
+          scrub: true, // Smooth animation on scroll
+        },
+      });
+
+      // Button animation sequence
+      timeline
+        .fromTo(
+          buttonElement,
+          {
+            width: "120px", // Initial size
+            height: "50px",
+           
+            
+          },
+          {
+            width: "50vw", // Midway size
+            height: "50vh",
+            duration: 1.5,
+            ease: "power3.inOut", // Smooth acceleration and deceleration
+          }
+        )
+        .to(buttonElement, {
+          width: "100vw", // Full-screen button
+          height: "100vh",
+          duration: 2,
+          ease: "power2.out",
+        });
+    }
+  }, []);
 
   return (
-    <div
-      className={`transition-all duration-500 ease-in-out ${
-        isVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-10 scale-95"
-      }`}
-    >
-      <div className="relative h-16">
-        <div className="sticky top-0 h-16 w-64">
-          {/* Gradient Overlay */}
-          <div className="absolute inset-x-0 top-0 h-4 w-full bg-gradient-to-t from-[#f9f9f9] to-transparent"></div>
+    <section>
+      <button
+        ref={buttonRef}
+        style={{
+          position: "absolute",
+          bottom: "5%",
+          left: "50%",
+          transform: "translateX(-50%)",
+          zIndex: 10,
+          overflow: "hidden", // Hide overflow for video
+        }}
+      >
+        {/* Video Layer */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{ width: "100%", height: "100%" }}
+        >
+          <source src="/video2.mp4" type="video/mp4" />
+        </video>
+      </button>
+    </section>
+  );
+};
 
-          {/* Content Wrapper */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="relative h-16 w-64 overflow-hidden rounded-full bg-black/20">
-              {/* Text Layer */}
-              <div className="absolute inset-0 flex items-center justify-center z-10">
-                <button className="text-center font-sans text-sm text-white hover:underline focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
-                  Let's Get Started!
-                </button>
-              </div>
-
-              {/* Video Background */}
-              <div className="absolute inset-0 opacity-20">
-                <video
-                  src="/video2.mp4"
-                  className="h-full w-full object-cover"
-                  preload="auto"
-                  autoPlay
-                  muted
-                  loop
-                  aria-hidden="true"
-                >
-                  <track kind="captions" />
-                </video>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-export default LetsGetStartedSection
+export default LetsGetStartedSection;

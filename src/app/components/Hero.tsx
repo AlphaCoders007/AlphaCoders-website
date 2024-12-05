@@ -41,7 +41,7 @@ const Hero: React.FC = () => {
       <section
         id="hero-section"
         ref={heroRef}
-        className=" relative z-10 h-[100vh] w-[100vw] overflow-hidden"
+        className="relative z-10 h-[100vh] w-[100vw] overflow-hidden"
       >
         {/* Background Video for larger screens */}
         <div className="absolute inset-0 sm:block">
@@ -69,29 +69,26 @@ const Hero: React.FC = () => {
         {/* Text Content */}
         <div
           ref={textRef}
-          className="relative flex h-full  flex-col justify-center"
+          className="relative flex h-full flex-col justify-center"
         >
-          <div className=" flex w-full pb-[3.8%]    origin-center flex-col items-center  md:items-start md:pl-[40%]">
-            <h1 className="text-center  text-3xl  md:text-left">
-              {/* first span  */}
-              <span className="font-thicccboi    font-light text-[#797979] lg:text-7xl block">
+          <div className="flex w-full pb-[3.8%] origin-center flex-col items-center md:items-start md:pl-[40%]">
+            <h1 className="text-center text-3xl md:text-left">
+              {/* First Span */}
+              <span className="font-thicccboi font-light text-[#797979] lg:text-7xl block">
                 This is a Change, to a
               </span>
-              {/* second span  */}
-              <span className="  font-thicccboi      leading-tight font-bold bg-gradient-to-r from-[#bf00ff] to-[#ff5633] bg-clip-text text-transparent lg:text-7xl  block ">
+              {/* Second Span */}
+              <span className="font-thicccboi leading-tight font-bold bg-gradient-to-r from-[#bf00ff] to-[#ff5633] bg-clip-text text-transparent lg:text-7xl block">
                 Future more Exciting.
               </span>
-              
-              
-            </h1> 
+            </h1>
             <h2 className="text-left font-Montserrat py-[3%] text-sm sm:text-xl font-thin">
-                Websites, Mobile App, UI/UX &amp; Branding
-              </h2>          
+              Websites, Mobile App, UI/UX &amp; Branding
+            </h2>
           </div>
         </div>
 
-        {/* Positioned at the bottom center */}
-        {/* */}
+       
       </section>
 
       <style jsx>{`

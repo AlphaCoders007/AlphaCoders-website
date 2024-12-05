@@ -6,12 +6,14 @@ import { ParallexSection } from "./components/ParallexSection";
 import VerticalStack from "./components/VerticalStack";
 import ConnectSection from "./components/ConnectSection";
 import NewComponent from "./components/NewComponent"; // Import your new component
+import LetsGetStartedSection from "./components/ui/Letgetstarted";
 
 function Page() {
 
   return (
     <div>
-      <Hero />
+      <Hero />      
+      <LetsGetStartedSection />       
       <Whatwedo /> 
       <div className="relative -mt-0 bg-background-light z-20">     
       <VerticalStack />  
