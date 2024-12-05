@@ -19,7 +19,7 @@ export function TextRevealByLine({
   lineHeight = 1.5,
   fontSize = "3xl", // Default font size
   textColor = "text-black dark:text-white",
-  fontStyle = "font-Inter", // Use a clean, modern font
+  fontStyle = "font-Montserrat", // Use a clean, modern font
 }: TextRevealByLineProps) {
   const targetRef = useRef<HTMLDivElement>(null)
 
@@ -34,7 +34,7 @@ export function TextRevealByLine({
     <div ref={targetRef} className={cn("relative z-0", className)}>
       <div
         className={cn(
-          "sticky top-0 mx-auto flex flex-wrap items-center bg-transparent px-4 py-20",
+          "sticky top-0 mx-auto flex flex-wrap items-center bg-transparent px-4 ",
           `leading-[${lineHeight}]`,
           "tracking-wide text-gray-800 dark:text-gray-200" // Better tracking and color
         )}
