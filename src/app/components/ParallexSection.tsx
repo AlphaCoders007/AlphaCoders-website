@@ -8,7 +8,6 @@ import Image from "next/image";
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
-// Sample high-resolution images
 const teamMembers = [
   { img: "/dev0.jpeg" },
   { img: "/dev3.jpg" },
@@ -31,25 +30,29 @@ interface ReviewCardProps {
 
 const ReviewCard = ({ img, text }: ReviewCardProps) => {
   return (
-    <div className="  relative flex flex-col items-center justify-center ">
+    <div className="relative flex flex-col items-center justify-center">
       {text ? (
-        <div className="text-5xl md:text-8xl font-ThicccboiRegular text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 hidden md:block space-x-6">
+        <div className="text-5xl md:text-8xl font-ThicccboiRegular text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 hidden md:block text-center">
           {text}
         </div>
       ) : (
-        <div className="relative">
+        <div className="relative w-32 h-32 sm:w-48 sm:h-48 md:w-60 md:h-60 lg:w-54 lg:h-54">
           <Image
-            className="object-cover w-32 h-32 md:w-72 md:h-72 rounded-[1.5rem] shadow-lg hover:scale-105 transition-all duration-300"
+            className="object-cover w-full h-full rounded-[1.5rem] shadow-lg hover:scale-105 transition-all duration-300"
             alt="Team member"
             src={img || ""}
-            width={288}
-            height={288}
+            layout="fill"
+            objectFit="cover"
           />
         </div>
       )}
     </div>
   );
 };
+
+
+
+
 
 export function ParallexSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -61,7 +64,6 @@ export function ParallexSection() {
     const ctx = gsap.context(() => {
       const mm = gsap.matchMedia();
 
-      // For desktop screens (min-width: 768px)
       mm.add("(min-width: 768px)", () => {
         gsap.fromTo(
           firstRowRef.current,
@@ -106,7 +108,6 @@ export function ParallexSection() {
         );
       });
 
-      // For mobile screens (max-width: 767px)
       mm.add("(max-width: 767px)", () => {
         gsap.fromTo(
           firstRowRef.current,
@@ -182,18 +183,17 @@ export function ParallexSection() {
   return (
     <section
       ref={sectionRef}
-      className=" z-10 relative flex flex-col items-center gap-4 py-16 md:py-24 overflow-hidden bg-gray-50"
+      className="z-10 relative flex flex-col items-center gap-4   overflow-hidden bg-gray-50"
     >
-      <div className="">
       {/* Mobile-only heading */}
-      <h2 className="md:hidden text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 mb-6">
-        Meet the Crew
+      <h2 className="md:hidden text-[clamp(2rem,8vw,6rem)] font-thhicboi font-regular text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 mb-6">
+        Meet the Crew!
       </h2>
 
       {/* First Row */}
       <div
         ref={firstRowRef}
-        className="flex items-center justify-start w-full gap-2 overflow-x-auto pb-6 px-6 md:justify-center md:space-x-12 md:overflow-x-visible"
+        className="flex items-center justify-center w-full gap-2 overflow-x-auto pb-6 px-6 md:justify-center md:space-x-12 md:overflow-x-visible"
       >
         {firstRow.map((item, index) => (
           <ReviewCard key={index} {...item} />
@@ -203,7 +203,7 @@ export function ParallexSection() {
       {/* Second Row */}
       <div
         ref={secondRowRef}
-        className="flex items-center justify-start w-full gap-2 overflow-x-auto pb-6 px-6 md:justify-center md:space-x-12 md:overflow-x-visible"
+        className="flex items-center justify-center w-full gap-2 overflow-x-auto pb-6 px-6 md:justify-center md:space-x-12 md:overflow-x-visible"
       >
         {secondRow.map((item, index) => (
           <ReviewCard key={index} {...item} />
@@ -213,12 +213,11 @@ export function ParallexSection() {
       {/* Third Row */}
       <div
         ref={thirdRowRef}
-        className="flex items-center justify-start w-full gap-2 overflow-x-auto pb-6 px-6 md:justify-center md:space-x-12 md:overflow-x-visible"
+        className="flex items-center justify-center w-full gap-2 overflow-x-auto pb-6 px-6 md:justify-center md:space-x-12 md:overflow-x-visible"
       >
         {thirdRow.map((item, index) => (
           <ReviewCard key={index} {...item} />
         ))}
-      </div>
       </div>
     </section>
   );
