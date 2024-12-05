@@ -36,19 +36,23 @@ const ReviewCard = ({ img, text }: ReviewCardProps) => {
           {text}
         </div>
       ) : (
-        <div className="relative">
+        <div className="relative w-32 h-32 sm:w-48 sm:h-48 md:w-60 md:h-60 lg:w-54 lg:h-54">
           <Image
-            className="object-cover w-32 h-32 md:w-72 md:h-72 rounded-[1.5rem] shadow-lg hover:scale-105 transition-all duration-300"
+            className="object-cover w-full h-full rounded-[1.5rem] shadow-lg hover:scale-105 transition-all duration-300"
             alt="Team member"
             src={img || ""}
-            width={288}
-            height={288}
+            layout="fill"
+            objectFit="cover"
           />
         </div>
       )}
     </div>
   );
 };
+
+
+
+
 
 export function ParallexSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -182,8 +186,8 @@ export function ParallexSection() {
       className="z-10 relative flex flex-col items-center gap-4   overflow-hidden bg-gray-50"
     >
       {/* Mobile-only heading */}
-      <h2 className="md:hidden text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 mb-6">
-        Meet the Crew
+      <h2 className="md:hidden text-[clamp(2rem,8vw,6rem)] font-thhicboi font-regular text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 mb-6">
+        Meet the Crew!
       </h2>
 
       {/* First Row */}
