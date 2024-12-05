@@ -36,22 +36,19 @@ const ReviewCard = ({ img, text }: ReviewCardProps) => {
           {text}
         </div>
       ) : (
-        <div className="relative w-32 h-32 sm:w-48 sm:h-48 md:w-60 md:h-60 lg:w-54 lg:h-54">
+        <div className="relative">
           <Image
-            className="object-cover w-full h-full rounded-[1.5rem] shadow-lg hover:scale-105 transition-all duration-300"
+            className="object-cover aspect-square w-24 md:w-48 lg:w-72 max-w-[100%] rounded-[16px] shadow-lg hover:scale-105 transition-all duration-300"
             alt="Team member"
             src={img || ""}
-            layout="fill"
-            objectFit="cover"
+            width={288}
+            height={288}
           />
         </div>
       )}
     </div>
   );
 };
-
-
-
 
 
 export function ParallexSection() {
@@ -183,7 +180,7 @@ export function ParallexSection() {
   return (
     <section
       ref={sectionRef}
-      className="z-10 relative flex flex-col items-center gap-4   overflow-hidden bg-gray-50"
+      className="z-10 relative flex flex-col items-center gap-4 py-16 md:py-24 overflow-hidden bg-gray-50"
     >
       {/* Mobile-only heading */}
       <h2 className="md:hidden text-[clamp(2rem,8vw,6rem)] font-thhicboi font-regular text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 mb-6">
@@ -221,4 +218,4 @@ export function ParallexSection() {
       </div>
     </section>
   );
-}
+} 
