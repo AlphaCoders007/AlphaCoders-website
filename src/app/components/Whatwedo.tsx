@@ -65,8 +65,8 @@ export function Whatwedo() {
         <TextRevealByLine
           text="AlphaCoders Innovations is a cutting-edge software solutions company dedicated to empowering businesses through transformative technology."
           textColor="text-white"
-          fontSize="4xl "
-          className="animated-text "
+          fontSize="2xl sm:text-4xl  "
+          className="animated-text font-Montserrat "
         />
       </motion.div>
     </motion.div>
@@ -81,8 +81,7 @@ export function Whatwedo() {
           className="flex flex-col items-center bg-white/10 text-white p-6 rounded-xl shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl w-full sm:w-1/3 md:w-1/4 lg:w-1/5 max-w-sm"
         />
       ))}
-    </div>
-    
+    </div>   
   </div>
 </AuroraBackground>
   );
