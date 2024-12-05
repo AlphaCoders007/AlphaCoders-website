@@ -179,7 +179,7 @@ export function ParallexSection() {
   return (
     <section
       ref={sectionRef}
-      className="z-10 relative flex flex-col items-center gap-4 py-16 md:py-24 overflow-hidden bg-gray-50"
+      className="z-10 relative flex flex-col items-center gap-4   overflow-hidden bg-gray-50"
     >
       {/* Mobile-only heading */}
       <h2 className="md:hidden text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 mb-6">

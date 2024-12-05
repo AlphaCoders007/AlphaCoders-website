@@ -220,7 +220,7 @@ const ConnectSection: React.FC = () => {
 
       {/* Sliding Contact Form */}
       <div
-        className={`fixed inset-x-0 bottom-0 z-50 transition-all duration-700 ease-out ${
+        className={`fixed inset-x-0 bottom-0  transition-all duration-700 ease-out ${
           isPopupOpen ? "transform translate-y-0" : "transform translate-y-full"
         }`}
         style={{
@@ -234,7 +234,7 @@ const ConnectSection: React.FC = () => {
             overflowY: "auto",
           }}
         >
-          <div className="absolute top-2 right-2">
+          <div className="absolute top-8 right-2">
             <button
               onClick={handlePopupToggle}
               className="hover:scale-110 transition-all"

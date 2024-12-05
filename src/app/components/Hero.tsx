@@ -69,24 +69,24 @@ const Hero: React.FC = () => {
         {/* Text Content */}
         <div
           ref={textRef}
-          className="relative flex h-full flex-col justify-start mt-[140px] z-10"
+          className="relative flex h-full  flex-col justify-center"
         >
-          <div className="main flex w-full origin-center py-[60%] sm:p-[8%] flex-col items-center gap-2 md:items-start md:pl-[40%] lg:gap-0">
-            
-            <h1 className="text-center text-3xl  md:text-left">
+          <div className=" flex w-full pb-[3.8%]    origin-center flex-col items-center  md:items-start md:pl-[40%]">
+            <h1 className="text-center  text-3xl  md:text-left">
               {/* first span  */}
-              <span className="font-thicccboi  font-light text-[#797979] lg:text-7xl block">
+              <span className="font-thicccboi    font-light text-[#797979] lg:text-7xl block">
                 This is a Change, to a
               </span>
               {/* second span  */}
-              <span className="font-thicccboi leading-tight font-bold bg-gradient-to-r from-[#bf00ff] to-[#ff5633] bg-clip-text text-transparent lg:text-7xl  block mt-1">
+              <span className="  font-thicccboi      leading-tight font-bold bg-gradient-to-r from-[#bf00ff] to-[#ff5633] bg-clip-text text-transparent lg:text-7xl  block ">
                 Future more Exciting.
               </span>
-              {/* third span  */}
-              <span className="text-left font-Montserrat py-[4%] text-sm sm:text-xl font-thin">
+              
+              
+            </h1> 
+            <h2 className="text-left font-Montserrat py-[3%] text-sm sm:text-xl font-thin">
                 Websites, Mobile App, UI/UX &amp; Branding
-              </span>
-            </h1>
+              </h2>          
           </div>
         </div>
 
