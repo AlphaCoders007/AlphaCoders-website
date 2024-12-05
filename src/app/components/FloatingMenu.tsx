@@ -33,7 +33,7 @@ const FloatingMenu: React.FC = () => {
       href: "tel:+919400303325",
       icon: (
         <img
-        src="call.svg" // Path to the SVG in the public folder
+        src="call.svg" 
         alt="Phone Icon"
         className="w-6 h-6"
       />
@@ -72,7 +72,7 @@ const FloatingMenu: React.FC = () => {
   ];
 
   const toggleMenu = (event: React.MouseEvent) => {
-    event.stopPropagation(); // Prevent click event from propagating
+    event.stopPropagation();
     setIsOpen((prev) => !prev);
   };
 
@@ -104,12 +104,12 @@ const FloatingMenu: React.FC = () => {
             toggleMenu(event);
           }
         }}
-        className={` overflow-hidden border  border-gray-300 bg-white rounded-2xl transition-all duration-300 ease-in-out ${isOpen ? "w-64 h-96" : "w-32 h-10"} cursor-pointer`}
+        className={` overflow-hidden border  border-gray-300 bg-white rounded-tl-[60px] rounded-tr-[60px] rounded-bl-[60px] rounded-br-[60px] transition-all duration-300 ease-in-out ${isOpen ? "w-60 h-96" : "w-28 h-11"} cursor-pointer`}
       >
         <div className="relative flex items-center justify-center w-full h-full">
           {isOpen && (
             <div className="flex flex-col items-center justify-center gap-3 p-4 absolute top-0 left-0 right-0 bottom-0">
-              <ul className="flex flex-col gap-1 font-montserrat text-sm w-full mt-4">
+              <ul className="flex flex-col gap-1 font-Montserrat font-thin  w-full mt-4">
                 {menuItems.map((item, index) => (
                   <li key={index} className={`${index === 0 ? "mt-2" : ""} cursor-pointer`}>
                     <Link href={item.href}>
@@ -124,10 +124,10 @@ const FloatingMenu: React.FC = () => {
                               alt="menu-icon"
                               width="24"
                               height="24"
-                              className="w-6 h-6"
+                              className="w-6 h-6" 
                             />
                           </span>
-                          <span className="ml-1 text-gray-900 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-500 group-hover:to-orange-500 text-xl">
+                          <span className="ml-1 text-gray-700 font-Montserrat  font-ultrathin text-ultrathin text-opacity-100  group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-500 group-hover:to-orange-500 ">
                             {item.label}
                           </span>
                         </div>
@@ -147,7 +147,7 @@ const FloatingMenu: React.FC = () => {
                     className="flex items-center justify-center gap-2.5 cursor-pointer"
                   >
                     <span className="text-2xl">{item.icon}</span>
-                    <span className="text-center text-gray-900">{item.label}</span>
+                    <span className="text-center text-gray-800 text-opacity-1 font-Montserrat">{item.label}</span>
                   </Link>
                 ))}
               </div>
@@ -164,7 +164,7 @@ const FloatingMenu: React.FC = () => {
             event.stopPropagation(); // Prevent propagation to prevent accidental menu closing
             toggleMenu(event);
           }}
-          className="bg-transparent border-0 rounded-lg w-12 h-8 transition-all duration-300 cursor-pointer  border-green-700"
+          className="bg-transparent border-0 rounded-lg w-12 h-8 transition-all duration-300 cursor-pointer"
         >
           <img
             src="cursor-icon.webp"

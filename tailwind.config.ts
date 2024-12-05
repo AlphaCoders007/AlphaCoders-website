@@ -36,6 +36,7 @@ export default {
       },
 
       fontWeight: {
+        ultrathin: "20",
         thin: "100",
         extralight: "200",
         light: "300",
