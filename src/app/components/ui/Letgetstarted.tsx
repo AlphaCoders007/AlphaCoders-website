@@ -52,22 +52,14 @@ const LetsGetStartedSection: React.FC = () => {
     <section>
       <button
         ref={buttonRef}
-        style={{
-          position: "absolute",
-          bottom: "5%",
-          left: "50%",
-          transform: "translateX(-50%)",
-          zIndex: 10,
-          overflow: "hidden", // Hide overflow for video
-        }}
+        className="absolute bottom-5 left-1/2 transform -translate-x-1/2 z-10 flex items-center justify-center overflow-hidden rounded-full  transition-all duration-300"
       >
-        {/* Video Layer */}
         <video
+          className="absolute w-full h-full object-cover"
           autoPlay
           loop
           muted
           playsInline
-          style={{ width: "100%", height: "100%" }}
         >
           <source src="/video2.mp4" type="video/mp4" />
         </video>

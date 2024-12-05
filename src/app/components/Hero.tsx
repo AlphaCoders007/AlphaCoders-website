@@ -71,7 +71,7 @@ const Hero: React.FC = () => {
           ref={textRef}
           className="relative flex h-full flex-col justify-center"
         >
-          <div className="flex w-full pb-[3.8%] origin-center flex-col items-center md:items-start md:pl-[40%]">
+          <div className="flex w-full pt-[2%] origin-center flex-col items-center md:items-start md:pl-[40%]">
             <h1 className="text-center text-3xl md:text-left">
               {/* First Span */}
               <span className="font-thicccboi font-light text-[#797979] lg:text-7xl block">
@@ -82,7 +82,7 @@ const Hero: React.FC = () => {
                 Future more Exciting.
               </span>
             </h1>
-            <h2 className="text-left font-Montserrat py-[3%] text-sm sm:text-xl font-thin">
+            <h2 className="text-left font-Montserrat py-[3%]  text-sm sm:text-xl font-thin">
               Websites, Mobile App, UI/UX &amp; Branding
             </h2>
           </div>

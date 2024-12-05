@@ -13,7 +13,7 @@ function Page() {
   return (
     <div>
       <Hero />      
-      <LetsGetStartedSection />       
+      {/* <LetsGetStartedSection />        */}
       <Whatwedo /> 
       <div className="relative -mt-0 bg-background-light z-20">     
       <VerticalStack />  
