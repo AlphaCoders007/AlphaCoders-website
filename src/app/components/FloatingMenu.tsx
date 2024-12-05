@@ -8,7 +8,6 @@ interface MenuItem {
   href: string;
   iconSrc?: string;
 }
-
 interface ContactItem {
   type: "call" | "email" | "social";
   label: string;
@@ -27,27 +26,17 @@ const FloatingMenu: React.FC = () => {
     { label: "UI/UX", href: "/ui-ux", iconSrc: "cursor-icon.webp" },
     { label: "Branding", href: "/branding", iconSrc: "cursor-icon.webp" },
   ];
-
   const contactItems: ContactItem[] = [
     {
       type: "call",
       label: "Call Now",
       href: "tel:+919400303325",
       icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          className="w-6 h-6"
-        >
-          <path
-            stroke="#333"
-            strokeLinejoin="round"
-            strokeMiterlimit="10"
-            strokeWidth="1.5"
-            d="M21.97 18.33c0 .36-.08.73-.25 1.09-.17.36-.39.7-.68 1.02.93-.58 2.04-.72 3.26-.73s2.29-.17 3.44-.72a9.03 9.03 0 0 0 2.8-2.8 4.32 4.32 0 0 1 1.28-.93c.07-.08.14-.16.2-.25z"
-          ></path>
-        </svg>
+        <img
+        src="call.svg" // Path to the SVG in the public folder
+        alt="Phone Icon"
+        className="w-6 h-6"
+      />
       ),
     },
     {
@@ -80,24 +69,6 @@ const FloatingMenu: React.FC = () => {
         </svg>
       ),
     },
-    {
-      type: "social",
-      label: "Behance",
-      href: "https://www.behance.net/UrbanhubInnovations",
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 32 32"
-          fill="none"
-          className="w-6 h-6"
-        >
-          <path
-            fill="#333"
-            d="M19.95 19.938c1.618 0 3.063-1.117 3.063-2.507s-1.445-2.507-3.063-2.507c-1.618 0-3.063 1.117-3.063 2.507s1.445 2.507 3.063 2.507zm0-3.066c.91 0 1.652.635 1.652 1.559s-.742 1.559-1.652 1.559c-.91 0-1.652-.635-1.652-1.559s.742-1.559 1.652-1.559z"
-          ></path>
-        </svg>
-      ),
-    },
   ];
 
   const toggleMenu = (event: React.MouseEvent) => {
@@ -125,7 +96,7 @@ const FloatingMenu: React.FC = () => {
   }, [handleClickOutside]);
 
   return (
-    <div className="fixed bottom-0 right-10 z-50 m-4">
+    <div className="fixed bottom-7 right-7 z-50">
       <div
         ref={menuRef}
         onClick={(event) => {
@@ -166,9 +137,9 @@ const FloatingMenu: React.FC = () => {
                 ))}
               </ul>
 
-              <div className="flex flex-col items-center gap-4 rounded-2xl h-2/5 w-56 border border-gray-300 px-6 py-4 font-montserrat text-sm cursor-pointer">
+              <div className="flex flex-col items-center justify-center gap-4 rounded-2xl h-2/5 w-56 border border-gray-300 px-6 py-4 font-montserrat text-sm cursor-pointer">
                 {contactItems.map((item, index) => (
-                  <a
+                  <Link
                     key={index}
                     href={item.href}
                     target={item.type === "social" ? "_blank" : undefined}
@@ -177,7 +148,7 @@ const FloatingMenu: React.FC = () => {
                   >
                     <span className="text-2xl">{item.icon}</span>
                     <span className="text-center text-gray-900">{item.label}</span>
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -186,19 +157,19 @@ const FloatingMenu: React.FC = () => {
       </div>
 
       {/* Toggle Button */}
-      <div className="absolute top-0 left-1/2 mt-2 z-50 flex justify-center items-center cursor-pointer"> {/* Added cursor-pointer here */}
+      <div className="absolute top-0 mt-1 z-50 flex justify-center items-center cursor-pointer left-1/2 -translate-x-1/4"> 
         <button
           ref={buttonRef}
           onClick={(event) => {
             event.stopPropagation(); // Prevent propagation to prevent accidental menu closing
             toggleMenu(event);
           }}
-          className="bg-transparent border-0 rounded-lg w-12 h-8 transition-all duration-300 cursor-pointer"
+          className="bg-transparent border-0 rounded-lg w-12 h-8 transition-all duration-300 cursor-pointer  border-green-700"
         >
           <img
             src="cursor-icon.webp"
             alt="Menu"
-            className="w-8 h-8 transition-all duration-300 rounded-full"
+            className="w-8 h-8 transition-all duration-300 rounded-full "
             style={{
               opacity: isOpen ? "0" : "1", // Make image fully transparent when menu is open
               pointerEvents: isOpen ? "none" : "auto", // Disable pointer events when hidden
