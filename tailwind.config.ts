@@ -61,9 +61,13 @@ export default {
         '7xl': ['clamp(1.56rem,.468rem + 4.48vw,4.5rem)', '5rem'],           // 72px, line-height 1
         '8xl': ['6rem', '1'],             // 96px, line-height 1
         '9xl': ['8rem', '1'],             // 128px, line-height 1
+        'imgclamped': 'clamp(1rem, .629rem + 1.524vw, 2rem)',
+        'textclamped': 'clamp(2rem,-.6rem + 10.667vw,9rem)',
       },
 
-
+      padding: {
+        'custom-padding': 'clamp(3rem, 2.257rem + 3.048vw, 5rem)',
+      },
       animation: {
         circle: "moveCircle 10s linear infinite",
         aurora: "aurora 10s ease-in-out infinite",
