@@ -1,25 +1,25 @@
 import React from "react";
 
 interface StatsCardProps {
-  count: string;
   label: string;
+  text: string;
   className?: string;
 }
 
 const StatsCard: React.FC<StatsCardProps> = ({
-  count,
   label,
+  text,
   className = "",
 }) => {
   return (
     <div
-      className={`flex w-full sm:w-72 md:w-56 flex-col items-center justify-center rounded-[1.5rem] border border-white/20 bg-white/10 px-6 py-4 text-center font-montserrat ${className}`}
+      className={`flex w-full  flex-col items-center justify-center rounded-[1.5rem] border border-white/20 bg-white/10 text-center font-montserrat ${className}`}
     >
-      <h3 className="font-bold text-white text-lg sm:text-xl">
-        <span>{count}</span>
+      <h3 className="font-bold bg-gradient-to-r from-[#bf00ff] to-[#ff5633] text-transparent bg-clip-text text-3xl sm:text-4xl">
+        <span>{label}</span>
       </h3>
-      <p className="font-semibold text-white text-sm sm:text-base">
-        {label}
+      <p className="font-medium text-white text-sm sm:text-base">
+        {text}
       </p>
     </div>
   );
