@@ -73,7 +73,7 @@ const Hero: React.FC = () => {
             <span className="font-thicccboi font-light text-[#797979] lg:text-7xl block">
             Dream it. Plan it. Do it.
             </span>
-            <span className="font-thicccboi leading-tight font-bold bg-gradient-to-r from-[#bf00ff] to-[#ff5633] bg-clip-text text-transparent lg:text-6xl block">
+            <span className="font-thicccboi leading-tight font-bold bg-gradient-to-r from-[#bf00ff] to-[#ff5633] bg-clip-text text-transparent md:text-6xl block ">
             Transform your ideas into reality
             </span>
           </h1>

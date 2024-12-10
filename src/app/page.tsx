@@ -13,9 +13,9 @@ const Page: React.FC = () => {
     <div>
       
       <Hero />
-      <div className=" relative bg-background-light z-30">
+      {/* <div className=" relative bg-background-light z-30">
         <LetsGetStartedSection />
-      </div>
+      </div> */}
       <Whatwedo />
       <div className="relative bg-background-light z-20">
         <VerticalStack />
