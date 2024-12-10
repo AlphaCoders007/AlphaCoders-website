@@ -37,7 +37,7 @@ export const QueueWords: React.FC = () => {
           background: 'linear-gradient(to right, #bf00ff, #ff5633)',  
           WebkitBackgroundClip: 'text',  
           color: 'transparent',
-          lineHeight: "7rem",
+          lineHeight: "5rem",
         }}
       >
         {words[currentWordIndex]}  
