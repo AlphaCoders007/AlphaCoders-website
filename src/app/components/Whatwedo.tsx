@@ -40,7 +40,6 @@ export function Whatwedo() {
         <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-center leading-tight tracking-wide lg:px-12 sm:px-6 md:px-8">
           <QueueWords />
         </div>
-      </motion.div>
 
       <div className="flex flex-col lg:flex-col-reverse w-full gap-4 sm:gap-6 lg:gap-8">
         <motion.div
@@ -58,15 +57,15 @@ export function Whatwedo() {
             }}
             className=" max-w-5xl mx-auto text-lg leading-8 text-center w-full min-h-[40vh] flex flex-col gap-4 items-center"
           >
-            <TextRevealByLine
+            {/* <TextRevealByLine
               text="LET'S BUILD YOUR DREAM TOGETHER"
-              textColor="bg-gradient-to-r from-[#bf00ff] to-[#ff5633] text-transparent bg-clip-text"
+              textColor="text-white"
               fontSize="2xl sm:text-4xl"
               className="animated-text font-Montserrat"
               onAnimationComplete={handleFirstRevealComplete}
-            />
+            /> */}
+            <p className="text-2xl sm:text-4xl text-white">LET'S BUILD YOUR DREAM TOGETHER</p>
 
-            {firstRevealComplete && (
               <TextRevealByLine
                 text="Whether you're dreaming of a groundbreaking application or a transformative platform, AlphaCoders is here to guide you every step of the way. Imagination is just the beginning—let us design and create something extraordinary with you."
                 textColor="text-white"
@@ -74,7 +73,6 @@ export function Whatwedo() {
                 className="animated-text font-Montserrat"
                 onAnimationComplete={handleSecondRevealComplete}
               />
-            )}
           </motion.div>
         </motion.div>
 
@@ -89,6 +87,7 @@ export function Whatwedo() {
           ))}
         </div>
       </div>
+      </motion.div>
     </AuroraBackground>
   );
 }
