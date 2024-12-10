@@ -15,6 +15,7 @@ const VerticalStack: React.FC = () => {
             <StickyComponent
             key={i}
             title={card.title}
+            subtitle={card.subtitle}
             technologies={card.technologie}
             description={card.description}
             imageSrc={card.imageSrc}
