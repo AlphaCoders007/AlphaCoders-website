@@ -28,7 +28,7 @@ export function Whatwedo() {
   }, [textAnimationComplete]);
 
   return (
-    <AuroraBackground className="w-full h-full pb-8 z-20"> 
+    <AuroraBackground className="w-full h-full  pb-8 z-20"> 
   <motion.div
     initial={{ opacity: 0, y: 40 }}
     whileInView={{ opacity: 1, y: 0 }}
