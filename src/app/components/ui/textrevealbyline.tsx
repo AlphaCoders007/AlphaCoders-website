@@ -44,6 +44,7 @@ export function TextRevealByLine({
           const end = (index + 1) / words.length
 
           return (
+            
             <Line
               key={index}
               text={word}
@@ -85,6 +86,7 @@ function Line({ text, progress, range, fontSize, textColor, fontStyle }: LinePro
         "tracking-wide" // Add consistent spacing
       )}
     >
+      
       {text}
     </motion.span>
   )
