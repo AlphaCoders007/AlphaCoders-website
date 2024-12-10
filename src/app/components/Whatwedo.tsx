@@ -23,21 +23,21 @@ export function Whatwedo() {
 
 
   return (
-    <AuroraBackground className="w-full h-full pb-8 z-20">
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: 0.3,
-          duration: 1.5,
-          ease: "easeInOut",
-        }}
-        className="relative flex flex-col gap-4 sm:gap-6 lg:gap-8 items-center justify-center px-6 py-16 text-white w-full overflow-hidden"
-      >
-        <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-center leading-tight tracking-wide lg:px-12 sm:px-6 md:px-8">
-          <QueueWords />
-        </div>
-      </motion.div>
+    <AuroraBackground className="w-full h-full pb-8 z-20"> 
+  <motion.div
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{
+      delay: 0.3,
+      duration: 1.5,
+      ease: "easeInOut",
+    }}
+    className="relative flex flex-col gap-4 sm:gap-6 lg:gap-8 items-center justify-center px-6 py-16 text-white w-full overflow-hidden"
+  >
+    <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-center leading-tight tracking-wide lg:px-12 sm:px-6 md:px-8">
+      <QueueWords />
+    </div>
+  </motion.div>
 
       <div className="flex flex-col lg:flex-col-reverse w-full gap-4 sm:gap-6 lg:gap-8">
 
