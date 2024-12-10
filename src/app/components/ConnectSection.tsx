@@ -49,7 +49,7 @@ const ConnectSection: React.FC = () => {
 
   return (
     <footer className="relative">
-      <div className="fixed bottom-0  w-full h-full">
+      <div className="fixed bottom-0   w-full h-full">
       <div className="flex h-full w-full flex-col items-end justify-end bg-background-light">
       <div className="max-container mx-auto px-[1.5rem] md:px-[5rem]">
         <div className="flex w-full items-center justify-between gap-[1rem] md:gap-[4rem] pt-[0rem] md:pt-[12rem]">
@@ -220,7 +220,7 @@ const ConnectSection: React.FC = () => {
 
       {/* Sliding Contact Form */}
       <div
-        className={`fixed inset-x-0 bottom-0  transition-all duration-700 ease-out ${
+        className={`fixed inset-x-0 z-[9999]  bottom-0  transition-all duration-700 ease-out ${
           isPopupOpen ? "transform translate-y-0" : "transform translate-y-full"
         }`}
         style={{
