@@ -5,6 +5,7 @@ import { div } from "framer-motion/client";
 interface StickyComponentProps {
   imageSrc: string;
   title: string;
+  subtitle: string;
   description: string;
   isEven: boolean;
   technologies: string[];
@@ -13,6 +14,7 @@ interface StickyComponentProps {
 const StickyComponent: React.FC<StickyComponentProps> = ({
   imageSrc,
   title,
+  subtitle,
   description,
   isEven,
   technologies,
@@ -74,9 +76,12 @@ const StickyComponent: React.FC<StickyComponentProps> = ({
 
             <div className="relative h-1/2 p-[1rem] font-Montserrat text-white md:h-full md:w-1/2 md:p-[2.8rem]">
               <div className="opacity-100 transform-none">
-                <h2 className="pt-[1rem] font-ThicccboiMedium text-2xl sm:text-lg md:text-3xl md:pt-[2.8rem]">
+                <h2 className="pt-[1rem] font-bold  text-3xl sm:text-4xl">
                   {title}
                 </h2>
+                {/* <p className="font-ThicccboiMedium text-xl ">
+                  {subtitle}
+                </p> */}
               </div>
               <div className="opacity-100 transform-none">
                 <div className="inline-flex flex-wrap items-start justify-start gap-1 sm:gap-2 py-[1rem] md:gap-3 md:py-[2rem]">
@@ -93,7 +98,7 @@ const StickyComponent: React.FC<StickyComponentProps> = ({
                 </div>
               </div>
               <div className="opacity-100 transform-none">
-                <p className="pr-10 text-sm sm:text-base md:text-lg">
+                <p className="pr-10 text-l lg:text-xl sm:text-base md:text-lg">
                   {description}
                 </p>
               </div>

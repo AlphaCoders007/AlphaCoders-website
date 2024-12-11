@@ -13,6 +13,7 @@ const teamMembers = [
   { img: "/dev3.jpg" },
   { img: "/dev1.jpg" },
   { img: "/ogdev2.jpg" },
+  { img: "/dev00.jpg" },
   { img: "/dev0.jpeg" },
   { img: "/dev3.jpg" },
   { img: "/ogdev2.jpg" },
@@ -156,14 +157,15 @@ export function ParallexSection() {
   const firstRow = [
     { img: teamMembers[0].img },
     { img: teamMembers[1].img },
-    { text: "Meet" },
+    { text: "United" },
     { img: teamMembers[2].img },
     { img: teamMembers[3].img },
+    
   ];
 
   const secondRow = [
-    { img: teamMembers[4].img },
-    { text: "the" },
+    { img: teamMembers[2].img },
+    { text: "In" },
     { img: teamMembers[5].img },
     { img: teamMembers[6].img },
     { img: teamMembers[7].img },
@@ -172,8 +174,8 @@ export function ParallexSection() {
   const thirdRow = [
     { img: teamMembers[8].img },
     { img: teamMembers[9].img },
-    { text: "Crew!" },
-    { img: teamMembers[10].img },
+    { text: "Innovation!" },
+    { img: teamMembers[4].img },
     { img: teamMembers[11].img },
   ];
 
@@ -184,7 +186,7 @@ export function ParallexSection() {
     >
       {/* Mobile-only heading */}
       <h2 className="md:hidden text-textclamped pb-[1rem] font-thhicboi font-regular text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 ">
-        Meet the Crew!
+        United In Innovation!
       </h2>
 
       {/* First Row */}

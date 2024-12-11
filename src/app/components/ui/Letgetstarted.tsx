@@ -5,17 +5,17 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const LetsGetStartedSection: React.FC = () => {
-  const buttonRef = useRef<HTMLButtonElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
-    const buttonElement = buttonRef.current;
+    const sectionElement = sectionRef.current;
 
-    if (buttonElement) {
+    if (sectionElement) {
       const timeline = gsap.timeline({
         scrollTrigger: {
-          trigger: buttonElement,
+          trigger: sectionElement,
           start: "top bottom", // Animation starts when button enters viewport
           end: "bottom top", // Ends when button leaves viewport
           scrub: true, // Smooth animation on scroll
@@ -25,23 +25,25 @@ const LetsGetStartedSection: React.FC = () => {
       // Button animation sequence
       timeline
         .fromTo(
-          buttonElement,
+          sectionElement,
           {
             width: "120px", // Initial size
             height: "50px",
-           
-            
           },
           {
             width: "50vw", // Midway size
             height: "50vh",
+            borderRadius: "20px", // Slight roundness midway
             duration: 1.5,
             ease: "power3.inOut", // Smooth acceleration and deceleration
           }
         )
-        .to(buttonElement, {
-          width: "100vw", // Full-screen button
+        .to(sectionElement, {
+          width: "100vw", // Full-screen div
           height: "100vh",
+          borderRadius: "0px", // No roundness
+          margin: "0px", // Remove any default margins
+          padding: "0px", // Ensure no padding
           duration: 2,
           ease: "power2.out",
         });
@@ -49,11 +51,11 @@ const LetsGetStartedSection: React.FC = () => {
   }, []);
 
   return (
-    <section>
-      <button
-        ref={buttonRef}
-        className="absolute bottom-5 left-1/2 transform -translate-x-1/2 z-10 flex items-center justify-center overflow-hidden rounded-full  transition-all duration-300"
-      >
+    <section
+      ref={sectionRef}
+      className="  relative flex h-[100vh]    w-full flex-col  items-center  left-1/2 transform -translate-x-1/2  z-20     "
+    >
+      <div className=" sticky  -mt-20  rounded-[50px]  h-full w-full z-20 flex items-center justify-center overflow-hidden   transition-all duration-300">
         <video
           className="absolute w-full h-full object-cover"
           autoPlay
@@ -63,7 +65,7 @@ const LetsGetStartedSection: React.FC = () => {
         >
           <source src="/video2.mp4" type="video/mp4" />
         </video>
-      </button>
+      </div>
     </section>
   );
 };
