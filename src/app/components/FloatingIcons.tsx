@@ -1,9 +1,9 @@
-"use client";
-
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { SiReact, SiPython, SiNextdotjs, SiJavascript, SiNodedotjs, SiFlask, SiMongodb, SiReactrouter, SiMysql } from "react-icons/si";
 import styles from "../Styles.css/FloatingIcons.module.css";
+
+// Define a constant for the icon size
+const ICON_SIZE = 80;
 
 const FloatingIcons: React.FC = () => {
   const iconContainerRef = useRef<HTMLDivElement>(null);
@@ -13,49 +13,51 @@ const FloatingIcons: React.FC = () => {
       const icons = iconContainerRef.current.querySelectorAll(`.${styles.icon}`);
 
       icons.forEach((icon) => {
-        const startX = gsap.utils.random(-20, 120); // Random starting x in vw
-        const startY = gsap.utils.random(-20, -0); // Random starting y above viewport
+        const startX = 15; // Start from the top left corner
+        const startY = -10; // Start just above the viewport
 
-        const driftX = gsap.utils.random(-20, 20); // Random x drift
-        const duration = gsap.utils.random(6, 8); // Random fall duration
+        const driftX = gsap.utils.random(-20, 20); // Small horizontal drift
+        const driftY = gsap.utils.random(5, 10); // Small vertical drift towards bottom-right
+        const duration = gsap.utils.random(8, 12); // Longer fall duration for smoother motion
 
         gsap.timeline({ repeat: -1 })
           .set(icon, {
-            x: `${startX}vw`,
-            y: `${startY}vh`,
+            x: `${startX}vw`, // Start from the top left corner
+            y: `${startY}vh`, // Start just above the viewport
             opacity: 1,
+            scale: 0.9, // Start smaller to grow a bit
           })
           .to(icon, {
-            x: `${startX + driftX}vw`, // Drift horizontally
-            y: "80vh", // Fall to 80% of the viewport
-            rotation: gsap.utils.random(-45, 45), // Add random rotation
-            scale: 1,
-            opacity: 1,
+            x: `${startX + driftX}vw`, // Drift horizontally (small drift to the right)
+            y: `${startY + driftY}vh`, // Drift vertically towards the bottom-right
+            rotation: gsap.utils.random(-15, 15), // Slight rotation for a more natural feel
+            scale: 1, // Slight growth
+            opacity: 0.9, // Slight opacity change
             duration,
-            ease: "power2.out",
+            ease: "power1.out", // Smooth easing
           })
           .to(icon, {
-            y: "60vh",
-            duration: 1.5,
-            ease: "elastic.out(1, 0.4)",
-            scale: 1.1,
-            
-          })
-          .to(icon, {
-            y: "80vh",
-            opacity: 1,
+            y: "80vh", // Settle into a gentle position
+            x: `${startX + driftX + 10}vw`, // Adjust for a slight extra horizontal drift
             duration: 1.5,
             ease: "power2.inOut",
-            
-            scale: 1,
+            scale: 1.05, // Slight scaling effect for smoothness
           })
           .to(icon, {
-            y: "120vh", // Exit the viewport
+            y: "90vh", // Hover slightly above the final resting point
+            opacity: 1, // Full opacity
+            duration: 1.5,
+            ease: "power2.inOut",
+            scale: 1, // Reset to original size
+            x: `${startX + driftX + 15}vw`, // Continue slight drift
+          })
+          .to(icon, {
+            y: "120vh", // Exit the viewport gradually
             opacity: 0,
             duration: 2,
             ease: "power2.in",
-            scale: 0.9,
-            boxShadow: "none",
+            scale: 0.95, // Shrink a bit for the exit
+            x: `${startX + driftX + 20}vw`, // Exit with a little more drift to the right
           });
       });
     }
@@ -64,31 +66,31 @@ const FloatingIcons: React.FC = () => {
   return (
     <div className={styles.floatingIconsContainer} ref={iconContainerRef}>
       <div className={`${styles.icon} ${styles.iconReact}`}>
-        <SiReact size={50} color="#61DAFB" />
+        <img src="icons/docker.png" alt="React Logo" width={ICON_SIZE} height={ICON_SIZE} />
       </div>
       <div className={`${styles.icon} ${styles.iconPython}`}>
-        <SiPython size={50} color="#3776AB" />
+        <img src="icons/figma.png" alt="Python Logo" width={ICON_SIZE} height={ICON_SIZE} />
       </div>
       <div className={`${styles.icon} ${styles.iconNextjs}`}>
-        <SiNextdotjs size={50} color="#000000" />
+        <img src="icons/tailwind-css.png" alt="Next.js Logo" width={ICON_SIZE} height={ICON_SIZE} />
       </div>
       <div className={`${styles.icon} ${styles.iconJavascript}`}>
-        <SiJavascript size={50} color="#F7DF1E" />
+        <img src="icons/python.png" alt="JavaScript Logo" width={ICON_SIZE} height={ICON_SIZE} />
       </div>
       <div className={`${styles.icon} ${styles.iconNodejs}`}>
-        <SiNodedotjs size={50} color="#43853D" />
+        <img src="icons/typescript.png" alt="Node.js Logo" width={ICON_SIZE} height={ICON_SIZE} />
       </div>
       <div className={`${styles.icon} ${styles.iconFlask}`}>
-        <SiFlask size={50} color="#000000" />
+        <img src="icons/javascript.png" alt="Flask Logo" width={ICON_SIZE} height={ICON_SIZE} />
       </div>
       <div className={`${styles.icon} ${styles.iconMongodb}`}>
-        <SiMongodb size={50} color="#47A248" />
+        <img src="icons/kotlin.png" alt="MongoDB Logo" width={ICON_SIZE} height={ICON_SIZE} />
       </div>
       <div className={`${styles.icon} ${styles.iconMysql}`}>
-        <SiMysql size={50} color="#00758F" />
+        <img src="icons/java.png" alt="MySQL Logo" width={ICON_SIZE} height={ICON_SIZE} />
       </div>
       <div className={`${styles.icon} ${styles.iconReactRouter}`}>
-        <SiReactrouter size={50} color="#CA4245" />
+        <img src="icons/flutter.png" alt="React Router Logo" width={ICON_SIZE} height={ICON_SIZE} />
       </div>
     </div>
   );

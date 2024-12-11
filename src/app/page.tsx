@@ -12,7 +12,9 @@ function Page() {
 
   return (
     <div>
-      <Hero />      
+      <div className="relative -mt-0 bg-background-light z-20">    
+      <Hero />   
+      </div>   
       {/* <LetsGetStartedSection />        */}
       <Whatwedo /> 
       <div className="relative -mt-0 bg-background-light z-20">     

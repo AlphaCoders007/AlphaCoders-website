@@ -5,6 +5,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import NavBarSection from "./NavbarSection";
 import LetsGetStartedSection from "./ui/Letgetstarted";
+import FloatingIcons from "./FloatingIcons";
 
 const Hero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -44,7 +45,7 @@ const Hero: React.FC = () => {
         className="relative z-10 h-[100vh] w-[100vw] overflow-hidden"
       >
         {/* Background Video for larger screens */}
-        <div className="absolute inset-0 sm:block">
+        {/* <div className="absolute inset-0 sm:block">
           <video
             src="home.mp4"
             className="w-full h-full object-cover"
@@ -53,6 +54,10 @@ const Hero: React.FC = () => {
             loop
             playsInline
           />
+        </div> */}
+        {/* floating icons */}
+        <div  className="absolute inset-0 ">
+          <FloatingIcons/>
         </div>
 
         {/* Background Image for smaller screens */}
@@ -61,7 +66,7 @@ const Hero: React.FC = () => {
           <div className="absolute inset-0 bg-overlay"></div>
           <img
             alt="Home"
-            src="home-sm.webp"
+            src="home2.png"
             className="w-full h-full object-cover"
           />
         </div>
