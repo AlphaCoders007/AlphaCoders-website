@@ -14,14 +14,8 @@ const teamMembers = [
   { img: "/dev1.jpg" },
   { img: "/ogdev2.jpg" },
   { img: "/dev00.jpg" },
-  { img: "/dev0.jpeg" },
-  { img: "/dev3.jpg" },
-  { img: "/ogdev2.jpg" },
-  { img: "/dev1.jpg" },
-  { img: "/ogdev2.jpg" },
-  { img: "/dev0.jpeg" },
-  { img: "/dev3.jpg" },
-  { img: "/dev1.jpg" },
+  { img: "/dev4.jpeg" },
+  { img: "/dev5.jpeg" },
 ];
 
 interface ReviewCardProps {
@@ -164,19 +158,19 @@ export function ParallexSection() {
   ];
 
   const secondRow = [
-    { img: teamMembers[2].img },
+    { img: teamMembers[3].img },
     { text: "In" },
-    { img: teamMembers[5].img },
-    { img: teamMembers[6].img },
-    { img: teamMembers[7].img },
+    { img: teamMembers[2].img },
+    { img: teamMembers[0].img },
+    { img: teamMembers[1].img },
   ];
 
   const thirdRow = [
-    { img: teamMembers[8].img },
-    { img: teamMembers[9].img },
-    { text: "Innovation!" },
+    { img: teamMembers[1].img },
     { img: teamMembers[4].img },
-    { img: teamMembers[11].img },
+    { text: "Innovation!" },
+    { img: teamMembers[5].img },
+    { img: teamMembers[6].img },
   ];
 
   return (

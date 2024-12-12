@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import CircularMovingText from "./MovingText";
 import { div } from "framer-motion/client";
-
+import Link from "next/link";
 interface StickyComponentProps {
   imageSrc: string;
   title: string;
@@ -9,15 +9,18 @@ interface StickyComponentProps {
   description: string;
   isEven: boolean;
   technologies: string[];
+  path: string;
+  color: string;
 }
 
 const StickyComponent: React.FC<StickyComponentProps> = ({
   imageSrc,
   title,
-  subtitle,
+  path,
   description,
   isEven,
   technologies,
+  color
 }) => {
   const [scale, setScale] = useState(1);
 
@@ -42,7 +45,7 @@ const StickyComponent: React.FC<StickyComponentProps> = ({
       <div className="  h-full origin-top pt-[7rem] pb-[2rem] w-full">
         <div className= "  relative h-full overflow-hidden">
           <div
-            className={`flex h-full w-full flex-col overflow-hidden rounded-3xl md:flex-row bg-gradient-to-b from-[#8305C9] to-[#4C0294] ${
+            className={`flex h-full w-full flex-col overflow-hidden rounded-3xl md:flex-row ${color} ${
               isEven ? "md:flex-row" : "md:flex-row-reverse"
             }`}
           >
@@ -106,13 +109,14 @@ const StickyComponent: React.FC<StickyComponentProps> = ({
           </div>
 
           {/* Arrow Button */}
-          <div
+          <Link
+            href = {path}
             className={`absolute right-[10%] top-1/2 -translate-y-1/2 scale-75 md:bottom-10 md:top-auto md:translate-y-0 md:scale-100 ${
               isEven ? "md:right-10" : "md:left-10"
             } sm:right-[10%]`}
           >
             <CircularMovingText />
-          </div>
+          </Link>
         </div>
       </div>
     </div>
