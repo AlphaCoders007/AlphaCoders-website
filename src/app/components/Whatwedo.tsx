@@ -35,7 +35,7 @@ export function Whatwedo() {
           duration: 1.5,
           ease: "easeInOut",
         }}
-        className="relative flex flex-col gap-4 sm:gap-6 lg:gap-8 items-center justify-center px-6 py-16 text-white w-full overflow-hidden"
+        className="relative flex flex-col gap-2  lg:gap-8 items-center justify-center px-6 py-16 text-white w-full overflow-hidden"
       >
         <div className="">
           <FlipWordsDemo />
@@ -64,12 +64,12 @@ export function Whatwedo() {
               className="animated-text font-Montserrat"
               onAnimationComplete={handleFirstRevealComplete}
             /> */}
-            <p className="text-2xl sm:text-4xl text-white">LET'S BUILD YOUR DREAM TOGETHER</p>
+            <p className="text-sm sm:text-4xl text-white">LET'S BUILD YOUR DREAM TOGETHER</p>
 
               <TextRevealByLine
                 text="Whether you're dreaming of a groundbreaking application or a transformative platform, AlphaCoders is here to guide you every step of the way. Imagination is just the beginning—let us design and create something extraordinary with you."
                 textColor="text-white"
-                fontSize="2xl sm:text-4xl"
+                fontSize="text-sm sm:text-4xl"
                 className="animated-text font-Montserrat"
                 onAnimationComplete={handleSecondRevealComplete}
               />
