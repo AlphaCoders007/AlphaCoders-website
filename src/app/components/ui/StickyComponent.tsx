@@ -91,7 +91,7 @@ const StickyComponent: React.FC<StickyComponentProps> = ({
                   {technologies.map((tech, index) => (
                     <div
                       key={index}
-                      className="flex items-center justify-center bg-[#F5F5F5] px-2 py-1 rounded-[0.5rem] text-sm sm:text-base md:px-6 md:py-2"
+                      className="flex items-center justify-center bg-[#F5F5F5] px-2 py-1 rounded-[0.5rem] text-xs sm:text-base md:px-6 md:py-2"
                     >
                       <p className="leading-loose tracking-wide text-gray-700">
                         {tech}
@@ -101,7 +101,7 @@ const StickyComponent: React.FC<StickyComponentProps> = ({
                 </div>
               </div>
               <div className="opacity-100 transform-none">
-                <p className="pr-10 text-l lg:text-xl sm:text-base md:text-lg">
+                <p className="pr-10 text-verticalbodyclamped ">
                   {description}
                 </p>
               </div>

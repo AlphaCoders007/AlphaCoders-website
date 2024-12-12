@@ -63,6 +63,7 @@ export default {
         '9xl': ['8rem', '1'],             // 128px, line-height 1
         'imgclamped': 'clamp(1rem, .629rem + 1.524vw, 2rem)',
         'textclamped': 'clamp(2rem,-.6rem + 10.667vw,9rem)',
+        'verticalbodyclamped': 'clamp(.7rem,.514rem + .762vw,1.2rem)',
       },
 
       padding: {

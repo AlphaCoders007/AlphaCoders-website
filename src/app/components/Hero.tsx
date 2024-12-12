@@ -72,7 +72,7 @@ const Hero: React.FC = () => {
       <div
         className="relative flex h-full flex-col justify-center"
       >
-        <div className="flex w-full pt-[2%] origin-center flex-col items-center md:items-start md:pl-[40%]">
+        <div className="flex w-full  origin-center flex-col items-center md:items-start md:pl-[40%]">
           <h1 className="text-center text-3xl md:text-left">
             <span className="font-thicccboi font-light text-[#797979] lg:text-7xl block">
             Dream it. Plan it. Do it.
