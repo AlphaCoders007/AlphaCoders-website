@@ -182,7 +182,7 @@ export function ParallexSection() {
   return (
     <section
       ref={sectionRef}
-      className="z-10 relative flex flex-col items-center gap-imgclamped pt-custom-padding overflow-hidden bg-gray-50"
+      className="z-10 relative flex flex-col items-center gap-imgclamped pt-custom-padding overflow-hidden bg-background-light"
     >
       {/* Mobile-only heading */}
       <h2 className="md:hidden text-textclamped pb-[1rem] font-thhicboi font-regular text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500 ">
