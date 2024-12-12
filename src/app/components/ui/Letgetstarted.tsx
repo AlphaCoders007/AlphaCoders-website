@@ -46,6 +46,7 @@ const LetsGetStartedSection: React.FC = () => {
           padding: "0px", // Ensure no padding
           duration: 2,
           ease: "power2.out",
+          opacity:1
         });
     }
   }, []);
@@ -53,11 +54,11 @@ const LetsGetStartedSection: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="  relative flex h-[100vh]    w-full flex-col  items-center  left-1/2 transform -translate-x-1/2  z-20     "
+      className="  relative backdrop-blur-sm flex h-full  w-full flex-col -mt-4 rounded-xl items-center  left-1/2 right-1/2 transform -translate-x-1/2  z-20 pt-4  "
     >
-      <div className=" sticky  -mt-20  rounded-[50px]  h-full w-full z-20 flex items-center justify-center overflow-hidden   transition-all duration-300">
+      <div className=" sticky h-[150%] w-full top-[-7rem]   -mt-20 rounded-2xl z-20 flex items-center justify-center overflow-hidden   transition-all duration-300">
         <video
-          className="absolute w-full h-full object-cover"
+          className="sticky w-auto sm:w-full h-full object-cover rounded-lg "
           autoPlay
           loop
           muted

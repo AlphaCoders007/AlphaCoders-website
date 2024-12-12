@@ -104,7 +104,7 @@ const FloatingMenu: React.FC = () => {
             toggleMenu(event);
           }
         }}
-        className={` overflow-hidden border  border-gray-300 bg-white rounded-tl-[60px] rounded-tr-[60px] rounded-bl-[60px] rounded-br-[60px] transition-all duration-300 ease-in-out ${isOpen ? "w-72 h-96" : "w-28 h-11"} cursor-pointer`}
+        className={` overflow-hidden border  border-gray-300 bg-white rounded-tl-[60px] rounded-tr-[60px] rounded-bl-[60px] rounded-br-[60px] transition-all duration-300 ease-in-out ${isOpen ? "w-72 h-96" : "w-11 sm:w-28 h-11"} cursor-pointer`}
       >
         <div className="relative flex items-center justify-center w-full h-full">
           {isOpen && (
@@ -164,7 +164,7 @@ const FloatingMenu: React.FC = () => {
             event.stopPropagation(); // Prevent propagation to prevent accidental menu closing
             toggleMenu(event);
           }}
-          className="bg-transparent border-0 rounded-lg w-12 h-8 transition-all duration-300 cursor-pointer"
+          className="bg-transparent border-0 rounded-lg w-12 h-8   transition-all duration-300 cursor-pointer"
         >
           <img
             src="cursor-icon.webp"
