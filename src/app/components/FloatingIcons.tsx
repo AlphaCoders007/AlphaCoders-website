@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import styles from "../Styles.css/FloatingIcons.module.css";
 
 // Define a constant for the icon size
-const ICON_SIZE = 60;
+const ICON_SIZE = 100;
 
 const FloatingIcons: React.FC = () => {
   const iconContainerRef = useRef<HTMLDivElement>(null);
