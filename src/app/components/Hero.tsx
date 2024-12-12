@@ -63,7 +63,7 @@ const Hero: React.FC = () => {
         <div className="absolute inset-0 bg-overlay"></div>
         <img
           alt="Home"
-          src="home2.png"
+          src="home1.png"
           className="w-full h-full object-cover"
         />
       </div>
