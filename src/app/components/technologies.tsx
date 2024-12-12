@@ -5,7 +5,7 @@ export function Technologies() {
   return (
     <div>
     <div className="relative w-full h-full py-20 bg-white z-20 ">
-        <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-6xl  text-black font-thicccboi">
+        <h2 className="max-w-7xl pl-4 mx-auto text-3xl md:text-6xl  text-black font-thicccboi">
         Technologies we leverage...
       </h2>
       </div>
