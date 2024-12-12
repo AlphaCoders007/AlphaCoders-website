@@ -15,7 +15,7 @@ const StatsCard: React.FC<StatsCardProps> = ({
     <div
       className={`flex w-full  flex-col items-center justify-center rounded-[1.5rem] border border-white/20 bg-white/10 text-center font-montserrat ${className}`}
     >
-      <h3 className="font-bold bg-gradient-to-r from-[#bf00ff] to-[#ff5633] text-transparent bg-clip-text text-3xl sm:text-xl">
+      <h3 className="font-bold bg-gradient-to-r from-[#bf00ff] to-[#ff5633] text-transparent bg-clip-text text-xl sm:text-xl">
         <span>{label}</span>
       </h3>
       <p className="font-medium text-white text-sm sm:text-sm">

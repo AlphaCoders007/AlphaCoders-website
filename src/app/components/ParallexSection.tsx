@@ -158,10 +158,10 @@ export function ParallexSection() {
   ];
 
   const secondRow = [
-    { img: teamMembers[3].img },
+    { img: teamMembers[5].img },
     { text: "In" },
     { img: teamMembers[2].img },
-    { img: teamMembers[0].img },
+    { img: teamMembers[3].img },
     { img: teamMembers[1].img },
   ];
 
@@ -169,7 +169,7 @@ export function ParallexSection() {
     { img: teamMembers[1].img },
     { img: teamMembers[4].img },
     { text: "Innovation!" },
-    { img: teamMembers[5].img },
+    { img: teamMembers[2].img },
     { img: teamMembers[6].img },
   ];
 

@@ -67,9 +67,7 @@ const FloatingIcons: React.FC = () => {
   const iconsArray = [
     "docker", "figma", "tailwind-css", "python", "typescript", "javascript",
     "kotlin", "java", "adobe-xd", "react", "ai", "adobe-illustrator", "2",
-    "flutter", "github", "photoshop", "angular", "golang", "ruby", "swift", "laravel",
-    "elixir", "express", "redux", "graphql", "csharp", "scala", "postgreSQL", "jest",
-    "typescript", "visual-studio-code", "electron", "aws", "azure", "rails", "go"
+    "flutter", "github", "photoshop", "angular"
   ];
 
   const allIcons = [...iconsArray, ...iconsArray];
