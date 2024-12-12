@@ -20,6 +20,8 @@ const VerticalStack: React.FC = () => {
             description={card.description}
             imageSrc={card.imageSrc}
             isEven = {i%2 === 0}
+            path={card.path}
+            color={card.color}
             />
         ))
       }

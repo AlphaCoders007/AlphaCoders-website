@@ -3,7 +3,7 @@
 import { motion,  } from "framer-motion";
 import { useState,  useRef } from "react";
 import { AuroraBackground } from "./ui/aurora-background";
-import { QueueWords } from "./QueueWords";
+import { FlipWordsDemo } from "./QueueWords";
 import StatsCard from "./StatsCard";
 import { TextRevealByLine } from "./ui/textrevealbyline";
 
@@ -37,8 +37,8 @@ export function Whatwedo() {
         }}
         className="relative flex flex-col gap-4 sm:gap-6 lg:gap-8 items-center justify-center px-6 py-16 text-white w-full overflow-hidden"
       >
-        <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-center leading-tight tracking-wide lg:px-12 sm:px-6 md:px-8">
-          <QueueWords />
+        <div className="">
+          <FlipWordsDemo />
         </div>
 
       <div className="flex flex-col lg:flex-col-reverse w-full gap-4 sm:gap-6 lg:gap-8">
@@ -55,7 +55,7 @@ export function Whatwedo() {
             transition={{
               duration: 5,
             }}
-            className=" max-w-5xl mx-auto text-lg leading-8 text-center w-full min-h-[40vh] flex flex-col gap-4 items-center"
+            className=" max-w-5xl mx-auto text-lg leading-8 text-center w-full min-h-[40vh] flex flex-col gap-10 py-12 items-center"
           >
             {/* <TextRevealByLine
               text="LET'S BUILD YOUR DREAM TOGETHER"

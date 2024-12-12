@@ -70,7 +70,6 @@ const Hero: React.FC = () => {
 
       {/* Text Content */}
       <div
-        ref={textRef}
         className="relative flex h-full flex-col justify-center"
       >
         <div className="flex w-full pt-[2%] origin-center flex-col items-center md:items-start md:pl-[40%]">
