@@ -9,7 +9,7 @@ import { Technologies } from "../components/technologies";
 function page() {
   return (
     <div>
-      <div className=" relative flex flex-col z-20 bg-white overflow-hidden font-thicccboi">
+      <div className=" relative flex flex-col z-30 bg-white overflow-hidden font-thicccboi">
         <ContainerScroll
           titleComponent={
             <>
@@ -34,8 +34,8 @@ function page() {
 
         <h1 className="text-4xl md:text-4xl lg:text-6xl font-semibold max-w-7xl mx-auto text-center relative z-20 py-6">
           <span className="bg-gradient-to-r from-neutral-500 to-neutral-500 text-transparent bg-clip-text font-thicccboi">
-            Cultivate ideas and <Cover>explore</Cover> creative
-            possibilities.
+          <Cover> Cultivate ideas and explore creative
+            possibilities.</Cover>
           </span>
         </h1>
       </div>

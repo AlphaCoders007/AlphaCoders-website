@@ -8,6 +8,7 @@ import VerticalStack from "./components/VerticalStack";
 import NewComponent from "./components/NewComponent";
 import LetsGetStartedSection from "./components/ui/Letgetstarted";
 
+
 const Page: React.FC = () => {
   return (
     <div>
@@ -22,6 +23,7 @@ const Page: React.FC = () => {
       </div>
 
       <ParallexSection />
+      
 
       <NewComponent />
     </div>

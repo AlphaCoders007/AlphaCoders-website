@@ -3,8 +3,8 @@ import React from "react";
 import { Carousel, Card } from "@/app/components/ui/whatweofferUI";
 
 export function Whatweoffer() {
-  const cards = data.map((card, index) => (
-    <Card key={card.src} card={card} index={index} />
+  const cards = data.map((card) => (
+    <Card key={card.src} card={card}  />
   ));
 
   return (

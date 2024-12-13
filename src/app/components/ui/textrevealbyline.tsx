@@ -1,27 +1,27 @@
-"use client"
+"use client";
 
-import React, { useRef,useState,useEffect } from "react"
-import { motion, useScroll, useTransform, MotionValue } from "framer-motion"
-import { cn } from "@/app/lib/utils"
+import React, { useRef, useState, useEffect } from "react";
+import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
+import { cn } from "@/app/lib/utils";
 
 interface TextRevealByLineProps {
-  text: string
-  className?: string
-  lineHeight?: number
-  fontSize?: string
-  textColor?: string
-  fontStyle?: string
-  onAnimationComplete?: ()=> void;
+  text: string;
+  className?: string;
+  lineHeight?: number;
+  fontSize?: string;
+  textColor?: string;
+  fontStyle?: string;
+  onAnimationComplete?: () => void;
 }
 
 export function TextRevealByLine({
   text,
   className,
   lineHeight = 1.5,
-  fontSize = "3xl",
+  fontSize = "text-3xl",
   textColor = "text-black dark:text-white",
   fontStyle = "font-Montserrat",
-  onAnimationComplete, // Accept the prop
+  onAnimationComplete,
 }: TextRevealByLineProps) {
   const targetRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -45,10 +45,15 @@ export function TextRevealByLine({
   }, [completedWords, totalWords, onAnimationComplete]);
 
   return (
-    <div ref={targetRef} className={cn("relative z-0", className)}>
+    <div
+      ref={targetRef}
+      className={cn("relative z-0", className)}
+      style={{ lineHeight }}
+    >
       <div
         className={cn(
-          "sticky top-0 mx-auto flex flex-wrap items-center bg-transparent px-4 ",
+          "sticky top-0 mx-auto flex flex-wrap items-center justify-center",
+          "bg-transparent px-4",
           "tracking-wide text-gray-800 dark:text-gray-200"
         )}
       >
@@ -65,7 +70,7 @@ export function TextRevealByLine({
               fontSize={fontSize}
               textColor={textColor}
               fontStyle={fontStyle}
-              onComplete={handleWordAnimationComplete} // Pass completion callback
+              onComplete={handleWordAnimationComplete}
             />
           );
         })}
@@ -81,7 +86,7 @@ interface LineProps {
   fontSize: string;
   textColor: string;
   fontStyle: string;
-  onComplete?: () => void; // Add this
+  onComplete?: () => void;
 }
 
 function Line({
@@ -91,11 +96,11 @@ function Line({
   fontSize,
   textColor,
   fontStyle,
-  onComplete, // Accept the prop
+  onComplete,
 }: LineProps) {
   const modifiedRange = [range[0] * 0.6, range[1] * 0.8];
-
   const opacity = useTransform(progress, modifiedRange, [0, 1]);
+  const translateY = useTransform(progress, modifiedRange, [20, 0]);
 
   // Trigger onComplete when opacity reaches 1
   useEffect(() => {
@@ -109,13 +114,13 @@ function Line({
 
   return (
     <motion.span
-      style={{ opacity }}
+      style={{ opacity, transform: translateY }}
       className={cn(
-        "mx-1",
+        "mx-1 inline-block",
         fontSize,
         textColor,
         fontStyle,
-        "tracking-wide"
+        "tracking-wide whitespace-nowrap"
       )}
     >
       {text}
