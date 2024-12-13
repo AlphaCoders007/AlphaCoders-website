@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import "./globals.css";
 import FloatingMenu from "./components/FloatingMenu";
@@ -21,8 +22,10 @@ export default function RootLayout({
         <NavBarSection/>
         <FloatingMenu/>
           {children}
-
+          
       <ConnectSection />
+      
+      
       </body>
     </html>
   );

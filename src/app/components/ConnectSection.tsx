@@ -55,6 +55,8 @@ const ConnectSection: React.FC = () => {
         <div className="flex w-full items-center justify-between gap-[1rem] md:gap-[4rem] pt-[0rem] md:pt-[12rem]">
           {/* Header Section */}
           <div className="flex flex-col items-start justify-start gap-10">
+
+            
             <div>
               <h2
                 className="font-ThicccboiRegular text-black md:font-ThicccboiMedium"
@@ -81,6 +83,7 @@ const ConnectSection: React.FC = () => {
                 Let’s Connect.
               </h2>
             </div>
+            
           </div>
 
           {/* Button */}

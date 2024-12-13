@@ -53,6 +53,8 @@ const Hero: React.FC = () => {
           playsInline
         />
         </div> */}
+
+       
         {/* floating icons */}
         <div  className="absolute inset-0 bg-background-light ">
           <FloatingIcons/>

@@ -3,14 +3,14 @@
 import { motion,  } from "framer-motion";
 import { useState,  useRef } from "react";
 import { AuroraBackground } from "./ui/aurora-background";
-import { FlipWordsDemo } from "./QueueWords";
+import { QueueWords } from "./QueueWords";
 import StatsCard from "./StatsCard";
 import { TextRevealByLine } from "./ui/textrevealbyline";
 
 const cardsTabs = [
-  { label: "We Imagine", text: "WHERE IDEAS ARE BORN" },
-  { label: "We Design", text: "TRANSFORM VISION INTO FORM" },
-  { label: "We Create", text: "BUILDING IDEAS TO LIFE" },
+  { label: "We Imagine", text: "Where ideas are born " },
+  { label: "We Design", text: "Transform vision into form" },
+  { label: "We Create", text: "Building ideas to life" },
 ];
 
 export function Whatwedo() {
@@ -37,8 +37,9 @@ export function Whatwedo() {
         }}
         className="relative flex flex-col gap-2  lg:gap-8 items-center justify-center px-6 py-16 text-white w-full overflow-hidden"
       >
-        <div className="">
-          <FlipWordsDemo />
+        <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-center leading-tight tracking-wide lg:px-12 sm:px-6 md:px-8">
+          <QueueWords />
+        
         </div>
 
       <div className="flex flex-col lg:flex-col-reverse w-full gap-4 sm:gap-6 lg:gap-8">
@@ -64,13 +65,13 @@ export function Whatwedo() {
               className="animated-text font-Montserrat"
               onAnimationComplete={handleFirstRevealComplete}
             /> */}
-            <p className="text-sm sm:text-4xl text-white">LET'S BUILD YOUR DREAM TOGETHER</p>
+            <p className="text-sm sm:text-4xl font-thicccboi text-white">LET'S BUILD YOUR DREAM TOGETHER</p>
 
               <TextRevealByLine
-                text="Whether you're dreaming of a groundbreaking application or a transformative platform, AlphaCoders is here to guide you every step of the way. Imagination is just the beginning—let us design and create something extraordinary with you."
+                text="Whether you're dreaming of a groundbreaking application or a transformative platform, AlphaCoders is here to guide you every step of the way. Imagination is just the beginning. Let us design and create something extraordinary with you."
                 textColor="text-white"
                 fontSize="text-sm sm:text-4xl"
-                className="animated-text font-Montserrat"
+                className="animated-text font-thicccboi"
                 onAnimationComplete={handleSecondRevealComplete}
               />
           </motion.div>
