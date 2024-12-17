@@ -104,7 +104,7 @@ const FloatingMenu: React.FC = () => {
             toggleMenu(event);
           }
         }}
-        className={` overflow-hidden border  border-gray-300 bg-background-light transition-colors rounded-tl-[60px] rounded-tr-[60px] rounded-bl-[60px] rounded-br-[60px] duration-300 ease-in-out ${isOpen ? "w-72 h-96" : "w-11 sm:w-28 h-11"} cursor-pointer`}
+        className={` overflow-hidden border  border-gray-300 bg-background-light transition-colors rounded-tl-[60px] rounded-tr-[60px] rounded-bl-[60px] rounded-br-[60px] duration-300 ease-in-out ${isOpen ? " w-64 h-96 sm:w-72 " : "w-11 sm:w-28 h-11"} cursor-pointer`}
       >
         <div className="relative flex items-center justify-center w-full h-full">
           {isOpen && (
