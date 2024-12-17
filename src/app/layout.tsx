@@ -5,10 +5,7 @@ import FloatingMenu from "./components/FloatingMenu";
 import NavBarSection from "./components/NavbarSection";
 import ConnectSection from "./components/ConnectSection";
 import { useTheme } from "@/app/components/hooks/useTheme";
-// export const metadata: Metadata = {
-//   title: "AlphaCoders",
-//   description: "Think out of the box",
-// };
+import Head from "./Head";
 
 export default function RootLayout({
   children,
@@ -19,6 +16,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <Head/>
       <body className=" transition-colors duration-300">
         <NavBarSection />
         <FloatingMenu />
