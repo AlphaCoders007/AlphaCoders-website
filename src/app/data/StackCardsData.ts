@@ -49,8 +49,8 @@ export const cards: CardStatsProps[] = [
     title: "We Create",
     subtitle: "Creation Brings Your Vision to Life", // Added subtitle here
     isEven: true,
-    path:"/websites",
-    color: "bg-[#B0CACE]",
+    path:"/wecreate",
+    color: "bg-[#D3D3D3]",
     description:
       "Our expertise lies in building what you dream. With cutting-edge technologies, robust engineering, and meticulous execution, we bring your ideas into reality. From software solutions to digital platforms, we deliver with precision and excellence",
   },
