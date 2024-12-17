@@ -9,11 +9,11 @@ import { Technologies } from "../components/technologies";
 function page() {
   return (
     <div>
-      <div className=" relative flex flex-col z-30 bg-white overflow-hidden font-thicccboi">
+      <div className=" relative flex flex-col z-30 bg-background-light transition-colors overflow-hidden font-thicccboi">
         <ContainerScroll
           titleComponent={
             <>
-              <h1 className="text-4xl font-semibold  text-black ">
+              <h1 className="text-4xl font-semibold ">
                 Imagination Sparks Innovation at <br />
                 <span className="text-4xl md:text-[6rem] bg-gradient-to-r from-[#bf00ff] to-[#ff5633] text-transparent bg-clip-text font-bold mt-1 leading-none">
                   AlphaCoders

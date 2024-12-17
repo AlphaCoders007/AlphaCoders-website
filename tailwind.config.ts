@@ -21,6 +21,7 @@ function addVariablesForColors({ addBase, theme }: any) {
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 export default {
+  darkMode:"class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -70,12 +71,21 @@ export default {
         'custom-padding': 'clamp(3rem, 2.257rem + 3.048vw, 5rem)',
       },
       animation: {
+        scroll:
+        "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
         circle: "moveCircle 10s linear infinite",
         aurora: "aurora 10s ease-in-out infinite",
         marquee: "marquee var(--duration) linear infinite",
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
       },
       keyframes: {
+
+        scroll: {
+          to: {
+            transform: "translate(calc(-50% - 0.5rem))",
+          },
+        },
+        
         aurora: {
           "0%, 100%": { backgroundPosition: "50% 50%" },
           "50%": { backgroundPosition: "60% 40%" },
@@ -95,7 +105,7 @@ export default {
       },
       colors: {
       "background": {
-      "light": "#ffffff",
+      "light": "#A28B55",
       "dark": "#1a1a1a",
       "red": "#FF0000",
       "gray": "#3f3f46",

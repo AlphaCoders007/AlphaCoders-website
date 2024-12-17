@@ -38,7 +38,7 @@ export const cards: CardStatsProps[] = [
     title: "We Design",
     subtitle: "Designing for Impact and Experience ", // Added subtitle here
     isEven: false,
-    path:"/websites",
+    path:"/wedesign",
     color: "bg-[#D3D3D3]",
     description:
       "Design is where imagination takes form. Our team crafts thoughtful, user-centric designs that are as functional as they are beautiful. Each design we create solves problems, enhances experiences, and stands the test of time.",
