@@ -21,8 +21,8 @@ const FloatingMenu: React.FC = () => {
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   const menuItems: MenuItem[] = [
-    { label: "WeImagine", href: "/weimagine", iconSrc: "cursor-icon.webp" },
-    { label: "Mobile App", href: "/apps", iconSrc: "cursor-icon.webp" },
+    { label: "We Imagine", href: "/weimagine", iconSrc: "cursor-icon.webp" },
+    { label: "We Design", href: "/wedesign", iconSrc: "cursor-icon.webp" },
     { label: "UI/UX", href: "/ui-ux", iconSrc: "cursor-icon.webp" },
     { label: "Branding", href: "/branding", iconSrc: "cursor-icon.webp" },
   ];

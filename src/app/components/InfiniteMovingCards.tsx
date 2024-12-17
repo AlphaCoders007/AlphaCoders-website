@@ -5,7 +5,7 @@ import { InfiniteMovingCardsUI } from "./ui/infinite-moving-cards";
 
 export function InfiniteMovingCards() {
   return (
-    <section className="bg-black text-white">
+    <section className="bg-background-light transition-colors">
       {/* Title Section */}
       <div className="px-6 text-center py-10">
         <h2 className="text-4xl md:text-6xl font-thicccboi tracking-tight leading-tight">
@@ -14,7 +14,7 @@ export function InfiniteMovingCards() {
       </div>
 
       {/* Infinite Cards Section */}
-      <div className="h-[40rem] flex flex-col items-center justify-center relative overflow-hidden bg-white dark:bg-black">
+      <div className="h-[40rem] flex flex-col items-center justify-center relative overflow-hidden">
         <InfiniteMovingCardsUI
           items={testimonials}
           direction="right"
