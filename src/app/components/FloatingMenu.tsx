@@ -21,7 +21,7 @@ const FloatingMenu: React.FC = () => {
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   const menuItems: MenuItem[] = [
-    { label: "Websites", href: "/websites", iconSrc: "cursor-icon.webp" },
+    { label: "WeImagine", href: "/weimagine", iconSrc: "cursor-icon.webp" },
     { label: "Mobile App", href: "/apps", iconSrc: "cursor-icon.webp" },
     { label: "UI/UX", href: "/ui-ux", iconSrc: "cursor-icon.webp" },
     { label: "Branding", href: "/branding", iconSrc: "cursor-icon.webp" },
@@ -104,7 +104,7 @@ const FloatingMenu: React.FC = () => {
             toggleMenu(event);
           }
         }}
-        className={` overflow-hidden border  border-gray-300 bg-white rounded-tl-[60px] rounded-tr-[60px] rounded-bl-[60px] rounded-br-[60px] transition-all duration-300 ease-in-out ${isOpen ? "w-72 h-96" : "w-11 sm:w-28 h-11"} cursor-pointer`}
+        className={` overflow-hidden border  border-gray-300 bg-background-light transition-colors rounded-tl-[60px] rounded-tr-[60px] rounded-bl-[60px] rounded-br-[60px] duration-300 ease-in-out ${isOpen ? "w-72 h-96" : "w-11 sm:w-28 h-11"} cursor-pointer`}
       >
         <div className="relative flex items-center justify-center w-full h-full">
           {isOpen && (
@@ -127,7 +127,7 @@ const FloatingMenu: React.FC = () => {
                               className="w-6 h-6" 
                             />
                           </span>
-                          <span className="ml-1 text-gray-700 font-Montserrat  font-ultrathin text-ultrathin text-opacity-100  group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-500 group-hover:to-orange-500 ">
+                          <span className="ml-1 dark:text-white text-gray-700 font-Montserrat  font-ultrathin text-ultrathin text-opacity-100  group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-500 group-hover:to-orange-500 ">
                             {item.label}
                           </span>
                         </div>
@@ -137,7 +137,7 @@ const FloatingMenu: React.FC = () => {
                 ))}
               </ul>
 
-              <div className="flex flex-col items-center justify-center gap-4 rounded-2xl h-2/5 w-56 border border-gray-300 px-6 py-4 font-montserrat text-sm cursor-pointer">
+              <div className="flex flex-col items-center justify-center gap-4 rounded-2xl h-2/5 w-56 border transition-colors border-gray-300 px-6 py-4 font-montserrat text-sm cursor-pointer">
                 {contactItems.map((item, index) => (
                   <Link
                     key={index}
@@ -146,8 +146,8 @@ const FloatingMenu: React.FC = () => {
                     rel={item.type === "social" ? "noopener noreferrer" : undefined}
                     className="flex items-center justify-center gap-2.5 cursor-pointer"
                   >
-                    <span className="text-2xl">{item.icon}</span>
-                    <span className="text-center text-gray-800 text-opacity-1 font-Montserrat">{item.label}</span>
+                    <span className="text-2xl text-black dark:text-white">{item.icon}</span>
+                    <span className="text-center text-opacity-1 font-Montserrat">{item.label}</span>
                   </Link>
                 ))}
               </div>

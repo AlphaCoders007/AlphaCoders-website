@@ -3,13 +3,13 @@ import { HoverEffect } from "./ui/TechnologiesUI";
 
 export function Technologies() {
   return (
-    <div>
-    <div className="relative w-full h-full py-20 bg-white z-20 ">
-        <h2 className="max-w-7xl pl-4 mx-auto text-3xl md:text-6xl  text-black font-thicccboi">
+    <div className="">
+    <div className="relative w-full h-full py-20 bg-background-light transition-colors z-20 ">
+        <h2 className="max-w-7xl pl-4 mx-auto text-3xl md:text-6xl  text-black dark:text-white font-thicccboi">
         Technologies we leverage...
       </h2>
       </div>
-      <div className="relative z-20 bg-white max-w-5xl mx-auto px-8 ">
+      <div className="relative z-20 bg-background-light transition-colors max-w-5xl mx-auto px-8 dark:text-white ">
       <HoverEffect items={projects} />
       </div>
       </div>

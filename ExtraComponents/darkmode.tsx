@@ -1,3 +1,5 @@
+"use client"
+
 import { useState, useEffect } from "react";
 
 export function useTheme() {
@@ -8,7 +10,6 @@ export function useTheme() {
     const defaultTheme = savedTheme || "light";
     setTheme(defaultTheme);
 
-    // Add or remove the "dark" class on <html>
     document.documentElement.classList.toggle("dark", defaultTheme === "dark");
   }, []);
 
@@ -18,6 +19,8 @@ export function useTheme() {
     localStorage.setItem("theme", newTheme);
 
     // Update the "dark" class on <html>
+    console.log('hello world');
+    
     document.documentElement.classList.toggle("dark", newTheme === "dark");
   };
 

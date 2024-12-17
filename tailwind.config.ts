@@ -21,6 +21,7 @@ function addVariablesForColors({ addBase, theme }: any) {
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 export default {
+  darkMode:"class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -95,7 +96,7 @@ export default {
       },
       colors: {
       "background": {
-      "light": "#ffffff",
+      "light": "#A28B55",
       "dark": "#1a1a1a",
       "red": "#FF0000",
       "gray": "#3f3f46",

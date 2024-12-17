@@ -50,16 +50,16 @@ const ConnectSection: React.FC = () => {
   return (
     <footer className="relative">
       <div className="fixed bottom-0   w-full h-full">
-      <div className="flex h-full w-full flex-col items-end justify-end bg-background-light">
+      <div className="flex h-full w-full flex-col items-end justify-end">
       <div className="max-container mx-auto px-[1.5rem] md:px-[5rem]">
-        <div className="flex w-full items-center justify-between gap-[1rem] md:gap-[4rem] pt-[0rem] md:pt-[12rem]">
+        <div className="flex w-full items-center justify-between gap-[1rem] md:gap-[4rem] pt-[0rem] md:pt-[12rem] bg-background-light transition-colors">
           {/* Header Section */}
           <div className="flex flex-col items-start justify-start gap-10">
 
             
             <div>
               <h2
-                className="font-ThicccboiRegular text-black md:font-ThicccboiMedium"
+                className="font-ThicccboiRegular md:font-ThicccboiMedium"
                 style={{
                   fontSize: "clamp(1rem, -.3rem + 5.333vw, 4.5rem)",
                   lineHeight: "clamp(1.1rem, -.2rem + 5.333vw, 4.6rem)",
@@ -68,8 +68,8 @@ const ConnectSection: React.FC = () => {
                 Got an Interesting Project?
               </h2>
               <h2
-                id="letsConnectDiv"
-                className="text-black font-ThicccboiMedium"
+                id="letsConnectDiv" 
+                className="font-ThicccboiMedium"
                 style={{
                   fontSize: "clamp(1rem, -.3rem + 5.333vw, 4.5rem)",
                   lineHeight: "clamp(1.1rem, -.2rem + 5.333vw, 4.6rem)",
@@ -90,7 +90,7 @@ const ConnectSection: React.FC = () => {
           <button
             aria-labelledby="letsConnectDiv"
             onClick={handlePopupToggle}
-            className="group relative rounded-full bg-[#F2F2F2] overflow-hidden transition-transform p-8 hover:scale-110"
+            className="group relative rounded-full bg-background-light overflow-hidden transition-transform p-8 hover:scale-110"
           >
             {/* First Arrow */}
             <svg
@@ -154,7 +154,7 @@ const ConnectSection: React.FC = () => {
           </button>
         </div>
         {/* Contact Section */}
-        <div className="py-8 md:py-16">
+        <div className="py-8 md:py-16 text-black">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className=" rounded-3xl  p-6 md:p-8">
               <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
@@ -231,13 +231,13 @@ const ConnectSection: React.FC = () => {
         }}
       >
         <div
-          className="bg-white rounded-t-[30px] shadow-xl p-6 relative"
+          className="bg-background-light transition-colors rounded-t-[30px] shadow-xl p-6 relative"
           style={{
-            height: "calc(100vh - 70px)",
+            height: "calc(100vh - 90px)",
             overflowY: "auto",
           }}
         >
-          <div className="absolute top-8 right-2">
+          <div className="absolute top-8 right-2 ">
             <button
               onClick={handlePopupToggle}
               className="hover:scale-110 transition-all"
@@ -250,6 +250,7 @@ const ConnectSection: React.FC = () => {
                 fill="none"
               >
                 <path
+                className="stroke-gray-800 dark:stroke-white"
                   stroke="#333"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -260,7 +261,7 @@ const ConnectSection: React.FC = () => {
             </button>
           </div>
           <h2
-            className="text-black text-6xl text-center font-ThicccboiMedium text-global-font-sm-h3 md:text-global-font-h1"
+            className=" text-6xl text-center font-ThicccboiMedium text-global-font-sm-h3 md:text-global-font-h1"
             style={{
               fontSize: "clamp(1rem, -.3rem + 5.333vw, 4.5rem)",
               lineHeight: "clamp(1.1rem, -.2rem + 5.333vw, 4.6rem)",
@@ -274,9 +275,9 @@ const ConnectSection: React.FC = () => {
             Let’s Get Into Work!
           </h2>
           <form className="mt-20 overflow-auto h-[80vh]">
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-              <div>
-                <label htmlFor="companyName" className="text-black text-lg">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 ">
+              <div className="transition-colors">
+                <label htmlFor="companyName" className="transition-colors text-lg">
                   Name / Company
                 </label>
                 <input
@@ -287,7 +288,7 @@ const ConnectSection: React.FC = () => {
                 />
               </div>
               <div>
-                <label htmlFor="email" className="text-black text-lg">
+                <label htmlFor="email" className="transition-colors text-lg">
                   Email
                 </label>
                 <input
@@ -301,7 +302,7 @@ const ConnectSection: React.FC = () => {
             </div>
 
             <div className="mt-4">
-              <label className="text-black text-lg">Requirement Based On</label>
+              <label className="transition-colors text-lg">Requirement Based On</label>
               <div className="flex flex-wrap gap-6 mt-3">
                 {[
                   "Website Development",
@@ -323,7 +324,7 @@ const ConnectSection: React.FC = () => {
             </div>
 
             <div className="mt-4">
-              <label className="text-black text-lg">Budget</label>
+              <label className="transition-colors text-lg">Budget</label>
               <div className="flex items-center justify-between mt-3">
                 <Slider
                   getAriaLabel={() => "Budget range"}
@@ -337,7 +338,7 @@ const ConnectSection: React.FC = () => {
             </div>
 
             <div className="mt-4">
-              <label className="text-black text-lg">Enquiry</label>
+              <label className="transition-colors text-lg">Enquiry</label>
               <textarea
                 rows={4}
                 placeholder="Give a brief about the project"
@@ -347,7 +348,7 @@ const ConnectSection: React.FC = () => {
 
             <button
               type="submit"
-              className="px-10 py-5 bg-black text-white rounded-full text-xl mt-6 hover:scale-105 transition-all"
+              className="px-10 py-5 bg-black rounded-full text-xl mt-6 hover:scale-105 transition-all"
             >
               Submit Your Enquiry
             </button>

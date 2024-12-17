@@ -14,7 +14,26 @@
 body {
   font-family: '', sans-serif;
 }
+:root {
+  --bg-light: #FFFFFF; /* Light background */
+  --bg-dark: #2F3645; /* Dark background */
+}
 
+body {
+  @apply bg-[var(--bg-light)] text-black;
+}
+
+.dark body {
+  @apply bg-[var(--bg-dark)] text-white;
+}
+
+.bg-background-light {
+  @apply bg-[var(--bg-light)] text-black;
+}
+
+.dark .bg-background-light {
+  @apply bg-[var(--bg-dark)] text-white;
+}
 
 @font-face {
   font-family: 'Thicccboi';
