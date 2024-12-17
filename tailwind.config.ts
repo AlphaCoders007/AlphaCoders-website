@@ -70,12 +70,21 @@ export default {
         'custom-padding': 'clamp(3rem, 2.257rem + 3.048vw, 5rem)',
       },
       animation: {
+        scroll:
+        "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
         circle: "moveCircle 10s linear infinite",
         aurora: "aurora 10s ease-in-out infinite",
         marquee: "marquee var(--duration) linear infinite",
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
       },
       keyframes: {
+
+        scroll: {
+          to: {
+            transform: "translate(calc(-50% - 0.5rem))",
+          },
+        },
+        
         aurora: {
           "0%, 100%": { backgroundPosition: "50% 50%" },
           "50%": { backgroundPosition: "60% 40%" },

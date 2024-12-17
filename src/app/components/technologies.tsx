@@ -1,4 +1,3 @@
-import { div } from "framer-motion/client";
 import { HoverEffect } from "./ui/TechnologiesUI";
 
 export function Technologies() {

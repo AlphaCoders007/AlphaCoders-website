@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { cn } from "@/app/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
@@ -36,7 +36,7 @@ export const HoverEffect = ({
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block  rounded-3xl"
+                className="absolute inset-0 h-full w-full bg-[#ff3369] block rounded-3xl" // Changed background color to #ff5633
                 layoutId="hoverBackground"
                 initial={{ opacity: 0 }}
                 animate={{
@@ -80,6 +80,7 @@ export const Card = ({
     </div>
   );
 };
+
 export const CardTitle = ({
   className,
   children,
@@ -88,11 +89,12 @@ export const CardTitle = ({
   children: React.ReactNode;
 }) => {
   return (
-    <h4 className={cn("text-black  font-thicccboi tracking-wide mt-4", className)}>
+    <h4 className={cn("text-black font-thicccboi tracking-wide mt-4", className)}>
       {children}
     </h4>
   );
 };
+
 export const CardDescription = ({
   className,
   children,
