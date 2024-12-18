@@ -54,19 +54,5 @@ export const cards: CardStatsProps[] = [
     description:
       "Our expertise lies in building what you dream. With cutting-edge technologies, robust engineering, and meticulous execution, we bring your ideas into reality. From software solutions to digital platforms, we deliver with precision and excellence",
   },
-  // {
-  //   technologie: [
-  //     "ILLUSTRATOR",
-  //     "PHOTOSHOP",
-  //     "INDesign",
-  //     "BRAND IDENTITY",
-  //     "BRAND STRATEGY",
-  //   ],
-  //   imageSrc: "branding.webp",
-  //   title: "Branding",
-  //   subtitle: "Building brands that last", // Added subtitle here
-  //   isEven: false,
-  //   description:
-  //     "We create distinctive logos and cohesive brand strategies that make a lasting impression. Our goal is to ensure your brand stands out and expresses with your audience. Shape your brand’s identity to stand out to this competitive world.",
-  // },
+
 ];

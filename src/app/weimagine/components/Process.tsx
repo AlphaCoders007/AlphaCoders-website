@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { Timeline } from "@/app/components/ui/ProcessUI";
+import { Timeline } from "@/app/weimagine/UI/ProcessUI";
 
 export function Process() {
   const data = [

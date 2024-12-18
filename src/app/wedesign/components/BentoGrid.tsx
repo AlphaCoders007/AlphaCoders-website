@@ -1,6 +1,6 @@
 import { cn } from "@/app/lib/utils";
 import React from "react";
-import { BentoGridUI, BentoGridItem } from "./ui/bento-gridUI";
+import { BentoGridUI, BentoGridItem } from "../UI/bento-gridUI";
 
 export function BentoGrid() {
   return (
