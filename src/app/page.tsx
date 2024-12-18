@@ -10,7 +10,6 @@ import LetsGetStartedSection from "./components/ui/Letgetstarted";
 import { GoogleGeminiEffectDemo } from "./components/googlegeminieffect";
 // import { HeroParallax } from "./components/ui/hero-parallax";
 import { HeroParallaxDemo } from "./components/heroparallax";
-import Model from "./components/Mymodel";
 
 const Page: React.FC = () => {
   return (
