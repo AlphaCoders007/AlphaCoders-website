@@ -33,46 +33,46 @@ const technologies = [
   {
     title: "Figma",
     description: "Collaborative design tool for creating and testing interfaces in real time.",
-    imgSrc: "image1.jpg", 
+    imgSrc: "Figma (2).png", 
   },
   {
     title: "Adobe XD",
     description: "Streamlined for UI/UX design with prototyping capabilities.",
-    imgSrc: "image2.jpg", 
+    imgSrc: "Adobe XD.png", 
   },
   {
     title: "Sketch",
     description: "A powerful design tool for creating user interfaces, icons, and prototypes.",
-    imgSrc: "image3.jpg", 
+    imgSrc: "Sketch.png", 
   },
   {
     title: "InVision",
     description: "Prototyping tool that lets you create clickable designs and gather feedback.",
-    imgSrc: "image4.jpg", 
+    imgSrc: "InVision.png", 
   },
   {
     title: "Axure RP",
     description: "Advanced prototyping tool with rich interactions and dynamic content.",
-    imgSrc: "image3.jpg",
+    imgSrc: "Azure rp.png",
   },
   {
     title: "Marvel",
     description: "Create interactive prototypes and gather user feedback quickly.",
-    imgSrc: "image2.jpg", 
+    imgSrc: "Marvel.png", 
   },
   {
     title: "Hotjar",
     description: "Heatmaps, session recordings, and user feedback for behavioral insights.",
-    imgSrc: "image1.jpg", 
+    imgSrc: "Hotjar.png", 
   },
   {
     title: "Maze",
     description: "Remote usability testing platform for gathering actionable feedback.",
-    imgSrc: "image4.jpg", 
+    imgSrc: "Maze (2).png", 
   },
   {
     title: "UsabilityHub",
     description: "Validate design decisions with real users through a variety of tests.",
-    imgSrc: "image3.jpg", 
+    imgSrc: "UsabilityHub.png", 
   },
 ];
