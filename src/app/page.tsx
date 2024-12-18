@@ -6,7 +6,7 @@ import React from "react";
 import { ParallexSection } from "./components/ParallexSection";
 import VerticalStack from "./components/VerticalStack";
 import NewComponent from "./components/NewComponent";
-// import LetsGetStartedSection from "./components/ui/Letgetstarted";
+import LetsGetStartedSection from "./components/ui/Letgetstarted";
 import { GoogleGeminiEffectDemo } from "./components/googlegeminieffect";
 // import { HeroParallax } from "./components/ui/hero-parallax";
 import { HeroParallaxDemo } from "./components/heroparallax";
@@ -16,11 +16,12 @@ const Page: React.FC = () => {
   return (
     <div>
       <GoogleGeminiEffectDemo />
+      {/* <LetsGetStartedSection /> */}
       
       {/* <Hero /> */}
-      {/* <div className=" relative bg-background-light max-h-lvh z-30">
+      <div className=" relative bg-background-light max-h-lvh z-30">
         <LetsGetStartedSection />
-      </div> */}
+      </div>
       {/* <Whatwedo /> */}
       <HeroParallaxDemo />
       <div className="relative bg-background-light  z-20">

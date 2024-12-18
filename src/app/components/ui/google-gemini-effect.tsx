@@ -21,27 +21,18 @@ export const GoogleGeminiEffect = ({
   className?: string;
 }) => {
   return (
-    <div className={cn("sticky top-60", className)}>
-
-       
-      <div className="flex w-full  origin-center flex-col items-center ">
-        
-          <h1 className="text-center text-3xl md:text-left">
-            <span className="font-thicccboi font-light text-[#797979] lg:text-7xl block">
+    
+    <div className={cn("sticky ", className)}>
+      <div className="flex w-full pt-20  origin-center flex-col items-center ">
+        <h1 className="text-center  text-3xl md:text-left">
+          <span className="font-thicccboi font-light text-[#797979] lg:text-7xl block">
             Dream it. Plan it. Do it.
-            </span>
-            <span className="font-thicccboi leading-tight font-bold bg-gradient-to-r from-[#bf00ff] to-[#ff5633] bg-clip-text text-transparent md:text-5xl block ">
+          </span>
+          <span className="font-thicccboi leading-tight font-bold bg-gradient-to-r from-[#bf00ff] to-[#ff5633] bg-clip-text text-transparent md:text-5xl block ">
             Transform your ideas into reality
-            </span>
-          </h1>
-           
-        </div>
-      
-        {/* <div className="w-full h-[890px] -top-60 md:-top-40  flex items-center justify-center bg-red-transparent absolute ">
-        <button className="font-bold bg-white rounded-full md:px-4 md:py-2 px-2 py-1 md:mt-24 mt-8 z-30 md:text-base text-black text-xs  w-fit mx-auto ">
-          ui.aceternity.com
-        </button>
-      </div> */}
+          </span>
+        </h1>
+      </div>
       <svg
         width="1440"
         height="890"
