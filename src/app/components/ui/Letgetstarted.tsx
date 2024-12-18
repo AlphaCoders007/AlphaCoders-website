@@ -8,67 +8,76 @@ const LetsGetStartedSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   gsap.registerPlugin(ScrollTrigger);
-  
 
   useEffect(() => {
     const sectionElement = sectionRef.current;
 
     if (sectionElement) {
+      // Create a timeline with smooth scrolling animations
       const timeline = gsap.timeline({
         scrollTrigger: {
           trigger: sectionElement,
-          start: "top bottom", // Animation starts when button enters viewport
-          end: "bottom top", // Ends when button leaves viewport
-          scrub: true, // Smooth animation on scroll
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1, // Smooth scroll with 1 second duration
+          markers: false, // Optional: Remove scroll trigger markers in production
         },
       });
 
-      // Button animation sequence
+      // Adding animations
       timeline
         .fromTo(
           sectionElement,
+          { width: "120px", height: "50px" },
           {
-            width: "120px", // Initial size
-            height: "50px",
-          },
-          {
-            width: "50vw", // Midway size
+            width: "50vw",
             height: "50vh",
-            borderRadius: "20px", // Slight roundness midway
+            borderRadius: "20px",
             duration: 1.5,
-            ease: "power3.inOut", // Smooth acceleration and deceleration
+            ease: "power3.inOut",
           }
         )
         .to(sectionElement, {
-          width: "100vw", // Full-screen div
+          width: "100vw",
           height: "100vh",
-          borderRadius: "0px", // No roundness
-          margin: "0px", // Remove any default margins
-          padding: "0px", // Ensure no padding
+          borderRadius: "0px",
+          margin: "0px",
+          padding: "0px",
           duration: 2,
           ease: "power2.out",
-          opacity:1
+          opacity: 1,
         });
     }
+
+    // Cleanup on component unmount
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
   }, []);
 
   return (
     <section
       ref={sectionRef}
-      className="  relative backdrop-blur-sm flex h-full  w-full flex-col -mt-4 rounded-xl items-center  left-1/2 right-1/2 transform -translate-x-1/2  z-20 pt-4  "
+      className="relative backdrop-blur-sm flex h-full w-full flex-col -mt-4 rounded-xl items-center left-1/2 right-1/2 transform -translate-x-1/2 z-20 pt-4"
     >
-      <div className=" sticky h-[150%] w-full top-[-7rem]   -mt-20 rounded-2xl z-20 flex items-center justify-center overflow-hidden   transition-all duration-300">
-        <video
-          className="sticky w-auto sm:w-full h-full object-cover rounded-lg "
-          autoPlay
-          loop
-          muted
-          playsInline
-        >
-          <source src="/video3.mp4" type="video/mp4" />
-        </video>
-      </div>
+      <VideoSection />
     </section>
+  );
+};
+
+const VideoSection: React.FC = () => {
+  return (
+    <div className="sticky h-[150%] w-full top-[-7rem] -mt-20 rounded-2xl z-20 flex items-center justify-center overflow-hidden transition-all duration-300">
+      <video
+        className="sticky w-auto sm:w-full h-full object-cover rounded-lg"
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
+        <source src="/video3.mp4" type="video/mp4" />
+      </video>
+    </div>
   );
 };
 
