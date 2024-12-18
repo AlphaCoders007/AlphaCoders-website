@@ -1,4 +1,4 @@
-import { HoverEffect } from "./ui/TechnologiesUI";
+import { HoverEffect } from "../../components/ui/TechnologiesUI";
 
 export function Technologies() {
   return (

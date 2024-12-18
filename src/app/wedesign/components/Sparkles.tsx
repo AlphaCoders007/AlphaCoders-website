@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { useTheme } from "@/app/components/hooks/useTheme"
-import { SparklesCore } from "./ui/sparkles";
+import { SparklesCore } from "../UI/sparkles";
 
 export function Sparkles() {
   const { isDarkMode } = useTheme();

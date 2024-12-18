@@ -12,15 +12,12 @@ import { GoogleGeminiEffectDemo } from "./components/googlegeminieffect";
 import { HeroParallaxDemo } from "./components/heroparallax";
 import Model from "./components/Mymodel";
 
-
-
 const Page: React.FC = () => {
   return (
     <div>
-
       <GoogleGeminiEffectDemo />
       {/* <LetsGetStartedSection /> */}
-      
+
       {/* <Hero /> */}
       <div className=" relative bg-background-light max-h-lvh z-30">
         <LetsGetStartedSection />
@@ -31,15 +28,7 @@ const Page: React.FC = () => {
       <div className="relative bg-background-light  z-20">
         <VerticalStack />
       </div>
-      <div className="">
-        <Model />
-      </div>
-      <div className="h-screen">
-        <Model />
-      </div>
       <ParallexSection />
-
-
       <NewComponent />
     </div>
   );

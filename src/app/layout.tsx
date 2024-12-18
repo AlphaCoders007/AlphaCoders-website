@@ -16,7 +16,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <Head/>
+      <Head />
       <body className=" transition-colors duration-300">
         <NavBarSection />
         <FloatingMenu />
