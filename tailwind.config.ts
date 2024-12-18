@@ -105,7 +105,7 @@ export default {
       },
       colors: {
       "background": {
-      "light": "#A28B55",
+      "light": "#f8f8f8",
       "dark": "#1a1a1a",
       "red": "#FF0000",
       "gray": "#3f3f46",

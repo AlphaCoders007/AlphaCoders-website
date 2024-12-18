@@ -8,7 +8,7 @@ import TechnologiesDesign from "./components/technologies";
 
 function page() {
   return (
-    
+    <div>
       <div className=" relative flex flex-col z-30  overflow-hidden font-thicccboi">
         
         
@@ -16,6 +16,7 @@ function page() {
         <Whatweoffer />
         <Methodologies />
         <TechnologiesDesign />
+    </div>
       <NewComponent />
     </div>
   );

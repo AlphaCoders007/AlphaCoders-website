@@ -23,6 +23,8 @@ const ConnectSection: React.FC = () => {
   };
 
   const handlePopupToggle = () => {
+    console.log("pop up done");
+    
     setIsPopupOpen(!isPopupOpen);
   };
 

@@ -9,7 +9,7 @@ interface MethodologyProps {
 const MethodologyCard: React.FC<MethodologyProps> = ({ name, methodology }) => (
   <div className="lg:w-1/3 mb-6 p-4">
     <div className="h-full text-center">
-      <h3 className="text-pretty font-thicccboi text-gray-900 font-medium title-font tracking-wider text-lg">{name}</h3>
+      <h3 className="text-pretty font-thicccboi  font-medium title-font tracking-wider text-lg">{name}</h3>
       <span className="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
       <p className="text-pretty font-thicccboi leading-relaxed text-lg mb-6">{methodology}</p>
     </div>
@@ -18,9 +18,9 @@ const MethodologyCard: React.FC<MethodologyProps> = ({ name, methodology }) => (
 
 const Methodologies: React.FC = () => {
   return (
-    <section className="text-pretty font-thicccboi text-gray-600 body-font bg-white">
+    <section className="text-pretty font-thicccboi  body-font bg-background-light transition-colors">
       <div className="container px-5 py-24 mx-auto">
-        <h1 className="sm:text-6xl text-3xl font-thicccboi text-pretty title-font mb-12 text-gray-900 text-center">
+        <h1 className="sm:text-6xl text-3xl font-thicccboi text-pretty title-font mb-12  text-center">
           Methodologies That Keep Us Going
         </h1>
         <div className="flex flex-wrap -m-4">

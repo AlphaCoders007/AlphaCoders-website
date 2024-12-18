@@ -2,11 +2,11 @@ import React from "react";
 
 export const Whatweoffer: React.FC = () => {
   return (
-    <section className="text-gray-600 bg-white body-font">
+    <section className=" bg-background-light transition-colors body-font">
       <div className="container px-5 py-24 mx-auto">
         {/* Section Title */}
         <div className="flex flex-col text-center w-full mb-20">
-          <h1 className="sm:text-6xl text-3xl font-thicccboi title-font mb-4 text-gray-900">
+          <h1 className="sm:text-6xl text-3xl font-thicccboi title-font mb-4">
             What we offer
           </h1>
           <p className="lg:w-2/3 mx-auto leading-relaxed text-lg font-thicccboi">
@@ -39,9 +39,9 @@ export const Whatweoffer: React.FC = () => {
           ].map((card, index) => (
             <div
               key={index}
-              className="xl:w-1/3 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60 text-pretty"
+              className="xl:w-1/3 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-900 dark:border-gray-200  border-opacity-60 text-pretty"
             >
-              <h2 className="text-2xl font-thicccboi text-gray-900 mb-2">
+              <h2 className="text-2xl font-thicccboi  mb-2">
                 {card.title}
               </h2>
               <p className="leading-relaxed text-lg mb-4 font-thicccboi">

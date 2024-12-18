@@ -13,7 +13,7 @@ export function BentoGrid() {
       </div>
 
       {/* Existing BentoGridUI component displaying Technologies */}
-      <BentoGridUI className="z-10 bg-background-light transition-colors">
+      <BentoGridUI className="z-10 bg-background-light transition-colors ">
         {technologies.map((item, i) => (
           <BentoGridItem
             key={i}

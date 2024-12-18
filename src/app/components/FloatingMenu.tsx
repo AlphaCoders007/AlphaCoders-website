@@ -23,14 +23,14 @@ const FloatingMenu: React.FC = () => {
   const menuItems: MenuItem[] = [
     { label: "We Imagine", href: "/weimagine", iconSrc: "cursor-icon.webp" },
     { label: "We Design", href: "/wedesign", iconSrc: "cursor-icon.webp" },
-    { label: "UI/UX", href: "/ui-ux", iconSrc: "cursor-icon.webp" },
+    { label: "We Create", href: "/wecreate", iconSrc: "cursor-icon.webp" },
     { label: "Branding", href: "/branding", iconSrc: "cursor-icon.webp" },
   ];
   const contactItems: ContactItem[] = [
     {
       type: "call",
       label: "Call Now",
-      href: "tel:+919400303325",
+      href: "tel:+91000000000",
       icon: (
         <img
         src="call.svg" 
@@ -51,15 +51,17 @@ const FloatingMenu: React.FC = () => {
           className="w-6 h-6"
         >
           <path
-            stroke="#333"
+            stroke="currentColor"
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeMiterlimit="10"
             strokeWidth="1.5"
+            fill="none"
             d="M17 20.5H7c-3 0-5-1.5-5-5v-7c0-3.5 2-5 5-5h10c3 0 5 1.5 5 5v7c0 3.5-2 5-5 5z"
           ></path>
           <path
-            stroke="#333"
+            stroke="currentColor"
+            fill="none"
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeMiterlimit="10"
@@ -146,7 +148,7 @@ const FloatingMenu: React.FC = () => {
                     rel={item.type === "social" ? "noopener noreferrer" : undefined}
                     className="flex items-center justify-center gap-2.5 cursor-pointer"
                   >
-                    <span className="text-2xl text-black dark:text-white">{item.icon}</span>
+                    <span className="text-2xl">{item.icon}</span>
                     <span className="text-center text-opacity-1 font-Montserrat">{item.label}</span>
                   </Link>
                 ))}

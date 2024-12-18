@@ -21,7 +21,7 @@ const Step: React.FC<StepProps> = ({ stepNumber, title, description, icon }) => 
         {icon}
       </div>
       <div className="flex-grow sm:pl-6 mt-6 sm:mt-0">
-        <h2 className="font-medium title-font text-gray-900 mb-1 text-xl">{title}</h2>
+        <h2 className="font-medium title-font  mb-1 text-xl">{title}</h2>
         <p className="leading-relaxed">{description}</p>
       </div>
     </div>
@@ -30,9 +30,9 @@ const Step: React.FC<StepProps> = ({ stepNumber, title, description, icon }) => 
 
 const TechnologiesDesign: React.FC = () => {
   return (
-    <section className="text-gray-600 body-font bg-white">
+    <section className=" body-font bg-background-light transition-colors">
       <div className="container px-5 py-24 mx-auto flex flex-wrap justify-center items-center">
-        <h1 className="sm:text-6xl text-3xl font-thicccboi text-pretty title-font mb-12 text-gray-900 text-center">
+        <h1 className="sm:text-6xl text-3xl font-thicccboi text-pretty title-font mb-12 text-center">
           Technologies that bring ideas to life
         </h1>
 
