@@ -2,8 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import styles from "../Styles.css/FloatingIcons.module.css";
 
-// Define a constant for the icon size
-const ICON_SIZE = 100;
+const ICON_SIZE = 80;
 
 const FloatingIcons: React.FC = () => {
   const iconContainerRef = useRef<HTMLDivElement>(null);
@@ -13,52 +12,34 @@ const FloatingIcons: React.FC = () => {
       const icons = iconContainerRef.current.querySelectorAll(`.${styles.icon}`);
 
       icons.forEach((icon) => {
-        // Adjust the starting X position to make icons denser on the left
-        const startX = gsap.utils.random(5, 30); // More concentrated on the left side
-        const startY = gsap.utils.random(-20, -2);
+        // Initial random position within the viewport
+        gsap.set(icon, {
+          x: `${gsap.utils.random(0, 100)}vw`, // Random X within the viewport
+          y: `${gsap.utils.random(0, 100)}vh`, // Random Y within the viewport
+          scale: gsap.utils.random(0.8, 1.5), // Random scale for depth
+          opacity: gsap.utils.random(0.7, 1), // Random opacity for natural feel
+          rotation: gsap.utils.random(-15, 15), // Slight tilt for realism
+        });
 
-        const driftX = gsap.utils.random(-10, 10);
-        const driftY = gsap.utils.random(-5, 5);
-        const duration = gsap.utils.random(6, 10);
-
+        // Create a timeline for infinite linear motion
         gsap.timeline({ repeat: -1 })
-          .set(icon, {
-            x: `${startX}vw`,
-            y: `${startY}vh`,
-            opacity: 1,
-            scale: 0.9,
-            rotation: gsap.utils.random(-10, 10),
+          .to(icon, {
+            x: `+=${gsap.utils.random(-20, 20)}vw`, // Drift horizontally
+            y: `+=${gsap.utils.random(-20, 20)}vh`, // Drift vertically
+            rotation: gsap.utils.random(-20, 20), // Slight rotation change
+            scale: gsap.utils.random(0.9, 1.5), // Scale subtly changes during motion
+            opacity: gsap.utils.random(0.6, 1), // Slight opacity fluctuations
+            duration: gsap.utils.random(10, 20), // Smooth, slow motion
+            ease: "power1.inOut", // Smooth ease for floating feel
           })
           .to(icon, {
-            x: `${startX + driftX}vw`,
-            y: `${startY + driftY}vh`,
-            rotation: gsap.utils.random(-15, 15),
-            scale: 1.05,
-            opacity: 0.9,
-            duration,
-            ease: "power1.out",
-          })
-          .to(icon, {
-            y: "80vh",
-            x: `${startX + driftX - 5}vw`,
-            duration: 1.5,
-            ease: "power2.inOut",
-            scale: 1.05,
-          })
-          .to(icon, {
-            y: "90vh",
-            opacity: 1,
-            duration: 1.5,
-            ease: "power2.inOut",
-            scale: 1,
-            x: `${startX + driftX - 10}vw`,
-          })
-          .to(icon, {
-            x: "-20vw",
-            y: "100vh",
-            opacity: 0,
-            duration: 1.5,
-            ease: "power3.in",
+            x: `${gsap.utils.random(0, 100)}vw`, // Reset position randomly within viewport
+            y: `${gsap.utils.random(0, 100)}vh`,
+            rotation: gsap.utils.random(-30, 30),
+            scale: gsap.utils.random(0.8, 1.5),
+            opacity: gsap.utils.random(0.7, 1),
+            duration: gsap.utils.random(10, 20),
+            ease: "power1.inOut",
           });
       });
     }

@@ -6,7 +6,7 @@ import Link from "next/link";
 function NavBarSection() {
   return (
     <header className="relative">
-      <div className="fixed  w-full z-40 backdrop-blur-3xl">
+      <div className="fixed  w-full z-40 ">
         <div className="flex flex-col justify-center items-center py-5 px-6">
           <Link href="/">
             <div className="flex flex-col items-center">

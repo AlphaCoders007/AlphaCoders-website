@@ -8,7 +8,7 @@ export function HeroParallaxDemo() {
 export const products = [
   {
     title: "Moonbeam",
-    link: "https://gomoonbeam.com",
+    link: "/wecreate",
     thumbnail:
       "https://aceternity.com/images/products/thumbnails/new/moonbeam.png",
   },
@@ -19,8 +19,8 @@ export const products = [
       "https://aceternity.com/images/products/thumbnails/new/cursor.png",
   },
   {
-    title: "Rogue",
-    link: "https://userogue.com",
+    title: "WeCreate",
+    link: "/wecreate",
     thumbnail:
       "https://aceternity.com/images/products/thumbnails/new/rogue.png",
   },
