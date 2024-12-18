@@ -6,14 +6,14 @@ export function BentoGrid() {
   return (
     <>
       {/* Add the new heading section here */}
-      <div className="px-6 z-10 bg-black text-white text-center py-10">
+      <div className="px-6 z-10 bg-background-light transition-colors text-center py-10">
         <h2 className="text-4xl md:text-6xl font-thicccboi tracking-tight leading-tight">
           Technologies We Leverage
         </h2>
       </div>
 
       {/* Existing BentoGridUI component displaying Technologies */}
-      <BentoGridUI className="z-10 bg-black">
+      <BentoGridUI className="z-10 bg-background-light transition-colors ">
         {technologies.map((item, i) => (
           <BentoGridItem
             key={i}
