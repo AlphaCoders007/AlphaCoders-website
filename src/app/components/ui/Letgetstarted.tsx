@@ -8,6 +8,7 @@ const LetsGetStartedSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   gsap.registerPlugin(ScrollTrigger);
+  
 
   useEffect(() => {
     const sectionElement = sectionRef.current;
@@ -64,7 +65,7 @@ const LetsGetStartedSection: React.FC = () => {
           muted
           playsInline
         >
-          <source src="/video2.mp4" type="video/mp4" />
+          <source src="/video3.mp4" type="video/mp4" />
         </video>
       </div>
     </section>
