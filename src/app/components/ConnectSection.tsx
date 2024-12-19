@@ -8,7 +8,7 @@ import {
   Facebook,
   Github,
 } from "lucide-react";
-import { Slider } from "@mui/material";
+import ContactForm from "./ContactForm";
 
 const ConnectSection: React.FC = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -276,7 +276,7 @@ const ConnectSection: React.FC = () => {
               >
                 Let’s Get Into Work!
               </h2>
-              <form className="mt-20 overflow-auto h-[80vh]">
+              {/* <form className="mt-20 overflow-auto h-[80vh]">
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2 ">
                   <div className="transition-colors">
                     <label
@@ -362,7 +362,9 @@ const ConnectSection: React.FC = () => {
                 >
                   Submit Your Enquiry
                 </button>
-              </form>
+              </form> */}
+
+              <ContactForm />
             </div>
           </div>
           <div
