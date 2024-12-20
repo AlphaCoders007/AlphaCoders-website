@@ -19,13 +19,13 @@ export function GoogleGeminiEffectDemo() {
 
   return (
     <div
-      className= " z-10 h-[100vh] bg-background-light transition-colors  w-full dark:border dark:border-white/[0.1] rounded-md relative pt-40 overflow-clip"
+      className= " z-10 h-[100vh] md:h-[100vh] bg-background-light transition-colors  w-full dark:border dark:border-white/[0.1] rounded-md relative pt-40 overflow-clip"
       ref={ref}
     >
       {/* floating icons */}
-      <div  className="absolute inset-0 bg-background-light ">
+      {/* <div  className="absolute inset-0 bg-background-light ">
           <FloatingIcons/>
-      </div>
+      </div> */}
       <GoogleGeminiEffect
         pathLengths={[
           pathLengthFirst,

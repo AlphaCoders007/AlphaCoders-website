@@ -58,28 +58,12 @@ const ConnectSection: React.FC = () => {
               {/* Header Section */}
               <div className="flex flex-col items-start justify-start gap-10">
                 <div>
-                  <h2
-                    className="font-ThicccboiRegular md:font-ThicccboiMedium"
-                    style={{
-                      fontSize: "clamp(1rem, -.3rem + 5.333vw, 4.5rem)",
-                      lineHeight: "clamp(1.1rem, -.2rem + 5.333vw, 4.6rem)",
-                    }}
-                  >
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-ThicccboiRegular leading-tight md:leading-snug">
                     Got an Interesting Project?
                   </h2>
                   <h2
                     id="letsConnectDiv"
-                    className="font-ThicccboiMedium"
-                    style={{
-                      fontSize: "clamp(1rem, -.3rem + 5.333vw, 4.5rem)",
-                      lineHeight: "clamp(1.1rem, -.2rem + 5.333vw, 4.6rem)",
-                      backgroundImage:
-                        "linear-gradient(90deg, #bf00ff, #ff5633)",
-                      backgroundClip: "text",
-                      WebkitBackgroundClip: "text",
-                      color: "transparent",
-                      backgroundRepeat: "no-repeat",
-                    }}
+                    className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-ThicccboiMedium leading-tight md:leading-snug bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-orange-500"
                   >
                     Let’s Connect.
                   </h2>
@@ -159,7 +143,7 @@ const ConnectSection: React.FC = () => {
                 <div className=" rounded-3xl  p-6 md:p-8">
                   <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
                     <a
-                      href="tel:+919400303325"
+                      href="tel:+919419196416"
                       className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-200"
                     >
                       <Phone className="w-5 h-5" />
@@ -167,7 +151,7 @@ const ConnectSection: React.FC = () => {
                     </a>
 
                     <a
-                      href="mailto:info@urbanhubinnovations.com"
+                      href="mailto:info@alphacoders.co.in"
                       className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-200"
                     >
                       <Mail className="w-5 h-5" />
@@ -193,16 +177,6 @@ const ConnectSection: React.FC = () => {
                       >
                         <Instagram className="w-5 h-5" />
                         <span className="sr-only">Instagram</span>
-                      </a>
-
-                      <a
-                        href="https://www.facebook.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors duration-200"
-                      >
-                        <Facebook className="w-5 h-5" />
-                        <span className="sr-only">Facebook</span>
                       </a>
 
                       <a
@@ -262,107 +236,9 @@ const ConnectSection: React.FC = () => {
                   </svg>
                 </button>
               </div>
-              <h2
-                className=" text-6xl text-center font-ThicccboiMedium text-global-font-sm-h3 md:text-global-font-h1"
-                style={{
-                  fontSize: "clamp(1rem, -.3rem + 5.333vw, 4.5rem)",
-                  lineHeight: "clamp(1.1rem, -.2rem + 5.333vw, 4.6rem)",
-                  backgroundImage: "linear-gradient(90deg, #bf00ff, #ff5633)",
-                  backgroundClip: "text",
-                  WebkitBackgroundClip: "text", // For webkit browsers (Chrome/Safari)
-                  color: "transparent", // Make text color transparent so the gradient shows
-                  backgroundRepeat: "no-repeat",
-                }}
-              >
+              <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-center font-ThicccboiMedium leading-none bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 bg-clip-text text-transparent">
                 Let’s Get Into Work!
               </h2>
-              {/* <form className="mt-20 overflow-auto h-[80vh]">
-                <div className="grid grid-cols-1 gap-6 md:grid-cols-2 ">
-                  <div className="transition-colors">
-                    <label
-                      htmlFor="companyName"
-                      className="transition-colors text-lg"
-                    >
-                      Name / Company
-                    </label>
-                    <input
-                      placeholder="Your Name / Company"
-                      className="mt-1 w-full border-2 border-gray-300 rounded-[1.5rem] p-4 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                      type="text"
-                      name="companyName"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="email"
-                      className="transition-colors text-lg"
-                    >
-                      Email
-                    </label>
-                    <input
-                      id="email"
-                      placeholder="Your Email"
-                      className="mt-1 w-full border-2 border-gray-300 rounded-[1.5rem] p-4 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                      type="email"
-                      name="email"
-                    />
-                  </div>
-                </div>
-
-                <div className="mt-4">
-                  <label className="transition-colors text-lg">
-                    Requirement Based On
-                  </label>
-                  <div className="flex flex-wrap gap-6 mt-3">
-                    {[
-                      "Website Development",
-                      "Mobile Application",
-                      "UI/UX",
-                      "Branding",
-                      "Web Application",
-                      "Other",
-                    ].map((item) => (
-                      <button
-                        key={item}
-                        type="button"
-                        className="border-2 border-gray-300 bg-gray-200 text-gray-700 rounded-full px-8 py-4 text-lg hover:bg-black hover:text-white transition-all"
-                      >
-                        {item}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="mt-4">
-                  <label className="transition-colors text-lg">Budget</label>
-                  <div className="flex items-center justify-between mt-3">
-                    <Slider
-                      getAriaLabel={() => "Budget range"}
-                      value={budgetRange}
-                      onChange={handleBudgetRangeChange}
-                      valueLabelDisplay="auto"
-                      min={0}
-                      max={1000}
-                    />
-                  </div>
-                </div>
-
-                <div className="mt-4">
-                  <label className="transition-colors text-lg">Enquiry</label>
-                  <textarea
-                    rows={4}
-                    placeholder="Give a brief about the project"
-                    className="mt-1 w-full h-200 border-2 border-gray-300 rounded-[1.5rem] p-4 "
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  className="px-10 py-5 bg-black rounded-full text-xl mt-6 hover:scale-105 transition-all"
-                >
-                  Submit Your Enquiry
-                </button>
-              </form> */}
 
               <ContactForm />
             </div>
