@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import styles from "../Styles.css/FloatingIcons.module.css";
 
-const ICON_SIZE = 80;
+const ICON_SIZE = 50;
 
 const FloatingIcons: React.FC = () => {
   const iconContainerRef = useRef<HTMLDivElement>(null);
