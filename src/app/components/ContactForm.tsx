@@ -124,11 +124,14 @@ const ContactForm: React.FC = () => {
           <label className="text-xl font-semibold">Requirement Based On</label>
           <div className="flex flex-wrap gap-4">
             {[
-              "Website Development",
-              "Mobile Application",
-              "UI/UX",
-              "Branding",
-              "Web Application",
+              "Idea Elaboration",
+              "Market Research and Feasibility Analysis",
+              "Wire-Framing and Prototyping",
+              "MVP Development",
+              "System Integration",
+              "Custom Software Development",
+              "Mobile and Web Application Development",
+              "Quality Testing and Software Maintenance",
               "Other",
             ].map((item) => (
               <button
@@ -136,9 +139,9 @@ const ContactForm: React.FC = () => {
                 type="button"
                 className={`border-2 px-6 py-3 rounded-full text-lg transition-all ${
                   formData.requirement === item
-                    ? "bg-indigo-600 text-white"
+                    ? "bg-[#bf00ff] text-white"
                     : "bg-gray-200 text-gray-700"
-                } hover:bg-indigo-500 hover:text-white`}
+                } hover:bg-[#bf00ff] hover:text-white`}
                 onClick={() =>
                   setFormData({ ...formData, requirement: item })
                 }
@@ -160,16 +163,17 @@ const ContactForm: React.FC = () => {
           <Slider
             value={formData.budgetRange}
             onChange={handleBudgetRangeChange}
-            valueLabelDisplay="auto"
-            valueLabelFormat={(value) => `$${value}`}
-            min={0}
-            max={2000}
+            // valueLabelDisplay="auto"
+            // valueLabelFormat={(value) => `$${value}`}
+            min={10}
+            max={1000}
             sx={{
-              color: "#4c51bf", // Customize slider color to match theme
+              color: "#bf00ff", 
+              
             }}
           />
           <div className="text-lg mt-2 text-gray-500">
-            Selected Budget: ${formData.budgetRange[0]} - ${formData.budgetRange[1]}
+            Selected Budget: ${formData.budgetRange[0]}K - ${formData.budgetRange[1]}K
           </div>
         </div>
 
@@ -196,7 +200,7 @@ const ContactForm: React.FC = () => {
 
         <button
           type="submit"
-          className="w-full px-8 py-4 bg-indigo-600 text-white rounded-full text-xl mt-6 hover:scale-105 transition-all ease-in-out duration-300"
+          className="w-full px-8 py-4 bg-gradient-to-r from-[#bf00ff] to-[#ff5633]  text-white rounded-full text-xl mt-6 hover:scale-105 transition-all ease-in-out duration-300"
         >
           Submit Your Enquiry
         </button>
