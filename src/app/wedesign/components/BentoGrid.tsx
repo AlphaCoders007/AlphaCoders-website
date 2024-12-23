@@ -13,7 +13,7 @@ export function BentoGrid() {
       </div>
 
       {/* Existing BentoGridUI component displaying Technologies */}
-      <BentoGridUI className="z-10 bg-background-light transition-colors ">
+      <BentoGridUI className="z-10 grid grid-cols-2 bg-background-light transition-colors ">
         {technologies.map((item, i) => (
           <BentoGridItem
             key={i}
@@ -32,47 +32,47 @@ export function BentoGrid() {
 const technologies = [
   {
     title: "Figma",
-    description: "Collaborative design tool for creating and testing interfaces in real time.",
+    description: "We collaborate in real-time to design and test interfaces efficiently.",
     imgSrc: "Figma (2).png", 
   },
   {
     title: "Adobe XD",
-    description: "Streamlined for UI/UX design with prototyping capabilities.",
+    description: "We streamline our UI/UX design process with its prototyping capabilities.",
     imgSrc: "Adobe XD.png", 
   },
   {
     title: "Sketch",
-    description: "A powerful design tool for creating user interfaces, icons, and prototypes.",
+    description: "We craft user interfaces, icons, and prototypes with its powerful design tools.",
     imgSrc: "Sketch.png", 
   },
   {
     title: "InVision",
-    description: "Prototyping tool that lets you create clickable designs and gather feedback.",
+    description: "We create clickable prototypes and gather feedback seamlessly.",
     imgSrc: "InVision.png", 
   },
   {
     title: "Axure RP",
-    description: "Advanced prototyping tool with rich interactions and dynamic content.",
+    description: "We build advanced prototypes with rich interactions and dynamic content.",
     imgSrc: "Azure rp.png",
   },
   {
     title: "Marvel",
-    description: "Create interactive prototypes and gather user feedback quickly.",
+    description: "We quickly create interactive prototypes and collect user feedback.",
     imgSrc: "Marvel.png", 
   },
   {
     title: "Hotjar",
-    description: "Heatmaps, session recordings, and user feedback for behavioral insights.",
+    description: "We analyze heatmaps, session recordings, and user feedback to gain behavioral insights.",
     imgSrc: "Hotjar.png", 
   },
   {
     title: "Maze",
-    description: "Remote usability testing platform for gathering actionable feedback.",
+    description: "We conduct remote usability testing to gather actionable feedback.",
     imgSrc: "Maze (2).png", 
   },
   {
     title: "UsabilityHub",
-    description: "Validate design decisions with real users through a variety of tests.",
+    description: " We validate our design decisions with real users through various tests.",
     imgSrc: "UsabilityHub.png", 
   },
 ];

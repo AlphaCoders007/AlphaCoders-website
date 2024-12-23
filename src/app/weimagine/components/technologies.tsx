@@ -1,4 +1,4 @@
-import { HoverEffect } from "../../components/ui/TechnologiesUI";
+import { HoverEffect } from "../UI/TechnologiesUI";
 
 export function Technologies() {
   return (
@@ -19,37 +19,37 @@ export const projects = [
   {
     title: "Miro",
     description:
-      "A visual collaboration platform that allows teams to brainstorm, plan, and collaborate in real time. It supports mind mapping, ideation boards, and sticky notes, helping streamline the creative process. It’s especially effective for remote teams, as it fosters collaboration despite geographic distances.",
+      "We brainstorm, plan, and collaborate in real-time using visual tools like mind maps and sticky notes. This helps streamline the creative process, especially for remote teams.",
     link: "https://miro.com/",
   },
   {
     title: "Microsoft Teams",
     description:
-      "A communication and collaboration hub that integrates with Office 365. Teams enables video conferencing, file sharing, and chat, ensuring that all stakeholders remain aligned and up-to-date throughout the ideation and development phases. It is essential for cross-functional team collaboration.",
+      "We use it as our communication hub to stay aligned through video conferencing, file sharing, and chats, ensuring smooth cross-functional collaboration.",
     link: "https://www.microsoft.com/en-in/microsoft-teams/group-chat-software",
   },
   {
     title: "Google Analytics",
     description:
-      "A powerful analytics tool that tracks website traffic, user behavior, and conversion rates. It helps identify patterns and insights from user interactions with digital products or services, guiding strategic decision-making during the ideation and development phases.",
+      "We analyze website traffic, user behavior, and conversion rates to uncover patterns and make data-driven strategic decisions during development phases.",
     link: "https://developers.google.com/analytics",
   },
   {
     title: "SEMRUSH",
     description:
-      "A leading competitive research tool that provides insights into keyword performance, traffic analysis, and backlink strategies. It is especially useful for market research and understanding the competitive landscape, ensuring that your ideas are not only innovative but also market-ready.",
+      "We conduct keyword research, traffic analysis, and competitor benchmarking to ensure our marketing strategies are both innovative and market-ready.",
     link: "https://www.semrush.com/",
   },
   {
     title: "Jira",
     description:
-      "A popular tool for agile project management, especially in software development. It enables teams to plan sprints, manage user stories, and track the progress of iterative development. Jira is essential for keeping track of the ideation process, from concept to delivery.",
+      "We manage agile workflows by planning sprints, tracking user stories, and overseeing the progress of iterative development from concept to delivery.",
     link: "https://www.atlassian.com/software/jira",
   },
   {
     title: "Figma",
     description:
-      "A cloud-based design tool that allows teams to create, prototype, and collaborate on UI/UX designs in real time. Figma is versatile, supporting vector graphics, design systems, and interactive prototyping. It enables rapid iteration, allowing teams to gather feedback and refine designs quickly.",
+      "We design, prototype, and collaborate on UI/UX projects in real-time, enabling rapid iterations and refining designs with team feedback.",
     link: "https://www.figma.com/",
   },
 ];

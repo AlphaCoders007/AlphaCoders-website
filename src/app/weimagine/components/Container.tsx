@@ -1,5 +1,5 @@
 import React from 'react'
-import { Cover } from "@/app/components/ui/cover";
+import { Cover } from "@/app/weimagine/UI/cover";
 import { ContainerScroll } from "../UI/container-scroll-animation";
 import Image from "next/image";
 const Container = () => {
