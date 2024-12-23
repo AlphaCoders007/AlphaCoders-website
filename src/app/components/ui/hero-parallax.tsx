@@ -137,7 +137,7 @@ export const ProductCard = ({
       whileHover={{
         y: -20,
       }}
-      className="group/product h-96 w-[30rem] relative flex-shrink-0"
+      className="group/product h-96 w-[20em] relative flex-shrink-0 rounded-xl border border-r-amber-700"
     >
       <Link
         href={product.link}
@@ -147,7 +147,7 @@ export const ProductCard = ({
           src={product.thumbnail}
           height={600}
           width={600}
-          className="object-cover object-left-top absolute h-full w-full inset-0"
+          className="object-fill absolute h-full w-full rounded-xl"
           alt={product.title}
         />
       </Link>

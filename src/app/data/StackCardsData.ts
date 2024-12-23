@@ -28,7 +28,7 @@ export const cards: CardStatsProps[] = [
     color: "bg-[#E49B0F]",
   },
   {
-    imageSrc: "wedesign.jpg",
+    imageSrc: "Wedesign5.png",
     technologie: [
       "User Experience Design (UX)",
       "Interface Design (UI) ",

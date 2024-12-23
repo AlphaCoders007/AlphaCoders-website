@@ -10,32 +10,32 @@ export const products = [
     title: "WeImagine",
     link: "/weimagine",
     thumbnail:
-      "/Ideationworkshop.png",
+      "/weimagine.png",
   },
   {
     title: "WeImagine",
     link: "/weimagine",
     thumbnail:
-      "/cnp.png",
+      "/weimagine2.png",
   },
   {
     title: "WeImagine",
     link: "/weimagine",
     thumbnail:
-      "/marketresearch.png",
+      "/weimagine3.png",
   },
 
   {
     title: "WeImagine",
     link: "/weimagine",
     thumbnail:
-      "/Ideationworkshop.png",
+      "/weimagine2.png",
   },
   {
-    title: "WeDesign",
-    link: "/wedesign",
+    title: "WeImagine",
+    link: "/weimagine",
     thumbnail:
-      "/Ui_Ux1.png",
+      "/weimagine.png",
   },
   {
     title: "WeDesign",
