@@ -76,42 +76,42 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
 };
 
 export const Card = ({
-  card,
-  layout = false,
-}: {
-  card: Card;
-  layout?: boolean;
-}) => {
-  return (
-    <motion.div
-      layoutId={layout ? `card-${card.title}` : undefined}
-      className="rounded-3xl bg-gray-100 dark:bg-neutral-900 h-80 w-56 md:h-[40rem] md:w-96 overflow-hidden flex flex-col items-start justify-start relative z-10 shadow-lg"
-    >
-      {/* Enhanced Overlay */}
-      <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/70 via-black/40 to-transparent z-30 pointer-events-none" />
-      <div className="relative z-40 p-8">
-        {/* Category Text */}
-        <motion.p
-          layoutId={layout ? `category-${card.category}` : undefined}
-          className="text-white text-sm md:text-xl font-thicccboi text-left drop-shadow-lg"
-        >
-          {card.category}
-        </motion.p>
-        {/* Title Text */}
-        <motion.p
-          layoutId={layout ? `title-${card.title}` : undefined}
-          className="text-white text-xl md:text-3xl font-thicccboi max-w-xs text-left [text-wrap:balance]  mt-2 drop-shadow-lg"
-        >
-          {card.title}
-        </motion.p>
-      </div>
-      {/* Background Image */}
-      <Image
-        src={card.src}
-        alt={card.title}
-        fill
-        className="object-cover absolute z-10 inset-0" 
-      />
-    </motion.div>
-  );
-};
+    card,
+    layout = false,
+  }: {
+    card: Card;
+    layout?: boolean;
+  }) => {
+    return (
+      <motion.div
+        layoutId={layout ? `card-${card.title}` : undefined}
+        className="rounded-3xl bg-gray-100 dark:bg-neutral-900 h-80 w-56 md:h-[40rem] md:w-96 overflow-hidden flex flex-col items-start justify-start relative z-10 shadow-lg"
+      >
+        {/* Enhanced Overlay */}
+        <div className="absolute  h-full top-0 inset-x-0 bg-gradient-to-b from-black/80 via-black/50 to-transparent z-30 pointer-events-none" />
+        <div className="relative z-40 p-8  ">
+          {/* Category Text */}
+          <motion.p
+            layoutId={layout ? `category-${card.category}` : undefined}
+            className="text-white text-xs   sm:text-sm md:text-lg lg:text-sm font-thicccboi text-left drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)] tracking-wide uppercase mb-2"
+          >
+            {card.category}
+          </motion.p>
+          {/* Title Text */}
+          <motion.h2
+            layoutId={layout ? `title-${card.title}` : undefined}
+            className="text-white text-sm sm:text-xl py-5 md:text-2xl lg:text-xl font-thicccboi max-w-xs text-left leading-tight md:leading-snug mt-4 drop-shadow-[0_3px_6px_rgba(0,0,0,0.9)]"
+          >
+            {card.title}
+          </motion.h2>
+        </div>
+        {/* Background Image */}
+        <Image
+          src={card.src}
+          alt={card.title}
+          fill
+          className="object-cover absolute z-10 inset-0"
+        />
+      </motion.div>
+    );
+  };
