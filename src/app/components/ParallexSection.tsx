@@ -9,7 +9,7 @@ import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger);
 
 const teamMembers = [
-  { img: "/dev0.jpeg" },
+  { img: "/dev00.jpg" },
   { img: "/dev3.jpg" },
   { img: "/dev1.jpg" },
   { img: "/ogdev2.jpg" },
