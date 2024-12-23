@@ -197,13 +197,15 @@ const ConnectSection: React.FC = () => {
 
           {/* Sliding Contact Form */}
           <div
-            className={`fixed inset-x-0 z-[9999]  bottom-0  transition-all duration-700 ease-out ${
+            className={`fixed z-50 !imoportant inset-x-0  bottom-0  transition-all duration-700 ease-out ${
               isPopupOpen
                 ? "transform translate-y-0"
                 : "transform translate-y-full"
             }`}
             style={{
               pointerEvents: isPopupOpen ? "auto" : "none",
+              zIndex:1050,
+              position:"fixed",
             }}
           >
             <div
@@ -239,8 +241,8 @@ const ConnectSection: React.FC = () => {
               <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-center font-ThicccboiMedium leading-none bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 bg-clip-text text-transparent">
                 Let’s Get Into Work!
               </h2>
-
               <ContactForm />
+
             </div>
           </div>
           <div

@@ -24,7 +24,6 @@ const FloatingMenu: React.FC = () => {
     { label: "We Imagine", href: "/weimagine", iconSrc: "cursor-icon.webp" },
     { label: "We Design", href: "/wedesign", iconSrc: "cursor-icon.webp" },
     { label: "We Create", href: "/wecreate", iconSrc: "cursor-icon.webp" },
-    { label: "Branding", href: "/branding", iconSrc: "cursor-icon.webp" },
   ];
   const contactItems: ContactItem[] = [
     {
@@ -129,7 +128,7 @@ const FloatingMenu: React.FC = () => {
                               className="w-6 h-6" 
                             />
                           </span>
-                          <span className="ml-1 dark:text-white text-gray-700 font-Montserrat  font-ultrathin text-ultrathin text-opacity-100  group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-500 group-hover:to-orange-500 ">
+                          <span className="ml-1 dark:text-white text-gray-700 font-thicccboi text-2xl text-opacity-100  group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-500 group-hover:to-orange-500 ">
                             {item.label}
                           </span>
                         </div>

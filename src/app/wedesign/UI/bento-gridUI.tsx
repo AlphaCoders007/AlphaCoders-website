@@ -10,7 +10,7 @@ export const BentoGridUI = ({
   return (
     <div
       className={cn(
-        "grid md:auto-rows-[18rem] grid-cols-1 md:grid-cols-3 gap-4 max-w-full p-20 ",
+        "grid md:auto-rows-[18rem] grid-cols-1 md:grid-cols-3 gap-4 max-w-full p-5 sm:p-20 ",
         className
       )}
     >
