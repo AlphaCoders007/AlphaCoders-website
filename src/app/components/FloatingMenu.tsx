@@ -21,9 +21,11 @@ const FloatingMenu: React.FC = () => {
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   const menuItems: MenuItem[] = [
+    { label: "Home", href: "/", iconSrc: "cursor-icon.webp" },
     { label: "We Imagine", href: "/weimagine", iconSrc: "cursor-icon.webp" },
     { label: "We Design", href: "/wedesign", iconSrc: "cursor-icon.webp" },
     { label: "We Create", href: "/wecreate", iconSrc: "cursor-icon.webp" },
+    
   ];
   const contactItems: ContactItem[] = [
     {
@@ -105,15 +107,25 @@ const FloatingMenu: React.FC = () => {
             toggleMenu(event);
           }
         }}
-        className={` overflow-hidden border  border-gray-300 bg-background-light transition-colors rounded-tl-[60px] rounded-tr-[60px] rounded-bl-[60px] rounded-br-[60px] duration-300 ease-in-out ${isOpen ? " w-64 h-96 sm:w-72 " : "w-11 sm:w-28 h-11"} cursor-pointer`}
+        className={`overflow-hidden border border-gray-300 bg-background-light transition-colors rounded-tl-[60px] rounded-tr-[60px] rounded-bl-[60px] rounded-br-[60px] duration-300 ease-in-out ${
+          isOpen ? "w-64 h-96 sm:w-72" : "w-11 sm:w-28 h-11"
+        } cursor-pointer`}
       >
         <div className="relative flex items-center justify-center w-full h-full">
           {isOpen && (
             <div className="flex flex-col items-center justify-center gap-3 p-4 absolute top-0 left-0 right-0 bottom-0">
-              <ul className="flex flex-col gap-1 font-Montserrat font-thin  w-full mt-4">
+              <ul className="flex flex-col gap-1 font-Montserrat font-thin w-full mt-4">
                 {menuItems.map((item, index) => (
-                  <li key={index} className={`${index === 0 ? "mt-2" : ""} cursor-pointer`}>
-                    <Link href={item.href}>
+                  <li
+                    key={index}
+                    className={`${
+                      index === 0 ? "mt-2" : ""
+                    } cursor-pointer`}
+                  >
+                    <Link
+                      href={item.href}
+                      onClick={() => setIsOpen(false)} 
+                    >
                       <div className="group flex items-center justify-center gap-1 h-10 w-3/4 mx-auto overflow-hidden rounded-full hover:bg-gray-100 text-center cursor-pointer">
                         <div className="relative flex items-center text-gray-900">
                           <span
@@ -125,10 +137,10 @@ const FloatingMenu: React.FC = () => {
                               alt="menu-icon"
                               width="24"
                               height="24"
-                              className="w-6 h-6" 
+                              className="w-6 h-6"
                             />
                           </span>
-                          <span className="ml-1 dark:text-white text-gray-700 font-thicccboi text-2xl text-opacity-100  group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-500 group-hover:to-orange-500 ">
+                          <span className="ml-1 dark:text-white text-gray-700 font-thicccboi text-2xl text-opacity-100 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-500 group-hover:to-orange-500">
                             {item.label}
                           </span>
                         </div>
@@ -137,18 +149,27 @@ const FloatingMenu: React.FC = () => {
                   </li>
                 ))}
               </ul>
-
+  
               <div className="flex flex-col items-center justify-center gap-4 rounded-2xl h-2/5 w-56 border transition-colors border-gray-300 px-6 py-4 font-montserrat text-sm cursor-pointer">
                 {contactItems.map((item, index) => (
                   <Link
                     key={index}
                     href={item.href}
-                    target={item.type === "social" ? "_blank" : undefined}
-                    rel={item.type === "social" ? "noopener noreferrer" : undefined}
+                    target={
+                      item.type === "social" ? "_blank" : undefined
+                    }
+                    rel={
+                      item.type === "social"
+                        ? "noopener noreferrer"
+                        : undefined
+                    }
+                    onClick={() => setIsOpen(false)} // Close menu on contact item click
                     className="flex items-center justify-center gap-2.5 cursor-pointer"
                   >
                     <span className="text-2xl">{item.icon}</span>
-                    <span className="text-center text-opacity-1 font-Montserrat">{item.label}</span>
+                    <span className="text-center text-opacity-1 font-Montserrat">
+                      {item.label}
+                    </span>
                   </Link>
                 ))}
               </div>
@@ -156,21 +177,21 @@ const FloatingMenu: React.FC = () => {
           )}
         </div>
       </div>
-
+  
       {/* Toggle Button */}
-      <div className="absolute top-0 mt-1 z-50 flex justify-center items-center cursor-pointer left-1/2 -translate-x-1/4"> 
+      <div className="absolute top-0 mt-1 z-50 flex justify-center items-center cursor-pointer left-1/2 -translate-x-1/4">
         <button
           ref={buttonRef}
           onClick={(event) => {
             event.stopPropagation(); // Prevent propagation to prevent accidental menu closing
             toggleMenu(event);
           }}
-          className="bg-transparent border-0 rounded-lg w-12 h-8   transition-all duration-300 cursor-pointer"
+          className="bg-transparent border-0 rounded-lg w-12 h-8 transition-all duration-300 cursor-pointer"
         >
           <img
             src="cursor-icon.webp"
             alt="Menu"
-            className="w-8 h-8 transition-all duration-300 rounded-full "
+            className="w-8 h-8 transition-all duration-300 rounded-full"
             style={{
               opacity: isOpen ? "0" : "1", // Make image fully transparent when menu is open
               pointerEvents: isOpen ? "none" : "auto", // Disable pointer events when hidden
@@ -179,7 +200,6 @@ const FloatingMenu: React.FC = () => {
         </button>
       </div>
     </div>
-
   );
 };
 
