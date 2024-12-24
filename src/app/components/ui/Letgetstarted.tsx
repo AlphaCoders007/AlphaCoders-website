@@ -35,6 +35,7 @@ const LetsGetStartedSection: React.FC = () => {
             borderRadius: "20px",
             duration: 1.5,
             ease: "power3.inOut",
+            
           }
         )
         .to(sectionElement, {
@@ -58,7 +59,7 @@ const LetsGetStartedSection: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative backdrop-blur-sm flex h-full w-full flex-col -mt-4 rounded-xl items-center left-1/2 right-1/2 transform -translate-x-1/2 z-20 pt-4"
+      className="relative backdrop-blur-sm flex h-full w-full flex-col -mt-6 rounded-xl items-center left-1/2 right-1/2 transform -translate-x-1/2 z-20 pt-4"
     >
       <VideoSection />
     </section>

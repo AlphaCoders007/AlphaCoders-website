@@ -16,6 +16,8 @@ const teamMembers = [
   { img: "/dev00.jpg" },
   { img: "/dev4.jpeg" },
   { img: "/dev5.jpeg" },
+  { img: "/dev123.jpeg" },
+
 ];
 
 interface ReviewCardProps {
@@ -169,7 +171,7 @@ export function ParallexSection() {
     { img: teamMembers[1].img },
     { img: teamMembers[4].img },
     { text: "Innovation!" },
-    { img: teamMembers[2].img },
+    { img: teamMembers[7].img },
     { img: teamMembers[6].img },
   ];
 
