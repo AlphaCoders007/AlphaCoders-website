@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import CircularMovingText from "./MovingText";
 import Link from "next/link";
 
@@ -22,6 +22,14 @@ const StickyComponent: React.FC<StickyComponentProps> = ({
   technologies,
   color,
 }) => {
+  // State to track the image loading status
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Handle image load event
+  const handleImageLoad = () => {
+    setIsLoading(false);
+  };
+
   return (
     <div className="sticky top-0 z-20 flex h-screen items-start justify-center px-[1rem] md:px-[2rem]">
       <div className="h-full origin-top pt-[7rem] pb-[2rem] w-full">
@@ -33,6 +41,12 @@ const StickyComponent: React.FC<StickyComponentProps> = ({
           >
             <div className="relative h-1/2 overflow-hidden md:h-full md:w-1/2">
               <div className="h-full w-full">
+                {/* Show spinner while the image is loading */}
+                {isLoading && (
+                  <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-white opacity-75">
+                    <div className="w-12 h-12 border-4 border-t-4 border-blue-500 border-solid rounded-full animate-spin"></div>
+                  </div>
+                )}
                 <img
                   alt="image"
                   loading="lazy"
@@ -49,6 +63,7 @@ const StickyComponent: React.FC<StickyComponentProps> = ({
                     color: "transparent",
                   }}
                   src={imageSrc}
+                  onLoad={handleImageLoad} // Handle the image load event
                 />
               </div>
             </div>
