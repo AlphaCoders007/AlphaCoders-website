@@ -21,19 +21,19 @@ const data = [
   {
     category: "Ideation Workshops",
     title: "Collaborative sessions to refine your ideas..",
-    src: "/workshop.webp",
+    src: "/Ideationworkshop.png",
     
   },
   {
     category: "Market Research",
     title: "Insights to align your vision with market needs.",
-    src: "/research.webp",
+    src: "/MarketResearch2.png",
     
   },
   {
     category: "Concept Validation",
     title: "Feasibility analysis to ensure success.",
-    src: "/validation2.webp",
+    src: "/ConceptValidation2.png",
     
   },
 ];
