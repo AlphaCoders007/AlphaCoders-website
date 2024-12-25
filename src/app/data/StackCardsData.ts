@@ -28,7 +28,7 @@ export const cards: CardStatsProps[] = [
     color: "bg-[#4C585B]",
   },
   {
-    imageSrc: "Wecreate (2).gif",
+    imageSrc: "18069234-hd_1080_1080_24fps-ezgif.com-gif-maker.gif",
     technologie: [
       "User Experience Design (UX)",
       "Interface Design (UI) ",
@@ -45,7 +45,7 @@ export const cards: CardStatsProps[] = [
   },
   {
     technologie: ["Custom Software Development", "End-to-End Engineering", " Quality Assurance"],
-    imageSrc: "8b5c7d22-d428-46e0-8235-857afc1d5e61.gif",
+    imageSrc: "8b5c7d22-d428-46e0-8235-857afc1d5e61-ezgif.com-gif-maker.gif",
     title: "We Create",
     subtitle: "Creation Brings Your Vision to Life", // Added subtitle here
     isEven: true,
