@@ -93,7 +93,7 @@ export const Card = ({
           {/* Category Text */}
           <motion.p
             layoutId={layout ? `category-${card.category}` : undefined}
-            className="text-white text-xs   sm:text-sm md:text-lg lg:text-sm font-thicccboi text-left drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)] tracking-wide uppercase mb-2"
+            className="text-white text-xs    md:text-lg lg:text-lg font-thicccboi text-left drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)] tracking-wide  mb-2"
           >
             {card.category}
           </motion.p>

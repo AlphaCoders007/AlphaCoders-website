@@ -18,7 +18,7 @@ const Container = () => {
           }
         >
           <Image
-            src={`/wecreate4.webp`}
+            src={`/weimaginetab.jpg`}
             alt="hero"
             height={720}
             width={1400}

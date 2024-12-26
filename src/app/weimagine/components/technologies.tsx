@@ -8,7 +8,7 @@ export function Technologies() {
         Technologies we leverage...
       </h2>
       </div>
-      <div className="relative z-20 bg-background-light transition-colors max-w-5xl mx-auto px-8 dark:text-white ">
+      <div className="relative z-20  bg-background-light transition-colors max-w-5xl mx-auto px-8 dark:text-white ">
       <HoverEffect items={projects} />
       </div>
       </div>
