@@ -14,6 +14,8 @@ export const HeroParallax = ({
   products,
 }: {
   products: {
+    heading?: string;
+    description?: string;
     title: string;
     link: string;
     id:number;
@@ -123,7 +125,9 @@ export const ProductCard = ({
   product,
   translate,
 }: {
-  product: {
+  product: { 
+    heading?: string;
+    description?: string;
     title: string;
     link: string;
     id: number;
@@ -149,14 +153,27 @@ export const ProductCard = ({
           src={product.thumbnail}
           height={600}
           width={600}
-          className="object-fill absolute h-full w-full rounded-xl"
+          className="object-cover absolute h-full w-full rounded-xl"
           alt={product.title}
         />
       </Link>
-      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
+      {/* Conditional gradient overlay */}
+      <div
+        className="absolute inset-0 h-full w-full pointer-events-none"
+        style={{
+          background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 100%)',
+          opacity: 1, // Default opacity before hover
+        }}
+      />
+      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-0 bg-black pointer-events-none"></div>
+      <div className="absolute top-4 left-4 text-white">
+        <h2 className="text-lg">{product.heading}</h2>
+        <p className="text-2xl">{product.description}</p>
+      </div>
       <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white text-lg">
         {product.title}
       </h2>
     </motion.div>
   );
 };
+
