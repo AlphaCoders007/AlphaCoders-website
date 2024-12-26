@@ -61,7 +61,7 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
-      className="z-10 bg-background-light transition-colors h-[350vh] sm:h-[300vh] py-20 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="z-10 bg-background-light transition-colors  h-[350vh] sm:h-[350vh]   py-20 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -108,7 +108,7 @@ export const HeroParallax = ({
 export const Header = () => {
   return (
     <div className="max-w-7xl relative mx-auto py-10 px-4 w-full left-0 top-0">
-      <h1 className="text-3xl md:text-6xl font-extrabold tracking-wide leading-tight ">
+      <h1 className="text-3xl md:text-6xl font-thicccboi tracking-wide leading-tight ">
         LET'S BUILD YOUR DREAM TOGETHER
       </h1>
       <p className="max-w-2xl text-base md:text-lg mt-4 text-gray-300">
@@ -158,16 +158,15 @@ export const ProductCard = ({
         />
       </Link>
 
-      {/* Enhanced gradient overlay with smooth opacity */}
+      {/* Stronger gradient overlay to enhance text visibility */}
       <div
         className="absolute inset-0 h-full w-full pointer-events-none"
         style={{
-          background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 100%)',
-          opacity: 0.6,
+          background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%)',
         }}
       />
 
-      {/* Text container with smooth opacity transitions and dynamic hover */}
+      {/* Text container with enhanced styling for better contrast and visibility */}
       <div className="absolute top-8 left-8 text-white z-20 space-y-2 opacity-90 transition-opacity duration-500 group-hover/product:opacity-100">
         <h2 className="text-2xl font-semibold">{product.heading}</h2>
         <p className="text-lg">{product.description}</p>
