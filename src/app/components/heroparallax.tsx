@@ -11,21 +11,21 @@ export const products = [
     link: "/weimagine",
     id:1,
     thumbnail:
-      "/Ideationworkshop.png",
+      "/weimagine.png",
   },
   {
     title: "WeImagine",
     link: "/weimagine",
     id:2,
     thumbnail:
-      "/cnp.png",
+      "/weimagine2.png",
   },
   {
     title: "WeImagine",
     link: "/weimagine",
     id:3,
     thumbnail:
-      "/marketresearch.png",
+      "/weimagine3.png",
   },
 
   {
@@ -33,14 +33,14 @@ export const products = [
     link: "/weimagine",
     id:4,
     thumbnail:
-      "/Ideationworkshop.png",
+      "/weimagine2.png",
   },
   {
     title: "WeDesign",
     link: "/wedesign",
     id:5,
     thumbnail:
-      "/Ui_Ux1.png",
+      "/weimagine.png",
   },
   {
     title: "WeDesign",
