@@ -122,7 +122,7 @@ const ContactForm: React.FC = () => {
 
         <div>
           <label className="text-xl font-semibold">Requirement Based On</label>
-          <div className="flex flex-wrap gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-4 ">
             {[
               "Idea Elaboration",
               "Market Research and Feasibility Analysis",
@@ -137,7 +137,7 @@ const ContactForm: React.FC = () => {
               <button
                 key={item}
                 type="button"
-                className={`border-2 px-6 py-3 rounded-full text-lg transition-all ${
+                className={` border-2 rounded-3xl w-full px-2 py-4  text-sm transition-all ${
                   formData.requirement === item
                     ? "bg-[#bf00ff] text-white"
                     : "bg-gray-200 text-gray-700"
