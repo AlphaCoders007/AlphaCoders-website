@@ -61,7 +61,7 @@ const StickyComponent: React.FC<StickyComponentProps> = ({
                   alt="image"
                   loading="lazy"
                   decoding="async"
-                  className="object-cover"
+                  className="object-contain"
                   style={{
                     position: "absolute",
                     height: "100%",

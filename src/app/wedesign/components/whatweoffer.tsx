@@ -24,19 +24,19 @@ const data = [
   {
     category: "Empathy for Users",
     title: "Understanding the user is at the heart of our design process. We ensure every design decision reflects their needs, challenges, and expectations.",
-    src: "/workshop.webp",
+    src: "/users.jpg",
     
   },
   {
     category: "Innovation through Simplicity",
     title: "Simplicity is the key to impactful designs. We strive to create clean, streamlined experiences that are intuitive and easy to navigate.",
-    src: "/research.webp",
+    src: "/research.jpg",
     
   },
   {
     category: "Alignment with Your Brand Identity",
     title: "Every design we create aligns with your brand’s personality, values, and goals. Consistency in visuals and messaging builds trust and recognition.",
-    src: "/validation2.webp",
+    src: "/validation.jpg",
     
   },
 ];

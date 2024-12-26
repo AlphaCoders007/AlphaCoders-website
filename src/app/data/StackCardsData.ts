@@ -11,7 +11,7 @@ interface CardStatsProps {
 
 export const cards: CardStatsProps[] = [
   {
-    imageSrc: "Weimagine3.gif",
+    imageSrc: "Weimagine.jpg",
     technologie: [
       "Ideation Workshops",
       "Market Research",
@@ -28,7 +28,7 @@ export const cards: CardStatsProps[] = [
     color: "bg-[#4C585B]",
   },
   {
-    imageSrc: "18069234-hd_1080_1080_24fps-ezgif.com-gif-maker.gif",
+    imageSrc: "wedesign.jpg",
     technologie: [
       "User Experience Design (UX)",
       "Interface Design (UI) ",
@@ -39,18 +39,18 @@ export const cards: CardStatsProps[] = [
     subtitle: "Designing for Impact and Experience ", // Added subtitle here
     isEven: false,
     path:"/wedesign",
-    color: "bg-[#69247C]",
+    color: "bg-[#4C585B]",
     description:
       "Design is where imagination takes form. Our team crafts thoughtful, user-centric designs that are as functional as they are beautiful. Each design we create solves problems, enhances experiences, and stands the test of time.",
   },
   {
     technologie: ["Custom Software Development", "End-to-End Engineering", " Quality Assurance"],
-    imageSrc: "8b5c7d22-d428-46e0-8235-857afc1d5e61-ezgif.com-gif-maker.gif",
+    imageSrc: "wecreate.jpg",
     title: "We Create",
     subtitle: "Creation Brings Your Vision to Life", // Added subtitle here
     isEven: true,
     path:"/wecreate",
-    color: "bg-[#213555]",
+    color: "bg-[#4C585B]",
     description:
       "Our expertise lies in building what you dream. With cutting-edge technologies, robust engineering, and meticulous execution, we bring your ideas into reality. From software solutions to digital platforms, we deliver with precision and excellence",
   },
