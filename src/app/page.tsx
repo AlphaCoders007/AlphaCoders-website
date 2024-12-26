@@ -7,7 +7,7 @@ import dynamic from "next/dynamic";
 // import ParallexSection  from "./components/ParallexSection";
 import VerticalStack from "./components/VerticalStack";
 import NewComponent from "./components/NewComponent";
-import LetsGetStartedSection from "./components/ui/Letgetstarted";
+import LetsGetStartedSection from "./components/ui/LetgetstartedUI";
 import { GoogleGeminiEffectDemo } from "./components/googlegeminieffect";
 // import { HeroParallax } from "./components/ui/hero-parallax";
 import { HeroParallaxDemo } from "./components/heroparallax";

@@ -15,6 +15,7 @@ interface ContactItem {
   icon: JSX.Element; // JSX for the icon
 }
 
+
 const FloatingMenu: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);

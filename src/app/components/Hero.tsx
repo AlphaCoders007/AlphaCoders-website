@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import LetsGetStartedSection from "./ui/Letgetstarted";
+import LetsGetStartedSection from "./ui/LetgetstartedUI";
 import FloatingIcons from "./FloatingIcons";
 
 const Hero: React.FC = () => {

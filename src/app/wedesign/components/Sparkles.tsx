@@ -22,7 +22,7 @@ export function Sparkles() {
           background="transparent"
           minSize={0.4}
           maxSize={1}
-          particleDensity={1000} // Slightly reduced particle density for performance
+          particleDensity={1000} 
           className="w-full h-full "
           particleColor={isDarkMode ? "#FFFFFF" : "#3A98B9"}
         />

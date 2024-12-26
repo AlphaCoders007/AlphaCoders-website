@@ -24,18 +24,22 @@ const LetsGetStartedSection: React.FC = () => {
         },
       });
 
-      // Adding animations
+      // Adding animations with enhanced transitions
       timeline
         .fromTo(
           sectionElement,
-          { width: "120px", height: "50px" },
+          { 
+            width: "120px", 
+            height: "50px", 
+            opacity: 1,  // Start with opacity 1
+          },
           {
-            width: "50vw",
+            width: "50vw", 
             height: "50vh",
             borderRadius: "20px",
+            opacity: 0.8,  // Fade out slightly to 0.8
             duration: 1.5,
             ease: "power3.inOut",
-            
           }
         )
         .to(sectionElement, {
@@ -44,9 +48,9 @@ const LetsGetStartedSection: React.FC = () => {
           borderRadius: "0px",
           margin: "0px",
           padding: "0px",
+          opacity: 1,  // Ensure opacity is fully 1 at the end
           duration: 2,
           ease: "power2.out",
-          opacity: 1,
         });
     }
 
@@ -68,15 +72,18 @@ const LetsGetStartedSection: React.FC = () => {
 
 const VideoSection: React.FC = () => {
   return (
-    <div className="sticky h-[150%] w-full top-[-7rem] -mt-20 rounded-2xl z-20 flex items-center justify-center overflow-hidden transition-all duration-300">
+    <div className="sticky h-[150%] w-full top-[-7rem] -mt-20 rounded-2xl z-20 flex items-center justify-center overflow-hidden transition-all duration-300 will-change-transform">
       <video
         className="sticky w-auto sm:w-full h-full object-cover rounded-lg"
         autoPlay
         loop
         muted
         playsInline
+        poster="/video-poster.jpg" // Fallback poster image
       >
         <source src="/video3.mp4" type="video/mp4" />
+        <source src="/video3.webm" type="video/webm" />
+        Your browser does not support the video tag.
       </video>
     </div>
   );

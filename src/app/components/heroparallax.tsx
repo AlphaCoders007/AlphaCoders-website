@@ -1,8 +1,6 @@
 "use client";
-import React from "react";
+import React from "react"
 import { HeroParallax } from "../components/ui/hero-parallax";
-import { describe } from "node:test";
-import { desc, head } from "framer-motion/client";
 
 export function HeroParallaxDemo() {
   return <HeroParallax products={products} />;

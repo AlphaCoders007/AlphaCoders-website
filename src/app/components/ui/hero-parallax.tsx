@@ -18,7 +18,7 @@ export const HeroParallax = ({
     description?: string;
     title: string;
     link: string;
-    id:number;
+    id: number;
     thumbnail: string;
   }[];
 }) => {
@@ -31,7 +31,7 @@ export const HeroParallax = ({
     offset: ["start start", "end start"],
   });
 
-  const springConfig = { stiffness: 300, damping: 30, bounce: 100 };
+  const springConfig = { stiffness: 300, damping: 50, bounce: 80 };
 
   const translateX = useSpring(
     useTransform(scrollYProgress, [0, 1], [0, 1000]),
@@ -46,7 +46,7 @@ export const HeroParallax = ({
     springConfig
   );
   const opacity = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [0.2, 1]),
+    useTransform(scrollYProgress, [0, 0.2], [0.1, 1]),
     springConfig
   );
   const rotateZ = useSpring(
@@ -61,7 +61,7 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
-      className="z-10 bg-background-light transition-colors h-[300vh]  py-20 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="z-10 bg-background-light transition-colors h-[350vh] sm:h-[300vh] py-20 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -108,14 +108,11 @@ export const HeroParallax = ({
 export const Header = () => {
   return (
     <div className="max-w-7xl relative mx-auto py-10 px-4 w-full left-0 top-0">
-      <h1 className="text-3xl md:text-6xl font-bold leading-tight">
+      <h1 className="text-3xl md:text-6xl font-extrabold tracking-wide leading-tight ">
         LET'S BUILD YOUR DREAM TOGETHER
       </h1>
-      <p className="max-w-2xl text-base md:text-lg mt-4 ">
-        Whether you're dreaming of a groundbreaking application or a
-        transformative platform, AlphaCoders is here to guide you every step of
-        the way. Imagination is just the beginning—let us design and create
-        something extraordinary with you.
+      <p className="max-w-2xl text-base md:text-lg mt-4 text-gray-300">
+        Whether you're dreaming of a groundbreaking application or a transformative platform, AlphaCoders is here to guide you every step of the way. Imagination is just the beginning—let us design and create something extraordinary with you.
       </p>
     </div>
   );
@@ -141,9 +138,12 @@ export const ProductCard = ({
         x: translate,
       }}
       whileHover={{
-        y: -20,
+        scale: 1.1,  // Larger scale for an intense hover effect
+        y: -15,      // Slightly higher upward shift for a more engaging effect
+        boxShadow: "0 25px 50px rgba(0, 0, 0, 0.3)",  // Intense shadow for focus
+        rotateY: 10,  // Slight rotation for added depth
       }}
-      className="group/product h-96 w-[20em] relative flex-shrink-0 rounded-xl border border-r-amber-700"
+      className="group/product h-[420px] w-[22em] relative flex-shrink-0 rounded-3xl overflow-hidden bg-white transition-transform duration-500 ease-out transform shadow-2xl hover:shadow-3xl hover:rotate-6"
     >
       <Link
         href={product.link}
@@ -153,27 +153,29 @@ export const ProductCard = ({
           src={product.thumbnail}
           height={600}
           width={600}
-          className="object-cover absolute h-full w-full rounded-xl"
+          className="object-cover absolute h-full w-full rounded-3xl transition-all duration-500 ease-in-out group-hover:scale-110"
           alt={product.title}
         />
       </Link>
-      {/* Conditional gradient overlay */}
+
+      {/* Enhanced gradient overlay with smooth opacity */}
       <div
         className="absolute inset-0 h-full w-full pointer-events-none"
         style={{
-          background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 100%)',
-          opacity: 1, // Default opacity before hover
+          background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 100%)',
+          opacity: 0.6,
         }}
       />
-      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-0 bg-black pointer-events-none"></div>
-      <div className="absolute top-4 left-4 text-white">
-        <h2 className="text-lg">{product.heading}</h2>
-        <p className="text-2xl">{product.description}</p>
+
+      {/* Text container with smooth opacity transitions and dynamic hover */}
+      <div className="absolute top-8 left-8 text-white z-20 space-y-2 opacity-90 transition-opacity duration-500 group-hover/product:opacity-100">
+        <h2 className="text-2xl font-semibold">{product.heading}</h2>
+        <p className="text-lg">{product.description}</p>
       </div>
-      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white text-lg">
+
+      <h2 className="absolute bottom-8 left-8 opacity-0 group-hover/product:opacity-100 text-white text-xl font-extrabold tracking-tight transition-opacity duration-500 ease-out">
         {product.title}
       </h2>
     </motion.div>
   );
 };
-

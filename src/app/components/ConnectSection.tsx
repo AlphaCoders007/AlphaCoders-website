@@ -198,7 +198,7 @@ const ConnectSection: React.FC = () => {
 
             {/* Sliding Contact Form */}
 
-            <div
+            <div 
               className={`fixed inset-x-0 bottom-0 z-40 transition-all duration-500 ease-in-out ${
                 isScrolledToBottom
                   ? "transform translate-y-0"
@@ -239,6 +239,7 @@ const ConnectSection: React.FC = () => {
           >
             <div className="absolute top-8 right-2 ">
               <button
+             
                 onClick={handlePopupToggle}
                 className="hover:scale-110 transition-all"
               >
