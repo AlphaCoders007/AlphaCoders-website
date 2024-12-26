@@ -48,7 +48,7 @@ const ReviewCard = ({ img, text }: ReviewCardProps) => {
 };  
 
 
-export function ParallexSection() {
+export default function ParallexSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const firstRowRef = useRef<HTMLDivElement>(null);
   const secondRowRef = useRef<HTMLDivElement>(null);
@@ -203,7 +203,7 @@ export function ParallexSection() {
         {secondRow.map((item, index) => (
           <ReviewCard key={index} {...item} />
         ))}
-      </div>
+      </div> 
 
       {/* Third Row */}
       <div
@@ -213,7 +213,7 @@ export function ParallexSection() {
         {thirdRow.map((item, index) => (
           <ReviewCard key={index} {...item} />
         ))}
-      </div>
+      </div> 
     </section>
   );
 } 
