@@ -212,7 +212,7 @@ const ConnectSection: React.FC = () => {
 
               <div className="w-full bg-gradient-to-r from-purple-500 to-orange-500">
                 <div className="text-center font-Montserrat leading-loose tracking-wide text-white text-sm p-2">
-                  © 2024 AlphaCoder Software Innovations
+                  © 2024 AlphaCoders Software Innovations
                 </div>
               </div>
             </div>
