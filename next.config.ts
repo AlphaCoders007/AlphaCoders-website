@@ -1,5 +1,18 @@
 import type { NextConfig } from "next";
 
+module.exports = {
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+        ],
+      },
+    ];
+  },
+};
+
 const nextConfig: NextConfig = {
   images: {
     remotePatterns: [

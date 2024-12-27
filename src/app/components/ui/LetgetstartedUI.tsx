@@ -74,6 +74,7 @@ const VideoSection: React.FC = () => {
   return (
     <div className="sticky h-[150%] w-full top-[-7rem] -mt-20 rounded-2xl z-20 flex items-center justify-center overflow-hidden transition-all duration-300 will-change-transform">
       <video
+        preload="metadata" controls
         className="sticky w-auto sm:w-full h-full object-cover rounded-lg"
         autoPlay
         loop
