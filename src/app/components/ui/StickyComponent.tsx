@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import CircularMovingText from "./MovingText";
+import MinimalButton from "./MinimalButton";
 import { div } from "framer-motion/client";
 import Link from "next/link";
 interface StickyComponentProps {
@@ -111,11 +111,11 @@ const StickyComponent: React.FC<StickyComponentProps> = ({
           {/* Arrow Button */}
           <Link
             href = {path}
-            className={`absolute right-[10%] top-1/2 -translate-y-1/2 scale-75 md:bottom-10 md:top-auto md:translate-y-0 md:scale-100 ${
+            className={`absolute right-[2%] bottom-40 -translate-y-1/2 scale-75 md:bottom-10 md:top-auto md:translate-y-0 md:scale-100 ${
               isEven ? "md:right-10" : "md:left-10"
             } sm:right-[10%]`}
           >
-            <CircularMovingText />
+            <MinimalButton />
           </Link>
         </div>
       </div>

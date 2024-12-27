@@ -1,84 +1,44 @@
-"use client";
+'use client'
 
-import { useState, useEffect, useRef, useCallback } from "react";
-import Link from "next/link";
+import { useState, useEffect, useRef, useCallback } from "react"
+import Link from "next/link"
+import { motion, AnimatePresence } from "framer-motion"
+import { Home, Lightbulb, Palette,  Phone, Mail, Menu, X } from 'lucide-react'
 
 interface MenuItem {
-  label: string;
-  href: string;
-  iconSrc?: string;
-}
-interface ContactItem {
-  type: "call" | "email" | "social";
-  label: string;
-  href: string;
-  icon: JSX.Element; // JSX for the icon
+  label: string
+  href: string
+  Icon: React.ElementType
 }
 
+interface ContactItem {
+  type: "call" | "email"
+  label: string
+  href: string
+  Icon: React.ElementType
+}
 
 const FloatingMenu: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const menuRef = useRef<HTMLDivElement>(null);
-  const buttonRef = useRef<HTMLButtonElement>(null);
+  const [isOpen, setIsOpen] = useState(false)
+  const menuRef = useRef<HTMLDivElement>(null)
+  const buttonRef = useRef<HTMLButtonElement>(null)
 
   const menuItems: MenuItem[] = [
-    { label: "Home", href: "/", iconSrc: "cursor-icon.webp" },
-    { label: "We Imagine", href: "/weimagine", iconSrc: "cursor-icon.webp" },
-    { label: "We Design", href: "/wedesign", iconSrc: "cursor-icon.webp" },
-    { label: "We Create", href: "/wecreate", iconSrc: "cursor-icon.webp" },
-    
-  ];
-  const contactItems: ContactItem[] = [
-    {
-      type: "call",
-      label: "Call Now",
-      href: "tel:+91000000000",
-      icon: (
-        <img
-        src="call.svg" 
-        alt="Phone Icon"
-        className="w-6 h-6"
-      />
-      ),
-    },
-    {
-      type: "email",
-      label: "Mail Us",
-      href: "mailto:info@alphacoders.co",
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          className="w-6 h-6"
-        >
-          <path
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeMiterlimit="10"
-            strokeWidth="1.5"
-            fill="none"
-            d="M17 20.5H7c-3 0-5-1.5-5-5v-7c0-3.5 2-5 5-5h10c3 0 5 1.5 5 5v7c0 3.5-2 5-5 5z"
-          ></path>
-          <path
-            stroke="currentColor"
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeMiterlimit="10"
-            strokeWidth="1.5"
-            d="m17 9-3.13 2.5c-1.03.82-2.72.82-3.75 0L7 9z"
-          ></path>
-        </svg>
-      ),
-    },
-  ];
+    { label: "Home", href: "/", Icon: Home },
+    { label: "We Imagine", href: "/weimagine", Icon: Lightbulb },
+    { label: "We Design", href: "/wedesign", Icon: Palette },
+    { label: "We Create", href: "/wecreate", Icon: Palette },
+  ]
 
-  const toggleMenu = (event: React.MouseEvent) => {
-    event.stopPropagation();
-    setIsOpen((prev) => !prev);
-  };
+  const contactItems: ContactItem[] = [
+    { type: "call", label: "Call", href: "tel:+91000000000", Icon: Phone },
+    { type: "email", label: "Email", href: "mailto:info@alphacoders.co", Icon: Mail },
+  ]
+
+  const toggleMenu = useCallback((event: React.MouseEvent) => {
+    event.stopPropagation()
+    setIsOpen((prev) => !prev)
+  }, [])
 
   const handleClickOutside = useCallback((event: MouseEvent) => {
     if (
@@ -87,121 +47,131 @@ const FloatingMenu: React.FC = () => {
       buttonRef.current &&
       !buttonRef.current.contains(event.target as Node)
     ) {
-      setIsOpen(false);
+      setIsOpen(false)
     }
-  }, []);
+  }, [])
 
   useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-
+    document.addEventListener("mousedown", handleClickOutside)
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [handleClickOutside]);
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [handleClickOutside])
+
+  const MenuItems: React.FC<{ onItemClick: () => void }> = ({ onItemClick }) => (
+    <ul className="flex flex-col gap-3 w-full">
+      {menuItems.map((item, index) => (
+        <motion.li
+          key={item.label}
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -20 }}
+          transition={{ duration: 0.2, delay: index * 0.05 }}
+        >
+          <Link
+            href={item.href}
+            onClick={onItemClick}
+            className="flex items-center p-3 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-colors duration-200"
+          >
+            <item.Icon className="w-5 h-5 mr-3 text-black/70 dark:text-white/70" />
+            <span className="text-black/80 dark:text-white/80 text-sm">{item.label}</span>
+          </Link>
+        </motion.li>
+      ))}
+    </ul>
+  )
+
+  const ContactItems: React.FC = () => (
+    <div className="flex gap-2 w-full">
+      {contactItems.map((item, index) => (
+        <motion.div
+          key={item.label}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 10 }}
+          transition={{ duration: 0.2, delay: index * 0.05 }}
+          className="flex-1"
+        >
+          <Link
+            href={item.href}
+            className="flex items-center justify-center p-2 rounded-lg border border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 transition-colors duration-200"
+          >
+            <item.Icon className="w-4 h-4 text-white/70 dark:text-white/70" />
+          </Link>
+        </motion.div>
+      ))}
+    </div>
+  )
 
   return (
-    <div className="fixed bottom-7 right-7 z-50">
-      <div
-        ref={menuRef}
-        onClick={(event) => {
-          if (!isOpen) {
-            toggleMenu(event);
-          }
-        }}
-        className={`overflow-hidden border border-gray-300 bg-background-light transition-colors rounded-tl-[60px] rounded-tr-[60px] rounded-bl-[60px] rounded-br-[60px] duration-300 ease-in-out ${
-          isOpen ? "w-64 h-96 sm:w-72" : "w-11 sm:w-28 h-11"
-        } cursor-pointer`}
-      >
-        <div className="relative flex items-center justify-center w-full h-full">
-          {isOpen && (
-            <div className="flex flex-col items-center justify-center gap-3 p-4 absolute top-0 left-0 right-0 bottom-0">
-              <ul className="flex flex-col gap-1 font-Montserrat font-thin w-full mt-4">
-                {menuItems.map((item, index) => (
-                  <li
-                    key={index}
-                    className={`${
-                      index === 0 ? "mt-2" : ""
-                    } cursor-pointer`}
-                  >
-                    <Link
-                      href={item.href}
-                      onClick={() => setIsOpen(false)} 
-                    >
-                      <div className="group flex items-center justify-center gap-1 h-10 w-3/4 mx-auto overflow-hidden rounded-full hover:bg-gray-100 text-center cursor-pointer">
-                        <div className="relative flex items-center text-gray-900">
-                          <span
-                            className="hidden group-hover:flex items-center justify-center transform transition-all duration-300 hover:ease-out"
-                            style={{ transform: "rotate(75deg)" }}
-                          >
-                            <img
-                              src={item.iconSrc}
-                              alt="menu-icon"
-                              width="24"
-                              height="24"
-                              className="w-6 h-6"
-                            />
-                          </span>
-                          <span className="ml-1 dark:text-white text-gray-700 font-thicccboi text-2xl text-opacity-100 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-500 group-hover:to-orange-500">
-                            {item.label}
-                          </span>
-                        </div>
-                      </div>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-  
-              <div className="flex flex-col items-center justify-center gap-4 rounded-2xl h-2/5 w-56 border transition-colors border-gray-300 px-6 py-4 font-montserrat text-sm cursor-pointer">
-                {contactItems.map((item, index) => (
-                  <Link
-                    key={index}
-                    href={item.href}
-                    target={
-                      item.type === "social" ? "_blank" : undefined
-                    }
-                    rel={
-                      item.type === "social"
-                        ? "noopener noreferrer"
-                        : undefined
-                    }
-                    onClick={() => setIsOpen(false)} // Close menu on contact item click
-                    className="flex items-center justify-center gap-2.5 cursor-pointer"
-                  >
-                    <span className="text-2xl">{item.icon}</span>
-                    <span className="text-center text-opacity-1 font-Montserrat">
-                      {item.label}
-                    </span>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
-  
-      {/* Toggle Button */}
-      <div className="absolute top-0 mt-1 z-50 flex justify-center items-center cursor-pointer left-1/2 -translate-x-1/4">
-        <button
-          ref={buttonRef}
-          onClick={(event) => {
-            event.stopPropagation(); // Prevent propagation to prevent accidental menu closing
-            toggleMenu(event);
-          }}
-          className="bg-transparent border-0 rounded-lg w-12 h-8 transition-all duration-300 cursor-pointer"
+    <div className="fixed top-4 left-4 z-50 font-thicccboi">
+      <div className="relative">
+        <motion.div
+          ref={menuRef}
+          initial={false}
+          animate={isOpen ? "open" : "closed"}
+          className="absolute top-0 left-0 overflow-hidden rounded-xl bg-background-light transition-colors  backdrop-blur-sm border border-black/10 dark:border-white/10"
         >
-          <img
-            src="cursor-icon.webp"
-            alt="Menu"
-            className="w-8 h-8 transition-all duration-300 rounded-full"
-            style={{
-              opacity: isOpen ? "0" : "1", // Make image fully transparent when menu is open
-              pointerEvents: isOpen ? "none" : "auto", // Disable pointer events when hidden
+          <motion.div
+            variants={{
+              open: { width: 240, height: 320, opacity: 1 },
+              closed: { width: 40, height: 40, opacity: 0.9 },
             }}
-          />
-        </button>
+            transition={{ type: "spring", stiffness: 400, damping: 30 }}
+            className="relative flex items-center justify-center w-full h-full"
+          >
+            <AnimatePresence>
+              {isOpen && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.2 }}
+                  className="flex flex-col justify-between h-full w-full p-8"
+                >
+                  <MenuItems onItemClick={() => setIsOpen(false)} />
+                  <ContactItems />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
+        </motion.div>
+
+        <motion.button
+          ref={buttonRef}
+          onClick={toggleMenu}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="relative z-10 bg-background-light transition-colors  backdrop-blur-sm rounded-lg border border-black/10 dark:border-white/10 w-10 h-10 flex items-center justify-center duration-200"
+          aria-label={isOpen ? "Close menu" : "Open menu"}
+        >
+          <AnimatePresence mode="wait" initial={false}>
+            {isOpen ? (
+              <motion.div
+                key="close"
+                initial={{ rotate: -45, opacity: 0 }}
+                animate={{ rotate: 0, opacity: 1 }}
+                exit={{ rotate: 45, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <X className="w-5 h-5 text-black/70 dark:text-white/70" />
+              </motion.div>
+            ) : (
+              <motion.div
+                key="open"
+                initial={{ rotate: 45, opacity: 0 }}
+                animate={{ rotate: 0, opacity: 1 }}
+                exit={{ rotate: -45, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Menu className="w-5 h-5 text-black/70 dark:text-white/70" />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default FloatingMenu;
+export default FloatingMenu
