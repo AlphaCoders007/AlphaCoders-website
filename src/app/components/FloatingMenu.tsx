@@ -74,7 +74,7 @@ const FloatingMenu: React.FC = () => {
             className="flex items-center p-3 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-colors duration-200"
           >
             <item.Icon className="w-5 h-5 mr-3 text-black/70 dark:text-white/70" />
-            <span className="text-black/80 dark:text-white/80 text-sm">{item.label}</span>
+            <span className="bg-background-light transition-colors text-sm">{item.label}</span>
           </Link>
         </motion.li>
       ))}
@@ -96,7 +96,7 @@ const FloatingMenu: React.FC = () => {
             href={item.href}
             className="flex items-center justify-center p-2 rounded-lg border border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5 transition-colors duration-200"
           >
-            <item.Icon className="w-4 h-4 text-white/70 dark:text-white/70" />
+            <item.Icon className="w-4 h-4 bg-background-light transition-colors" />
           </Link>
         </motion.div>
       ))}
@@ -154,7 +154,7 @@ const FloatingMenu: React.FC = () => {
                 exit={{ rotate: 45, opacity: 0 }}
                 transition={{ duration: 0.2 }}
               >
-                <X className="w-5 h-5 text-black/70 dark:text-white/70" />
+                <X className="w-5 h-5 bg-background-light transition-colors" />
               </motion.div>
             ) : (
               <motion.div
@@ -164,7 +164,7 @@ const FloatingMenu: React.FC = () => {
                 exit={{ rotate: -45, opacity: 0 }}
                 transition={{ duration: 0.2 }}
               >
-                <Menu className="w-5 h-5 text-black/70 dark:text-white/70" />
+                <Menu className="w-5 h-5 bg-background-light transition-colors" />
               </motion.div>
             )}
           </AnimatePresence>

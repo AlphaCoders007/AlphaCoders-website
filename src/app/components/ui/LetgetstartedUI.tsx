@@ -28,16 +28,16 @@ const LetsGetStartedSection: React.FC = () => {
       timeline
         .fromTo(
           sectionElement,
-          { 
-            width: "120px", 
-            height: "50px", 
-            opacity: 1,  // Start with opacity 1
+          {
+            width: "120px",
+            height: "50px",
+            opacity: 1, // Start with opacity 1
           },
           {
-            width: "50vw", 
+            width: "50vw",
             height: "50vh",
             borderRadius: "20px",
-            opacity: 0.8,  // Fade out slightly to 0.8
+            opacity: 0.8, // Fade out slightly to 0.8
             duration: 1.5,
             ease: "power3.inOut",
           }
@@ -48,7 +48,7 @@ const LetsGetStartedSection: React.FC = () => {
           borderRadius: "0px",
           margin: "0px",
           padding: "0px",
-          opacity: 1,  // Ensure opacity is fully 1 at the end
+          opacity: 1, // Ensure opacity is fully 1 at the end
           duration: 2,
           ease: "power2.out",
         });
@@ -74,7 +74,8 @@ const VideoSection: React.FC = () => {
   return (
     <div className="sticky h-[150%] w-full top-[-7rem] -mt-20 rounded-2xl z-20 flex items-center justify-center overflow-hidden transition-all duration-300 will-change-transform">
       <video
-        preload="metadata" controls
+        
+        preload="metadata"
         className="sticky w-auto sm:w-full h-full object-cover rounded-lg"
         autoPlay
         loop
