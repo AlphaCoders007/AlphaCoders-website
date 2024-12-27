@@ -24,6 +24,7 @@ const Container = () => {
             width={1400}
             className="mx-auto rounded-2xl object-cover h-full object-left-top"
             draggable={false}
+            priority
           />
         </ContainerScroll>
 
