@@ -1,18 +1,5 @@
 import type { NextConfig } from "next";
 
-module.exports = {
-  async headers() {
-    return [
-      {
-        source: '/:path*',
-        headers: [
-          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
-        ],
-      },
-    ];
-  },
-};
-
 const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
@@ -29,12 +16,25 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "randomuser.me",
-        pathname: "/**", // This allows any path from randomuser.me
+        pathname: "/**", // This allows any path from this hostname
       },
     ],
   },
   eslint: {
     ignoreDuringBuilds: true, // Disable ESLint during build
+  },
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable", // Caching policy for static assets
+          },
+        ],
+      },
+    ];
   },
 };
 
