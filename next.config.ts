@@ -23,19 +23,6 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true, // Disable ESLint during build
   },
-  async headers() {
-    return [
-      {
-        source: "/:path*",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable", // Caching policy for static assets
-          },
-        ],
-      },
-    ];
-  },
 };
 
 export default nextConfig;

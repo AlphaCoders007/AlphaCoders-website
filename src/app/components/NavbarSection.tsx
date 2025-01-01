@@ -12,7 +12,7 @@ function NavBarSection() {
             <div className="flex flex-col items-center">
               <div className="flex flex-col items-center">
                 <span className="text-3xl lg:text-3xl font-wide font-thin bg-gradient-to-r from-[#bf00ff] to-[#ff5633] text-transparent bg-clip-text text-center">
-                  alphacoders
+                  do it again
                 </span>
                 <p className="text-xs text-gray-500 font-Orbitron text-center">
                   SOFTWARE INNOVATIONS
