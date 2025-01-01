@@ -7,6 +7,7 @@ import NavBarSection from "./components/NavbarSection";
 import ConnectSection from "./components/ConnectSection";
 // import { Providers } from "./Providers";
 import Head from "./Head";
+import ThemeToggle from "./components/togleTheme";
 // import dynamic from "next/dynamic";
 
 // Dynamically import ThemeSwitcher
