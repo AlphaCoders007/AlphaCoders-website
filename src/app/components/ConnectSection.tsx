@@ -12,15 +12,9 @@ import ContactForm from "./ContactForm";
 
 const ConnectSection: React.FC = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [budgetRange, setBudgetRange] = useState<number[]>([10, 100]);
   const [isScrolledToBottom, setIsScrolledToBottom] = useState(false);
 
-  const handleBudgetRangeChange = (
-    event: Event,
-    newValue: number | number[]
-  ) => {
-    setBudgetRange(newValue as number[]);
-  };
+
 
   const handlePopupToggle = () => {
     console.log("pop up done");
