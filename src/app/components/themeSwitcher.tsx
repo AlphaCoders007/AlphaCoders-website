@@ -1,24 +1,21 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import Image from "next/image";
 
 export default function ThemeSwitcher() {
     const [mounted, setMounted] = useState(false);
     const { setTheme, resolvedTheme } = useTheme();
 
-    // Set mounted state after component has mounted to prevent SSR issues
     useEffect(() => {
         setMounted(true);
     }, []);
 
-    // Log the resolved theme to see if it's being set correctly
-    useEffect(() => {
-        console.log("Resolved theme:", resolvedTheme); // Check what resolvedTheme is
-    }, [resolvedTheme]);
+    const toggleTheme = useCallback(() => {
+        setTheme(resolvedTheme === "dark" ? "light" : "dark");
+    }, [resolvedTheme, setTheme]);
 
-    // While mounting, show a loading image
     if (!mounted) {
         return (
             <Image
@@ -34,12 +31,7 @@ export default function ThemeSwitcher() {
         );
     }
 
-    // Toggle between dark and light theme
-    const toggleTheme = () => {
-        console.log("Before Toggle:", resolvedTheme); // Log the current theme before toggling
-        setTheme(resolvedTheme === "dark" ? "light" : "dark");
-    };
-
+    // After mounting, show the theme toggle button
     return (
         <button
             onClick={toggleTheme}

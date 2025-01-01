@@ -8,6 +8,7 @@ import ConnectSection from "./components/ConnectSection";
 import { Providers } from "./Providers";
 import Head from "./Head";
 import dynamic from "next/dynamic";
+import ThemeToggle from "./components/togleTheme";
 
 // Dynamically import ThemeSwitcher
 const ThemeSwitcher = dynamic(() => import("./components/themeSwitcher"), {
@@ -24,13 +25,14 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className="light">
       <Head />
       <body className="transition-colors duration-300">
-        <Providers>
-        <ThemeSwitcher />
+        {/* <ThemeSwitcher /> */}
+        {/* <Providers> */}
           <NavBarSection />
+        <ThemeToggle/>
           <FloatingMenu />
           {children}
           <ConnectSection />
-        </Providers>
+        {/* </Providers> */}
       </body>
     </html>
   );
