@@ -11,13 +11,11 @@ function NavBarSection() {
           <Link href="/">
             <div className="flex flex-col items-center">
               <div className="flex flex-col items-center">
-              {/* <span
-  className="text-3xl lg:text-3xl font-wide font-thin bg-gradient-to-r from-[#bf00ff] to-[#ff5633] text-transparent bg-clip-text text-center dark:from-white dark:to-gray-300"
-> */}
-<span
-  className="text-3xl lg:text-3xl font-wide font-thin bg-gradient-to-r from-[#bf00ff] to-[#ff5633] text-transparent bg-clip-text text-center dark:bg-gradient-to-r dark:from-white dark:to-gray-300"
+              <span
+  className="text-3xl lg:text-3xl font-wide font-thin bg-gradient-to-r from-[#bf00ff] to-[#ff5633] text-transparent bg-clip-text text-center"
 >
-                  do it make me do it lets change the theme
+
+                  Area 41
                 </span>
                 <p className="text-xs dark:text-gray-500 font-Orbitron text-center ">
                   SOFTWARE INNOVATIONS

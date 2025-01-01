@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import MinimalButton from "./MinimalButton";
-import { div } from "framer-motion/client";
 import Link from "next/link";
 
 interface StickyComponentProps {

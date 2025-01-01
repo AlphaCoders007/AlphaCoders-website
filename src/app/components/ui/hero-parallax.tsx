@@ -107,11 +107,11 @@ export const HeroParallax = ({
 
 export const Header = () => {
   return (
-    <div className="max-w-7xl relative mx-auto py-10 px-4 w-full left-0 top-0">
+    <div className="max-w-7xl relative mx-auto py-10 px-4 w-full left-0 top-0 transition-colors">
       <h1 className="text-3xl md:text-6xl font-thicccboi tracking-wide leading-tight ">
         LET'S BUILD YOUR DREAM TOGETHER
       </h1>
-      <p className="max-w-2xl text-base md:text-lg mt-4 text-gray-300">
+      <p className="max-w-2xl text-base md:text-lg mt-4 ">
         Whether you're dreaming of a groundbreaking application or a transformative platform, AlphaCoders is here to guide you every step of the way. Imagination is just the beginning—let us design and create something extraordinary with you.
       </p>
     </div>

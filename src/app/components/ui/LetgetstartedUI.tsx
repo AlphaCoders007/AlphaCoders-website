@@ -63,7 +63,7 @@ const LetsGetStartedSection: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative backdrop-blur-sm flex h-full w-full flex-col -mt-6 rounded-xl items-center left-1/2 right-1/2 transform -translate-x-1/2 z-20 pt-4"
+      className="  relative backdrop-blur-sm flex h-full  w-full flex-col -mt-4 rounded-xl items-center  left-1/2 right-1/2 transform -translate-x-1/2  z-20 pt-4 "
     >
       <VideoSection />
     </section>
@@ -72,7 +72,7 @@ const LetsGetStartedSection: React.FC = () => {
 
 const VideoSection: React.FC = () => {
   return (
-    <div className="sticky h-[150%] w-full top-[-7rem] -mt-20 rounded-2xl z-20 flex items-center justify-center overflow-hidden transition-all duration-300 will-change-transform">
+    <div className=" sticky h-[150%] w-full top-[-7rem]   -mt-20  rounded-2xl z-20 flex items-center justify-center overflow-hidden   transition-all duration-300">
       <video
         
         preload="metadata"
