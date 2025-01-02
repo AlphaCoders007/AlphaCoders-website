@@ -61,7 +61,7 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
-      className="z-10 bg-background-light transition-colors  h-[350vh] sm:h-[350vh]   py-20 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="z-10 bg-background-light transition-colors  h-[220vh] lg:h-[300vh] md:h-[280vh] sm:h-[350vh]   py-20 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -112,7 +112,10 @@ export const Header = () => {
         LET'S BUILD YOUR DREAM TOGETHER
       </h1>
       <p className="max-w-2xl text-base md:text-lg mt-4 ">
-        Whether you're dreaming of a groundbreaking application or a transformative platform, AlphaCoders is here to guide you every step of the way. Imagination is just the beginning—let us design and create something extraordinary with you.
+        Whether you're dreaming of a groundbreaking application or a
+        transformative platform, AlphaCoders is here to guide you every step of
+        the way. Imagination is just the beginning—let us design and create
+        something extraordinary with you.
       </p>
     </div>
   );
@@ -122,7 +125,7 @@ export const ProductCard = ({
   product,
   translate,
 }: {
-  product: { 
+  product: {
     heading?: string;
     description?: string;
     title: string;
@@ -136,14 +139,16 @@ export const ProductCard = ({
     <motion.div
       style={{
         x: translate,
+        height: "clamp(300px, 50vw, 420px)", // Min 300px, scales up to 420px
+        width: "clamp(280px, 45vw, 352px)", // Min 280px, scales up to 352px
       }}
       whileHover={{
-        scale: 1.1,  // Larger scale for an intense hover effect
-        y: -15,      // Slightly higher upward shift for a more engaging effect
-        boxShadow: "0 25px 50px rgba(0, 0, 0, 0.3)",  // Intense shadow for focus
-        rotateY: 10,  // Slight rotation for added depth
+        scale: 1.1, // Larger scale for an intense hover effect
+        y: -15, // Slightly higher upward shift for a more engaging effect
+        boxShadow: "0 25px 50px rgba(0, 0, 0, 0.3)", // Intense shadow for focus
+        rotateY: 10, // Slight rotation for added depth
       }}
-      className="group/product h-[420px] w-[22em] relative flex-shrink-0 rounded-3xl overflow-hidden bg-white transition-transform duration-500 ease-out transform shadow-2xl hover:shadow-3xl hover:rotate-6"
+      className="group/product relative flex-shrink-0 overflow-hidden bg-white transition-transform duration-500 ease-out transform shadow-2xl hover:shadow-3xl hover:rotate-6 rounded-3xl"
     >
       <Link
         href={product.link}
@@ -153,16 +158,19 @@ export const ProductCard = ({
           src={product.thumbnail}
           height={600}
           width={600}
+          style={{
+            height: "clamp(300px, 50vw, 600px)",
+            width: "clamp(300px, 50vw, 600px)",
+          }}
           className="object-cover absolute h-full w-full rounded-3xl transition-all duration-500 ease-in-out group-hover:scale-110"
           alt={product.title}
         />
       </Link>
-
-      {/* Stronger gradient overlay to enhance text visibility */}
       <div
         className="absolute inset-0 h-full w-full pointer-events-none font-thicccboi"
         style={{
-          background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%)',
+          background:
+            "linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%)",
         }}
       />
 
