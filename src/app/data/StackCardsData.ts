@@ -44,7 +44,7 @@ export const cards: CardStatsProps[] = [
       "Design is where imagination takes form. Our team crafts thoughtful, user-centric designs that are as functional as they are beautiful. Each design we create solves problems, enhances experiences, and stands the test of time.",
   },
   {
-    technologie: ["Custom Software Development", "End-to-End Engineering", " Quality Assurance"],
+    technologie: ["Custom Software Development", "End-to-End Engineering", " Quality "],
     imageSrc: "wecreate.jpg",
     title: "We Create",
     subtitle: "Creation Brings Your Vision to Life", // Added subtitle here
@@ -52,7 +52,7 @@ export const cards: CardStatsProps[] = [
     path:"/wecreate",
     color: "bg-[#7A1CAC]",
     description:
-      "Our expertise lies in building what you dream. With cutting-edge technologies, robust engineering, and meticulous execution, we bring your ideas into reality. From software solutions to digital platforms, we deliver with precision and excellence",
+      "Our expertise lies in building what you dream. With cutting-edge technologies, robust engineering, and meticulous execution, we bring your ideas into reality. ",
   },
 
 ];
