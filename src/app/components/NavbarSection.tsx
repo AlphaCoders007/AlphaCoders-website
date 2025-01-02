@@ -15,7 +15,7 @@ function NavBarSection() {
   className="text-3xl lg:text-3xl font-wide font-thin bg-gradient-to-r from-[#bf00ff] to-[#ff5633] text-transparent bg-clip-text text-center"
 >
 
-                  Area 41
+                  alphacoders
                 </span>
                 <p className="text-xs dark:text-gray-500 font-Orbitron text-center ">
                   SOFTWARE INNOVATIONS
