@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
-import { Home, Lightbulb, Palette,  Phone, Mail, Menu, X } from 'lucide-react'
+import { Home, Lightbulb, Palette,  Phone, Mail, Menu, X, PenTool } from 'lucide-react'
 
 interface MenuItem {
   label: string
@@ -24,10 +24,10 @@ const FloatingMenu: React.FC = () => {
   const buttonRef = useRef<HTMLButtonElement>(null)
 
   const menuItems: MenuItem[] = [
-    { label: "Home", href: "/", Icon: Home },
+    { label: "", href: "/", Icon: Home },
     { label: "We Imagine", href: "/weimagine", Icon: Lightbulb },
     { label: "We Design", href: "/wedesign", Icon: Palette },
-    { label: "We Create", href: "/wecreate", Icon: Palette },
+    { label: "We Create", href: "/wecreate", Icon: PenTool },
   ]
 
   const contactItems: ContactItem[] = [
@@ -59,26 +59,49 @@ const FloatingMenu: React.FC = () => {
   }, [handleClickOutside])
 
   const MenuItems: React.FC<{ onItemClick: () => void }> = ({ onItemClick }) => (
-    <ul className="flex flex-col gap-3 w-full">
-      {menuItems.map((item, index) => (
-        <motion.li
-          key={item.label}
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -20 }}
-          transition={{ duration: 0.2, delay: index * 0.05 }}
+    <div className="flex flex-col items-center w-full">
+      {/* Centered Home Item */}
+      <motion.div
+        key="home"
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.95 }}
+        transition={{ duration: 0.2 }}
+        className="mb-6"
+      >
+        <Link
+          href="/"
+          onClick={onItemClick}
+          className="flex items-center justify-center p-4 rounded-full bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 transition-colors duration-200"
         >
-          <Link
-            href={item.href}
-            onClick={onItemClick}
-            className="flex items-center p-3 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-colors duration-200"
-          >
-            <item.Icon className="w-5 h-5 mr-3 text-black/70 dark:text-white/70" />
-            <span className="bg-background-light transition-colors text-sm">{item.label}</span>
-          </Link>
-        </motion.li>
-      ))}
-    </ul>
+          <Home className="w-6 h-6" />
+        </Link>
+      </motion.div>
+  
+      {/* Other Menu Items */}
+      <ul className="flex flex-col  w-full">
+        {menuItems
+          .filter((item) => item.label !== "") 
+          .map((item, index) => (
+            <motion.li
+              key={item.label}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.2, delay: index * 0.05 }}
+            >
+              <Link
+                href={item.href}
+                onClick={onItemClick}
+                className="flex items-center p-3 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-colors duration-200"
+              >
+                <item.Icon className="w-5 h-5 mr-3 text-black/70 dark:text-white/70" />
+                <span className="text-sm">{item.label}</span>
+              </Link>
+            </motion.li>
+          ))}
+      </ul>
+    </div>
   )
 
   const ContactItems: React.FC = () => (
@@ -114,7 +137,7 @@ const FloatingMenu: React.FC = () => {
         >
           <motion.div
             variants={{
-              open: { width: 240, height: 320, opacity: 1 },
+              open: { width: 240, height: 300, opacity: 1 },
               closed: { width: 40, height: 40, opacity: 0.9 },
             }}
             transition={{ type: "spring", stiffness: 400, damping: 30 }}
@@ -127,7 +150,7 @@ const FloatingMenu: React.FC = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.2 }}
-                  className="flex flex-col justify-between h-full w-full p-8"
+                  className="flex flex-col justify-between h-full w-full p-4"
                 >
                   <MenuItems onItemClick={() => setIsOpen(false)} />
                   <ContactItems />

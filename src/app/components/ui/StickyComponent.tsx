@@ -20,30 +20,29 @@ const StickyComponent: React.FC<StickyComponentProps> = ({
   description,
   isEven,
   technologies,
-  color
+  color,
 }) => {
   const [scale, setScale] = useState(1);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-  
-      const zoomFactor = Math.max(-1, 1.1 + scrollY / 9000); 
+
+      const zoomFactor = Math.max(-1, 1.4 + scrollY / 9000);
       setScale(zoomFactor);
     };
-  
+
     window.addEventListener("scroll", handleScroll);
-  
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  
 
   return (
     <div className="    sticky top-0 z-20 flex h-screen items-start justify-center px-[1rem] md:px-[2rem]">
       <div className="  h-full origin-top pt-[7rem] pb-[2rem] w-full">
-        <div className= "  relative h-full overflow-hidden">
+        <div className="  relative h-full overflow-hidden">
           <div
             className={`flex h-full w-full flex-col overflow-hidden rounded-3xl md:flex-row ${color} ${
               isEven ? "md:flex-row" : "md:flex-row-reverse"
@@ -66,6 +65,7 @@ const StickyComponent: React.FC<StickyComponentProps> = ({
                     position: "absolute",
                     height: "100%",
                     width: "100%",
+                    aspectRatio: "4/3",
                     left: 0,
                     top: 0,
                     right: 0,
@@ -77,7 +77,7 @@ const StickyComponent: React.FC<StickyComponentProps> = ({
               </div>
             </div>
 
-            <div className="relative h-1/2 p-[1rem] font-Montserrat text-white md:h-full md:w-1/2 md:p-[2.8rem]">
+            <div className="relative h-1/2 p-[1rem] font-thicccboi text-white md:h-full md:w-1/2 md:p-[2.8rem]">
               <div className="opacity-100 transform-none">
                 <h2 className="pt-[1rem] font-bold  text-3xl sm:text-4xl">
                   {title}
@@ -101,19 +101,18 @@ const StickyComponent: React.FC<StickyComponentProps> = ({
                 </div>
               </div>
               <div className="opacity-100 transform-none">
-                <p className="pr-10 text-verticalbodyclamped ">
-                  {description}
-                </p>
+                <p className="pr-10 text-verticalbodyclamped ">{description}</p>
               </div>
             </div>
           </div>
 
           {/* Arrow Button */}
           <Link
-            href = {path}
-            className={`absolute right-[2%] bottom-40 -translate-y-1/2 scale-75 md:bottom-10 md:top-auto md:translate-y-0 md:scale-100 ${
-              isEven ? "md:right-10" : "md:left-10"
-            } sm:right-[10%]`}
+            href={path}
+            className={`absolute top-1/2 right-0  sm:top-3/4 sm:right-10 scale-75 sm:scale-100   ${
+              isEven ? "sm:right-10" : "sm:left-10"
+            } sm:right-[10%]}`}
+           
           >
             <MinimalButton />
           </Link>

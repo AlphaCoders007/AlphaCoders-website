@@ -107,8 +107,8 @@ export const HeroParallax = ({
 
 export const Header = () => {
   return (
-    <div className="max-w-7xl relative mx-auto py-10 px-4 w-full left-0 top-0 transition-colors">
-      <h1 className="text-3xl md:text-6xl font-thicccboi tracking-wide leading-tight ">
+    <div className="max-w-7xl relative mx-auto py-10 px-4 w-full left-0 top-0 transition-colors font-thicccboi">
+      <h1 className="text-3xl md:text-5xl font-thicccboi tracking-wide leading-tight ">
         LET'S BUILD YOUR DREAM TOGETHER
       </h1>
       <p className="max-w-2xl text-base md:text-lg mt-4 ">
@@ -160,19 +160,19 @@ export const ProductCard = ({
 
       {/* Stronger gradient overlay to enhance text visibility */}
       <div
-        className="absolute inset-0 h-full w-full pointer-events-none"
+        className="absolute inset-0 h-full w-full pointer-events-none font-thicccboi"
         style={{
           background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%)',
         }}
       />
 
       {/* Text container with enhanced styling for better contrast and visibility */}
-      <div className="absolute top-8 left-8 text-white z-20 space-y-2 opacity-90 transition-opacity duration-500 group-hover/product:opacity-100">
+      <div className="absolute top-8 left-8 text-white z-20 space-y-2 opacity-90 transition-opacity font-thicccboi duration-500 group-hover/product:opacity-100">
         <h2 className="text-2xl font-semibold">{product.heading}</h2>
         <p className="text-lg">{product.description}</p>
       </div>
 
-      <h2 className="absolute bottom-8 left-8 opacity-0 group-hover/product:opacity-100 text-white text-xl font-extrabold tracking-tight transition-opacity duration-500 ease-out">
+      <h2 className="absolute bottom-8 left-8 opacity-0 group-hover/product:opacity-100 text-white text-xl font-thicccboi tracking-tight transition-opacity duration-500 ease-out">
         {product.title}
       </h2>
     </motion.div>

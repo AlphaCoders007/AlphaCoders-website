@@ -137,11 +137,11 @@ const ContactForm: React.FC = () => {
               <button
                 key={item}
                 type="button"
-                className={` border-2 rounded-3xl w-full px-2 py-4  text-sm transition-all ${
+                className={` border-2 rounded-3xl w-full px-2 py-2  text-sm transition-all ${
                   formData.requirement === item
-                    ? "bg-[#bf00ff] text-white"
+                    ? "bg-[#F5CB5C] text-white"
                     : "bg-gray-200 text-gray-700"
-                } hover:bg-[#bf00ff] hover:text-white`}
+                } hover:bg-[#F5CB5C] hover:text-white`}
                 onClick={() =>
                   setFormData({ ...formData, requirement: item })
                 }
@@ -168,7 +168,7 @@ const ContactForm: React.FC = () => {
             min={10}
             max={1000}
             sx={{
-              color: "#bf00ff", 
+              color: "#F5CB5C", 
               
             }}
           />
@@ -200,7 +200,7 @@ const ContactForm: React.FC = () => {
 
         <button
           type="submit"
-          className="w-full px-8 py-4 bg-gradient-to-r from-[#bf00ff] to-[#ff5633]  text-white rounded-full text-xl mt-6 hover:scale-105 transition-all ease-in-out duration-300"
+          className="w-full px-8 py-4 text-textcolor-yellow  border  rounded-full text-xl mt-6 hover:scale-105 transition-all ease-in-out duration-300"
         >
           Submit Your Enquiry
         </button>

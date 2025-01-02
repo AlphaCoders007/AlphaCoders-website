@@ -14,20 +14,14 @@ const ConnectSection: React.FC = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [isScrolledToBottom, setIsScrolledToBottom] = useState(false);
 
-
-
   const handlePopupToggle = () => {
-    console.log("pop up done");
-
     setIsPopupOpen(!isPopupOpen);
   };
 
-  // Scroll detection function
   const handleScroll = () => {
     const scrollPosition = window.innerHeight + window.scrollY;
     const documentHeight = document.documentElement.offsetHeight;
 
-    // Check if the user has scrolled to the bottom
     if (scrollPosition >= documentHeight) {
       setIsScrolledToBottom(true);
     } else {
@@ -35,7 +29,6 @@ const ConnectSection: React.FC = () => {
     }
   };
 
-  // Add scroll event listener when the component mounts
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -46,19 +39,19 @@ const ConnectSection: React.FC = () => {
   return (
     <footer className="relative">
       <div>
-        <div className="fixed bottom-0   w-full h-full">
-          <div className="flex h-full  w-full flex-col items-end justify-end">
+        <div className="fixed bottom-0 w-full h-full">
+          <div className="flex h-full w-full flex-col items-end justify-end">
             <div className="max-container mx-auto px-[1.5rem] md:px-[5rem]">
               <div className="flex w-full items-center justify-between gap-[1rem] md:gap-[4rem] pt-[0rem] md:pt-[12rem] bg-background-light transition-colors">
                 {/* Header Section */}
                 <div className="flex flex-col items-start justify-start gap-10">
                   <div>
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-ThicccboiRegular leading-tight md:leading-snug">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-thicccboi leading-tight md:leading-snug">
                       Got an Interesting Project?
                     </h2>
                     <h2
                       id="letsConnectDiv"
-                      className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-ThicccboiMedium leading-tight md:leading-snug bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-orange-500"
+                      className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-thicccboi leading-tight md:leading-snug dark:text-white text-black"
                     >
                       Let’s Connect.
                     </h2>
@@ -93,11 +86,11 @@ const ConnectSection: React.FC = () => {
                         y2="25.3"
                         gradientUnits="userSpaceOnUse"
                       >
-                        <stop stopColor="#BF00FF" />
-                        <stop offset="0.06" stopColor="#C306F1" />
-                        <stop offset="0.53" stopColor="#E3318C" />
-                        <stop offset="0.85" stopColor="#F74C4C" />
-                        <stop offset="1" stopColor="#FF5633" />
+                        <stop stopColor="#F5CB5C" />
+                        <stop offset="0.06" stopColor="#F5CB5C" />
+                        <stop offset="0.53" stopColor="#F5CB5C" />
+                        <stop offset="0.85" stopColor="#F5CB5C" />
+                        <stop offset="1" stopColor="#F5CB5C" />
                       </linearGradient>
                     </defs>
                   </svg>
@@ -122,11 +115,11 @@ const ConnectSection: React.FC = () => {
                         y2="25.3"
                         gradientUnits="userSpaceOnUse"
                       >
-                        <stop stopColor="#BF00FF" />
-                        <stop offset="0.06" stopColor="#C306F1" />
-                        <stop offset="0.53" stopColor="#E3318C" />
-                        <stop offset="0.85" stopColor="#F74C4C" />
-                        <stop offset="1" stopColor="#FF5633" />
+                        <stop stopColor="#F5CB5C" />
+                        <stop offset="0.06" stopColor="#F5CB5C" />
+                        <stop offset="0.53" stopColor="#F5CB5C" />
+                        <stop offset="0.85" stopColor="#F5CB5C" />
+                        <stop offset="1" stopColor="#F5CB5C" />
                       </linearGradient>
                     </defs>
                   </svg>
@@ -135,7 +128,7 @@ const ConnectSection: React.FC = () => {
               {/* Contact Section */}
               <div className="py-8 md:py-16 text-black">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                  <div className=" rounded-3xl  p-6 md:p-8">
+                  <div className="rounded-3xl p-6 md:p-8">
                     <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
                       <a
                         href="tel:+919419196416"
@@ -191,8 +184,7 @@ const ConnectSection: React.FC = () => {
             </div>
 
             {/* Sliding Contact Form */}
-
-            <div 
+            <div
               className={`fixed inset-x-0 bottom-0 z-40 transition-all duration-500 ease-in-out ${
                 isScrolledToBottom
                   ? "transform translate-y-0"
@@ -202,18 +194,18 @@ const ConnectSection: React.FC = () => {
                 pointerEvents: isScrolledToBottom ? "auto" : "none",
               }}
             >
-              {/* Footer Content */}
-
-              <div className="w-full bg-gradient-to-r from-purple-500 to-orange-500">
-                <div className="text-center font-Montserrat leading-loose tracking-wide text-white text-sm p-2">
+              <div className="w-full bg-textcolor-yellow">
+                <div className="text-center font-thicccboi leading-loose tracking-wide text-white text-sm p-2">
                   © 2024 AlphaCoders Software Innovations
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+        {/* Popup for Contact Form */}
         <div
-          className={`fixed z-100 !important inset-x-0  bottom-0  transition-all duration-700 ease-out ${
+          className={`fixed z-100 !important inset-x-0 bottom-0 transition-all duration-700 ease-out ${
             isPopupOpen
               ? "transform translate-y-0"
               : "transform translate-y-full"
@@ -233,7 +225,6 @@ const ConnectSection: React.FC = () => {
           >
             <div className="absolute top-8 right-2 ">
               <button
-             
                 onClick={handlePopupToggle}
                 className="hover:scale-110 transition-all"
               >
@@ -255,7 +246,7 @@ const ConnectSection: React.FC = () => {
                 </svg>
               </button>
             </div>
-            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-center font-ThicccboiMedium leading-none bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 bg-clip-text text-transparent">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-center font-thicccboi leading-none ">
               Let’s Get Into Work!
             </h2>
             <ContactForm />

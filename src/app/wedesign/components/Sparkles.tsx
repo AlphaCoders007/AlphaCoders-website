@@ -36,7 +36,7 @@ export function Sparkles() {
       </div>
 
       {/* Description Section */}
-      <h1 className="text-l md:text-3xl font-thicccboi text-center relative z-20 max-w-5xl px-6">
+      <h1 className="text-l md:text-3xl font-thicccboi text-center dark:text-white text-black relative z-20 max-w-5xl px-6">
         Design is where imagination takes form. Our team crafts thoughtful,
         user-centric designs that are as functional as they are beautiful. Each
         design we create solves problems, enhances experiences, and stands the

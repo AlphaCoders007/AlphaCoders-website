@@ -1,51 +1,44 @@
 "use client"
 
-import { useEffect, useState } from 'react';
-import Image from 'next/image';
-const ThemeToggle = () => {
-  const [theme, setTheme] = useState<string | null>(null);
-  const [mounted, setMounted] = useState(false); 
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react"
 
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      setTheme(savedTheme);
-      document.documentElement.classList.add(savedTheme); 
-    } else {
-      setTheme('light');
-      document.documentElement.classList.add('light');
-    }
-    setMounted(true); 
-  }, []);
+export default function ThemeSwitch () {
+    const [mounted, setMounted] = useState(false);
+    const {setTheme, resolvedTheme} = useTheme()
+    useEffect(()=>{setMounted(true)
+        console.log("hi ");
+        
+    },[])
 
-  const toggleTheme = () => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark';
-    setTheme(newTheme);
-    localStorage.setItem('theme', newTheme); 
-    document.documentElement.classList.remove('light', 'dark'); 
-    document.documentElement.classList.add(newTheme); 
-  };
-
-  if (!mounted) {
-    <Image
-        src="/sunmoonimg.png"       // Source of the image
-        alt="A description of the image"  
-        width={36}                    
-        height={36}                 
-        quality={90}                  
-      />
-  }
-
-  return (
-       <button
-      onClick={toggleTheme}
-      className="fixed top-4 right-4 p-3 rounded-full shadow-lg  transition-all z-50"
-      aria-label="Toggle theme"
-    >
-      {theme === 'dark' ? '☀️' : '🌙'}
+    if (!mounted) return (
+        // <Image
+        // src='/sunmoonimg.png'
+        // width={36}
+        // height={36}
+        // sizes="36x36"
+        // alt="Loading image"
+        // priority = {false}
+        // title="loading light/dark toggle"
+        // className="fixed top-4 right-4 p-3 rounded-full shadow-lg  transition-all z-50"
+        // />
+        <div className="fixed top-4 right-4 p-3 rounded-full shadow-lg  transition-all z-50">
+            ☀️
+        </div>
+    )
+    if (resolvedTheme === 'dark'){
+        return <div className="relative">
+        <button onClick={()=>setTheme ('light')} className="fixed top-4 right-4 p-3 rounded-full shadow-lg  transition-all z-50">
+        ☀️
     </button>
-
-  );
-};
-
-export default ThemeToggle;
+    </div>
+        
+    }
+    if (resolvedTheme === 'light'){
+        return <div className="relative">
+        <button onClick={()=>setTheme ('dark')} className="fixed top-4 right-4 p-3 rounded-full shadow-lg  transition-all z-50">
+        🌙
+    </button>
+    </div>
+    }
+}

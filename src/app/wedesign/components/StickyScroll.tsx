@@ -58,7 +58,7 @@ export function StickyScrollReveal() {
   return (
     <div className="overflow-hidden">
       <div className="px-6 py-20 bg-background-light text-center">
-        <h2 className="text-4xl md:text-6xl font-thicccboi tracking-tight">
+        <h2 className="text-4xl md:text-6xl dark:text-white text-black  font-thicccboi tracking-tight">
           What We Offer
         </h2>
         

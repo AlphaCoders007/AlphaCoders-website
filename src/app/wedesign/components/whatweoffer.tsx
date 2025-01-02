@@ -11,7 +11,7 @@ export function Whatweoffer() {
     <div className="relative w-full h-full py-20 bg-background-light transition-colors z-20">
        {/* Title Section */}
        <div className="px-6 text-center py-10">
-        <h2 className="text-4xl md:text-6xl font-thicccboi tracking-tight leading-tight">
+        <h2 className="text-4xl md:text-6xl font-thicccboi dark:text-white text-black tracking-tight leading-tight">
           Our Design Philosophy
         </h2>
       </div>
