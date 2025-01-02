@@ -44,7 +44,7 @@ export const cards: CardStatsProps[] = [
       "Design is where imagination takes form. Our team crafts thoughtful, user-centric designs that are as functional as they are beautiful. Each design we create solves problems, enhances experiences, and stands the test of time.",
   },
   {
-    technologie: ["Custom Software Development", "End-to-End Engineering", " Quality "],
+    technologie: ["End-to-End Engineering","Tailored Software",  " QA Testing "],
     imageSrc: "wecreate.jpg",
     title: "We Create",
     subtitle: "Creation Brings Your Vision to Life", // Added subtitle here
