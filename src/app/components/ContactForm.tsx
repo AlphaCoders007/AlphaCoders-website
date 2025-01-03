@@ -40,44 +40,34 @@ const ContactForm: React.FC = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!validateForm()) return;
 
-    try {
-      const response = await fetch("https://formspree.io/f/meoqyqqw", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setSuccessMessage("Your enquiry has been submitted successfully!");
-        setFormData({
-          companyName: "",
-          email: "",
-          requirement: "",
-          budgetRange: [10, 100],
-          enquiry: "",
-        });
-      } else {
-        throw new Error("Failed to submit your enquiry. Please try again.");
-      }
-    } catch (error) {
-      const message =
-        error instanceof Error ? error.message : "An unknown error occurred.";
-      setSuccessMessage(message);
-    }
+    setSuccessMessage("Your enquiry has been submitted successfully!");
+    setFormData({
+      companyName: "",
+      email: "",
+      requirement: "",
+      budgetRange: [10, 100],
+      enquiry: "",
+    });
   };
 
   return (
     <form
-      className="mt-10 overflow-auto border  h-auto flex flex-col md:flex-row gap-10 md:gap-8 px-4 md:px-12 py-10  text-white rounded-xl shadow-lg"
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      className="mt-10 overflow-auto border h-auto flex flex-col md:flex-row gap-10 md:gap-8 px-4 md:px-12 py-10 text-white rounded-xl shadow-lg"
       onSubmit={handleSubmit}
     >
+      {/* Hidden input for Netlify */}
+      <input type="hidden" name="form-name" value="contact" />
+
       {/* Left Side - Name, Email, and Requirement */}
-      <div className="w-full md:w-1/2 space-y-6 ">
+      <div className="w-full md:w-1/2 space-y-6">
         <div>
           <label htmlFor="companyName" className="text-xl font-semibold">
             Name / Company
@@ -122,7 +112,7 @@ const ContactForm: React.FC = () => {
 
         <div>
           <label className="text-xl font-semibold">Requirement Based On</label>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-4  shadow-lg ">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-4">
             {[
               "Idea Elaboration",
               "Market Research and Feasibility Analysis",
@@ -137,7 +127,7 @@ const ContactForm: React.FC = () => {
               <button
                 key={item}
                 type="button"
-                className={` border-2 rounded-3xl w-full px-1 py-1 mt-2 mb-2  text-sm transition-all ${
+                className={`border-2 rounded-3xl w-full px-1 py-1 mt-2 mb-2 text-sm transition-all ${
                   formData.requirement === item
                     ? "bg-[#F5CB5C] text-gray-700"
                     : "bg-gray-200 text-gray-700"
@@ -163,17 +153,15 @@ const ContactForm: React.FC = () => {
           <Slider
             value={formData.budgetRange}
             onChange={handleBudgetRangeChange}
-            // valueLabelDisplay="auto"
-            // valueLabelFormat={(value) => `$${value}`}
             min={10}
             max={1000}
             sx={{
-              color: "#F5CB5C", 
-              
+              color: "#F5CB5C",
             }}
           />
           <div className="text-lg mt-2 text-gray-500">
-            Selected Budget: ${formData.budgetRange[0]}K - ${formData.budgetRange[1]}K
+            Selected Budget: ${formData.budgetRange[0]}K - $
+            {formData.budgetRange[1]}K
           </div>
         </div>
 
@@ -200,12 +188,14 @@ const ContactForm: React.FC = () => {
 
         <button
           type="submit"
-          className="w-full px-8 py-4 text-textcolor-yellow  border  rounded-full text-xl mt-6 hover:scale-105 transition-all ease-in-out duration-300"
+          className="w-full px-8 py-4 text-textcolor-yellow border rounded-full text-xl mt-6 hover:scale-105 transition-all ease-in-out duration-300"
         >
           Submit Your Enquiry
         </button>
 
-        {successMessage && <p className="mt-4 text-green-500">{successMessage}</p>}
+        {successMessage && (
+          <p className="mt-4 text-green-500">{successMessage}</p>
+        )}
       </div>
     </form>
   );
