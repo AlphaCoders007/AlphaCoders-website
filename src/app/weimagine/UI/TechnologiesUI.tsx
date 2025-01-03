@@ -36,7 +36,7 @@ export const HoverEffect = ({
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className="absolute inset-0 h-full w-full  block rounded-3xl" // Changed background color to #ff5633
+                className="absolute inset-0 h-full w-full   block rounded-3xl bg-textcolor-yellow" // Set hover background color to yellow
                 layoutId="hoverBackground"
                 initial={{ opacity: 0 }}
                 animate={{
