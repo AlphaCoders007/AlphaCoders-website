@@ -31,8 +31,8 @@ const FloatingMenu: React.FC = () => {
   ]
 
   const contactItems: ContactItem[] = [
-    { type: "call", label: "Call", href: "tel:+91000000000", Icon: Phone },
-    { type: "email", label: "Email", href: "mailto:info@alphacoders.co", Icon: Mail },
+    { type: "call", label: "Call", href: "tel:+919419196416", Icon: Phone },
+    { type: "email", label: "Email", href: "mailto:info@alphacoders.co.in", Icon: Mail },
   ]
 
   const toggleMenu = useCallback((event: React.MouseEvent) => {
