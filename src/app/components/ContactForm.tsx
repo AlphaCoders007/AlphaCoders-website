@@ -73,11 +73,11 @@ const ContactForm: React.FC = () => {
 
   return (
     <form
-      className="mt-10 overflow-auto h-auto flex flex-col md:flex-row gap-10 md:gap-8 px-4 md:px-12 py-10  text-white rounded-xl shadow-lg"
+      className="mt-10 overflow-auto border  h-auto flex flex-col md:flex-row gap-10 md:gap-8 px-4 md:px-12 py-10  text-white rounded-xl shadow-lg"
       onSubmit={handleSubmit}
     >
       {/* Left Side - Name, Email, and Requirement */}
-      <div className="w-full md:w-1/2 space-y-6">
+      <div className="w-full md:w-1/2 space-y-6 ">
         <div>
           <label htmlFor="companyName" className="text-xl font-semibold">
             Name / Company
@@ -122,7 +122,7 @@ const ContactForm: React.FC = () => {
 
         <div>
           <label className="text-xl font-semibold">Requirement Based On</label>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-4 ">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-4  shadow-lg ">
             {[
               "Idea Elaboration",
               "Market Research and Feasibility Analysis",
@@ -137,9 +137,9 @@ const ContactForm: React.FC = () => {
               <button
                 key={item}
                 type="button"
-                className={` border-2 rounded-3xl w-full px-2 py-2  text-sm transition-all ${
+                className={` border-2 rounded-3xl w-full px-1 py-1 mt-2 mb-2  text-sm transition-all ${
                   formData.requirement === item
-                    ? "bg-[#F5CB5C] text-white"
+                    ? "bg-[#F5CB5C] text-gray-700"
                     : "bg-gray-200 text-gray-700"
                 } hover:bg-[#F5CB5C] hover:text-white`}
                 onClick={() =>

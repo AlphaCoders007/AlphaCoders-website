@@ -111,7 +111,7 @@ export const Header = () => {
       <h1 className="text-3xl md:text-5xl font-thicccboi tracking-wide leading-tight ">
         LET'S BUILD YOUR DREAM TOGETHER
       </h1>
-      <p className="max-w-2xl text-base md:text-lg mt-4 ">
+      <p className="max-w-2xl text-base md:text-lg dark:text-white text-black mt-4 ">
         Whether you're dreaming of a groundbreaking application or a
         transformative platform, AlphaCoders is here to guide you every step of
         the way. Imagination is just the beginning—let us design and create
@@ -175,12 +175,12 @@ export const ProductCard = ({
       />
 
       {/* Text container with enhanced styling for better contrast and visibility */}
-      <div className="absolute top-8 left-8 text-white z-20 space-y-2 opacity-90 transition-opacity font-thicccboi duration-500 group-hover/product:opacity-100">
-        <h2 className="text-2xl font-semibold">{product.heading}</h2>
-        <p className="text-lg">{product.description}</p>
+      <div className="absolute top-8 left-8  z-20 space-y-2 text-white opacity-90 transition-opacity font-thicccboi duration-500 group-hover/product:opacity-100">
+        <h2 className="text-2xl font-semibold text-textcolor-yellow ">{product.heading}</h2>
+        <p className="text-sm ">{product.description}</p>
       </div>
 
-      <h2 className="absolute bottom-8 left-8 opacity-0 group-hover/product:opacity-100 text-white text-xl font-thicccboi tracking-tight transition-opacity duration-500 ease-out">
+      <h2 className="absolute bottom-8 left-8 text-textcolor-yellow opacity-0 group-hover/product:opacity-100  text-xl font-thicccboi tracking-tight transition-opacity duration-500 ease-out">
         {product.title}
       </h2>
     </motion.div>

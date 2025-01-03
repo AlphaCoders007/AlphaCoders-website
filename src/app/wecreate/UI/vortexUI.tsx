@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { cn } from "@/app/lib/utils";
 import React, { useEffect, useRef } from "react";
 import { createNoise3D } from "simplex-noise";
@@ -15,7 +15,6 @@ interface VortexProps {
   rangeSpeed?: number;
   baseRadius?: number;
   rangeRadius?: number;
-  backgroundColor?: string;
 }
 
 export const Vortex = (props: VortexProps) => {
@@ -37,7 +36,6 @@ export const Vortex = (props: VortexProps) => {
   const xOff = 0.00125;
   const yOff = 0.00125;
   const zOff = 0.0005;
-  const backgroundColor = props.backgroundColor || "#000000";
   let tick = 0;
   const noise3D = createNoise3D();
   let particleProps = new Float32Array(particlePropsLength);
@@ -71,7 +69,6 @@ export const Vortex = (props: VortexProps) => {
 
   const initParticles = () => {
     tick = 0;
-    // simplex = new SimplexNoise();
     particleProps = new Float32Array(particlePropsLength);
 
     for (let i = 0; i < particlePropsLength; i += particlePropCount) {
@@ -102,9 +99,6 @@ export const Vortex = (props: VortexProps) => {
     tick++;
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    ctx.fillStyle = backgroundColor;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     drawParticles(ctx);
     renderGlow(canvas, ctx);
@@ -158,7 +152,6 @@ export const Vortex = (props: VortexProps) => {
 
     (checkBounds(x, y, canvas) || life > ttl) && initParticle(i);
   };
-
   const drawParticle = (
     x: number,
     y: number,
@@ -170,10 +163,22 @@ export const Vortex = (props: VortexProps) => {
     hue: number,
     ctx: CanvasRenderingContext2D
   ) => {
+    const lightness = fadeInOut(life, ttl) * 100;
+  
+    // Define colors for the particles
+    const colors = [
+      `hsla(0, 0%, 100%, ${fadeInOut(life, ttl)})`, // White
+      `hsla(0, 0%, 50%, ${fadeInOut(life, ttl)})`, // Gray
+      `hsla(50, 100%, 50%, ${fadeInOut(life, ttl)})`, // Yellow
+    ];
+  
+    // Randomly pick a color
+    const color = colors[Math.floor(Math.random() * colors.length)];
+  
     ctx.save();
     ctx.lineCap = "round";
     ctx.lineWidth = radius;
-    ctx.strokeStyle = `hsla(${hue},100%,60%,${fadeInOut(life, ttl)})`;
+    ctx.strokeStyle = color;
     ctx.beginPath();
     ctx.moveTo(x, y);
     ctx.lineTo(x2, y2);
@@ -238,7 +243,7 @@ export const Vortex = (props: VortexProps) => {
   }, []);
 
   return (
-    <div className={cn("relative h-full w-full", props.containerClassName)}>
+    <div className={cn("bg-background-light relative h-full w-full", props.containerClassName)}>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

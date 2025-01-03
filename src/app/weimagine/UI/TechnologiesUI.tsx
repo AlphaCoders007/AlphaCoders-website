@@ -36,7 +36,7 @@ export const HoverEffect = ({
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className="absolute inset-0 h-full w-full bg-textcolor-yellow block rounded-3xl" // Changed background color to #ff5633
+                className="absolute inset-0 h-full w-full  block rounded-3xl" // Changed background color to #ff5633
                 layoutId="hoverBackground"
                 initial={{ opacity: 0 }}
                 animate={{
@@ -89,7 +89,7 @@ export const CardTitle = ({
   children: React.ReactNode;
 }) => {
   return (
-    <h4 className={cn("  font-thicccboi tracking-wide mt-4 transition-colors", className)}>
+    <h4 className={cn("  font-thicccboi  tracking-wide mt-4 transition-colors", className)}>
       {children}
     </h4>
   );
@@ -105,7 +105,7 @@ export const CardDescription = ({
   return (
     <p
       className={cn(
-        "mt-8 transition-colors tracking-wide font-thicccboi leading-relaxed text-sm",
+        "mt-8 transition-colors text-white tracking-wide font-thicccboi leading-relaxed text-sm",
         className
       )}
     >

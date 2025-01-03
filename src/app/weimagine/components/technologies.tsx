@@ -4,7 +4,7 @@ export function Technologies() {
   return (
     <div className="">
     <div className="relative w-full h-full py-20 bg-background-light z-30">
-        <h2 className="max-w-7xl pl-4 mx-auto text-3xl md:text-6xl  text-black dark:text-white font-thicccboi">
+        <h2 className="max-w-7xl pl-4 sm:pl-20 mx-auto mb-4 text-3xl md:text-6xl  text-black dark:text-white font-thicccboi">
         Technologies we leverage...
       </h2>
       <div className="relative z-30  bg-background-light transition-colors max-w-5xl mx-auto px-8 dark:text-white ">

@@ -27,22 +27,20 @@ const StickyComponent: React.FC<StickyComponentProps> = ({
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-
       const zoomFactor = Math.max(-1, 1.4 + scrollY / 9000);
       setScale(zoomFactor);
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
-    <div className="    sticky top-0 z-20 flex h-screen items-start justify-center px-[1rem] md:px-[2rem]">
-      <div className="  h-full origin-top pt-[7rem] pb-[2rem] w-full">
-        <div className="  relative h-full overflow-hidden">
+    <div className="sticky top-0 z-20 flex h-screen items-start justify-center px-[1rem] md:px-[2rem]">
+      <div className="h-full origin-top pt-[7rem] pb-[2rem] w-full">
+        <div className="relative h-full overflow-hidden">
           <div
             className={`flex h-full w-full flex-col overflow-hidden rounded-3xl md:flex-row ${color} ${
               isEven ? "md:flex-row" : "md:flex-row-reverse"
@@ -79,21 +77,18 @@ const StickyComponent: React.FC<StickyComponentProps> = ({
 
             <div className="relative h-1/2 p-[1rem] font-thicccboi text-white md:h-full md:w-1/2 md:p-[2.8rem]">
               <div className="opacity-100 transform-none">
-                <h2 className="pt-[1rem] font-bold  text-3xl sm:text-4xl">
+                <h2 className="pt-[1rem] font-bold text-3xl sm:text-4xl">
                   {title}
                 </h2>
-                {/* <p className="font-ThicccboiMedium text-xl ">
-                  {subtitle}
-                </p> */}
               </div>
               <div className="opacity-100 transform-none">
-                <div className="inline-flex  flex-wrap items-start justify-start gap-1 sm:gap-2 py-[1rem] md:gap-3 md:py-[2rem]">
+                <div className="inline-flex flex-wrap items-start justify-start gap-1 sm:gap-2 py-[1rem] md:gap-3 md:py-[2rem]">
                   {technologies.map((tech, index) => (
                     <div
                       key={index}
-                      className="flex  items-center justify-center bg-[#F5F5F5] px-2 py-1 rounded-[0.5rem] text-xs sm:text-base md:px-6 md:py-2"
+                      className="flex items-center justify-center bg-[#F5F5F5] px-2 py-1 rounded-[0.5rem] text-xs sm:text-base md:px-6 md:py-2"
                     >
-                      <p className="  text-gray-700">
+                      <p className="text-gray-700">
                         {tech}
                       </p>
                     </div>
@@ -101,18 +96,18 @@ const StickyComponent: React.FC<StickyComponentProps> = ({
                 </div>
               </div>
               <div className="opacity-100 transform-none">
-                <p className="pr-10 text-verticalbodyclamped ">{description}</p>
+                <p className="pr-10 text-verticalbodyclamped">{description}</p>
               </div>
             </div>
           </div>
 
-          {/* Arrow Button */}
+          {/* Improved Arrow Button Positioning */}
           <Link
             href={path}
-            className={`absolute top-1/2 right-0  sm:top-3/4 sm:right-10 scale-75 sm:scale-100   ${
-              isEven ? "sm:right-10" : "sm:left-10"
-            } sm:right-[10%]}`}
-           
+            className={`absolute bottom-80 sm:bottom-4  ${
+              isEven ? "right-4 md:right-8" : "right-4 md:left-8"
+            }  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white`}
+            aria-label={`View details for ${title}`}
           >
             <MinimalButton />
           </Link>
@@ -123,3 +118,4 @@ const StickyComponent: React.FC<StickyComponentProps> = ({
 };
 
 export default StickyComponent;
+

@@ -12,7 +12,7 @@ interface StepProps {
 
 const Step: React.FC<StepProps> = ({ stepNumber, title, description, icon }) => (
   <div className="flex pb-20 sm:items-center md:w-2/3 mx-auto">
-    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-black text-white flex items-center justify-center relative z-10 title-font font-medium text-sm">
+    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gray-500 text-black flex items-center justify-center relative z-10 title-font font-medium text-sm">
       {/* Number inside the black circle */}
       {stepNumber}
     </div>
@@ -22,7 +22,7 @@ const Step: React.FC<StepProps> = ({ stepNumber, title, description, icon }) => 
       </div>
       <div className="flex-grow sm:pl-6 mt-6 sm:mt-0">
         <h2 className="font-medium title-font  mb-1 text-xl">{title}</h2>
-        <p className="leading-relaxed">{description}</p>
+        <p className="leading-relaxed text-white">{description}</p>
       </div>
     </div>
   </div>
