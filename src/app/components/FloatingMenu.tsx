@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
-import { Home, Lightbulb, Palette,  Phone, Mail, Menu, X, PenTool } from 'lucide-react'
+import { Home, Lightbulb, Palette, Phone, Mail, Menu, X, PenTool } from 'lucide-react'
 
 interface MenuItem {
   label: string
@@ -59,61 +59,39 @@ const FloatingMenu: React.FC = () => {
   }, [handleClickOutside])
 
   const MenuItems: React.FC<{ onItemClick: () => void }> = ({ onItemClick }) => (
-    <div className="flex flex-col items-center w-full">
-      {/* Centered Home Item */}
-      <motion.div
-        key="home"
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        exit={{ opacity: 0, scale: 0.95 }}
-        transition={{ duration: 0.2 }}
-        className="mb-6"
-      >
-        <Link
-          href="/"
-          onClick={onItemClick}
-          className="flex items-center justify-center p-4 rounded-full bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 transition-colors duration-200"
+    <div className="flex items-center space-x-2">
+      {menuItems.map((item, index) => (
+        <motion.div
+          key={item.label || 'home'}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.95 }}
+          transition={{ duration: 0.2, delay: index * 0.05 }}
         >
-          <Home className="w-6 h-6" />
-        </Link>
-      </motion.div>
-  
-      {/* Other Menu Items */}
-      <ul className="flex flex-col  w-full">
-        {menuItems
-          .filter((item) => item.label !== "") 
-          .map((item, index) => (
-            <motion.li
-              key={item.label}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              transition={{ duration: 0.2, delay: index * 0.05 }}
-            >
-              <Link
-                href={item.href}
-                onClick={onItemClick}
-                className="flex items-center p-3 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-colors duration-200"
-              >
-                <item.Icon className="w-5 h-5 mr-3 text-black/70 dark:text-white/70" />
-                <span className="text-sm">{item.label}</span>
-              </Link>
-            </motion.li>
-          ))}
-      </ul>
+          <Link
+            href={item.href}
+            onClick={onItemClick}
+            className="flex items-center justify-center p-2 rounded-lg bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 transition-colors duration-200"
+          >
+            <item.Icon className="w-5 h-5" />
+            {item.label && (
+              <span className="ml-2 text-sm hidden md:inline">{item.label}</span>
+            )}
+          </Link>
+        </motion.div>
+      ))}
     </div>
   )
 
   const ContactItems: React.FC = () => (
-    <div className="flex gap-2 w-full">
+    <div className="flex items-center space-x-2">
       {contactItems.map((item, index) => (
         <motion.div
           key={item.label}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.95 }}
           transition={{ duration: 0.2, delay: index * 0.05 }}
-          className="flex-1"
         >
           <Link
             href={item.href}
@@ -128,44 +106,13 @@ const FloatingMenu: React.FC = () => {
 
   return (
     <div className="fixed top-4 left-4 z-50 font-thicccboi">
-      <div className="relative">
-        <motion.div
-          ref={menuRef}
-          initial={false}
-          animate={isOpen ? "open" : "closed"}
-          className="absolute top-0 left-0 overflow-hidden rounded-xl bg-background-light transition-colors  backdrop-blur-sm border border-black/10 dark:border-white/10"
-        >
-          <motion.div
-            variants={{
-              open: { width: 240, height: 300, opacity: 1 },
-              closed: { width: 40, height: 40, opacity: 0.9 },
-            }}
-            transition={{ type: "spring", stiffness: 400, damping: 30 }}
-            className="relative flex items-center justify-center w-full h-full"
-          >
-            <AnimatePresence>
-              {isOpen && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.2 }}
-                  className="flex flex-col justify-between h-full w-full p-4"
-                >
-                  <MenuItems onItemClick={() => setIsOpen(false)} />
-                  <ContactItems />
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </motion.div>
-        </motion.div>
-
+      <div className="flex flex-col items-start space-y-6">
         <motion.button
           ref={buttonRef}
           onClick={toggleMenu}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="relative z-10 bg-background-light transition-colors  backdrop-blur-sm rounded-lg border border-black/10 dark:border-white/10 w-10 h-10 flex items-center justify-center duration-200"
+          className="relative z-10 bg-background-light transition-colors backdrop-blur-sm rounded-lg border border-black/10 dark:border-white/10 w-10 h-10 flex items-center justify-center duration-200"
           aria-label={isOpen ? "Close menu" : "Open menu"}
         >
           <AnimatePresence mode="wait" initial={false}>
@@ -192,9 +139,42 @@ const FloatingMenu: React.FC = () => {
             )}
           </AnimatePresence>
         </motion.button>
+
+        <motion.div
+          ref={menuRef}
+          initial={false}
+          animate={isOpen ? "open" : "closed"}
+          className="overflow-hidden rounded-xl bg-background-light transition-colors backdrop-blur-sm border border-black/10 dark:border-white/10 mt-2"
+        >
+          <motion.div
+            variants={{
+              open: { width: 'auto', height: 'auto', opacity: 1, x: 0 },
+              closed: { width: 0, height: 0, opacity: 0, x: -20 },
+            }}
+            transition={{ type: "spring", stiffness: 400, damping: 30 }}
+            className="relative flex items-center justify-center w-full h-full"
+          >
+            <AnimatePresence>
+              {isOpen && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.2 }}
+                  className="flex items-center space-x-4 p-2 whitespace-nowrap"
+                >
+                  <MenuItems onItemClick={() => setIsOpen(false)} />
+                  <div className="h-6 w-px bg-black/10 dark:bg-white/10" />
+                  <ContactItems />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
+        </motion.div>
       </div>
     </div>
   )
 }
 
 export default FloatingMenu
+

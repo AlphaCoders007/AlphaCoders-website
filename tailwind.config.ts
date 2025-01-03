@@ -32,7 +32,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        thicccboi: ["Roboto Mono", "serif"],
+        thicccboi: ["Thicccboi", ...defaultTheme.fontFamily.sans],
         wide: ["Audiowide"],
         Montserrat: ["Montserrat", "sans-serif"],
         Orbitron: ["Orbitron"],
