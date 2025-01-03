@@ -23,10 +23,10 @@ export const GoogleGeminiEffect = ({
     <div className={cn("sticky top-40", className)}>
       <div className="flex w-full pt-20 origin-center bg-background-light transition-colors flex-col items-center">
         <h1 className="text-center text-3xl md:text-left space-y-6">
-          <span className="font-thicccboi font-light dark:text-white text-black   transition-colors text-2xl lg:text-6xl block">
+          <span className="font-thicccboi font-light dark:text-white text-black   transition-colors text-4xl lg:text-8xl block">
             dream it. plan it. do it.
           </span>
-          <span className="font-thicccboi text-xl font-bold text-textcolor-yellow md:text-3xl text-center block">
+          <span className="font-thicccboi text-xl font-bold text-textcolor-yellow md:text-4xl text-center block">
             transform your ideas into reality
           </span>
         </h1>
