@@ -69,12 +69,38 @@ const ContactForm: React.FC = () => {
         error instanceof Error ? error.message : "An unknown error occurred.";
       setSuccessMessage(message);
     }
+    try {
+      const response = await fetch("https://formspree.io/f/meoqyqqw", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSuccessMessage("Your enquiry has been submitted successfully!");
+        setFormData({
+          companyName: "",
+          email: "",
+          requirement: "",
+          budgetRange: [10, 100],
+          enquiry: "",
+        });
+      } else {
+        throw new Error("Failed to submit your enquiry. Please try again.");
+      }
+    } catch (error) {
+      const message =
+        error instanceof Error ? error.message : "An unknown error occurred.";
+      setSuccessMessage(message);
+    }
   };
 
   return (
     <form
-      
-      className="mt-10 overflow-auto border  h-auto flex flex-col md:flex-row gap-10 md:gap-8 px-4 md:px-12 py-10  text-white rounded-xl shadow-lg"
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      className="mt-10 overflow-auto border h-auto flex flex-col md:flex-row gap-10 md:gap-8 px-4 md:px-12 py-10 text-white rounded-xl shadow-lg"
       onSubmit={handleSubmit}
     >
       {/* Left Side - Name, Email, and Requirement */}
