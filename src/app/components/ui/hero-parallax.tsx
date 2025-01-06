@@ -31,14 +31,14 @@ export const HeroParallax = ({
     offset: ["start start", "end start"],
   });
 
-  const springConfig = { stiffness: 300, damping: 50, bounce: 80 };
+  const springConfig = { stiffness: 200, damping: 35, bounce: 60 };
 
   const translateX = useSpring(
-    useTransform(scrollYProgress, [0, 1], [0, 1000]),
+    useTransform(scrollYProgress, [0, 1], [0, 200]),
     springConfig
   );
   const translateXReverse = useSpring(
-    useTransform(scrollYProgress, [0, 1], [0, -1000]),
+    useTransform(scrollYProgress, [0, 1], [0, -800]),
     springConfig
   );
   const rotateX = useSpring(
@@ -46,22 +46,22 @@ export const HeroParallax = ({
     springConfig
   );
   const opacity = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [0.1, 1]),
+    useTransform(scrollYProgress, [0, 0.2], [0.2, 1]),
     springConfig
   );
   const rotateZ = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [20, 0]),
+    useTransform(scrollYProgress, [0, 0.2], [15, 0]),
     springConfig
   );
   const translateY = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [-700, 500]),
+    useTransform(scrollYProgress, [0, 0.2], [-500, 400]),
     springConfig
   );
 
   return (
     <div
       ref={ref}
-      className="z-10 bg-background-light transition-colors  h-[300vh] sm:h-[350vh]   py-20 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="z-10 bg-background-light transition-colors h-[300vh] sm:h-[350vh] py-20 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -73,7 +73,8 @@ export const HeroParallax = ({
         }}
         className="space-y-12"
       >
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-10 mb-8">
+        {/* First Row: Horizontal Scrollable */}
+        <motion.div className="overflow-x-auto flex space-x-10 mb-8 scrollbar-hidden">
           {firstRow.map((product) => (
             <ProductCard
               product={product}
@@ -82,7 +83,9 @@ export const HeroParallax = ({
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row mb-8 space-x-10">
+
+        {/* Second Row: Horizontal Scrollable */}
+        <motion.div className="overflow-x-auto flex space-x-10 mb-8">
           {secondRow.map((product) => (
             <ProductCard
               product={product}
@@ -91,7 +94,9 @@ export const HeroParallax = ({
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-10">
+
+        {/* Third Row: Horizontal Scrollable */}
+        <motion.div className="overflow-x-auto flex space-x-10 mb-8">
           {thirdRow.map((product) => (
             <ProductCard
               product={product}
@@ -142,12 +147,7 @@ export const ProductCard = ({
         height: "clamp(300px, 50vw, 420px)", // Min 300px, scales up to 420px
         width: "clamp(280px, 45vw, 352px)", // Min 280px, scales up to 352px
       }}
-      whileHover={{
-        scale: 1.1, // Larger scale for an intense hover effect
-        y: -15, // Slightly higher upward shift for a more engaging effect
-        boxShadow: "0 25px 50px rgba(0, 0, 0, 0.3)", // Intense shadow for focus
-        rotateY: 10, // Slight rotation for added depth
-      }}
+     
       className="group/product relative flex-shrink-0 overflow-hidden bg-white transition-transform duration-500 ease-out transform shadow-2xl hover:shadow-3xl hover:rotate-6 rounded-3xl"
     >
       <Link
