@@ -246,9 +246,7 @@ const ConnectSection: React.FC = () => {
                 </svg>
               </button>
             </div>
-            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-center font-thicccboi leading-none ">
-              Let’s Get Into Work!
-            </h2>
+            
             <ContactForm />
           </div>
         </div>

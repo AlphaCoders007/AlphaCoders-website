@@ -19,7 +19,6 @@ const Page: React.FC = () => {
       <div className=" relative bg-background-light max-h-lvh z-30">
         <LetsGetStartedSection />
       </div>
-      {/* <Whatwedo /> */}
 
       <HeroParallaxDemo />
       <div className="relative bg-background-light  z-20">

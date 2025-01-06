@@ -72,141 +72,142 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <form
-      className="mt-10 overflow-auto border h-auto flex flex-col md:flex-row gap-10 md:gap-8 px-4 md:px-12 py-10 text-white rounded-xl shadow-lg"
-      onSubmit={handleSubmit}
-    >
-      {/* Left Side - Name, Email, and Requirement */}
-      <div className="w-full md:w-1/2 space-y-6 ">
-        <div>
-          <label htmlFor="companyName" className="text-xl font-semibold">
-            Name / Company
-          </label>
-          <input
-            id="companyName"
-            name="companyName"
-            type="text"
-            value={formData.companyName}
-            onChange={handleChange}
-            placeholder="Your Name / Company"
-            className={`w-full border-2 rounded-lg p-4 text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-400 ${
-              errors.companyName ? "border-red-500" : "border-gray-300"
-            }`}
-            aria-invalid={!!errors.companyName}
-          />
-          {errors.companyName && (
-            <p className="text-red-500 text-sm mt-1">{errors.companyName}</p>
-          )}
-        </div>
-
-        <div>
-          <label htmlFor="email" className="text-xl font-semibold">
-            Email
-          </label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="Your Email"
-            className={`w-full border-2 rounded-lg p-4 text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-400 ${
-              errors.email ? "border-red-500" : "border-gray-300"
-            }`}
-            aria-invalid={!!errors.email}
-          />
-          {errors.email && (
-            <p className="text-red-500 text-sm mt-1">{errors.email}</p>
-          )}
-        </div>
-
-        <div>
-          <label className="text-xl font-semibold">Requirement Based On</label>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-4  shadow-lg ">
-            {[
-              "Idea Elaboration",
-              "Market Research and Feasibility Analysis",
-              "Wire-Framing and Prototyping",
-              "MVP Development",
-              "System Integration",
-              "Custom Software Development",
-              "Mobile and Web Application Development",
-              "Quality Testing and Software Maintenance",
-              "Other",
-            ].map((item) => (
-              <button
-                key={item}
-                type="button"
-                className={` border-2 rounded-3xl w-full px-1 py-1 mt-2 mb-2  text-sm transition-all ${
-                  formData.requirement === item
-                    ? "bg-[#F5CB5C] text-gray-700"
-                    : "bg-gray-200 text-gray-700"
-                } hover:bg-[#F5CB5C] hover:text-white`}
-                onClick={() =>
-                  setFormData({ ...formData, requirement: item })
-                }
-              >
-                {item}
-              </button>
-            ))}
+    <div className="max-w-6xl mx-auto px-6 md:px-12 py-16 bg-[#7e7e7e]  rounded-3xl shadow-2xl">
+      <h2 className="text-4xl sm:text-6xl font-bold text-center dark:text-gray-800  leading-tight mb-12">
+        Let’s Get Into Work!
+      </h2>
+      <form
+        className="grid grid-cols-1 md:grid-cols-2 gap-12 font-thicccboi"
+        onSubmit={handleSubmit}
+      >
+        {/* Left Side */}
+        <div className="space-y-8">
+          <div>
+            <label htmlFor="companyName" className="block text-lg font-medium">
+              Name / Company
+            </label>
+            <input
+              id="companyName"
+              name="companyName"
+              type="text"
+              value={formData.companyName}
+              onChange={handleChange}
+              placeholder="Your Name / Company"
+              className={`w-full border-2 rounded-lg p-4   placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 ${
+                errors.companyName ? "border-red-500" : "border-gray-300"
+              }`}
+            />
+            {errors.companyName && (
+              <p className="text-red-500 text-sm mt-2">{errors.companyName}</p>
+            )}
           </div>
-          {errors.requirement && (
-            <p className="text-red-500 text-sm mt-1">{errors.requirement}</p>
-          )}
-        </div>
-      </div>
-
-      {/* Right Side - Budget, Enquiry, and Submit */}
-      <div className="w-full md:w-1/2 space-y-6">
-        <div>
-          <label className="text-xl font-semibold">Budget</label>
-          <Slider
-            value={formData.budgetRange}
-            onChange={handleBudgetRangeChange}
-            // valueLabelDisplay="auto"
-            // valueLabelFormat={(value) => `$${value}`}
-            min={10}
-            max={1000}
-            sx={{
-              color: "#F5CB5C", 
-            }}
-          />
-          <div className="text-lg mt-2 text-gray-500">
-            Selected Budget: ${formData.budgetRange[0]}K - ${formData.budgetRange[1]}K
+          <div>
+            <label htmlFor="email" className="block text-lg font-medium">
+              Email
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Your Email"
+              className={`w-full border-2 rounded-lg p-4  placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 ${
+                errors.email ? "border-red-500" : "border-gray-300"
+              }`}
+            />
+            {errors.email && (
+              <p className="text-red-500 text-sm mt-2">{errors.email}</p>
+            )}
+          </div>
+          <div>
+            <label htmlFor="enquiry" className="block text-lg font-medium">
+              Enquiry
+            </label>
+            <textarea
+              id="enquiry"
+              name="enquiry"
+              rows={5}
+              value={formData.enquiry}
+              onChange={handleChange}
+              placeholder="Give a brief about the project"
+              className={`w-full border-2 rounded-lg p-4  placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 ${
+                errors.enquiry ? "border-red-500" : "border-gray-300"
+              }`}
+            ></textarea>
+            {errors.enquiry && (
+              <p className="text-red-500 text-sm mt-2">{errors.enquiry}</p>
+            )}
           </div>
         </div>
+        {/* Right Side */}
+        <div className="space-y-8">
+          <div>
+            <label className="block text-lg font-medium">Budget</label>
+            <Slider
+              value={formData.budgetRange}
+              onChange={handleBudgetRangeChange}
+              min={10}
+              max={1000}
+              sx={{
+                color: "#F5CB5C",
+              }}
+            />
+            <div className="text-sm text-gray-900">
+              Selected Budget: ${formData.budgetRange[0]}K - $
+              {formData.budgetRange[1]}K
+            </div>
+          </div>
 
-        <div>
-          <label htmlFor="enquiry" className="text-xl font-semibold">
-            Enquiry
-          </label>
-          <textarea
-            id="enquiry"
-            name="enquiry"
-            rows={5}
-            value={formData.enquiry}
-            onChange={handleChange}
-            placeholder="Give a brief about the project"
-            className={`w-full border-2 rounded-lg p-4 text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-400 ${
-              errors.enquiry ? "border-red-500" : "border-gray-300"
-            }`}
-            aria-invalid={!!errors.enquiry}
-          ></textarea>
-          {errors.enquiry && (
-            <p className="text-red-500 text-sm mt-1">{errors.enquiry}</p>
+          <div>
+            <label className="block text-lg ">
+              Requirement Based On
+            </label>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+              {[
+                "Idea Elaboration",
+                "Market Research and Feasibility Analysis",
+                "Wire-Framing and Prototyping",
+                "MVP Development",
+                "System Integration",
+                "Custom Software Development",
+                "Mobile and Web Application Development",
+                "Quality Testing and Software Maintenance",
+                "Other",
+              ].map((item) => (
+                <button
+                  key={item}
+                  type="button"
+                  className={`border-2 rounded-3xl px-4 py-2 text-sm  ${
+                    formData.requirement === item
+                      ? " text-textcolor-yellow dark:bg-black bg-white "
+                      : " text-textcolor-yellow   "
+                  } dark:hover:bg-black hover:bg-background-light`}
+                  onClick={() =>
+                    setFormData({ ...formData, requirement: item })
+                  }
+                >
+                  {item}
+                </button>
+              ))}
+            </div>
+            {errors.requirement && (
+              <p className="text-red-500 text-sm mt-2">{errors.requirement}</p>
+            )}
+          </div>
+
+          <button
+            type="submit"
+            className="w-full py-3 text-white bg-textcolor-yellow hover:bg-yellow-500 rounded-full text-lg font-medium transition-transform transform hover:scale-105"
+          >
+            Submit Your Enquiry
+          </button>
+          {successMessage && (
+            <p className="mt-4 text-green-500 text-center">{successMessage}</p>
           )}
         </div>
-
-        <button
-          type="submit"
-          className="w-full px-8 py-4 text-textcolor-yellow  border  rounded-full text-xl mt-6 hover:scale-105 transition-all ease-in-out duration-300"
-        >
-          Submit Your Enquiry
-        </button>
-
-        {successMessage && <p className="mt-4 text-green-500">{successMessage}</p>}
-      </div>
-    </form>
+      </form>
+    </div>
   );
 };
 
