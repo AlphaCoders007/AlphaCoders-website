@@ -73,8 +73,8 @@ export const HeroParallax = ({
         }}
         className="space-y-12"
       >
-        {/* First Row: Horizontal Scrollable */}
-        <motion.div className="overflow-x-auto flex space-x-10 mb-8 scrollbar-hidden">
+        {/* First Row */}
+        <motion.div className=" flex space-x-10 mb-8 scrollbar-hidden">
           {firstRow.map((product) => (
             <ProductCard
               product={product}
@@ -84,8 +84,8 @@ export const HeroParallax = ({
           ))}
         </motion.div>
 
-        {/* Second Row: Horizontal Scrollable */}
-        <motion.div className="overflow-x-auto flex space-x-10 mb-8">
+        {/* Second Row */}
+        <motion.div className=" flex space-x-10 mb-8">
           {secondRow.map((product) => (
             <ProductCard
               product={product}
@@ -95,8 +95,8 @@ export const HeroParallax = ({
           ))}
         </motion.div>
 
-        {/* Third Row: Horizontal Scrollable */}
-        <motion.div className="overflow-x-auto flex space-x-10 mb-8">
+        {/* Third Row*/}
+        <motion.div className=" flex space-x-10 mb-8">
           {thirdRow.map((product) => (
             <ProductCard
               product={product}
