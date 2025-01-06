@@ -9,10 +9,6 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "AlphaCoders",
   description: "Think out of the box - Innovative Solutions and Digital Development",
-  viewport: "width=device-width, initial-scale=1.0",
-  icons: {
-    icon: "/Logo.ico",
-  },
   keywords: "AlphaCoders, alphacoersinc, alphacoders, digital solutions, innovation, technology, software development, web development",
   robots: "index, follow",  
   openGraph: {
@@ -23,6 +19,9 @@ export const metadata: Metadata = {
   
   },
  
+};
+export const viewportExport = {
+  viewport: "width=device-width, initial-scale=1.0",
 };
 
 export default function RootLayout({
