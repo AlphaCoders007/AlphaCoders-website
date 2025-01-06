@@ -7,7 +7,7 @@ import { Technologies } from "./components/technologies";
 import Container from "./components/Container";
 function page() {
   return (
-    <div>
+    <div className="">
       <Container />
       <Whatweoffer />
       <Process />

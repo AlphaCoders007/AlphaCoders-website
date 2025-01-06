@@ -1,15 +1,14 @@
-"use client";
-
 import React from "react";
 
-const MinimalButton: React.FC = () => {
+const MagicalButton = () => {
   return (
-    <button className="relative inline-flex items-center px-8 py-3 text-sm font-thicccboi text-white transition-all duration-300 ease-in-out bg-gradient-to-r from-gray-800 to-gray-900 rounded-xl shadow-md hover:bg-gradient-to-r hover:from-gray-700 hover:to-gray-800 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-600">
-      {/* Underline Effect */}
-      <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-gray-200 transition-all duration-300 transform -translate-x-1/2 hover:w-full"></span>
+    <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+    <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#FFFFFF_0%,#D3D3D3_50%,#FFD700_100%)]" />
+    <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
       View More
-    </button>
+    </span>
+  </button>
   );
 };
 
-export default MinimalButton;
+export default MagicalButton;

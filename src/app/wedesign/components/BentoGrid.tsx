@@ -7,7 +7,7 @@ export function BentoGrid() {
     <>
       {/* Add the new heading section here */}
       <div className="px-6 z-10 bg-background-light transition-colors text-center py-10">
-        <h2 className="text-4xl md:text-6xl font-thicccboi tracking-tight leading-tight">
+        <h2 className="text-4xl md:text-6xl font-thicccboi dark:text-white text-black tracking-tight leading-tight">
           Technologies We Leverage
         </h2>
       </div>

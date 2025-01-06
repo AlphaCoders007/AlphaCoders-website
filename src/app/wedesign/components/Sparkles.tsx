@@ -11,12 +11,7 @@ export function Sparkles() {
 
       {/* Gradient and Sparkles Core Container */}
       <div className="w-[60rem] h-60 relative my-10">
-        {/* Gradients */}
-        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
-        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
-        <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
-        <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
-
+        
         {/* Sparkles Core */}
         <SparklesCore
           background="transparent"
@@ -36,7 +31,7 @@ export function Sparkles() {
       </div>
 
       {/* Description Section */}
-      <h1 className="text-l md:text-3xl font-thicccboi text-center relative z-20 max-w-5xl px-6">
+      <h1 className="text-l md:text-3xl font-thicccboi text-center dark:text-white text-black relative z-20 max-w-5xl px-6">
         Design is where imagination takes form. Our team crafts thoughtful,
         user-centric designs that are as functional as they are beautiful. Each
         design we create solves problems, enhances experiences, and stands the

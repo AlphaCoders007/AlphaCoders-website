@@ -37,7 +37,7 @@ const LetsGetStartedSection: React.FC = () => {
             width: "50vw",
             height: "50vh",
             borderRadius: "20px",
-            opacity: 0.8, // Fade out slightly to 0.8
+            opacity: 1, // Fade out slightly to 0.8
             duration: 1.5,
             ease: "power3.inOut",
           }
@@ -81,10 +81,9 @@ const VideoSection: React.FC = () => {
         loop
         muted
         playsInline
-        poster="/video-poster.jpg" // Fallback poster image
+        
       >
-        <source src="/video3.mp4" type="video/mp4" />
-        <source src="/video3.webm" type="video/webm" />
+        <source src="/video4.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </div>

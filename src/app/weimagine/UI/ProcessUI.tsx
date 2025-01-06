@@ -34,7 +34,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   return (
     <div className="w-full bg-background-light transition-colors font-thicccboi md:px-10" ref={containerRef}>
       <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
-        <h2 className="text-3xl md:text-6xl mb-4 transition-colors max-w-4xl">
+        <h2 className="text-3xl md:text-6xl mb-4 dark:text-white text-black transition-colors max-w-4xl">
           Process we follow...
         </h2>
       </div>
@@ -51,14 +51,14 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                 whileHover={{ scale: 1.2 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className="h-4 w-4 rounded-full bg-purple-500 border border-neutral-300 dark:border-neutral-700 p-2" />
+                <div className="h-4 w-4 rounded-full bg-textcolor-yellow border border-neutral-300 dark:border-neutral-700 p-2" />
               </motion.div>
               <motion.h3
                 className="hidden md:block text-xl md:pl-20 md:text-5xl font-thicccboi"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.1, color: "#6b46c1" }}
+                whileHover={{ scale: 1.1, color: "#ffffff" }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
               >
                 {item.title}
@@ -85,7 +85,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               height: heightTransform,
               opacity: opacityTransform,
             }}
-            className="absolute inset-x-0 top-0  w-[4px] bg-gradient-to-t from-purple-500 via-blue-500 to-transparent rounded-full"
+            className="absolute inset-x-0 top-0  w-[4px] bg-textcolor-yellow rounded-full"
           />
         </div>
       </div>
