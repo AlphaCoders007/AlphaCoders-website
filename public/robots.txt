@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://alphacodersinc.com/
+
+# Sitemaps
+Sitemap: https://alphacodersinc.com/sitemap.xml

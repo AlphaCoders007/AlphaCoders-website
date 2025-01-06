@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import MinimalButton from "./MinimalButton";
 import Link from "next/link";
-
+import Image from "next/image";
 interface StickyComponentProps {
   imageSrc: string;
   title: string;
@@ -54,11 +54,11 @@ const StickyComponent: React.FC<StickyComponentProps> = ({
                   transition: "transform 0.7s easeInOut",
                 }}
               >
-                <img
+                {/* <img
                   alt="image"
                   loading="lazy"
                   decoding="async"
-                  className="object-contain"
+                  className="object-cover"
                   style={{
                     position: "absolute",
                     height: "100%",
@@ -71,7 +71,26 @@ const StickyComponent: React.FC<StickyComponentProps> = ({
                     color: "transparent",
                   }}
                   src={imageSrc}
-                />
+                /> */}
+                <Image
+                src={`/${imageSrc}`}
+                alt="image"
+                loading="lazy"
+                decoding="async"
+                className="object-cover"
+                width={900}
+                height={600}
+                style={{
+                  position: "absolute",
+                  height: "100%",
+                  width: "100%",
+                  aspectRatio: "4/3",
+                  left: 0,
+                  top: 0,
+                  right: 0,
+                  bottom: 0,
+                  color: "transparent",
+                }} />
               </div>
             </div>
 
