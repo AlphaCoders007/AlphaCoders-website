@@ -31,6 +31,7 @@ export default {
   ],
   theme: {
     extend: {
+     
       fontFamily: {
         thicccboi: ["Thicccboi", ...defaultTheme.fontFamily.sans],
         wide: ["Audiowide"],
