@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description: "AlphaCoders delivers creative digital solutions and web development services. Transform your business with innovative tech.",  // Concise and engaging OG description
     url: "https://www.alphacodersinc.com",  // Correct URL
     siteName: "AlphaCoders",  // Clear brand name
-    images: ["https://www.alphacodersinc.com/prototyping2.png"],  // Optional: Add a relevant image for social media sharing
+    images: ["https://www.alphacodersinc.com/prototyping2.png"],  
   },
 };
 
