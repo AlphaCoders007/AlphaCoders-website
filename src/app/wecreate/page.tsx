@@ -5,8 +5,6 @@ import { VortexDemo } from "./components/vortex";
 import { Whatweoffer } from "./components/whatweoffer";
 import Methodologies from "./components/methodologies";
 import TechnologiesDesign from "./components/technologies";
-import { Lamp } from "./components/lamp";
-import { WobbleCardMain } from "./components/wobblecard";
 
 function page() {
   return (
@@ -15,7 +13,6 @@ function page() {
         
         
         <VortexDemo />
-        {/* <Lamp /> */}
         <Whatweoffer />
         
         <Methodologies />

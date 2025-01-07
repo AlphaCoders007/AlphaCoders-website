@@ -1,5 +1,4 @@
 import React from "react";
-import { Lamp } from "./lamp";
 import { CardStackMain } from "./cardstack";
 
 export const Whatweoffer: React.FC = () => {
