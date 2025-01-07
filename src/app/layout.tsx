@@ -7,19 +7,19 @@ import { Providers } from "./components/Providers";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "AlphaCoders",
-  description: "Think out of the box - Innovative Solutions and Digital Development",
-  keywords: "AlphaCoders, alphacoersinc, alphacoders, digital solutions, innovation, technology, software development, web development",
-  robots: "index, follow",  
+  title: "AlphaCoders - Innovative Digital Solutions & Web Development",  // Short, descriptive title with keywords
+  description: "AlphaCoders provides innovative digital solutions and web development services to help you think outside the box and transform your business.",  // Concise, keyword-rich description
+  keywords: "AlphaCoders, innovative solutions, digital transformation, custom software development, web development, technology services, digital marketing, Alphacoders, alphacoders, alphaCodersinc, AlphaCoderinc,alphacodersinc",  // Relevant, focused keywords
+  robots: "index, follow",  // Fine for SEO
   openGraph: {
-    title: "AlphaCoders",
-    description: "Innovative Solutions and Digital Development - Think out of the box.",
-    url: "https://www.alphacoderinc.com",
-    siteName: "AlphaCoders",
-  
+    title: "AlphaCoders - Innovative Digital Solutions & Web Development",  // Match OG title to page title
+    description: "AlphaCoders delivers creative digital solutions and web development services. Transform your business with innovative tech.",  // Concise and engaging OG description
+    url: "https://www.alphacoderinc.com",  // Correct URL
+    siteName: "AlphaCoders",  // Clear brand name
+    images: ["https://www.alphacodersinc.com/prototyping2.png"],  // Optional: Add a relevant image for social media sharing
   },
- 
 };
+
 export const viewportExport = {
   viewport: "width=device-width, initial-scale=1.0",
 };
