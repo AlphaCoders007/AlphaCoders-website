@@ -12,11 +12,11 @@ export const metadata: Metadata = {
   keywords: "AlphaCoders, innovative solutions, digital transformation, custom software development, web development, technology services, digital marketing, Alphacoders, alphacoders, alphaCodersinc, AlphaCoderinc,alphacodersinc",  // Relevant, focused keywords
   robots: "index, follow",  // Fine for SEO
   openGraph: {
-    title: "AlphaCoders - Innovative Digital Solutions & Web Development",  // Match OG title to page title
+    title: "AlphaCoders - Innovative Digital Solutions & Web Development",  
     description: "AlphaCoders delivers creative digital solutions and web development services. Transform your business with innovative tech.",  // Concise and engaging OG description
     url: "https://www.alphacoderinc.com",  // Correct URL
     siteName: "AlphaCoders",  // Clear brand name
-    images: ["https://www.alphacodersinc.com/prototyping2.png"],  // Optional: Add a relevant image for social media sharing
+    images: ["https://www.alphacodersinc.com/prototyping2.png"],  
   },
 };
 
