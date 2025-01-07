@@ -8,7 +8,7 @@ import LetsGetStartedSection from "./components/ui/LetgetstartedUI";
 import { GoogleGeminiEffectDemo } from "./components/googlegeminieffect";
 import { HeroParallaxDemo } from "./components/heroparallax";
 const ParallaxSection = dynamic(() => import('./components/ParallexSection'), {
-  ssr: false, // Disable SSR for this component
+  ssr: false, 
 });
 const Page: React.FC = () => {
   return (
