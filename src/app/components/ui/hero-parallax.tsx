@@ -116,7 +116,7 @@ export const Header = () => {
       <h1 className="text-3xl md:text-5xl font-thicccboi tracking-wide leading-tight ">
         LET'S BUILD YOUR DREAM TOGETHER
       </h1>
-      <p className="max-w-2xl text-base md:text-lg dark:text-white text-black mt-4 ">
+      <p className="max-w-5xl text-base md:text-3xl dark:text-white text-black mt-4 ">
         Whether you're dreaming of a groundbreaking application or a
         transformative platform, AlphaCoders is here to guide you every step of
         the way. Imagination is just the beginning—let us design and create
