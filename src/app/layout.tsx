@@ -9,7 +9,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "AlphaCoders - Innovative Digital Solutions",
   description: "AlphaCoders provides innovative digital solutions and web development services to help you think outside the box and transform your business.",
-  keywords: "AlphaCoders, Business analyst, Machine Learning, AI, digital transformation, web development",
+  keywords: "AlphaCoders, Bussiness analyst, Machine Learing, Ai,innovative solutions, digital transformation, custom software development, web development, technology services, digital marketing, Alphacoders, alphacoders, alphaCodersinc, AlphaCoderinc,alphacodersinc",
   robots: "index, follow",
   metadataBase: new URL("https://alphacodersinc.com"), // Base URL
 
