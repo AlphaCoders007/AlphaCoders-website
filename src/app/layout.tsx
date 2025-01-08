@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "AlphaCoders - Innovative Digital Solutions",  // Match OG title to page title
     description: "AlphaCoders delivers creative digital solutions and web development services. Transform your business with innovative tech.",  // Concise and engaging OG description
-    url: "https://www.alphacodersinc.com",  // Correct URL
+    url: "https://alphacodersinc.com",  // Correct URL
     siteName: "AlphaCoders",  // Clear brand name
     images: [
       {
