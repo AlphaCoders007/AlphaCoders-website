@@ -22,7 +22,7 @@ export const metadata: Metadata = {
         secureUrl: 'https://alphacodersinc.com/opengraph-image.png',
         width: 1200,
         height: 630,
-        alt: 'Preview image for Dave Gray',
+        alt: 'Preview image for alphacoders',
       }
     ]
   },
