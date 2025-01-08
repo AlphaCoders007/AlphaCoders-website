@@ -7,36 +7,38 @@ import { Providers } from "./components/Providers";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "AlphaCoders - Innovative Digital Solutions",  
+  title: "AlphaCoders - Innovative Digital Solutions",
   description: "AlphaCoders provides innovative digital solutions and web development services to help you think outside the box and transform your business.",
-  keywords: "AlphaCoders, Bussiness analyst, Machine Learning, AI, innovative solutions, digital transformation, custom software development, web development, technology services, digital marketing",
+  keywords: "AlphaCoders, Business analyst, Machine Learning, AI, digital transformation, web development",
   robots: "index, follow",
+  metadataBase: new URL("https://alphacodersinc.com"), // Base URL
 
-  metadataBase: new URL("https://alphacodersinc.com"), // Base URL for resolving relative links
+  // Canonical URL
+  alternates: {
+    canonical: "https://alphacodersinc.com", // Preferred URL for SEO
+  },
 
   openGraph: {
     title: "AlphaCoders - Innovative Digital Solutions",
-    description: "AlphaCoders delivers creative digital solutions and web development services. Transform your business with innovative tech.",
-    url: "https://alphacodersinc.com",
+    description: "AlphaCoders delivers creative digital solutions and web development services.",
+    url: "https://alphacodersinc.com", // OpenGraph URL
     siteName: "AlphaCoders",
     images: [
       {
-        url: "https://alphacodersinc.com/opengraph-image.png", // Absolute URL
+        url: "https://alphacodersinc.com/opengraph-image.png",
         width: 1200,
         height: 630,
         alt: "Preview image for AlphaCoders",
       },
     ],
-    type: "website", // Specifies it's a website (default is okay, but explicit is better)
-    locale: "en_US", // Optional, specify your locale
   },
 
   twitter: {
-    card: "summary_large_image", // Twitter Card type
-    site: "@alphacoders", // Replace with your Twitter handle
+    card: "summary_large_image",
+    site: "@alphacoders",
     title: "AlphaCoders - Innovative Digital Solutions",
-    description: "AlphaCoders provides digital solutions to transform your business.",
-    images: ["https://alphacodersinc.com/opengraph-image.png"], // Twitter uses the same image as OpenGraph
+    description: "Transform your business with AlphaCoders' innovative solutions.",
+    images: ["https://alphacodersinc.com/opengraph-image.png"],
   },
 };
 
