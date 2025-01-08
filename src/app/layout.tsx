@@ -16,7 +16,15 @@ export const metadata: Metadata = {
     description: "AlphaCoders delivers creative digital solutions and web development services. Transform your business with innovative tech.",  // Concise and engaging OG description
     url: "https://www.alphacodersinc.com",  // Correct URL
     siteName: "AlphaCoders",  // Clear brand name
-    images: ["opengraph-image.png"],  
+    images: [
+      {
+        url: 'https://alphacodersinc.com/opengraph-image.png',
+        secureUrl: 'https://alphacodersinc.com/opengraph-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Preview image for Dave Gray',
+      }
+    ]
   },
 };
 
