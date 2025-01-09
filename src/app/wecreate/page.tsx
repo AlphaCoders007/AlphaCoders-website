@@ -6,7 +6,7 @@ import { Whatweoffer } from "./components/whatweoffer";
 import {Methodologies} from "./components/methodologies";
 import TechnologiesDesign from "./components/technologies";
 import { Metadata } from "next";
-import exp from "constants";
+
 
 export const metadata: Metadata = { 
   title:"We Create",
