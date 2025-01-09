@@ -15,8 +15,13 @@ export const metadata: Metadata = {
   description: "AlphaCoders provides innovative digital solutions and web development services to help you think outside the box and transform your business.",
   keywords: "AlphaCoders, Business analyst, Machine Learning, AI, digital transformation, web development",
   robots: "index, follow",
-  metadataBase: new URL("https://alphacodersinc.com"), // Base URL
+  icons: {
+    icon: "favicon.ico",
+    apple: "apple-icon.png", 
+  },
 
+  metadataBase: new URL("https://alphacodersinc.com"), // Base URL
+ 
   // Canonical URL
   alternates: {
     canonical: "https://alphacodersinc.com", // Preferred URL for SEO
