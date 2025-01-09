@@ -1,7 +1,5 @@
 import React from 'react';
-import { WobbleCardMain } from './wobblecard';
 
-// Reusable Methodology Card component
 interface MethodologyProps {
   name: string;
   methodology: string;

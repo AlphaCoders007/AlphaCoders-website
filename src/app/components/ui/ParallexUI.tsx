@@ -1,13 +1,12 @@
 import { cn } from "@/app/lib/utils";
 
-interface MarqueeProps {
+interface MarqueeProps extends React.HTMLProps<HTMLDivElement> {
   className?: string;
   reverse?: boolean;
   pauseOnHover?: boolean;
   children?: React.ReactNode;
   vertical?: boolean;
   repeat?: number;
-  [key: string]: any;
 }
 
 export function Marquee({
@@ -23,7 +22,7 @@ export function Marquee({
     <div
       {...props}
       className={cn(
-        "  group flex overflow-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)] ", // Added z-20 here
+        "group flex overflow-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)]", // Added z-20 here
         {
           "flex-row": !vertical,
           "flex-col": vertical,
