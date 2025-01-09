@@ -9,7 +9,7 @@ import { Metadata } from "next";
 
 
 export const metadata: Metadata = { 
-  title:"We Create",
+  title:"We Create ",
   description: "We create innovative digital solutions and web development services to help you think outside the box and transform your business.",  
 }
 
