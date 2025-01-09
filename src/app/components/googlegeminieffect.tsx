@@ -2,7 +2,6 @@
 import { useScroll, useTransform } from "framer-motion";
 import React from "react";
 import { GoogleGeminiEffect } from "./ui/google-gemini-effect";
-import LetsGetStartedSection from "./ui/LetgetstartedUI";
 export function GoogleGeminiEffectDemo() {
   const ref = React.useRef(null);
   const { scrollYProgress } = useScroll({

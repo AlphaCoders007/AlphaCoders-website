@@ -2,7 +2,6 @@ import React from "react";
 import NewComponent from "../components/NewComponent";
 import { Sparkles } from "./components/Sparkles";
 import { StickyScrollReveal } from "./components/StickyScroll";
-import { InfiniteMovingCards } from "./components/InfiniteMovingCards";
 import { BentoGrid } from "./components/BentoGrid";
 import { Whatweoffer } from "./components/whatweoffer";
 import { Metadata } from "next";
@@ -19,7 +18,6 @@ function page() {
         <Sparkles />
        <StickyScrollReveal />
        <Whatweoffer />
-       {/* <InfiniteMovingCards /> */}
        <BentoGrid />
     </div>
       <NewComponent />

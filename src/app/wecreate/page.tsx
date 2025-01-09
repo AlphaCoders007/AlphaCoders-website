@@ -3,7 +3,7 @@ import React from "react";
 import NewComponent from "../components/NewComponent";
 import { VortexDemo } from "./components/vortex";
 import { Whatweoffer } from "./components/whatweoffer";
-import Methodologies from "./components/methodologies";
+import {Methodologies} from "./components/methodologies";
 import TechnologiesDesign from "./components/technologies";
 import { Metadata } from "next";
 import exp from "constants";

@@ -31,7 +31,7 @@ const Step: React.FC<StepProps> = ({ stepNumber, title, description, icon }) => 
 const TechnologiesDesign: React.FC = () => {
   return (
     <section className=" body-font bg-background-light transition-colors">
-      <div className="container px-5 py-24 mx-auto flex flex-wrap justify-center items-center">
+      <div className="container px-5 pt-24 mx-auto flex flex-wrap justify-center items-center">
         <h1 className="sm:text-6xl text-3xl font-thicccboi text-pretty title-font mb-12 text-center">
           Technologies that bring ideas to life
         </h1>
