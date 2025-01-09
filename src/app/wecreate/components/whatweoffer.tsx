@@ -1,5 +1,4 @@
 import React from "react";
-import { CardStackMain } from "./cardstack";
 
 export const Whatweoffer: React.FC = () => {
   return (

@@ -21,7 +21,7 @@ const nextConfig: NextConfig = {
     ],
   },
   eslint: {
-    ignoreDuringBuilds: true, // Disable ESLint during build
+    ignoreDuringBuilds: false, // Disable ESLint during build
   },
 };
 
