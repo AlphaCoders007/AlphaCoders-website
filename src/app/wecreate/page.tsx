@@ -5,6 +5,15 @@ import { VortexDemo } from "./components/vortex";
 import { Whatweoffer } from "./components/whatweoffer";
 import Methodologies from "./components/methodologies";
 import TechnologiesDesign from "./components/technologies";
+import { Metadata } from "next";
+import exp from "constants";
+
+export const metadata: Metadata = { 
+  title:"We Create",
+  description: "We create innovative digital solutions and web development services to help you think outside the box and transform your business.",  
+}
+
+
 
 function page() {
   return (

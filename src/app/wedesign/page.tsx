@@ -5,6 +5,13 @@ import { StickyScrollReveal } from "./components/StickyScroll";
 import { InfiniteMovingCards } from "./components/InfiniteMovingCards";
 import { BentoGrid } from "./components/BentoGrid";
 import { Whatweoffer } from "./components/whatweoffer";
+import { Metadata } from "next";
+
+export const metadata: Metadata = { 
+  title:"We Design",
+  description: "We design innovative digital solutions and web development services to help you think outside the box and transform your business.",  
+}
+
 function page() {
   return (
     <div>

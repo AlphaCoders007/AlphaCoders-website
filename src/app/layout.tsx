@@ -7,7 +7,11 @@ import { Providers } from "./components/Providers";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "AlphaCoders - Innovative Digital Solutions",
+  title: {
+  default: "AlphaCoders - Innovative Digital Solutions",
+  template: "%s | AlphaCoders",
+  absolute :"",
+  },
   description: "AlphaCoders provides innovative digital solutions and web development services to help you think outside the box and transform your business.",
   keywords: "AlphaCoders, Business analyst, Machine Learning, AI, digital transformation, web development",
   robots: "index, follow",
