@@ -6,7 +6,7 @@ import { Process } from "./components/Process";
 import { Technologies } from "./components/technologies";
 import Container from "./components/Container";
 import { Metadata } from "next";
-import exp from "constants";
+
 
 
 export const metadata: Metadata = {
