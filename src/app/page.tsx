@@ -7,14 +7,13 @@ import NewComponent from "./components/NewComponent";
 import LetsGetStartedSection from "./components/ui/LetgetstartedUI";
 import { GoogleGeminiEffectDemo } from "./components/googlegeminieffect";
 import { HeroParallaxDemo } from "./components/heroparallax";
-const ParallaxSection = dynamic(() => import('./components/ParallexSection'), {
-  ssr: false, 
+const ParallaxSection = dynamic(() => import("./components/ParallexSection"), {
+  ssr: false,
 });
 const Page: React.FC = () => {
   return (
     <div>
       <GoogleGeminiEffectDemo />
-     
 
       <div className=" relative bg-background-light max-h-lvh z-30">
         <LetsGetStartedSection />
