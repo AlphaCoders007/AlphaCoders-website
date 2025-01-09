@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 }
 function page() {
   return (
-    <div className="">
+    <div className=" ">
       <Container />
       <Whatweoffer />
       <Process />
