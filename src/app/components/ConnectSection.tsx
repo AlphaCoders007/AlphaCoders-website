@@ -222,7 +222,7 @@ const ConnectSection: React.FC = () => {
               overflowY: "auto",
             }}
           >
-            <div className="absolute top-8 right-2 ">
+            <div className="fixed top-8 right-6 ">
               <button
                 onClick={handlePopupToggle}
                 className="hover:scale-110 transition-all"
