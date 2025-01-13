@@ -11,16 +11,7 @@ export default function ThemeSwitch () {
     },[])
 
     if (!mounted) return (
-        // <Image
-        // src='/sunmoonimg.png'
-        // width={36}
-        // height={36}
-        // sizes="36x36"
-        // alt="Loading image"
-        // priority = {false}
-        // title="loading light/dark toggle"
-        // className="fixed top-4 right-4 p-3 rounded-full shadow-lg  transition-all z-50"
-        // />
+       
         <div className="fixed top-4 right-4 p-3 rounded-full shadow-lg  transition-all z-50">
             ☀️
         </div>
