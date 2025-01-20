@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   absolute :"",
   },
   description: "AlphaCoders provides innovative digital solutions and web development services to help you think outside the box and transform your business.",
-  keywords: "AlphaCoders, Bussiness analyst, Machine Learing, Ai,innovative solutions, digital transformation, custom software development, web development, technology services, digital marketing, Alphacoders, alphacoders, alphaCodersinc, AlphaCoderinc,alphacodersinc",
+  keywords:"AlphaCoders, Business Analyst, Machine Learning, Artificial Intelligence, innovative digital solutions, digital transformation, custom AI software development, web development, technology consulting, digital marketing services, software development agency, digital innovation, AlphaCoders web services",
   robots: "index, follow",
   icons: {
     icon: "favicon.ico",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://alphacodersinc.com", // Preferred URL for SEO
   },
-
+  
   openGraph: {
     title: "AlphaCoders - Innovative Digital Solutions",
     description: "AlphaCoders delivers creative digital solutions and web development services.",
