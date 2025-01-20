@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   absolute :"",
   },
   description: "AlphaCoders provides innovative digital solutions and web development services to help you think outside the box and transform your business.",
-  keywords:"AlphaCoders, Business Analyst, Machine Learning, Artificial Intelligence, innovative digital solutions, digital transformation, custom AI software development, web development, technology consulting, digital marketing services, software development agency, digital innovation, AlphaCoders web services",
+  keywords:"AlphaCoders , Business Analyst, Machine Learning, Artificial Intelligence, innovative digital solutions, digital transformation, custom AI software development, web development, technology consulting, digital marketing services, software development agency, digital innovation, AlphaCoders web services",
   robots: "index, follow",
   icons: {
     icon: "favicon.ico",
