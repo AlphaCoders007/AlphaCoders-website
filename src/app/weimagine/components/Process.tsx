@@ -57,7 +57,7 @@ export function Process() {
         {step.description.map((text, index) => (
           <p
             key={index}
-            className="text-base md:text-lg font-thicccboi text-white dark:text-gray-300 mb-4"
+            className="text-base md:text-lg font-thicccboi dark:text-white text-black mb-4"
           >
             {text}
           </p>

@@ -17,7 +17,7 @@ body {
   font-family: '', sans-serif;
 }
 :root {
-  --bg-light: #526D82; /* Light background */
+  --bg-light: #FFFFFF; /* Light background */
   --bg-dark: #323437; /* Dark background */
 }
 
@@ -30,7 +30,7 @@ body {
 }
 
 .bg-background-light {
-  @apply bg-[var(--bg-light)] text-textcolor-yellow;
+  @apply bg-[var(--bg-light)] text-textcolor-lightcolor;
 }
 
 .dark .bg-background-light {

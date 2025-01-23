@@ -22,7 +22,7 @@ const Step: React.FC<StepProps> = ({ stepNumber, title, description, icon }) => 
       </div>
       <div className="flex-grow sm:pl-6 mt-6 sm:mt-0">
         <h2 className="font-medium title-font  mb-1 text-xl">{title}</h2>
-        <p className="leading-relaxed text-white">{description}</p>
+        <p className="leading-relaxed dark:text-white text-black">{description}</p>
       </div>
     </div>
   </div>

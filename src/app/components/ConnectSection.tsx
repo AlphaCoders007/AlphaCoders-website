@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
 import {
   Phone,
   Mail,
@@ -8,10 +9,15 @@ import {
   Github,
 } from "lucide-react";
 import ContactForm from "./ContactForm";
+import { colors } from "@mui/material";
 
 const ConnectSection: React.FC = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [isScrolledToBottom, setIsScrolledToBottom] = useState(false);
+  
+  const { theme } = useTheme(); // Use theme hook to get the current theme
+
+  const svgcolor = theme === "dark" ?  "#F5CB5C" : "#F231F2"; // Set colors based on the theme
 
   const handlePopupToggle = () => {
     setIsPopupOpen(!isPopupOpen);
@@ -61,7 +67,7 @@ const ConnectSection: React.FC = () => {
                 <button
                   aria-labelledby="letsConnectDiv"
                   onClick={handlePopupToggle}
-                  className="group relative rounded-full bg-background-light overflow-hidden transition-transform p-8 hover:scale-110"
+                  className="group relative rounded-full  overflow-hidden transition-transform p-8 hover:scale-110"
                 >
                   {/* First Arrow */}
                   <svg
@@ -85,11 +91,11 @@ const ConnectSection: React.FC = () => {
                         y2="25.3"
                         gradientUnits="userSpaceOnUse"
                       >
-                        <stop stopColor="#F5CB5C" />
-                        <stop offset="0.06" stopColor="#F5CB5C" />
-                        <stop offset="0.53" stopColor="#F5CB5C" />
-                        <stop offset="0.85" stopColor="#F5CB5C" />
-                        <stop offset="1" stopColor="#F5CB5C" />
+                        <stop stopColor={svgcolor} />
+                        <stop offset="0.06" stopColor={svgcolor} />
+                        <stop offset="0.53" stopColor={svgcolor} />
+                        <stop offset="0.85" stopColor={svgcolor} />
+                        <stop offset="1" stopColor={svgcolor} />
                       </linearGradient>
                     </defs>
                   </svg>
@@ -114,11 +120,11 @@ const ConnectSection: React.FC = () => {
                         y2="25.3"
                         gradientUnits="userSpaceOnUse"
                       >
-                        <stop stopColor="#F5CB5C" />
-                        <stop offset="0.06" stopColor="#F5CB5C" />
-                        <stop offset="0.53" stopColor="#F5CB5C" />
-                        <stop offset="0.85" stopColor="#F5CB5C" />
-                        <stop offset="1" stopColor="#F5CB5C" />
+                        <stop stopColor={svgcolor} />
+                        <stop offset="0.06" stopColor={svgcolor} />
+                        <stop offset="0.53" stopColor={svgcolor} />
+                        <stop offset="0.85" stopColor={svgcolor} />
+                        <stop offset="1" stopColor={svgcolor} />
                       </linearGradient>
                     </defs>
                   </svg>
@@ -193,7 +199,7 @@ const ConnectSection: React.FC = () => {
                 pointerEvents: isScrolledToBottom ? "auto" : "none",
               }}
             >
-              <div className="w-full bg-textcolor-yellow">
+              <div className="w-full dark:bg-textcolor-yellow bg-textcolor-lightcolor">
                 <div className="text-center font-thicccboi leading-loose tracking-wide text-white text-sm p-2">
                   © 2024 AlphaCoders Software Innovations
                 </div>
@@ -254,4 +260,4 @@ const ConnectSection: React.FC = () => {
   );
 };
 
-export default ConnectSection;
+export default ConnectSection; 

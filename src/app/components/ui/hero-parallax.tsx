@@ -176,11 +176,11 @@ export const ProductCard = ({
 
       {/* Text container with enhanced styling for better contrast and visibility */}
       <div className="absolute top-8 left-8  z-20 space-y-2 text-white opacity-90 transition-opacity font-thicccboi duration-500 group-hover/product:opacity-100">
-        <h2 className="text-2xl font-semibold text-textcolor-yellow ">{product.heading}</h2>
+        <h2 className="text-2xl font-semibold dark:text-textcolor-yellow text-textcolor-lightcolor ">{product.heading}</h2>
         <p className="text-sm ">{product.description}</p>
       </div>
 
-      <h2 className="absolute bottom-8 left-8 text-textcolor-yellow opacity-0 group-hover/product:opacity-100  text-xl font-thicccboi tracking-tight transition-opacity duration-500 ease-out">
+      <h2 className="absolute bottom-8 left-8 dark:text-textcolor-yellow text-textcolor-lightcolor opacity-0 group-hover/product:opacity-100  text-xl font-thicccboi tracking-tight transition-opacity duration-500 ease-out">
         {product.title}
       </h2>
     </motion.div>
