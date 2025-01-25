@@ -9,7 +9,7 @@ import {
   Github,
 } from "lucide-react";
 import ContactForm from "./ContactForm";
-import { colors } from "@mui/material";
+
 
 const ConnectSection: React.FC = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
