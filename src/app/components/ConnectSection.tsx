@@ -58,7 +58,7 @@ const ConnectSection: React.FC = () => {
                 {/* Header Section */}
                 <div className="flex flex-col items-start justify-start gap-10">
                   <div>
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-thicccboi leading-tight md:leading-snug text-textcolor-yellow">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-thicccboi leading-tight md:leading-snug dark:text-textcolor-yellow text-textcolor-lightcolor">
                       Got an Interesting Project?
                     </h2>
                     <h2
