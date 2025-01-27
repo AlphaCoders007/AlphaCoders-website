@@ -66,8 +66,6 @@ export function FocusCardsUi({
   cards: Card[];
   className: string;
 }) {
-  // Define routes for rows
-  const rowRoutes = ["/weimagine", "/wedesign", "/wecreate"];
 
   // Group cards into rows
   const rows = Array.from({ length: Math.ceil(cards.length / 3) }, (_, i) =>

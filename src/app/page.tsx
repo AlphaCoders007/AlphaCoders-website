@@ -6,7 +6,6 @@ import VerticalStack from "./components/VerticalStack";
 import NewComponent from "./components/NewComponent";
 import LetsGetStartedSection from "./components/ui/LetgetstartedUI";
 import { GoogleGeminiEffectDemo } from "./components/googlegeminieffect";
-import { HeroParallaxDemo } from "./components/heroparallax";
 import { LampsEffect } from "./components/LampsEffects";
 import { FocusCards } from "./components/FocusCards";
 const ParallaxSection = dynamic(() => import("./components/ParallexSection"), {
