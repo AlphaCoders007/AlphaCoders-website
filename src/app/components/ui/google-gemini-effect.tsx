@@ -1,8 +1,9 @@
 "use client";
+
 import { cn } from "@/app/lib/utils";
 import { motion, MotionValue } from "framer-motion";
 import { useTheme } from "next-themes";
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const transition = {
   duration: 0,
@@ -11,8 +12,6 @@ const transition = {
 
 export const GoogleGeminiEffect = ({
   pathLengths,
-  
-  
   className,
 }: {
   pathLengths: MotionValue[];
@@ -20,9 +19,17 @@ export const GoogleGeminiEffect = ({
   description?: string;
   className?: string;
 }) => {
-  const { theme } = useTheme(); // Use theme hook to get the current theme
-  const strokeColor = theme === "dark" ? "#F5CB5C" : "#C449C2"; // Set colors based on the theme
+  const { theme } = useTheme();
+  const [strokeColor, setStrokeColor] = useState<string | null>(null);
 
+  useEffect(() => {
+    if (theme) {
+      setStrokeColor(theme === "dark" ? "#F5CB5C" : "#F231F2");
+    }
+  }, [theme]);
+
+  // Prevent rendering if the stroke color or path lengths are not ready
+  if (!strokeColor || !pathLengths) return null;
   return (
     <div className={cn("sticky top-40", className)}>
       <div className="flex w-full pt-20 origin-center bg-background-light transition-colors flex-col items-center">
@@ -30,7 +37,7 @@ export const GoogleGeminiEffect = ({
           <span className="font-thicccboi font-light dark:text-white text-black   transition-colors text-4xl lg:text-8xl block">
             Dream it. Plan it. Do it.
           </span>
-          <span className="font-thicccboi text-xl font-bold dark:text-textcolor-yellow text-textcolor-lightcolor md:text-4xl text-center block">
+          <span className="font-thicccboi text-xl font-bold  md:text-4xl text-center block">
             transform your ideas into reality
           </span>
         </h1>
