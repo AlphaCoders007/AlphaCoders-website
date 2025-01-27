@@ -41,11 +41,11 @@ const ConnectSection: React.FC = () => {
         <div className="fixed bottom-0 w-full h-full">
           <div className="flex h-full w-full flex-col items-end justify-end">
             <div className="max-container mx-auto px-[1.5rem] md:px-[5rem]">
-              <div className="flex w-full items-center justify-between gap-[1rem] md:gap-[4rem] pt-[0rem] md:pt-[12rem] bg-background-light transition-colors">
+              <div className="flex w-full items-center justify-between gap-[1rem] md:gap-[4rem] pt-[0rem] md:pt-[12rem]">
                 {/* Header Section */}
                 <div className="flex flex-col items-start justify-start gap-10">
                   <div>
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-thicccboi leading-tight md:leading-snug">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-thicccboi leading-tight md:leading-snug text-textcolor-yellow">
                       Got an Interesting Project?
                     </h2>
                     <h2
@@ -61,7 +61,7 @@ const ConnectSection: React.FC = () => {
                 <button
                   aria-labelledby="letsConnectDiv"
                   onClick={handlePopupToggle}
-                  className="group relative rounded-full bg-background-light overflow-hidden transition-transform p-8 hover:scale-110"
+                  className="group relative rounded-full overflow-hidden transition-transform p-8 hover:scale-110"
                 >
                   {/* First Arrow */}
                   <svg
