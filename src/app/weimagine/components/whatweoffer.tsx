@@ -33,7 +33,7 @@ const data = [
   {
     category: "Concept Validation",
     title: "Feasibility analysis to ensure success.",
-    src: "/conceptvalidation.jpg",
+    src: "/conceptvalid.jpg",
     
   },
 ];

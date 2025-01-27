@@ -54,11 +54,14 @@ const StickyComponent: React.FC<StickyComponentProps> = ({
                   transition: "transform 0.7s easeInOut",
                 }}
               >
-                {/* <img
+                <Image
+                  src={`/${imageSrc}`}
                   alt="image"
                   loading="lazy"
                   decoding="async"
-                  className="object-cover"
+                  className="object-contain"
+                  width={900}
+                  height={600}
                   style={{
                     position: "absolute",
                     height: "100%",
@@ -70,35 +73,19 @@ const StickyComponent: React.FC<StickyComponentProps> = ({
                     bottom: 0,
                     color: "transparent",
                   }}
-                  src={imageSrc}
-                /> */}
-                <Image
-                src={`/${imageSrc}`}
-                alt="image"
-                loading="lazy"
-                decoding="async"
-                className="object-cover"
-                width={900}
-                height={600}
-                style={{
-                  position: "absolute",
-                  height: "100%",
-                  width: "100%",
-                  aspectRatio: "4/3",
-                  left: 0,
-                  top: 0,
-                  right: 0,
-                  bottom: 0,
-                  color: "transparent",
-                }} />
+                />
               </div>
             </div>
 
             <div className="relative h-1/2 p-[1rem] font-thicccboi text-white md:h-full md:w-1/2 md:p-[2.8rem]">
-              <div className="opacity-100 transform-none">
+            
+
+
+              <div className="opacity-100 transform-none flex ">
                 <h2 className="pt-[1rem] font-bold text-3xl sm:text-4xl">
                   {title}
                 </h2>
+               
               </div>
               <div className="opacity-100 transform-none">
                 <div className="inline-flex flex-wrap items-start justify-start gap-1 sm:gap-2 py-[1rem] md:gap-3 md:py-[2rem]">
@@ -107,29 +94,25 @@ const StickyComponent: React.FC<StickyComponentProps> = ({
                       key={index}
                       className="flex items-center justify-center bg-[#F5F5F5] px-2 py-1 rounded-[0.5rem] text-xs sm:text-base md:px-6 md:py-2"
                     >
-                      <p className="text-gray-700">
-                        {tech}
-                      </p>
+                      <p className="text-gray-700">{tech}</p>
                     </div>
                   ))}
                 </div>
               </div>
               <div className="opacity-100 transform-none">
                 <p className="pr-10 text-verticalbodyclamped">{description}</p>
+                <Link
+                href={path}
+                className={`    ${
+                  isEven ? "right-4 md:right-8" : "right-4 md:left-8"
+                }  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white`}
+                aria-label={`View details for ${title}`}
+              >
+                <MinimalButton />
+              </Link>
               </div>
             </div>
           </div>
-
-          {/* Improved Arrow Button Positioning */}
-          <Link
-            href={path}
-            className={`absolute bottom-80 sm:bottom-4  ${
-              isEven ? "right-4 md:right-8" : "right-4 md:left-8"
-            }  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white`}
-            aria-label={`View details for ${title}`}
-          >
-            <MinimalButton />
-          </Link>
         </div>
       </div>
     </div>
@@ -137,4 +120,3 @@ const StickyComponent: React.FC<StickyComponentProps> = ({
 };
 
 export default StickyComponent;
-

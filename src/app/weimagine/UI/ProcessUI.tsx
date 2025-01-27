@@ -51,10 +51,10 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                 whileHover={{ scale: 1.2 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className="h-4 w-4 rounded-full bg-textcolor-yellow border border-neutral-300 dark:border-neutral-700 p-2" />
+                <div className="h-4 w-4 rounded-full dark:bg-textcolor-yellow bg-textcolor-lightcolor border  border-neutral-300 dark:border-neutral-700 p-2" />
               </motion.div>
               <motion.h3
-                className="hidden md:block text-xl md:pl-20 md:text-5xl font-thicccboi"
+                className="hidden md:block dark:text-textcolor-yellow text-textcolor-lightcolor text-xl md:pl-20 md:text-5xl font-thicccboi"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -85,7 +85,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               height: heightTransform,
               opacity: opacityTransform,
             }}
-            className="absolute inset-x-0 top-0  w-[4px] bg-textcolor-yellow rounded-full"
+            className="absolute inset-x-0 top-0  w-[4px] dark:bg-textcolor-yellow bg-textcolor-lightcolor rounded-full"
           />
         </div>
       </div>

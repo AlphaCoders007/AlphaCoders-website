@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState, createContext, useContext } from "react";
+import React, { useEffect, useRef,  createContext } from "react";
 import { cn } from "@/app/lib/utils";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -24,32 +24,22 @@ export const CarouselContext = createContext<{
 
 export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
   const carouselRef = useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
-  const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Removed setCurrentIndex and currentIndex if not needed
   useEffect(() => {
     if (carouselRef.current) {
       carouselRef.current.scrollLeft = initialScroll;
-      checkScrollability();
     }
   }, [initialScroll]);
 
-  const checkScrollability = () => {
-    if (carouselRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
-      setCanScrollLeft(scrollLeft > 0);
-      setCanScrollRight(scrollLeft < scrollWidth - clientWidth);
-    }
-  };
+
 
   return (
-    <CarouselContext.Provider value={{ currentIndex }}>
+    <CarouselContext.Provider value={{ currentIndex: 0 }}>
       <div className="relative w-full">
         <div
           className="flex w-full overflow-x-scroll py-10 md:py-20 scroll-smooth [scrollbar-width:none]"
           ref={carouselRef}
-          onScroll={checkScrollability}
         >
           <div className="absolute right-0 z-[1000] h-auto w-[5%] overflow-hidden bg-gradient-to-l"></div>
           <div
@@ -93,7 +83,7 @@ export const Card = ({
           {/* Category Text */}
           <motion.p
             layoutId={layout ? `category-${card.category}` : undefined}
-            className=" text-xs text-textcolor-yellow    md:text-lg lg:text-lg font-thicccboi text-left drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)] tracking-wide  mb-2"
+            className=" text-xs dark:text-textcolor-yellow text-textcolor-lightcolor    md:text-lg lg:text-lg font-thicccboi text-left drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)] tracking-wide  mb-2"
           >
             {card.category}
           </motion.p>

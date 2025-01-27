@@ -31,10 +31,10 @@ export const HeroParallax = ({
     offset: ["start start", "end start"],
   });
 
-  const springConfig = { stiffness: 200, damping: 35, bounce: 60 };
+  const springConfig = { stiffness: 120, damping: 40, mass: 0.8 }; 
 
   const translateX = useSpring(
-    useTransform(scrollYProgress, [0, 1], [0, 200]),
+    useTransform(scrollYProgress, [0, 1], [0, -400]),
     springConfig
   );
   const translateXReverse = useSpring(
@@ -114,10 +114,10 @@ export const Header = () => {
   return (
     <div className="max-w-7xl relative mx-auto py-10 px-4 w-full left-0 top-0 transition-colors font-thicccboi">
       <h1 className="text-3xl md:text-5xl font-thicccboi tracking-wide leading-tight ">
-        LET'S BUILD YOUR DREAM TOGETHER
+        LET&apos;S BUILD YOUR DREAM TOGETHER
       </h1>
-      <p className="max-w-2xl text-base md:text-lg dark:text-white text-black mt-4 ">
-        Whether you're dreaming of a groundbreaking application or a
+      <p className="max-w-5xl text-base md:text-3xl dark:text-white text-black mt-4 ">
+        Whether you&apos;re dreaming of a groundbreaking application or a
         transformative platform, AlphaCoders is here to guide you every step of
         the way. Imagination is just the beginning—let us design and create
         something extraordinary with you.
@@ -176,11 +176,11 @@ export const ProductCard = ({
 
       {/* Text container with enhanced styling for better contrast and visibility */}
       <div className="absolute top-8 left-8  z-20 space-y-2 text-white opacity-90 transition-opacity font-thicccboi duration-500 group-hover/product:opacity-100">
-        <h2 className="text-2xl font-semibold text-textcolor-yellow ">{product.heading}</h2>
+        <h2 className="text-2xl font-semibold dark:text-textcolor-yellow text-textcolor-lightcolor ">{product.heading}</h2>
         <p className="text-sm ">{product.description}</p>
       </div>
 
-      <h2 className="absolute bottom-8 left-8 text-textcolor-yellow opacity-0 group-hover/product:opacity-100  text-xl font-thicccboi tracking-tight transition-opacity duration-500 ease-out">
+      <h2 className="absolute bottom-8 left-8 dark:text-textcolor-yellow text-textcolor-lightcolor opacity-0 group-hover/product:opacity-100  text-xl font-thicccboi tracking-tight transition-opacity duration-500 ease-out">
         {product.title}
       </h2>
     </motion.div>

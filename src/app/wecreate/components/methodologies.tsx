@@ -1,6 +1,5 @@
 import React from 'react';
 
-// Reusable Methodology Card component
 interface MethodologyProps {
   name: string;
   methodology: string;
@@ -11,12 +10,12 @@ const MethodologyCard: React.FC<MethodologyProps> = ({ name, methodology }) => (
     <div className="h-full text-center">
       <h3 className="text-pretty font-thicccboi  font-medium title-font tracking-wider text-lg">{name}</h3>
       <span className="inline-block h-1 w-10 rounded bg-gray-500 mt-6 mb-4"></span>
-      <p className="text-clip text-white font-thicccboi leading-relaxed text-lg mb-6">{methodology}</p>
+      <p className="text-clip dark:text-white text-black font-thicccboi leading-relaxed text-lg mb-6">{methodology}</p>
     </div>
   </div>
 );
 
-const Methodologies: React.FC = () => {
+export  const Methodologies: React.FC = () => {
   return (
     <section className="text-pretty font-thicccboi  body-font bg-background-light transition-colors">
       <div className="container px-5 py-24 mx-auto">
@@ -37,9 +36,8 @@ const Methodologies: React.FC = () => {
             methodology="With User-Centered Design, we prioritize the needs and behaviors of users throughout the development process. This ensures that the final product is intuitive, accessible, and delivers the best user experience, ultimately driving satisfaction and adoption."
           />
         </div>
+        
       </div>
     </section>
   );
 };
-
-export default Methodologies;

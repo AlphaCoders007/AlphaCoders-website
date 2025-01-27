@@ -203,7 +203,7 @@ const ContactForm: React.FC = () => {
             Submit Your Enquiry
           </button>
           {successMessage && (
-            <p className="mt-4 text-green-500 text-center">{successMessage}</p>
+            <p className="mt-4 text-textcolor-yellow text-center">{successMessage}</p>
           )}
         </div>
       </form>

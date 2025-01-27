@@ -5,7 +5,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 
-// Register ScrollTrigger plugin
+
 gsap.registerPlugin(ScrollTrigger);
 
 const teamMembers = [
@@ -29,7 +29,7 @@ const ReviewCard = ({ img, text }: ReviewCardProps) => {
   return (
     <div className="relative flex flex-col items-center justify-center">
       {text ? (
-        <div className="text-5xl md:text-8xl font-thicccboi   text-textcolor-yellow hidden md:block text-center">
+        <div className="text-5xl md:text-8xl font-thicccboi   dark:text-textcolor-yellow text-textcolor-lightcolor hidden md:block text-center">
           {text}
         </div>
       ) : (
@@ -181,7 +181,7 @@ export default function ParallexSection() {
       className="z-10 relative flex flex-col items-center gap-imgclamped pt-custom-padding overflow-hidden transition-colors bg-background-light "
     >
       {/* Mobile-only heading */}
-      <h2 className="md:hidden text-textclamped pb-[1rem] font-thhicboi font-regular text-center text-textcolor-yellow   ">
+      <h2 className="md:hidden text-textclamped pb-[1rem] font-thhicboi font-regular text-center dark:text-textcolor-yellow text-textcolor-lightcolor   ">
         United In Innovation!
       </h2>
 

@@ -1,18 +1,23 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
 import {
   Phone,
   Mail,
   Linkedin,
   Instagram,
-  Facebook,
   Github,
 } from "lucide-react";
 import ContactForm from "./ContactForm";
 
+
 const ConnectSection: React.FC = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [isScrolledToBottom, setIsScrolledToBottom] = useState(false);
+  
+  const { theme } = useTheme(); // Use theme hook to get the current theme
+
+  const svgcolor = theme === "dark" ?  "#F5CB5C" : "#F231F2"; // Set colors based on the theme
 
   const handlePopupToggle = () => {
     setIsPopupOpen(!isPopupOpen);
@@ -42,11 +47,11 @@ const ConnectSection: React.FC = () => {
         <div className="fixed bottom-0 w-full h-full">
           <div className="flex h-full w-full flex-col items-end justify-end">
             <div className="max-container mx-auto px-[1.5rem] md:px-[5rem]">
-              <div className="flex w-full items-center justify-between gap-[1rem] md:gap-[4rem] pt-[0rem] md:pt-[12rem] bg-background-light transition-colors">
+              <div className="flex w-full items-center justify-between gap-[1rem] md:gap-[4rem] pt-[0rem] md:pt-[12rem]">
                 {/* Header Section */}
                 <div className="flex flex-col items-start justify-start gap-10">
                   <div>
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-thicccboi leading-tight md:leading-snug">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-thicccboi leading-tight md:leading-snug text-textcolor-yellow">
                       Got an Interesting Project?
                     </h2>
                     <h2
@@ -62,7 +67,7 @@ const ConnectSection: React.FC = () => {
                 <button
                   aria-labelledby="letsConnectDiv"
                   onClick={handlePopupToggle}
-                  className="group relative rounded-full bg-background-light overflow-hidden transition-transform p-8 hover:scale-110"
+                  className="group relative rounded-full overflow-hidden transition-transform p-8 hover:scale-110"
                 >
                   {/* First Arrow */}
                   <svg
@@ -86,11 +91,11 @@ const ConnectSection: React.FC = () => {
                         y2="25.3"
                         gradientUnits="userSpaceOnUse"
                       >
-                        <stop stopColor="#F5CB5C" />
-                        <stop offset="0.06" stopColor="#F5CB5C" />
-                        <stop offset="0.53" stopColor="#F5CB5C" />
-                        <stop offset="0.85" stopColor="#F5CB5C" />
-                        <stop offset="1" stopColor="#F5CB5C" />
+                        <stop stopColor={svgcolor} />
+                        <stop offset="0.06" stopColor={svgcolor} />
+                        <stop offset="0.53" stopColor={svgcolor} />
+                        <stop offset="0.85" stopColor={svgcolor} />
+                        <stop offset="1" stopColor={svgcolor} />
                       </linearGradient>
                     </defs>
                   </svg>
@@ -115,11 +120,11 @@ const ConnectSection: React.FC = () => {
                         y2="25.3"
                         gradientUnits="userSpaceOnUse"
                       >
-                        <stop stopColor="#F5CB5C" />
-                        <stop offset="0.06" stopColor="#F5CB5C" />
-                        <stop offset="0.53" stopColor="#F5CB5C" />
-                        <stop offset="0.85" stopColor="#F5CB5C" />
-                        <stop offset="1" stopColor="#F5CB5C" />
+                        <stop stopColor={svgcolor} />
+                        <stop offset="0.06" stopColor={svgcolor} />
+                        <stop offset="0.53" stopColor={svgcolor} />
+                        <stop offset="0.85" stopColor={svgcolor} />
+                        <stop offset="1" stopColor={svgcolor} />
                       </linearGradient>
                     </defs>
                   </svg>
@@ -194,7 +199,7 @@ const ConnectSection: React.FC = () => {
                 pointerEvents: isScrolledToBottom ? "auto" : "none",
               }}
             >
-              <div className="w-full bg-textcolor-yellow">
+              <div className="w-full dark:bg-textcolor-yellow bg-textcolor-lightcolor">
                 <div className="text-center font-thicccboi leading-loose tracking-wide text-white text-sm p-2">
                   © 2024 AlphaCoders Software Innovations
                 </div>
@@ -223,7 +228,7 @@ const ConnectSection: React.FC = () => {
               overflowY: "auto",
             }}
           >
-            <div className="absolute top-8 right-2 ">
+            <div className="fixed top-8 right-6 ">
               <button
                 onClick={handlePopupToggle}
                 className="hover:scale-110 transition-all"
@@ -255,4 +260,4 @@ const ConnectSection: React.FC = () => {
   );
 };
 
-export default ConnectSection;
+export default ConnectSection; 

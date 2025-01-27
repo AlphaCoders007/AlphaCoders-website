@@ -1,10 +1,9 @@
 import React from "react";
-import { Lamp } from "./lamp";
 
 export const Whatweoffer: React.FC = () => {
   return (
     <section className=" bg-background-light transition-colors body-font">
-      <div className="container px-5 py-24 mx-auto">
+      <div className="container px-5 py-24 mx-auto ">
       
 
         {/* Section Title */}
@@ -12,8 +11,9 @@ export const Whatweoffer: React.FC = () => {
           <h1 className="sm:text-6xl text-3xl font-thicccboi title-font mb-4">
             What we offer
           </h1>
+
           
-          <p className="lg:w-2/3 mx-auto leading-relaxed text-lg text-white font-thicccboi">
+          <p className="lg:w-2/3 mx-auto leading-relaxed text-lg dark:text-white text-black font-thicccboi">
             Our offerings combine innovation, precision, and user-centered
             execution, ensuring that we deliver software solutions of the
             highest caliber. By focusing on the details and understanding your
@@ -21,9 +21,8 @@ export const Whatweoffer: React.FC = () => {
             that drive success and growth.
           </p>
         </div>
-
-        {/* Cards */}
-        <div className="flex flex-wrap justify-center">
+         {/* Cards */}
+         <div className="flex flex-wrap justify-center">
           {[
             {
               title: "Custom Software Development",
@@ -48,12 +47,14 @@ export const Whatweoffer: React.FC = () => {
               <h2 className="text-2xl font-thicccboi  mb-2">
                 {card.title}
               </h2>
-              <p className="leading-relaxed text-white text-lg mb-4 font-thicccboi">
+              <p className="leading-relaxed dark:text-white text-black text-lg mb-4 font-thicccboi">
                 {card.description}
               </p>
             </div>
           ))}
         </div>
+
+       
       </div>
     </section>
   );

@@ -12,23 +12,16 @@ export const products = [
     link: "/weimagine",
     id:1,
     thumbnail:
-      "/workshop.jpg",
+      "/conceptvalid.jpg",
   },
-  { description: "Feasibility analysis to ensure success.",
-    heading: "Concept Validation",
-    title: "We Imagine",
-    link: "/weimagine",
-    id:2,
-    thumbnail:
-      "/marketresearch.jpg",
-  },
+
   { description: "Insights to align your vision with market needs.",
     heading: "Market Research",
     title: "We Imagine",
     link: "/weimagine",
     id:3,
     thumbnail:
-      "/conceptvalidation.jpg",
+      "/marketresearch.jpg",
   },
 
   { description: "Collaborative sessions to refine your ideas..",
@@ -45,7 +38,7 @@ export const products = [
     link: "/weImagine",
     id:5,
     thumbnail:
-      "/marketresearch.jpg",
+      "/conceptvalid.jpg",
   },
   { description: "Our UI design creates functional, branded, and user-friendly interfaces.",
     heading: "Interface Design (UI)",
