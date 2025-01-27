@@ -17,7 +17,7 @@ export function GoogleGeminiEffectDemo() {
 
   return (
     <div
-      className=" z-30 h-[100vh] sm:h-[150vh] bg-background-light transition-colors  w-full dark:border dark:border-white/[0.1] rounded-md relative pt-40 overflow-clip"
+      className=" z-30 h-[70vh] sm:h-[150vh] bg-background-light transition-colors  w-full dark:border dark:border-white/[0.1] rounded-md relative pt-40 overflow-clip"
       ref={ref}
     >
       <GoogleGeminiEffect

@@ -30,7 +30,7 @@ export const GoogleGeminiEffect = ({
           <span className="font-thicccboi font-light dark:text-white text-black   transition-colors text-4xl lg:text-8xl block">
             Dream it. Plan it. Do it.
           </span>
-          <span className="font-thicccboi text-xl font-bold dark:text-textcolor-yellow text-textcolor-lightcolor md:text-4xl text-center block">
+          <span className="font-thicccboi text-xl font-bold  md:text-4xl text-center block">
             transform your ideas into reality
           </span>
         </h1>
