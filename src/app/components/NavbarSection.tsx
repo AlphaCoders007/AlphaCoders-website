@@ -11,8 +11,8 @@ function NavBarSection() {
           <Link href="/">
             <div className="flex flex-col items-center">
               <div className="flex flex-col items-center">
-                <span className="text-3xl lg:text-3xl font-wide font-thin dark:text-textcolor-yellow text-textcolor-lightcolor text-center">
-                  alphacoders
+              <span className="text-3xl lg:text-3xl font-wide font-thin bg-gradient-to-r from-pink-500 to-yellow-500 bg-clip-text text-transparent text-center">
+                   alphacoders
                 </span>
                 <p className="text-xs dark:text-white text-black font-Orbitron text-center ">
                   SOFTWARE INNOVATIONS

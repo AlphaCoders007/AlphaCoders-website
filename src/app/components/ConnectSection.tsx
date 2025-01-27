@@ -16,8 +16,15 @@ const ConnectSection: React.FC = () => {
   const [isScrolledToBottom, setIsScrolledToBottom] = useState(false);
   
   const { theme } = useTheme(); // Use theme hook to get the current theme
-
-  const svgcolor = theme === "dark" ?  "#F5CB5C" : "#F231F2"; // Set colors based on the theme
+  const [svgcolor, setSvgColor] = useState("#F5CB5C"); // Set colors based on the theme
+  // const svgcolor = theme === "dark" ?  "#F5CB5C" : "#F231F2"; // Set colors based on the theme
+  useEffect(() => {
+    if (theme === "dark") {
+      setSvgColor("#F5CB5C"); // Dark theme color
+    } else {
+      setSvgColor("#F231F2"); // Light theme color
+    }
+  }, [theme]);
 
   const handlePopupToggle = () => {
     setIsPopupOpen(!isPopupOpen);
