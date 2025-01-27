@@ -78,21 +78,14 @@ const StickyComponent: React.FC<StickyComponentProps> = ({
             </div>
 
             <div className="relative h-1/2 p-[1rem] font-thicccboi text-white md:h-full md:w-1/2 md:p-[2.8rem]">
-              <Link
-                href={path}
-                className={`absolute  sm:bottom-4  ${
-                  isEven ? "right-4 md:right-8" : "right-4 md:left-8"
-                }  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white`}
-                aria-label={`View details for ${title}`}
-              >
-                <MinimalButton />
-              </Link>
+            
 
 
-              <div className="opacity-100 transform-none">
+              <div className="opacity-100 transform-none flex ">
                 <h2 className="pt-[1rem] font-bold text-3xl sm:text-4xl">
                   {title}
                 </h2>
+               
               </div>
               <div className="opacity-100 transform-none">
                 <div className="inline-flex flex-wrap items-start justify-start gap-1 sm:gap-2 py-[1rem] md:gap-3 md:py-[2rem]">
@@ -108,6 +101,15 @@ const StickyComponent: React.FC<StickyComponentProps> = ({
               </div>
               <div className="opacity-100 transform-none">
                 <p className="pr-10 text-verticalbodyclamped">{description}</p>
+                <Link
+                href={path}
+                className={`    ${
+                  isEven ? "right-4 md:right-8" : "right-4 md:left-8"
+                }  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white`}
+                aria-label={`View details for ${title}`}
+              >
+                <MinimalButton />
+              </Link>
               </div>
             </div>
           </div>
