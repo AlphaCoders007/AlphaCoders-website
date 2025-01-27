@@ -10,7 +10,7 @@ const MethodologyCard: React.FC<MethodologyProps> = ({ name, methodology }) => (
     <div className="h-full text-center">
       <h3 className="text-pretty font-thicccboi  font-medium title-font tracking-wider text-lg">{name}</h3>
       <span className="inline-block h-1 w-10 rounded bg-gray-500 mt-6 mb-4"></span>
-      <p className="text-clip text-white font-thicccboi leading-relaxed text-lg mb-6">{methodology}</p>
+      <p className="text-clip dark:text-white text-black font-thicccboi leading-relaxed text-lg mb-6">{methodology}</p>
     </div>
   </div>
 );

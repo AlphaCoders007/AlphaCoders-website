@@ -10,9 +10,9 @@ const Container = () => {
       <ContainerScroll
         titleComponent={
           <>
-            <h1 className="text-4xl font-semibold text-white">
+            <h1 className="text-4xl font-semibold dark:text-white text-black">
               Imagination Sparks Innovation at <br />
-              <span className="text-4xl md:text-[6rem] text-textcolor-yellow font-bold mt-1 leading-none">
+              <span className="text-4xl md:text-[6rem] dark:text-textcolor-yellow text-textcolor-lightcolor font-bold mt-1 leading-none">
                 AlphaCoders
               </span>
             </h1>
@@ -32,7 +32,7 @@ const Container = () => {
 
       <h1 className="text-4xl md:text-4xl lg:text-6xl font-semibold max-w-7xl mx-auto text-center relative z-20 py-6">
         <span className="bg-gradient-to-r from-neutral-500 to-neutral-500 text-transparent bg-clip-text font-thicccboi">
-          <Cover className="text-textcolor-yellow">
+          <Cover className="dark:text-textcolor-yellow text-textcolor-lightcolor">
             Cultivate ideas and explore creative possibilities.
           </Cover>
         </span>

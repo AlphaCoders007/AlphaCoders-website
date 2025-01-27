@@ -125,6 +125,7 @@ export default {
       colors: {
         textcolor: {
           yellow: "#F5CB5C",
+          lightcolor:"#C449C2"
          
         },
         background: {

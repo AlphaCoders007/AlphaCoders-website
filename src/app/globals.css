@@ -17,8 +17,23 @@ body {
   font-family: '', sans-serif;
 }
 :root {
-  --bg-light: #526D82; /* Light background */
+  --bg-light: #ECF2FF; /* Light background ECF2FF */
   --bg-dark: #323437; /* Dark background */
+  --slider-color-light: #C449C2; /* Light mode color */
+  --slider-color-dark: #F5CB5C; /* Dark mode color */
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --slider-color: var(--slider-color-dark);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --slider-color: var(--slider-color-light);
+  }
 }
 
 body {
@@ -30,7 +45,7 @@ body {
 }
 
 .bg-background-light {
-  @apply bg-[var(--bg-light)] text-textcolor-yellow;
+  @apply bg-[var(--bg-light)] text-textcolor-lightcolor;
 }
 
 .dark .bg-background-light {

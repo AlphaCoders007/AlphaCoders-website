@@ -36,7 +36,7 @@ export const HoverEffect = ({
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className="absolute inset-0 h-full w-full   block rounded-3xl bg-textcolor-yellow" // Set hover background color to yellow
+                className="absolute inset-0 h-full w-full   block rounded-3xl dark:bg-textcolor-yellow bg-textcolor-lightcolor" // Set hover background color to yellow
                 layoutId="hoverBackground"
                 initial={{ opacity: 0 }}
                 animate={{
@@ -105,7 +105,7 @@ export const CardDescription = ({
   return (
     <p
       className={cn(
-        "mt-8 transition-colors text-white tracking-wide font-thicccboi leading-relaxed text-sm",
+        "mt-8 transition-colors dark:text-white text-black tracking-wide font-thicccboi leading-relaxed text-sm",
         className
       )}
     >

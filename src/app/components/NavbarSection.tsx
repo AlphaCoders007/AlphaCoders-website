@@ -11,10 +11,10 @@ function NavBarSection() {
           <Link href="/">
             <div className="flex flex-col items-center">
               <div className="flex flex-col items-center">
-                <span className="text-3xl lg:text-3xl font-wide font-thin text-textcolor-yellow text-center">
+                <span className="text-3xl lg:text-3xl font-wide font-thin dark:text-textcolor-yellow text-textcolor-lightcolor text-center">
                   alphacoders
                 </span>
-                <p className="text-xs text-white font-Orbitron text-center ">
+                <p className="text-xs dark:text-white text-black font-Orbitron text-center ">
                   SOFTWARE INNOVATIONS
                 </p>
               </div>

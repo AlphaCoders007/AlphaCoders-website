@@ -64,7 +64,7 @@ export const Card = ({ card }: { card: { src: string; title: string; category: s
       <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/70 via-black/40 to-transparent z-30 pointer-events-none" />
       <div className="relative z-40 p-8">
         {/* Category Text */}
-        <motion.p className="text-textcolor-yellow text-sm md:text-2xl font-thicccboi text-left drop-shadow-lg">
+        <motion.p className="dark:text-textcolor-yellow text-textcolor-lightcolor text-sm md:text-2xl font-thicccboi text-left drop-shadow-lg">
           {card.category}
         </motion.p>
         {/* Title Text */}

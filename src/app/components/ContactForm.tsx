@@ -72,7 +72,7 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-6 md:px-12 py-16 bg-[#7e7e7e]  rounded-3xl shadow-2xl">
+    <div className="max-w-6xl mx-auto px-6 md:px-12 py-16 bg-[#]  rounded-3xl border border-black shadow-2xl">
       <h2 className="text-4xl sm:text-6xl font-bold text-center dark:text-gray-800  leading-tight mb-12">
         Let’s Get Into Work!
       </h2>
@@ -150,7 +150,7 @@ const ContactForm: React.FC = () => {
               min={10}
               max={1000}
               sx={{
-                color: "#F5CB5C",
+                color: "var(--slider-color)",
               }}
             />
             <div className="text-sm text-gray-900">
@@ -160,10 +160,8 @@ const ContactForm: React.FC = () => {
           </div>
 
           <div>
-            <label className="block text-lg ">
-              Requirement Based On
-            </label>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+            <label className="block text-lg ">Requirement Based On</label>
+            <div className="grid grid-cols-2  sm:grid-cols-3 gap-2 ">
               {[
                 "Idea Elaboration",
                 "Market Research and Feasibility Analysis",
@@ -178,11 +176,11 @@ const ContactForm: React.FC = () => {
                 <button
                   key={item}
                   type="button"
-                  className={`border-2 rounded-3xl px-4 py-2 text-sm  ${
+                  className={`border-2 rounded-3xl px-4 py-2 text-sm ${
                     formData.requirement === item
-                      ? " text-textcolor-yellow dark:bg-black bg-white "
-                      : " text-textcolor-yellow   "
-                  } dark:hover:bg-black hover:bg-background-light`}
+                      ? "text-black dark:text-white dark:bg-textcolor-yellow bg-textcolor-lightcolor"
+                      : "text-black dark:text-white"
+                  } dark:hover:bg-textcolor-yellow hover:bg-textcolor-lightcolor`}
                   onClick={() =>
                     setFormData({ ...formData, requirement: item })
                   }
@@ -198,12 +196,14 @@ const ContactForm: React.FC = () => {
 
           <button
             type="submit"
-            className="w-full py-3 text-white bg-textcolor-yellow hover:bg-yellow-500 rounded-full text-lg font-medium transition-transform transform hover:scale-105"
+            className="w-full py-3 text-white bg-textcolor-lightcolor dark:bg-textcolor-yellow hover:bg-yellow-500 rounded-full text-lg font-medium transition-transform transform hover:scale-105"
           >
             Submit Your Enquiry
           </button>
           {successMessage && (
-            <p className="mt-4 text-textcolor-yellow text-center">{successMessage}</p>
+            <p className="mt-4 text-textcolor-yellow text-center">
+              {successMessage}
+            </p>
           )}
         </div>
       </form>
