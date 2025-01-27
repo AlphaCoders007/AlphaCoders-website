@@ -15,6 +15,9 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const isDarkMode = document.documentElement.classList.contains("dark"); // Detect if dark mode is enabled
 
   useEffect(() => {
     if (ref.current) {
@@ -54,15 +57,28 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                 <div className="h-4 w-4 rounded-full dark:bg-textcolor-yellow bg-textcolor-lightcolor border  border-neutral-300 dark:border-neutral-700 p-2" />
               </motion.div>
               <motion.h3
-                className="hidden md:block dark:text-textcolor-yellow text-textcolor-lightcolor text-xl md:pl-20 md:text-5xl font-thicccboi"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.1, color: "#ffffff" }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-              >
-                {item.title}
-              </motion.h3>
+  className="hidden md:block text-xl md:pl-20 md:text-5xl font-thicccboi"
+  initial={{ opacity: 0, y: 50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  onHoverStart={() => setIsHovered(true)}
+  onHoverEnd={() => setIsHovered(false)}
+  style={{
+    color: isHovered
+      ? isDarkMode
+        ? "#ffffff"  // White on dark mode
+        : "#000000"  // Black on light mode
+      : "inherit",  // Retains default color when not hovered
+  }}
+  whileHover={{
+    scale: 1.1,  // Scales up to 1.1 times the size on hover
+    transition: { duration: 0.3, ease: "easeInOut" },  // Smooth, ease-in-out transition
+  }}
+  transition={{ duration: 0.5, delay: index * 0.2 }}
+>
+  {item.title}
+</motion.h3>
+
             </div>
 
             <div className="relative pl-20 pr-4 md:pl-4 w-full">
