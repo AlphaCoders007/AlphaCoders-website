@@ -24,7 +24,7 @@ export const GoogleGeminiEffect = ({
 
   useEffect(() => {
     if (theme) {
-      setStrokeColor(theme === "dark" ? "#F5CB5C" : "#F231F2");
+      setStrokeColor(theme === "dark" ? "#F5CB5C" : "#C449C2");
     }
   }, [theme]);
 

@@ -19,22 +19,9 @@ body {
 :root {
   --bg-light: #ECF2FF; /* Light background ECF2FF */
   --bg-dark: #323437; /* Dark background */
-  --slider-color-light: #C449C2; /* Light mode color */
-  --slider-color-dark: #F5CB5C; /* Dark mode color */
+
 }
 
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --slider-color: var(--slider-color-dark);
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --slider-color: var(--slider-color-light);
-  }
-}
 
 body {
   @apply bg-[var(--bg-light)] text-black;

@@ -34,13 +34,13 @@ export const Card = React.memo(
               backfaceVisibility: "hidden",
             }}
           />
-          <div className="absolute inset-0 bg-black/50 flex flex-col justify-end py-8 px-4 transition-opacity duration-300 text-textcolor-yellow rounded-lg">
+          <div className="absolute font-thicccboi inset-0 bg-black/50 flex flex-col justify-start py-8 px-4 transition-opacity duration-300 text-textcolor-yellow rounded-lg">
             {/* Title */}
-            <div className="text-xl md:text-2xl font-medium bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-200">
+            <div className="text-xl font-thicccboi  md:text-2xl font-medium bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-200">
               {card.title}
             </div>
             {/* Description */}
-            <div className="text-sm md:text-base text-textcolor-yellow mt-2">
+            <div className="text-sm md:text-base font-thicccboi text-textcolor-yellow mt-2">
               {card.description}
             </div>
           </div>

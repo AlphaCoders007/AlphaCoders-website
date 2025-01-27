@@ -144,7 +144,7 @@ const ConnectSection: React.FC = () => {
                     <div className="flex flex-wrap items-center  justify-center gap-4 md:gap-6">
                       <a
                         href="tel:+919419196416"
-                        className="flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-black  hover:bg-gray-200 transition-colors duration-200"
+                        className="flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-black  bg-white transition-colors duration-200"
                       >
                         <Phone className="w-5 h-5" />
                         <span className="text-sm font-medium">Call Now</span>
@@ -152,7 +152,7 @@ const ConnectSection: React.FC = () => {
 
                       <a
                         href="mailto:info@alphacoders.co.in"
-                        className="flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-black  hover:bg-gray-200 transition-colors duration-200"
+                        className="flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-black  bg-white transition-colors duration-200"
                       >
                         <Mail className="w-5 h-5" />
                         <span className="text-sm font-medium">Email Us</span>
@@ -162,7 +162,7 @@ const ConnectSection: React.FC = () => {
                         href="https://www.linkedin.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-black  hover:bg-gray-200 transition-colors duration-200"
+                        className="flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-black  bg-white transition-colors duration-200"
                       >
                         <Linkedin className="w-5 h-5 " />
                         <span className="text-sm font-medium ">LinkedIn</span>
@@ -173,7 +173,7 @@ const ConnectSection: React.FC = () => {
                           href="https://www.instagram.com"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="p-2 rounded-full  hover:bg-gray-200 border border-black transition-colors duration-200"
+                          className="p-2 rounded-full  bg-white border border-black transition-colors duration-200"
                         >
                           <Instagram className="w-5 h-5 " />
                           <span className="sr-only">Instagram</span>
@@ -183,7 +183,7 @@ const ConnectSection: React.FC = () => {
                           href="https://github.com"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="p-2 rounded-full hover:bg-gray-200 border border-black transition-colors duration-200"
+                          className="p-2 rounded-full bg-white border border-black transition-colors duration-200"
                         >
                           <Github className="w-5 h-5" />
                           <span className="sr-only">GitHub</span>
@@ -207,7 +207,7 @@ const ConnectSection: React.FC = () => {
               }}
             >
               <div className="w-full dark:bg-textcolor-yellow bg-textcolor-lightcolor">
-                <div className="text-center font-thicccboi leading-loose tracking-wide text-white text-sm p-2">
+                <div className="text-center font-thicccboi leading-loose tracking-wide dark:text-black text-white  text-sm p-2">
                   © 2024 AlphaCoders Software Innovations
                 </div>
               </div>

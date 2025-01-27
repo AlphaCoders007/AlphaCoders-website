@@ -84,9 +84,9 @@ export function FocusCards() {
  
   return  (
     <>
-    <FocusCardsUi cards={cards1} className="bg-[#481E14] dark:dark:bg-black "/>
-    <FocusCardsUi cards={cards2} className="bg-[#9B3922] dark:bg-slate-800  "/>
-    <FocusCardsUi cards={cards3} className="bg-[#F2613F] dark:bg-slate-500 "/>
+    <FocusCardsUi cards={cards1} className=" dark:bg-[#323437] bg-[#ECF2FF] "/>
+    <FocusCardsUi cards={cards2} className=" dark:bg-[#323437] bg-[#ECF2FF] "/>
+    <FocusCardsUi cards={cards3} className="dark:bg-[#323437] bg-[#ECF2FF]  "/>
     </>
   )
   
