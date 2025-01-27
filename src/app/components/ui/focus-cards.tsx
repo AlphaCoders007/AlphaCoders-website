@@ -39,6 +39,7 @@ export const Card = React.memo(
             <div className="text-xl md:text-2xl font-medium bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-200">
               {card.title}
             </div>
+            <div>{card.path}</div>
             {/* Description */}
             <div className="text-sm md:text-base text-textcolor-yellow mt-2">
               {card.description}
@@ -56,6 +57,7 @@ type Card = {
   title: string;
   src: string;
   description: string;
+  path:string;
 };
 
 export function FocusCardsUi({
@@ -84,8 +86,9 @@ export function FocusCardsUi({
             <Card
               key={cardIndex}
               card={card}
-              href={rowRoutes[rowIndex] || "#"} // Use the corresponding route for the row, or fallback to "#"
+              href={card.path || "/"} // Use the corresponding route for the row, or fallback to "#"
             />
+            
           ))}
         </div>
       ))}

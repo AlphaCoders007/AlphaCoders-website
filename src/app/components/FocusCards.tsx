@@ -17,29 +17,30 @@ export function FocusCards() {
     },
    
     {
-      title: "User Experience Design (UX)",
-      src: "/users.jpg",
-      description: "We design intuitive, user-focused experiences with research and prototypes.",
-      path: "/wedesign",
+      title: "Market Research",
+      src: "/marketresearch.jpg",
+      description: "Insights to align your vision with market needs.",
+      path: "/weimagine",
     },
     {
-      title: "Interface Design (UI)",
-      src: "/research.jpg",
-      description: "Our UI design creates functional, branded, and user-friendly interfaces.",
-      path: "/wedesign",
+      title: "Concept Validation",
+      src: "/conceptvalid.jpg",
+      description:
+        "We test your software for reliability, security, and performance, ensuring a polished product.",
+      path: "/weimagine",
     },
   ];
   
   const cards2: Card[] = [
     {
-      title: "Ideation workshops",
-      src: "/research.jpg",
-      description: "Collaborative sessions to refine your ideas.",
+      title: "Prototyping",
+      src: "/validation.jpg",
+      description: "We create prototypes to refine your concept before development.",
       path: "/wedesign",
     },
     {
       title: "Interface Design (UI)",
-      src: "/wecreateimg.jpg",
+      src: "/research.jpg",
       description:
         "Our UI design creates functional, branded, and user-friendly interfaces.",
       path: "/wedesign",
@@ -62,10 +63,10 @@ export function FocusCards() {
       path: "/wecreate",
     },
     {
-      title: "Concept Validation",
-      src: "/conceptvalid.jpg",
+      title: "End-To-End-Development",
+      src: "/wecreateimg.jpg",
       description:
-        "We test your software for reliability, security, and performance, ensuring a polished product.",
+        "Our end-to-end engineering delivers secure backends and intuitive frontends for high-performing, unified products.",
       path: "/wecreate",
     },
     {
