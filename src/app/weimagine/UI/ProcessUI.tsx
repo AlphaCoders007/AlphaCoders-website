@@ -15,16 +15,8 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null); // Track the hovered item by inde
-  const [isDarkMode, setIsDarkMode] = useState(false); // Initialize dark mode state
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null); // Track the hovered item by index
 
-  // Check for dark mode only in the browser
-  useEffect(() => {
-    if (typeof document !== "undefined") {
-      setIsDarkMode(document.documentElement.classList.contains("dark"));
-    }
-  }, []);
-  
   useEffect(() => {
     if (ref.current) {
       const rect = ref.current.getBoundingClientRect();
@@ -70,12 +62,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                 onHoverStart={() => setHoveredIndex(index)} // Set hover state for the current index
                 onHoverEnd={() => setHoveredIndex(null)} // Reset hover state when mouse leaves
                 style={{
-                  color:
-                    hoveredIndex === index // Check if the current item is hovered
-                      ? isDarkMode
-                        ? "#ffffff" // White on dark mode
-                        : "#000000" // Black on light mode
-                      : "inherit", // Default color for non-hovered items
+                  color: hoveredIndex === index ? "#000000" : "inherit", // Always black on hover
                 }}
                 whileHover={{
                   scale: 1.1, // Scales up to 1.1 times the size on hover
@@ -85,8 +72,6 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               >
                 {item.title}
               </motion.h3>
-
-
             </div>
 
             <div className="relative pl-20 pr-4 md:pl-4 w-full">
