@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { useTheme } from "next-themes";
 import {
   Phone,
   Mail,
@@ -9,23 +8,12 @@ import {
   Github,
 } from "lucide-react";
 import ContactForm from "./ContactForm";
-
+import useThemeColors from "./hooks/useSvgColor";
 
 const ConnectSection: React.FC = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [isScrolledToBottom, setIsScrolledToBottom] = useState(false);
-  
-  const { theme } = useTheme(); // Use theme hook to get the current theme
-  const [svgcolor, setSvgColor] = useState("#F5CB5C"); // Set colors based on the theme
-  // const svgcolor = theme === "dark" ?  "#F5CB5C" : "#F231F2"; // Set colors based on the theme
-  useEffect(() => {
-    if (theme === "dark") {
-      setSvgColor("#F5CB5C"); // Dark theme color
-    } else {
-      setSvgColor("#F231F2"); // Light theme color
-    }
-  }, [theme]);
-
+  const {svgColor}  = useThemeColors()
   const handlePopupToggle = () => {
     setIsPopupOpen(!isPopupOpen);
   };
@@ -88,9 +76,10 @@ const ConnectSection: React.FC = () => {
                       fillRule="evenodd"
                       d="M35.892.81H2.108v5.631h24.171L.941 31.78l3.982 3.982L30.26 10.423v24.172h5.63V.81Z"
                       clipRule="evenodd"
+                      // className={`${svgColor}`}
                     />
                     <defs>
-                      <linearGradient
+                      {/* <linearGradient
                         id="service_arrow_color"
                         x1="0.086"
                         x2="35.104"
@@ -98,12 +87,12 @@ const ConnectSection: React.FC = () => {
                         y2="25.3"
                         gradientUnits="userSpaceOnUse"
                       >
-                        <stop stopColor={svgcolor} />
-                        <stop offset="0.06" stopColor={svgcolor} />
-                        <stop offset="0.53" stopColor={svgcolor} />
-                        <stop offset="0.85" stopColor={svgcolor} />
-                        <stop offset="1" stopColor={svgcolor} />
-                      </linearGradient>
+                        <stop stopColor={svgColor} />
+                        <stop offset="0.06" stopColor={svgColor} />
+                        <stop offset="0.53" stopColor={svgColor} />
+                        <stop offset="0.85" stopColor={svgColor} />
+                        <stop offset="1" stopColor={svgColor} />
+                      </linearGradient> */}
                     </defs>
                   </svg>
                   <svg
@@ -127,11 +116,11 @@ const ConnectSection: React.FC = () => {
                         y2="25.3"
                         gradientUnits="userSpaceOnUse"
                       >
-                        <stop stopColor={svgcolor} />
-                        <stop offset="0.06" stopColor={svgcolor} />
-                        <stop offset="0.53" stopColor={svgcolor} />
-                        <stop offset="0.85" stopColor={svgcolor} />
-                        <stop offset="1" stopColor={svgcolor} />
+                        <stop stopColor={svgColor} />
+                        <stop offset="0.06" stopColor={svgColor} />
+                        <stop offset="0.53" stopColor={svgColor} />
+                        <stop offset="0.85" stopColor={svgColor} />
+                        <stop offset="1" stopColor={svgColor} />
                       </linearGradient>
                     </defs>
                   </svg>

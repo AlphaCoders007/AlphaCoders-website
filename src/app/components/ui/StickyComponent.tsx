@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import MinimalButton from "./MinimalButton";
 import Link from "next/link";
 import Image from "next/image";
+import CircularMovingText from "./CircularMovingButton";
 interface StickyComponentProps {
   imageSrc: string;
   title: string;
@@ -23,7 +23,6 @@ const StickyComponent: React.FC<StickyComponentProps> = ({
   color,
 }) => {
   const [scale, setScale] = useState(1);
-
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -81,10 +80,19 @@ const StickyComponent: React.FC<StickyComponentProps> = ({
             
 
 
-              <div className="opacity-100 transform-none flex ">
+              <div className="opacity-100 transform-none flex gap-20 sm:gap-56 relative ">
                 <h2 className="pt-[1rem] font-bold text-3xl sm:text-4xl">
                   {title}
                 </h2>
+                <Link
+                href={path}
+                className={`    
+                 focus:outline-none `}
+                aria-label={`View details for ${title}`}
+              >
+                {/* <MinimalButton /> */}
+              <CircularMovingText/>
+              </Link>
                
               </div>
               <div className="opacity-100 transform-none">
@@ -101,15 +109,6 @@ const StickyComponent: React.FC<StickyComponentProps> = ({
               </div>
               <div className="opacity-100 transform-none">
                 <p className="pr-10 text-verticalbodyclamped">{description}</p>
-                <Link
-                href={path}
-                className={`    ${
-                  isEven ? "right-4 md:right-8" : "right-4 md:left-8"
-                }  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white`}
-                aria-label={`View details for ${title}`}
-              >
-                <MinimalButton />
-              </Link>
               </div>
             </div>
           </div>
