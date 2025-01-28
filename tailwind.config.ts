@@ -31,7 +31,7 @@ export default {
   ],
   theme: {
     extend: {
-     
+
       fontFamily: {
         thicccboi: ["Thicccboi", ...defaultTheme.fontFamily.sans],
         wide: ["Audiowide"],
@@ -72,6 +72,7 @@ export default {
         "custom-padding": "clamp(3rem, 2.257rem + 3.048vw, 5rem)",
       },
       animation: {
+        'rotate-text': 'rotateText 10s linear infinite',
         scroll:
           "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
         circle: "moveCircle 10s linear infinite",
@@ -82,6 +83,10 @@ export default {
         shimmer: "shimmer 2s linear infinite", // Add shimmer animation
       },
       keyframes: {
+        rotateText: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
         scroll: {
           to: {
             transform: "translate(calc(-50% - 0.5rem))",
