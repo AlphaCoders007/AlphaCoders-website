@@ -16,7 +16,7 @@ export function LampsEffect() {
           duration: 0.8,
           ease: "easeInOut",
         }}
-        className="mt-8  py-4 text-center text-2xl font-medium tracking-tight md:text-7xl text-white dark:text-textcolor-yellow "
+        className="mt-8   py-4 text-bottom  font-thicccboi tracking-tight md:text-7xl text-white dark:text-textcolor-yellow "
       >
         LET&apos;S BUILD<br /> YOUR DREAM TOGETHER
         {/* <div>

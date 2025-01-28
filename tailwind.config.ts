@@ -130,7 +130,7 @@ export default {
       colors: {
         textcolor: {
           yellow: "#F5CB5C",
-          lightcolor:"#F231F2"
+          lightcolor:"#C449C2"
          
         },
         background: {

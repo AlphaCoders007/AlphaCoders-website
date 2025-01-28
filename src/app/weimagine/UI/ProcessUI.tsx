@@ -15,6 +15,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null); // Track the hovered item by index
 
   useEffect(() => {
     if (ref.current) {
@@ -54,11 +55,19 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                 <div className="h-4 w-4 rounded-full dark:bg-textcolor-yellow bg-textcolor-lightcolor border  border-neutral-300 dark:border-neutral-700 p-2" />
               </motion.div>
               <motion.h3
-                className="hidden md:block dark:text-textcolor-yellow text-textcolor-lightcolor text-xl md:pl-20 md:text-5xl font-thicccboi"
+                className="hidden md:block text-xl md:pl-20 md:text-5xl font-thicccboi"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.1, color: "#ffffff" }}
+                onHoverStart={() => setHoveredIndex(index)} // Set hover state for the current index
+                onHoverEnd={() => setHoveredIndex(null)} // Reset hover state when mouse leaves
+                style={{
+                  color: hoveredIndex === index ? "#000000" : "inherit", // Always black on hover
+                }}
+                whileHover={{
+                  scale: 1.1, // Scales up to 1.1 times the size on hover
+                  transition: { duration: 0.3, ease: "easeInOut" }, // Smooth, ease-in-out transition
+                }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
               >
                 {item.title}
