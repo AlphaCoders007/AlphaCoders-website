@@ -1,28 +1,10 @@
 "use client";
 
 import React from "react";
-import { useState, useEffect } from "react";
-import { useTheme } from "next-themes";
 const CircularMovingText: React.FC = () => {
   const text = "CLICK HERE TO VIEW MORE ";
   const radius = 30; 
   const containerRadius = 40; 
-
-
-  const { theme } = useTheme(); // Use theme hook to get the current theme
-  const [svgColor, setSvgColor] = useState("#F5CB5C"); // Set colors based on the theme
-  // const svgcolor = theme === "dark" ?  "#F5CB5C" : "#F231F2"; // Set colors based on the theme
-  useEffect(() => {
-    if (theme === "dark") {
-      console.log(svgColor);
-      setSvgColor("#F5CB5C"); // Dark theme color
-    } else {
-      setSvgColor("#F231F2"); // Light theme color
-      console.log(svgColor);
-
-    }
-  }, [theme]);
-
   return (
     <div
       className="relative block rounded-full bg-[#F2F2F2] transition-all hover:scale-110 animate-circle"
@@ -55,7 +37,7 @@ const CircularMovingText: React.FC = () => {
         </text>
       </svg>
 
-      {/* The arrow SVG stays fixed at the center */}
+      {/* The arrow SVG stays fixed at the center */}  
       <span className="absolute inset-0 flex items-center justify-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"

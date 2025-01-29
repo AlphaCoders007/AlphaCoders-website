@@ -7,7 +7,6 @@ import NewComponent from "./components/NewComponent";
 import LetsGetStartedSection from "./components/ui/LetgetstartedUI";
 import { GoogleGeminiEffectDemo } from "./components/googlegeminieffect";
 import { LampsEffect } from "./components/LampsEffects";
-import { FocusCards } from "./components/FocusCards";
 import { Whatweoffer } from "./components/WhatWeOffer";
 const ParallaxSection = dynamic(() => import("./components/ParallexSection"), {
   ssr: false,
