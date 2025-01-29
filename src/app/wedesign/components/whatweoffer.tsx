@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Carousel, Card } from "@/app/wedesign/UI/whatweofferUI";
+import { Carousel, Card } from "@/app/components/ui/what-we-offerui";
 
 export function Whatweoffer() {
   const cards = data.map((card) => (
