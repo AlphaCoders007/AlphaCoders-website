@@ -140,6 +140,10 @@ export default {
           dark: "#333333",
         },
       },
+      backgroundImage: {
+        'custom-gradient': 'linear-gradient(to right, #ec4899, #facc15)', // Your pink-to-yellow gradient
+        'custom-gradient-r': 'linear-gradient(to right,#facc15,#ec4899)', // Your pink-to-yellow gradient
+      },
     },
   },
   plugins: [addVariablesForColors],
