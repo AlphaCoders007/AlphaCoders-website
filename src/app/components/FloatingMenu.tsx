@@ -59,7 +59,7 @@ const FloatingMenu: React.FC = () => {
   }, [handleClickOutside])
 
   const MenuItems: React.FC<{ onItemClick: () => void }> = ({ onItemClick }) => (
-    <div className="flex items-center space-x-2">
+    <div className="flex items-center flex-col sm:flex-row gap-4 ">
       {menuItems.map((item, index) => (
         <motion.div
           key={item.label || 'home'}
@@ -73,8 +73,8 @@ const FloatingMenu: React.FC = () => {
             onClick={onItemClick}
             className="flex items-center justify-center p-2 rounded-lg bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 transition-colors duration-200"
           >
-            <item.Icon className="w-5 h-5" />
-            {item.label && (
+            <item.Icon className="w-8 h-8 sm:h-5 sm:w-5" />
+            {item.label || (
               <span className="ml-2 text-sm hidden md:inline">{item.label}</span>
             )}
           </Link>
@@ -84,7 +84,7 @@ const FloatingMenu: React.FC = () => {
   )
 
   const ContactItems: React.FC = () => (
-    <div className="flex items-center space-x-2">
+    <div className="flex items-center space-x-2 gap-5 mb-3 sm:mb-0">
       {contactItems.map((item, index) => (
         <motion.div
           key={item.label}
@@ -134,7 +134,7 @@ const FloatingMenu: React.FC = () => {
                 exit={{ rotate: -45, opacity: 0 }}
                 transition={{ duration: 0.2 }}
               >
-                <Menu className="w-5 h-5 bg-background-light transition-colors" />
+                <Menu className="w-5 h-5  bg-background-light transition-colors" />
               </motion.div>
             )}
           </AnimatePresence>
@@ -152,7 +152,7 @@ const FloatingMenu: React.FC = () => {
               closed: { width: 0, height: 0, opacity: 0, x: -20 },
             }}
             transition={{ type: "spring", stiffness: 400, damping: 30 }}
-            className="relative flex items-center justify-center w-full h-full"
+            className="relative flex items-center justify-center"
           >
             <AnimatePresence>
               {isOpen && (
@@ -161,10 +161,10 @@ const FloatingMenu: React.FC = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.2 }}
-                  className="flex items-center space-x-4 p-2 whitespace-nowrap"
+                  className="flex items-center space-x-4 p-2 whitespace-nowrap flex-col sm:flex-row w-30vh h-30vh"
                 >
                   <MenuItems onItemClick={() => setIsOpen(false)} />
-                  <div className="h-6 w-px bg-black/10 dark:bg-white/10" />
+                  <div className="h-6  bg-black/10 dark:bg-white/10" />
                   <ContactItems />
                 </motion.div>
               )}
