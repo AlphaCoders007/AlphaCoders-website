@@ -6,7 +6,6 @@ import VerticalStack from "./components/VerticalStack";
 import NewComponent from "./components/NewComponent";
 import LetsGetStartedSection from "./components/ui/LetgetstartedUI";
 import { GoogleGeminiEffectDemo } from "./components/googlegeminieffect";
-import { LampsEffect } from "./components/LampsEffects";
 import { Whatweoffer } from "./components/WhatWeOffer";
 const ParallaxSection = dynamic(() => import("./components/ParallexSection"), {
   ssr: false,
@@ -63,7 +62,6 @@ const Page: React.FC = () => {
       {/* <HeroParallaxDemo /> */}
       <div className="bg-background-light  relative z-30">
 
-      <LampsEffect />
       {/* <FocusCards/> */}
       </div>
       <div>

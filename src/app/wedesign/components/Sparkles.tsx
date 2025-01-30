@@ -6,7 +6,7 @@ import { SparklesCore } from "../UI/sparkles";
 export function Sparkles() {
   const { isDarkMode } = useTheme();
   return (
-    <div className="h-[45rem] w-full bg-background-light transition-colors flex flex-col items-center justify-center overflow-hidden relative">
+    <div className="h-[45rem] w-full bg-background-dark transition-colors text-textcolor-lightcolor dark:text-textcolor-yellow flex flex-col items-center justify-center overflow-hidden relative">
       {/* Title Section */}
 
       {/* Gradient and Sparkles Core Container */}
@@ -31,7 +31,7 @@ export function Sparkles() {
       </div>
 
       {/* Description Section */}
-      <h1 className="text-l md:text-3xl font-thicccboi text-center dark:text-white text-black relative z-20 max-w-5xl px-6">
+      <h1 className="text-l md:text-3xl font-thicccboi text-center text-white relative z-20 max-w-5xl px-6">
         Design is where imagination takes form. Our team crafts thoughtful,
         user-centric designs that are as functional as they are beautiful. Each
         design we create solves problems, enhances experiences, and stands the

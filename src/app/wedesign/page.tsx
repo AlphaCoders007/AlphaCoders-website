@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 function page() {
   return (
     <div>
-      <div className=" relative flex flex-col z-30  overflow-hidden font-thicccboi">
+      <div className=" relative flex flex-col z-30  overflow-hidden font-thicccboi bg-background-light dark:bg-background-dark">
         <Sparkles />
        <StickyScrollReveal />
        <Whatweoffer />
