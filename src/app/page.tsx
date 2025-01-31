@@ -61,8 +61,8 @@ const Page: React.FC = () => {
       </div>
 
       {/* <HeroParallaxDemo /> */}
-      <div className="bg-background-light relative z-30 w-full h-[80vh] flex items-center justify-center ">
-        <div className="text-5xl w-[75vw] ">
+      <div className="bg-background-light relative z-30 w-full h-[40vh] flex items-center justify-center ">
+        <div className="text-5xl w-[75vw]  text-center justify-center">
           <TextGenerate />
         </div>
         {/* <FocusCards /> */}
