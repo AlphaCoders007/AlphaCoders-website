@@ -19,11 +19,8 @@ function page() {
   return (
     <div>
       <div className=" relative flex flex-col z-30  overflow-hidden font-thicccboi">
-        
-        
         <VortexDemo />
         <Whatweoffer />
-        
         <Methodologies />
         <TechnologiesDesign />
     </div>
