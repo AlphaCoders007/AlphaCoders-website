@@ -66,7 +66,7 @@ export default {
         "9xl": ["8rem", "1"],
         imgclamped: "clamp(1rem, .629rem + 1.524vw, 2rem)",
         textclamped: "clamp(2rem,-.6rem + 10.667vw,9rem)",
-        verticalbodyclamped: "clamp(0.725rem, .514rem + .762vw, 1.2rem)",
+        verticalbodyclamped: "clamp(0.8rem, .8rem + .762vw, 1.2rem)",
       },
       padding: {
         "custom-padding": "clamp(3rem, 2.257rem + 3.048vw, 5rem)",

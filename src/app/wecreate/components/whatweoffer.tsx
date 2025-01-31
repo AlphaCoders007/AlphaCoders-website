@@ -13,7 +13,7 @@ export const Whatweoffer: React.FC = () => {
           </h1>
 
           
-          <p className="lg:w-2/3 mx-auto leading-relaxed text-lg dark:text-white text-black font-thicccboi">
+          <p className="lg:w-[75vw] mx-auto leading-relaxed text-2xl dark:text-white text-black font-thicccboi">
             Our offerings combine innovation, precision, and user-centered
             execution, ensuring that we deliver software solutions of the
             highest caliber. By focusing on the details and understanding your
