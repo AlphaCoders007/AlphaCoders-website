@@ -24,10 +24,4 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://alphacodersinc.com/apps</loc>
-    <lastmod>2025-01-06T07:07:47.390Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
 </urlset>
