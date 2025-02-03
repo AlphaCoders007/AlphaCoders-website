@@ -12,19 +12,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: 'https://alphacodersinc.com/weimagine',
       lastModified: new Date(),
       changeFrequency: 'daily',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: 'https://alphacodersinc.com/wedesign',
       lastModified: new Date(),
       changeFrequency: 'daily',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: 'https://alphacodersinc.com/wecreate',
       lastModified: new Date(),
       changeFrequency: 'daily',
-      priority: 0.8,
+      priority: 0.9,
     },
   ]
 }
