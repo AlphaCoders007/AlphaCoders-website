@@ -71,7 +71,7 @@ const FloatingMenu: React.FC = () => {
           <Link
             href={item.href}
             onClick={onItemClick}
-            className="flex items-center justify-center p-2 rounded-lg bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 transition-colors duration-200"
+            className="flex items-center justify-center p-2 rounded-lg bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 transition-colors duration-200 gap-1"
           >
             <item.Icon className="w-8 h-8 sm:h-5 sm:w-5" />
             {item.label || (
@@ -112,7 +112,7 @@ const FloatingMenu: React.FC = () => {
           onClick={toggleMenu}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="relative z-10 bg-background-light transition-colors backdrop-blur-sm rounded-lg border border-black/10 dark:border-white/10 w-10 h-10 flex items-center justify-center duration-200"
+          className="relative z-10 bg-background-light transition-colors backdrop-blur-sm rounded-lg sm:w-20  border border-black/10 dark:border-white/10 w-10 h-10 flex items-center justify-center duration-200 "
           aria-label={isOpen ? "Close menu" : "Open menu"}
         >
           <AnimatePresence mode="wait" initial={false}>
@@ -161,16 +161,17 @@ const FloatingMenu: React.FC = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.2 }}
-                  className="flex items-center space-x-4 p-2 whitespace-nowrap flex-col sm:flex-row w-30vh h-30vh"
+                  className="flex items-center space-x-4 p-2 whitespace-nowrap flex-col sm:flex-row  gap-3"
                 >
                   <MenuItems onItemClick={() => setIsOpen(false)} />
-                  <div className="h-6  bg-black/10 dark:bg-white/10" />
                   <ContactItems />
                 </motion.div>
               )}
             </AnimatePresence>
           </motion.div>
         </motion.div>
+
+
       </div>
     </div>
   )

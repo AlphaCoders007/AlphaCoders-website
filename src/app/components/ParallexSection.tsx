@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const teamMembers = [
   { img: "/dev00.jpg" },
-  { img: "/dev3.jpg" },
+  { img: "/dev_og3.jpg" },
   { img: "/dev1.jpg" },
   { img: "/ogdev2.jpg" },
   { img: "/dev00.jpg" },
