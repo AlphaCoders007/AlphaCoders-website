@@ -8,7 +8,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: {
-    default: "AlphaCodersinc - AI solutions",
+    default: "AlphaCoders - AI solutions",
     template: "%s | AlphaCoders",
     absolute: "",
   },
