@@ -8,12 +8,12 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: {
-    default: "AlphaCoders - AI solutions",
+    default: "AlphaCoders - Innovative Digital Solutions",
     template: "%s | AlphaCoders",
     absolute: "",
   },
   description: "AlphaCoders provides innovative digital solutions and web development services to help you think outside the box and transform your business.",
-  keywords: "AlphaCoders, AlphaCoders Inc, AlphaCodersinc, business analyst, machine learning, AI solutions, artificial intelligence, innovative digital solutions, digital transformation, custom software development, web development, technology consulting, IT services, cloud computing, software engineering, mobile app development, UI/UX design, cybersecurity, data analytics, business automation, SEO services, digital marketing, enterprise solutions",
+  keywords: "AlphaCoders, AlphaCoders Inc, AlphaCoders, business analyst, machine learning, AI solutions, artificial intelligence, innovative digital solutions, digital transformation, custom software development, web development, technology consulting, IT services, cloud computing, software engineering, mobile app development, UI/UX design, cybersecurity, data analytics, business automation, SEO services, digital marketing, enterprise solutions"
 
   robots: "index, follow",
   icons: {
