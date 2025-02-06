@@ -5,26 +5,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: 'https://alphacodersinc.com/',
       lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 1,
+      changeFrequency: 'yearly',
+      priority:0.9,
     },
     {
       url: 'https://alphacodersinc.com/weimagine',
       lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
+      changeFrequency: 'monthly',
+      priority: 0.8,
     },
     {
       url: 'https://alphacodersinc.com/wedesign',
       lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
+      changeFrequency: 'monthly',
+      priority: 0.8,
     },
     {
       url: 'https://alphacodersinc.com/wecreate',
       lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
+      changeFrequency: 'monthly',
+      priority: 0.8,
     },
   ]
 }
