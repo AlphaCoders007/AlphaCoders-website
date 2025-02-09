@@ -65,6 +65,7 @@ export default function RootLayout({
       <head>
         {/* Handheld Friendly meta tag for mobile optimization */}
         <meta name="handheldFriendly" content="true" />
+        <meta name="robots" content="all" />
       </head>
       <body className="transition-colors duration-300">
         <Providers>
