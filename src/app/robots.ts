@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/ ',
     },
-    sitemap: 'https://alphacodersinc.com/sitemap.xml',
+    sitemap: 'https://www.alphacoders.co.in/sitemap.xml',
   }
 }
