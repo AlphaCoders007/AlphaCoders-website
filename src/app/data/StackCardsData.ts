@@ -11,7 +11,7 @@ interface CardStatsProps {
 
 export const cards: CardStatsProps[] = [
   {
-    imageSrc: "Weimagine.jpg",
+    imageSrc: "weimagine.jpg",
     technologie: [
       "Ideation Workshops",
       "Market Research",
