@@ -21,8 +21,8 @@ export function Whatweoffer({ data, title }: WhatweofferProps) {
 
   return (
     <div className="relative w-full h-full  bg-background-light transition-colors z-20">
-       <div className="px-6 text-center py-10">
-        <h2 className="text-2xl md:text-6xl font-thicccboi dark:text-white text-black tracking-tight leading-tight">
+       <div className="px-6 text-center py-40 ">
+        <h2 className="text-4xl md:text-8xl font-thicccboi dark:text-white text-black tracking-tight leading-tight">
           {title}
         </h2>
       </div>

@@ -59,7 +59,7 @@ const FloatingMenu: React.FC = () => {
   }, [handleClickOutside])
 
   const MenuItems: React.FC<{ onItemClick: () => void }> = ({ onItemClick }) => (
-    <div className="flex items-center flex-col sm:flex-row gap-4 ">
+    <div className="flex items-center flex-col sm:flex-row gap-4">
       {menuItems.map((item, index) => (
         <motion.div
           key={item.label || 'home'}
@@ -74,9 +74,9 @@ const FloatingMenu: React.FC = () => {
             className="flex items-center justify-center p-2 rounded-lg bg-black/10 dark:bg-white/10 hover:bg-black/20 dark:hover:bg-white/20 transition-colors duration-200 gap-1"
           >
             <item.Icon className="w-8 h-8 sm:h-5 sm:w-5" />
-            {item.label || (
+            {item.label ? (
               <span className="ml-2 text-sm hidden md:inline">{item.label}</span>
-            )}
+            ) : null}
           </Link>
         </motion.div>
       ))}

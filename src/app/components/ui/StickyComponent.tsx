@@ -108,7 +108,7 @@ const StickyComponent: React.FC<StickyComponentProps> = ({
                 </div>
               </div>
               <div className="opacity-100 transform-none">
-                <p className="pr-10 text-verticalbodyclamped">{description}</p>
+                <p className="pr-10 text-xs md:text-xl  ">{description}</p>
               </div>
             </div>
           </div>
