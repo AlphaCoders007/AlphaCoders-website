@@ -17,18 +17,21 @@ const ParallaxSection = dynamic(() => import("./components/ParallexSection"), {
 const data1 = [
   {
     category: "Ideation Workshops",
-    title: "A collaborative session to refine your ideas simply means working together with others to improve or clarify your thoughts. It could be brainstorming, reviewing, or tweaking a concept to make it better",
+    title: "Collaborative sessions to refine your ideas.",
     src: "/Ideationworkshop.jpg",
+    
   },
   {
     category: "Market Research",
-    title: "Insights to align your vision with market needs means gathering and analyzing information to ensure that your ideas, products, or services match what the market actually wants.",
+    title: "Insights to align your vision with market needs.",
     src: "/marketresearch.jpg",
+    
   },
   {
     category: "Concept Validation",
-    title: "A feasibility analysis is a structured evaluation to determine whether an idea, project, or business plan is practical and likely to succeed. It helps in identifying potential risks, required resources, and overall viability before investing time and money.",
+    title: "Feasibility analysis to ensure success.",
     src: "/conceptvalid.jpg",
+    
   },
 ];
 const data2 = [
@@ -45,7 +48,7 @@ const data2 = [
 
   },
   {
-    category: "Alignment with Your Brand Identity",
+    category: "Alignment with Brand Identity",
     title: "Every design we create aligns with your brand’s personality, values, and goals. Consistency in visuals and messaging builds trust and recognition.",
     src: "/validation.jpg",
 

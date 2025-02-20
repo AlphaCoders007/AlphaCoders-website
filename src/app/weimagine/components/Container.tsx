@@ -30,7 +30,7 @@ const Container = () => {
         />
       </ContainerScroll>
 
-      <h1 className="text-4xl md:text-4xl lg:text-6xl font-semibold max-w-7xl mx-auto text-center relative z-20 py-6">
+      <h1 className="text-4xl md:text-4xl lg:text-6xl font-semibold max-w-7xl mx-auto text-center relative z-20 ">
         <span className="bg-gradient-to-r from-neutral-500 to-neutral-500 text-transparent bg-clip-text font-thicccboi">
           <Cover className="dark:text-textcolor-yellow text-textcolor-lightcolor">
             Cultivate ideas and explore creative possibilities.
