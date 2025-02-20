@@ -208,7 +208,7 @@ export default function ParallexSection() {
       {/* Third Row */}
       <div
         ref={thirdRowRef}
-        className="flex items-center justify-center w-full gap-2 overflow-x-auto pb-6 px-6 md:justify-center md:space-x-12 md:overflow-x-visible"
+        className="flex items-center justify-center w-full gap-2 overflow-x-auto pb-6 px-6 md:justify-center md:space-x-4 md:overflow-x-visible"
       >
         {thirdRow.map((item, index) => (
           <ReviewCard key={index} {...item} />
