@@ -20,7 +20,7 @@ export function Whatweoffer() {
 const data = [
   {
     category: "Ideation Workshops",
-    title: "Collaborative sessions to refine your ideas..",
+    title: "Collaborative sessions to refine your ideas.",
     src: "/Ideationworkshop.jpg",
     
   },

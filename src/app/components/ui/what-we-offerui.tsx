@@ -83,14 +83,14 @@ export const Card = ({
           {/* Category Text */}
           <motion.p
             layoutId={layout ? `category-${card.category}` : undefined}
-            className=" dark:text-textcolor-yellow text-textcolor-lightcolor    text-xl md:text-2xl  font-thicccboi text-left drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)] tracking-wide  mb-2"
+            className=" dark:text-textcolor-yellow text-textcolor-lightcolor    text-2xl md:text-3xl  font-thicccboi text-left drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)] tracking-wide  mb-2"
           >
             {card.category}
           </motion.p>
           {/* Title Text */}
           <motion.h2
             layoutId={layout ? `title-${card.title}` : undefined}
-            className="text-white text-xs sm:text-xl py-5 md:text-2xl lg:text-xl font-thicccboi max-w-xs text-left leading-tight md:leading-snug mt-4 drop-shadow-[0_3px_6px_rgba(0,0,0,0.9)]"
+            className="text-white text-sm sm:text-2xl py-5    font-thicccboi max-w-xs text-left leading-tight md:leading-snug mt-4 drop-shadow-[0_3px_6px_rgba(0,0,0,0.9)]"
           >
             {card.title}
           </motion.h2>

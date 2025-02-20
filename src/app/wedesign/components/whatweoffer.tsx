@@ -34,7 +34,7 @@ const data = [
     
   },
   {
-    category: "Alignment with Your Brand Identity",
+    category: "Alignment with Brand Identity",
     title: "Every design we create aligns with your brand’s personality, values, and goals. Consistency in visuals and messaging builds trust and recognition.",
     src: "/validation.jpg",
     

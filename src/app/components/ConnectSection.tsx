@@ -140,7 +140,7 @@ const ConnectSection: React.FC = () => {
                       </a>
 
                       <a
-                        href="mailto:info@alphacoders.co.in"
+                        href="mailto:info@alphacoders.ai"
                         className="flex items-center justify-center gap-2 px-4 py-2 rounded-full border border-black  bg-white transition-colors duration-200"
                       >
                         <Mail className="w-5 h-5" />

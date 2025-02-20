@@ -17,6 +17,7 @@ const teamMembers = [
   { img: "/dev4.jpeg" },
   { img: "/dev5.jpeg" },
   { img: "/dev123.jpeg" },
+  { img: "/devnew.jpeg" },
 
 ];
 
@@ -163,7 +164,7 @@ export default function ParallexSection() {
     { img: teamMembers[5].img },
     { text: "In" },
     { img: teamMembers[2].img },
-    { img: teamMembers[3].img },
+    { img: teamMembers[8].img },
     { img: teamMembers[1].img },
   ];
 

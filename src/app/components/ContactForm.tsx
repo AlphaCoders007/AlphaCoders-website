@@ -214,7 +214,7 @@ const ContactForm: React.FC = () => {
 
           <button
             type="submit"
-            className="w-full py-3 text-white bg-textcolor-lightcolor dark:bg-textcolor-yellow hover:bg-yellow-500 rounded-full text-lg font-medium transition-transform transform hover:scale-105"
+            className="w-full py-3 text-black bg-textcolor-lightcolor dark:bg-textcolor-yellow hover:bg-yellow-500 rounded-full text-lg font-medium transition-transform transform hover:scale-105"
           >
             Submit Your Enquiry
           </button>

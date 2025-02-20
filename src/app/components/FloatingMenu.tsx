@@ -44,7 +44,7 @@ const FloatingMenu: React.FC = () => {
     {
       type: "email",
       label: "Email",
-      href: "mailto:info@alphacoders.co.in",
+      href: "mailto:info@alphacoders.ai",
       Icon: Mail,
     },
   ];
@@ -91,7 +91,7 @@ const FloatingMenu: React.FC = () => {
           >
             <item.Icon className="w-8 h-8 sm:h-5 sm:w-5" />
             {item.label ? (
-              <span className="ml-2 text-sm hidden md:inline">
+              <span className="ml-2 text-sm  md:inline">
                 {item.label}
               </span>
             ) : null}
