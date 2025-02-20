@@ -1,44 +1,58 @@
-'use client'
+"use client";
 
-import { useState, useEffect, useRef, useCallback } from "react"
-import Link from "next/link"
-import { motion, AnimatePresence } from "framer-motion"
-import { Home, Lightbulb, Palette, Phone, Mail, Menu, X, PenTool } from 'lucide-react'
+import { useState, useEffect, useRef, useCallback } from "react";
+import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Home,
+  Lightbulb,
+  Palette,
+  Phone,
+  Mail,
+  Menu,
+  X,
+  PenTool,
+} from "lucide-react";
 
 interface MenuItem {
-  label: string
-  href: string
-  Icon: React.ElementType
+  label: string;
+  href: string;
+  Icon: React.ElementType;
 }
 
 interface ContactItem {
-  type: "call" | "email"
-  label: string
-  href: string
-  Icon: React.ElementType
+  type: "call" | "email";
+  label: string;
+  href: string;
+  Icon: React.ElementType;
 }
 
 const FloatingMenu: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false)
-  const menuRef = useRef<HTMLDivElement>(null)
-  const buttonRef = useRef<HTMLButtonElement>(null)
+  const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   const menuItems: MenuItem[] = [
     { label: "", href: "/", Icon: Home },
     { label: "We Imagine", href: "/weimagine", Icon: Lightbulb },
     { label: "We Design", href: "/wedesign", Icon: Palette },
     { label: "We Create", href: "/wecreate", Icon: PenTool },
-  ]
+  ];
 
   const contactItems: ContactItem[] = [
     { type: "call", label: "Call", href: "tel:+919419196416", Icon: Phone },
-    { type: "email", label: "Email", href: "mailto:info@alphacoders.co.in", Icon: Mail },
-  ]
+    {
+      type: "email",
+      label: "Email",
+      href: "mailto:info@alphacoders.co.in",
+      Icon: Mail,
+    },
+  ];
 
   const toggleMenu = useCallback((event: React.MouseEvent) => {
-    event.stopPropagation()
-    setIsOpen((prev) => !prev)
-  }, [])
+    event.stopPropagation();
+    setIsOpen((prev) => !prev);
+  }, []);
 
   const handleClickOutside = useCallback((event: MouseEvent) => {
     if (
@@ -47,22 +61,24 @@ const FloatingMenu: React.FC = () => {
       buttonRef.current &&
       !buttonRef.current.contains(event.target as Node)
     ) {
-      setIsOpen(false)
+      setIsOpen(false);
     }
-  }, [])
+  }, []);
 
   useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside)
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside)
-    }
-  }, [handleClickOutside])
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [handleClickOutside]);
 
-  const MenuItems: React.FC<{ onItemClick: () => void }> = ({ onItemClick }) => (
+  const MenuItems: React.FC<{ onItemClick: () => void }> = ({
+    onItemClick,
+  }) => (
     <div className="flex items-center flex-col sm:flex-row gap-4">
       {menuItems.map((item, index) => (
         <motion.div
-          key={item.label || 'home'}
+          key={item.label || "home"}
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.95 }}
@@ -75,13 +91,15 @@ const FloatingMenu: React.FC = () => {
           >
             <item.Icon className="w-8 h-8 sm:h-5 sm:w-5" />
             {item.label ? (
-              <span className="ml-2 text-sm hidden md:inline">{item.label}</span>
+              <span className="ml-2 text-sm hidden md:inline">
+                {item.label}
+              </span>
             ) : null}
           </Link>
         </motion.div>
       ))}
     </div>
-  )
+  );
 
   const ContactItems: React.FC = () => (
     <div className="flex items-center space-x-2 gap-5 mb-3 sm:mb-0">
@@ -102,7 +120,7 @@ const FloatingMenu: React.FC = () => {
         </motion.div>
       ))}
     </div>
-  )
+  );
 
   return (
     <div className="fixed top-4 left-4 z-50 font-thicccboi">
@@ -144,38 +162,35 @@ const FloatingMenu: React.FC = () => {
           ref={menuRef}
           initial={false}
           animate={isOpen ? "open" : "closed"}
+          variants={{
+            open: { opacity: 1, x: 0, display: "block" },
+            closed: { opacity: 0, x: -20, transitionEnd: { display: "none" } },
+          }}
+          transition={{ type: "spring", stiffness: 400, damping: 30 }}
           className="overflow-hidden rounded-xl bg-background-light transition-colors backdrop-blur-sm border border-black/10 dark:border-white/10 mt-2"
         >
-          <motion.div
-            variants={{
-              open: { width: 'auto', height: 'auto', opacity: 1, x: 0 },
-              closed: { width: 0, height: 0, opacity: 0, x: -20 },
-            }}
-            transition={{ type: "spring", stiffness: 400, damping: 30 }}
-            className="relative flex items-center justify-center"
-          >
-            <AnimatePresence>
-              {isOpen && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.2 }}
-                  className="flex items-center space-x-4 p-2 whitespace-nowrap flex-col sm:flex-row  gap-3"
-                >
-                  <MenuItems onItemClick={() => setIsOpen(false)} />
-                  <ContactItems />
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </motion.div>
+          <AnimatePresence>
+            {isOpen && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{
+                  opacity: 0,
+                  scale: 0.95,
+                  transitionEnd: { display: "none" },
+                }}
+                transition={{ duration: 0.2 }}
+                className="flex items-center space-x-4 p-2 whitespace-nowrap flex-col sm:flex-row gap-3"
+              >
+                <MenuItems onItemClick={() => setIsOpen(false)} />
+                <ContactItems />
+              </motion.div>
+            )}
+          </AnimatePresence>
         </motion.div>
-
-
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default FloatingMenu
-
+export default FloatingMenu;
