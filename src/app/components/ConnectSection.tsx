@@ -197,7 +197,7 @@ const ConnectSection: React.FC = () => {
             >
               <div className="w-full dark:bg-textcolor-yellow bg-textcolor-lightcolor">
                 <div className="text-center font-thicccboi leading-loose tracking-wide dark:text-black text-white  text-sm p-2">
-                  © 2024 AlphaCoders Software Innovations
+                  © 2025 AlphaCoders Software Innovations
                 </div>
               </div>
             </div>
