@@ -13,7 +13,7 @@ interface WhatweofferProps {
   title: string; 
 }
 
-// Modify Whatweoffer to accept 'data' and 'title' as props with correct types
+
 export function Whatweoffer({ data, title }: WhatweofferProps) {
   const cards = data.map((card) => (
     <Card key={card.src} card={card} />
