@@ -9,7 +9,6 @@ const VerticalStack: React.FC = () => {
       
       
       
-      {/* Add more StickyComponent instances as needed */}
       {
         cards.map((card,i) =>(
             <StickyComponent
