@@ -1,7 +1,7 @@
 "use client"
 
 import React from 'react';
-import StickyComponent from './ui/StickyComponent'; // Import your existing component
+import StickyComponent from './ui/StickyComponent'; 
 import { cards } from '../data/StackCardsData';
 const VerticalStack: React.FC = () => {
   return (
