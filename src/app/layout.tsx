@@ -13,28 +13,28 @@ export const metadata: Metadata = {
     absolute: "",
   },
   description: "AlphaCoders provides innovative digital solutions and web development services to help you think outside the box and transform your business.",
-  keywords: "AlphaCoders, AlphaCoders Inc, AlphaCoders, business analyst, machine learning, AI solutions, artificial intelligence, innovative digital solutions, digital transformation, custom software development, web development, technology consulting, IT services, cloud computing, software engineering, mobile app development, UI/UX design, cybersecurity, data analytics, business automation, SEO services, digital marketing, enterprise solutions",
+  keywords: "AlphaCoders, alphaCodersinc.com, alphacoders.co.in,alphacoders kashmir, alphacoders anantnag, alphacoders srinagar, alphacoders jandk, alphacoders jammu and kashmir, alphaCoders.ai, It company pune, software company pune,It company kashmir,software company kashmir, It company anantnag,Innovative Tech Consultancy, Transformative Platform Development company,fast growing startup, kashmir startup, software company anantnag, AI solutions company , artificial intelligence company, software development company, software company , anantnag, kashmir , srinagar , Jandk ,jammu and kashmir , jammu and kashmir company , web development company , technology consulting company , IT services company, cloud computing company, software engineering company,Digital Product Development Services,Custom Software Solutions for Startups, business automation , alphacoders",
 
   robots: "index, follow",
   icons: {
     icon: "favicon.ico",
     apple: "apple-icon.png", 
   },
-  metadataBase: new URL("https://alphacodersinc.com"), // Base URL
+  metadataBase: new URL("https://www.alphacoders.ai"), // Base URL
 
   // Canonical URL for SEO
   alternates: {
-    canonical: "https://alphacodersinc.com", // Preferred URL for SEO
+    canonical: "https://www.alphacoders.ai", // Preferred URL for SEO
   },
   
   openGraph: {
     title: "AlphaCoders - Innovative Digital Solutions",
     description: "AlphaCoders delivers creative digital solutions and web development services.",
-    url: "https://alphacodersinc.com", // OpenGraph URL
+    url: "https://www.alphacoders.ai", // OpenGraph URL
     siteName: "AlphaCoders",
     images: [
       {
-        url: "https://alphacodersinc.com/opengraph-image.png",
+        url: "https://www.alphacoders.ai/opengraph-image.png",
         width: 1200,
         height: 630,
         alt: "Preview image for AlphaCoders",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     site: "@alphacoders",
     title: "AlphaCoders - Innovative Digital Solutions",
     description: "Transform your business with AlphaCoders' innovative solutions.",
-    images: ["https://alphacodersinc.com/opengraph-image.png"],
+    images: ["https://www.alphacoders.ai/opengraph-image.png"],
   },
 };
 
